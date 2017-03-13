@@ -1,0 +1,15 @@
+PODS:
+  - SwiftIconFont (2.6.0)
+  - SwiftyJSON (3.1.4)
+
+DEPENDENCIES:
+  - SwiftIconFont
+  - SwiftyJSON
+
+SPEC CHECKSUMS:
+  SwiftIconFont: bbe1f32e1e16bac87dad8566afc80132cb8d072c
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+
+PODFILE CHECKSUM: c1a25f53d25cebfe5e754b5e56a68fd939d35a27
+
+COCOAPODS: 1.2.0

@@ -1,0 +1,810 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		10B8576B7B7548D9C82E11A0A998C9B9 /* SwiftIconFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F81948D5673D67D5CBE7665B9D6ED4 /* SwiftIconFont.swift */; };
+		1FAF6E136D26C0A7A4F74D308BEE8554 /* Pods-EasyLearn-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F0F0C23D033B40C8C2A12E646B8E2ACF /* Pods-EasyLearn-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2191630948B9D1F6296DA58CDBA3E9DB /* SwiftIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E23C749A3722D111FC65072DAB2FBC /* SwiftIconButton.swift */; };
+		2686C23F486B2E1FEBBD219A0EDBF74B /* open-iconic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44A2F6DF2AB2220662A0FE85FD722F2A /* open-iconic.ttf */; };
+		2E675E3253D2005576A091018F5FF235 /* ThemifyIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE7ED51ECEAFDCF978BBD347F0EBAD7 /* ThemifyIcon.swift */; };
+		32D6D50694C215E3EB52C0BF88F7E0A4 /* SwiftIconFont-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E07FE4CC09CF6A0BFB7D8A870BBD55B4 /* SwiftIconFont-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3401FE17A6447B518C9BC786D34A940A /* map-icons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FB2A390F297433AAA79E781D4CC937EB /* map-icons.ttf */; };
+		41637E1B8D0D8410333BECD848238ADD /* SwiftIconTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965DA7B725BE093BBBC42916BA2F8CB4 /* SwiftIconTextField.swift */; };
+		4421ABB383B97C4D9A7C312E00DFA022 /* FontAwesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0AF7C618A4DAB12A3985B4872ED625 /* FontAwesome.swift */; };
+		565AD8EECC603B7A540A0B6EFC92CAC2 /* FontLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25F4068416D48F1BF777558F1311CEF /* FontLoader.swift */; };
+		5E6F3D23791797FEDFD607DD060A1649 /* SwiftIconLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFA30E0C25F075C6EC71051069C3076 /* SwiftIconLabel.swift */; };
+		63268B6F68FEABF3D597BE110FB59C23 /* themify.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 032459FABDCD586DAF9448589326FA24 /* themify.ttf */; };
+		6721569628C87B1E0B8D2D3892A3E364 /* IonIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C82C2FF8D94AF7AEB50B76118D5C456 /* IonIcons.swift */; };
+		7CB6517325F40BCC14B6DDE810B7E366 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC994CDC2D681BA26389F78A7E4B325 /* UIKit.framework */; };
+		8562CA71219FCD9E23C366054FF5C74A /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EA9A8282546D48310695FE2CF9DA04 /* SwiftyJSON.swift */; };
+		86A64C14E172B1C5B8ACAA8612CBBC5D /* SwiftIconFont-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 058EFE86BA75C5FEDE14142EA3DA48D5 /* SwiftIconFont-dummy.m */; };
+		8816F276EF479FC4C115F98BF1B423E4 /* MaterialIcons-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A2696C51128DAB1BD7F626AFDD874DE1 /* MaterialIcons-Regular.ttf */; };
+		8FC0FCB138BB9489C3CE6E57E2FCD906 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */; };
+		9A0855F61F49A489EF77F286F847CC8E /* MapIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659B949FF6527687EB00EBF27981545C /* MapIcon.swift */; };
+		9AD68441D36FCDD4B7F4C296E2C7AE62 /* SwiftBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF827CDEA4A83CD7D7767C79F067CE0 /* SwiftBarButtonItem.swift */; };
+		9CA60CD032A1713C5B42642106EE948D /* SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 486965023D34C3C0B1198297CB207FF4 /* SwiftyJSON-dummy.m */; };
+		A1B4A5DDDFD912F417BBCB6E0FFDC99F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */; };
+		A244DB848CFC98E9015DE9FB081ADE77 /* MaterialIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1DC65B927315EED58548A29B682D1 /* MaterialIcon.swift */; };
+		A52F46E1F11EF35F954C0A06067C092D /* Iconic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D33EB62895B31D6591A891452DA2349 /* Iconic.swift */; };
+		AB4C6AD6F2D6DDBF6A755A9C260AB41F /* Pods-EasyLearn-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F01F48D452F288ADFD1BF736DA42ED /* Pods-EasyLearn-dummy.m */; };
+		B30527C9C65CBD2DED0A94EA587E66A0 /* SwiftIconTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B283123C9D86B7BDF219DD2229260C /* SwiftIconTextView.swift */; };
+		BA7C72EEC6F48756CD9E20130DCB668D /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7529583D13AE71D10C6BA85CF37EC4D5 /* FontAwesome.ttf */; };
+		BF0E446647A733D74BCFB22387E96737 /* octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 37ABA1B5FEA190F9DF00DD6C759A9576 /* octicons.ttf */; };
+		C19477B45F09C8AF09A1B9026DE9DE14 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3446366A9DF1EA9A926B18C2ED030B9 /* Ionicons.ttf */; };
+		C51F6450135CD31B45FD453BCCF37F65 /* SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C2E88D75B63800797A8C12DDBF290ACC /* SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D58369F5084F3DD86DC13A7BCDC00CEA /* Octicon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E8382962ADFB25AE0DB920FC4D772A /* Octicon.swift */; };
+		E588729940632C879A37B1BC65BB62C4 /* SwiftIconTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EE4E696B7D9216516416485DD15D0B /* SwiftIconTabBarItem.swift */; };
+		EB15370157144478BFACC477EE96F164 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		75DA89FBEDA1812592C5E16AC37446BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F25CE5BA031AF7438667773F50C73D64;
+			remoteInfo = SwiftIconFont;
+		};
+		CC265BA777A23EB6E3CB7F44CB50C996 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 105DEE27E6F4FC4B682019BA72F935A6;
+			remoteInfo = SwiftyJSON;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01F81948D5673D67D5CBE7665B9D6ED4 /* SwiftIconFont.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftIconFont.swift; path = SwiftIconFont/Classes/SwiftIconFont.swift; sourceTree = "<group>"; };
+		025A3062EA3B620D12105B3A637F0D8D /* SwiftIconFont.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftIconFont.modulemap; sourceTree = "<group>"; };
+		032459FABDCD586DAF9448589326FA24 /* themify.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = themify.ttf; path = SwiftIconFont/Resources/themify.ttf; sourceTree = "<group>"; };
+		058EFE86BA75C5FEDE14142EA3DA48D5 /* SwiftIconFont-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftIconFont-dummy.m"; sourceTree = "<group>"; };
+		143016503D7AA10150D36360164AC3E1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19B283123C9D86B7BDF219DD2229260C /* SwiftIconTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftIconTextView.swift; path = SwiftIconFont/Classes/SwiftIconTextView.swift; sourceTree = "<group>"; };
+		1E0AF7C618A4DAB12A3985B4872ED625 /* FontAwesome.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontAwesome.swift; path = SwiftIconFont/Classes/FontAwesome.swift; sourceTree = "<group>"; };
+		26EE4E696B7D9216516416485DD15D0B /* SwiftIconTabBarItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftIconTabBarItem.swift; path = SwiftIconFont/Classes/SwiftIconTabBarItem.swift; sourceTree = "<group>"; };
+		288A65AD0D2ABE7FCDFE7166370961C6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29B2BB986744F3ECC2915B4793590ABC /* SwiftIconFont.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftIconFont.framework; path = SwiftIconFont.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		37ABA1B5FEA190F9DF00DD6C759A9576 /* octicons.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = octicons.ttf; path = SwiftIconFont/Resources/octicons.ttf; sourceTree = "<group>"; };
+		44A2F6DF2AB2220662A0FE85FD722F2A /* open-iconic.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = "open-iconic.ttf"; path = "SwiftIconFont/Resources/open-iconic.ttf"; sourceTree = "<group>"; };
+		486965023D34C3C0B1198297CB207FF4 /* SwiftyJSON-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyJSON-dummy.m"; sourceTree = "<group>"; };
+		554F5BC747EC6C31A907555D73A202B3 /* Pods-EasyLearn.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-EasyLearn.modulemap"; sourceTree = "<group>"; };
+		58156E1E740B9754D38F31F63C6E2AD4 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyJSON.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		64E7E9DE39FA62E357E60C415DF487A5 /* Pods-EasyLearn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EasyLearn.release.xcconfig"; sourceTree = "<group>"; };
+		659B949FF6527687EB00EBF27981545C /* MapIcon.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MapIcon.swift; path = SwiftIconFont/Classes/MapIcon.swift; sourceTree = "<group>"; };
+		6649B1307B28178CF0C149AC3F98BF28 /* Pods-EasyLearn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EasyLearn.debug.xcconfig"; sourceTree = "<group>"; };
+		6C82C2FF8D94AF7AEB50B76118D5C456 /* IonIcons.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IonIcons.swift; path = SwiftIconFont/Classes/IonIcons.swift; sourceTree = "<group>"; };
+		6F73F7CAB354C58499E2B0C89D90F6E5 /* SwiftyJSON.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.xcconfig; sourceTree = "<group>"; };
+		71EA9A8282546D48310695FE2CF9DA04 /* SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON.swift; sourceTree = "<group>"; };
+		7529583D13AE71D10C6BA85CF37EC4D5 /* FontAwesome.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = FontAwesome.ttf; path = SwiftIconFont/Resources/FontAwesome.ttf; sourceTree = "<group>"; };
+		7AD1A880D11D43E5E343C5A4F64D1FEC /* Pods-EasyLearn-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EasyLearn-resources.sh"; sourceTree = "<group>"; };
+		7EC994CDC2D681BA26389F78A7E4B325 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		847B3B8A7B5B1D217A559360B5085732 /* SwiftIconFont.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftIconFont.xcconfig; sourceTree = "<group>"; };
+		84E8382962ADFB25AE0DB920FC4D772A /* Octicon.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Octicon.swift; path = SwiftIconFont/Classes/Octicon.swift; sourceTree = "<group>"; };
+		8B4FACFE7048C6EC2BF35F96523814E8 /* SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
+		8BE91A5F5A55B548A17D6DF92C9E4C0C /* Pods_EasyLearn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_EasyLearn.framework; path = "Pods-EasyLearn.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D33EB62895B31D6591A891452DA2349 /* Iconic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Iconic.swift; path = SwiftIconFont/Classes/Iconic.swift; sourceTree = "<group>"; };
+		90AA379E01537E50E4FC6DE2B88310CA /* SwiftIconFont-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftIconFont-prefix.pch"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		94AFEB7B334E18735519C9BF013A3FD8 /* Pods-EasyLearn-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EasyLearn-acknowledgements.markdown"; sourceTree = "<group>"; };
+		965DA7B725BE093BBBC42916BA2F8CB4 /* SwiftIconTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftIconTextField.swift; path = SwiftIconFont/Classes/SwiftIconTextField.swift; sourceTree = "<group>"; };
+		96E23C749A3722D111FC65072DAB2FBC /* SwiftIconButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftIconButton.swift; path = SwiftIconFont/Classes/SwiftIconButton.swift; sourceTree = "<group>"; };
+		A2696C51128DAB1BD7F626AFDD874DE1 /* MaterialIcons-Regular.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = "MaterialIcons-Regular.ttf"; path = "SwiftIconFont/Resources/MaterialIcons-Regular.ttf"; sourceTree = "<group>"; };
+		B4075531B46CB134D4DA76370548E681 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBE7ED51ECEAFDCF978BBD347F0EBAD7 /* ThemifyIcon.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThemifyIcon.swift; path = SwiftIconFont/Classes/ThemifyIcon.swift; sourceTree = "<group>"; };
+		C0D1DC65B927315EED58548A29B682D1 /* MaterialIcon.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MaterialIcon.swift; path = SwiftIconFont/Classes/MaterialIcon.swift; sourceTree = "<group>"; };
+		C25F4068416D48F1BF777558F1311CEF /* FontLoader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontLoader.swift; path = SwiftIconFont/Classes/FontLoader.swift; sourceTree = "<group>"; };
+		C2E88D75B63800797A8C12DDBF290ACC /* SwiftyJSON-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-umbrella.h"; sourceTree = "<group>"; };
+		C64AF387D9EB62747C89B35D302198D6 /* Pods-EasyLearn-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EasyLearn-acknowledgements.plist"; sourceTree = "<group>"; };
+		D4F01F48D452F288ADFD1BF736DA42ED /* Pods-EasyLearn-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EasyLearn-dummy.m"; sourceTree = "<group>"; };
+		D6AA825F59F4E1017B677AB7E5C2002B /* SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftyJSON.modulemap; sourceTree = "<group>"; };
+		DFFA30E0C25F075C6EC71051069C3076 /* SwiftIconLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftIconLabel.swift; path = SwiftIconFont/Classes/SwiftIconLabel.swift; sourceTree = "<group>"; };
+		E07FE4CC09CF6A0BFB7D8A870BBD55B4 /* SwiftIconFont-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftIconFont-umbrella.h"; sourceTree = "<group>"; };
+		E3446366A9DF1EA9A926B18C2ED030B9 /* Ionicons.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = Ionicons.ttf; path = SwiftIconFont/Resources/Ionicons.ttf; sourceTree = "<group>"; };
+		E4D17C1C4905F3B3FF35F1A054A54442 /* Pods-EasyLearn-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EasyLearn-frameworks.sh"; sourceTree = "<group>"; };
+		F0F0C23D033B40C8C2A12E646B8E2ACF /* Pods-EasyLearn-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EasyLearn-umbrella.h"; sourceTree = "<group>"; };
+		FB2A390F297433AAA79E781D4CC937EB /* map-icons.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = "map-icons.ttf"; path = "SwiftIconFont/Resources/map-icons.ttf"; sourceTree = "<group>"; };
+		FFF827CDEA4A83CD7D7767C79F067CE0 /* SwiftBarButtonItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftBarButtonItem.swift; path = SwiftIconFont/Classes/SwiftBarButtonItem.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		47362DD6E5BD305E0D35F5D168259EC3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1B4A5DDDFD912F417BBCB6E0FFDC99F /* Foundation.framework in Frameworks */,
+				7CB6517325F40BCC14B6DDE810B7E366 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F482373886005FCB2BDA3FA583B39C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB15370157144478BFACC477EE96F164 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1F18D917488989C28025FE2C4F4EC2D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FC0FCB138BB9489C3CE6E57E2FCD906 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1CE6CE5E087B1B4448AC2CBE8BF81452 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B4075531B46CB134D4DA76370548E681 /* Info.plist */,
+				025A3062EA3B620D12105B3A637F0D8D /* SwiftIconFont.modulemap */,
+				847B3B8A7B5B1D217A559360B5085732 /* SwiftIconFont.xcconfig */,
+				058EFE86BA75C5FEDE14142EA3DA48D5 /* SwiftIconFont-dummy.m */,
+				90AA379E01537E50E4FC6DE2B88310CA /* SwiftIconFont-prefix.pch */,
+				E07FE4CC09CF6A0BFB7D8A870BBD55B4 /* SwiftIconFont-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftIconFont";
+			sourceTree = "<group>";
+		};
+		40AF33032CF2BB830411203D8B1E8F9A /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				917E14B7FD8D9B2EEC23E38805A1CF5E /* Pods-EasyLearn */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E6EE98446B568159EE277B68FD442AF0 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		55D782A5468DAFF7012480CB3D26F5EC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7529583D13AE71D10C6BA85CF37EC4D5 /* FontAwesome.ttf */,
+				E3446366A9DF1EA9A926B18C2ED030B9 /* Ionicons.ttf */,
+				FB2A390F297433AAA79E781D4CC937EB /* map-icons.ttf */,
+				A2696C51128DAB1BD7F626AFDD874DE1 /* MaterialIcons-Regular.ttf */,
+				37ABA1B5FEA190F9DF00DD6C759A9576 /* octicons.ttf */,
+				44A2F6DF2AB2220662A0FE85FD722F2A /* open-iconic.ttf */,
+				032459FABDCD586DAF9448589326FA24 /* themify.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		751BC5785AE1629DE4363771F088BC13 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A64F4A3190DA772F214C4AA87CACE8CE /* SwiftIconFont */,
+				94AAFCBB2FE77B08EEEFDBCDFB49A0EE /* SwiftyJSON */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				751BC5785AE1629DE4363771F088BC13 /* Pods */,
+				D2EA7EAF198D62B533C64C46E8F54F5B /* Products */,
+				40AF33032CF2BB830411203D8B1E8F9A /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		917E14B7FD8D9B2EEC23E38805A1CF5E /* Pods-EasyLearn */ = {
+			isa = PBXGroup;
+			children = (
+				288A65AD0D2ABE7FCDFE7166370961C6 /* Info.plist */,
+				554F5BC747EC6C31A907555D73A202B3 /* Pods-EasyLearn.modulemap */,
+				94AFEB7B334E18735519C9BF013A3FD8 /* Pods-EasyLearn-acknowledgements.markdown */,
+				C64AF387D9EB62747C89B35D302198D6 /* Pods-EasyLearn-acknowledgements.plist */,
+				D4F01F48D452F288ADFD1BF736DA42ED /* Pods-EasyLearn-dummy.m */,
+				E4D17C1C4905F3B3FF35F1A054A54442 /* Pods-EasyLearn-frameworks.sh */,
+				7AD1A880D11D43E5E343C5A4F64D1FEC /* Pods-EasyLearn-resources.sh */,
+				F0F0C23D033B40C8C2A12E646B8E2ACF /* Pods-EasyLearn-umbrella.h */,
+				6649B1307B28178CF0C149AC3F98BF28 /* Pods-EasyLearn.debug.xcconfig */,
+				64E7E9DE39FA62E357E60C415DF487A5 /* Pods-EasyLearn.release.xcconfig */,
+			);
+			name = "Pods-EasyLearn";
+			path = "Target Support Files/Pods-EasyLearn";
+			sourceTree = "<group>";
+		};
+		94AAFCBB2FE77B08EEEFDBCDFB49A0EE /* SwiftyJSON */ = {
+			isa = PBXGroup;
+			children = (
+				71EA9A8282546D48310695FE2CF9DA04 /* SwiftyJSON.swift */,
+				DDA771AA9844AA4C3B45CB97FC7C9C98 /* Support Files */,
+			);
+			name = SwiftyJSON;
+			path = SwiftyJSON;
+			sourceTree = "<group>";
+		};
+		A64F4A3190DA772F214C4AA87CACE8CE /* SwiftIconFont */ = {
+			isa = PBXGroup;
+			children = (
+				1E0AF7C618A4DAB12A3985B4872ED625 /* FontAwesome.swift */,
+				C25F4068416D48F1BF777558F1311CEF /* FontLoader.swift */,
+				8D33EB62895B31D6591A891452DA2349 /* Iconic.swift */,
+				6C82C2FF8D94AF7AEB50B76118D5C456 /* IonIcons.swift */,
+				659B949FF6527687EB00EBF27981545C /* MapIcon.swift */,
+				C0D1DC65B927315EED58548A29B682D1 /* MaterialIcon.swift */,
+				84E8382962ADFB25AE0DB920FC4D772A /* Octicon.swift */,
+				FFF827CDEA4A83CD7D7767C79F067CE0 /* SwiftBarButtonItem.swift */,
+				96E23C749A3722D111FC65072DAB2FBC /* SwiftIconButton.swift */,
+				01F81948D5673D67D5CBE7665B9D6ED4 /* SwiftIconFont.swift */,
+				DFFA30E0C25F075C6EC71051069C3076 /* SwiftIconLabel.swift */,
+				26EE4E696B7D9216516416485DD15D0B /* SwiftIconTabBarItem.swift */,
+				965DA7B725BE093BBBC42916BA2F8CB4 /* SwiftIconTextField.swift */,
+				19B283123C9D86B7BDF219DD2229260C /* SwiftIconTextView.swift */,
+				BBE7ED51ECEAFDCF978BBD347F0EBAD7 /* ThemifyIcon.swift */,
+				55D782A5468DAFF7012480CB3D26F5EC /* Resources */,
+				1CE6CE5E087B1B4448AC2CBE8BF81452 /* Support Files */,
+			);
+			name = SwiftIconFont;
+			path = SwiftIconFont;
+			sourceTree = "<group>";
+		};
+		D2EA7EAF198D62B533C64C46E8F54F5B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8BE91A5F5A55B548A17D6DF92C9E4C0C /* Pods_EasyLearn.framework */,
+				29B2BB986744F3ECC2915B4793590ABC /* SwiftIconFont.framework */,
+				58156E1E740B9754D38F31F63C6E2AD4 /* SwiftyJSON.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DDA771AA9844AA4C3B45CB97FC7C9C98 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				143016503D7AA10150D36360164AC3E1 /* Info.plist */,
+				D6AA825F59F4E1017B677AB7E5C2002B /* SwiftyJSON.modulemap */,
+				6F73F7CAB354C58499E2B0C89D90F6E5 /* SwiftyJSON.xcconfig */,
+				486965023D34C3C0B1198297CB207FF4 /* SwiftyJSON-dummy.m */,
+				8B4FACFE7048C6EC2BF35F96523814E8 /* SwiftyJSON-prefix.pch */,
+				C2E88D75B63800797A8C12DDBF290ACC /* SwiftyJSON-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftyJSON";
+			sourceTree = "<group>";
+		};
+		E6EE98446B568159EE277B68FD442AF0 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */,
+				7EC994CDC2D681BA26389F78A7E4B325 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		30D4E163EB238E8954EBFE548E0DCD28 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C51F6450135CD31B45FD453BCCF37F65 /* SwiftyJSON-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6323F1AF44638331C9E91539748428B3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FAF6E136D26C0A7A4F74D308BEE8554 /* Pods-EasyLearn-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB79ED10FCAF64832CA38EB67C01F4CB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32D6D50694C215E3EB52C0BF88F7E0A4 /* SwiftIconFont-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		01155FE6E0930B22C775422527E46F76 /* Pods-EasyLearn */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB370001F51AEEEA241DE26A5D6C2B5B /* Build configuration list for PBXNativeTarget "Pods-EasyLearn" */;
+			buildPhases = (
+				A0EFF6002D40706B458029A5A9AC1B32 /* Sources */,
+				E1F18D917488989C28025FE2C4F4EC2D /* Frameworks */,
+				6323F1AF44638331C9E91539748428B3 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1BF013547C709B967D2865FF146E4AFF /* PBXTargetDependency */,
+				C6F05A3F677B16DE56F0E6D8BA0EE698 /* PBXTargetDependency */,
+			);
+			name = "Pods-EasyLearn";
+			productName = "Pods-EasyLearn";
+			productReference = 8BE91A5F5A55B548A17D6DF92C9E4C0C /* Pods_EasyLearn.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		105DEE27E6F4FC4B682019BA72F935A6 /* SwiftyJSON */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3081B26333652A6AEC148C6FB53AE666 /* Build configuration list for PBXNativeTarget "SwiftyJSON" */;
+			buildPhases = (
+				3601D24781DA08CB23916DF442707A4D /* Sources */,
+				9F482373886005FCB2BDA3FA583B39C4 /* Frameworks */,
+				30D4E163EB238E8954EBFE548E0DCD28 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftyJSON;
+			productName = SwiftyJSON;
+			productReference = 58156E1E740B9754D38F31F63C6E2AD4 /* SwiftyJSON.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F25CE5BA031AF7438667773F50C73D64 /* SwiftIconFont */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 453F22A239829A1BDC275E696522B298 /* Build configuration list for PBXNativeTarget "SwiftIconFont" */;
+			buildPhases = (
+				4BD834F48D5CAF2DDD0DF4992273A7E0 /* Sources */,
+				47362DD6E5BD305E0D35F5D168259EC3 /* Frameworks */,
+				F03A0389200D7EF1D0A1E86DFFA6DD04 /* Resources */,
+				BB79ED10FCAF64832CA38EB67C01F4CB /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftIconFont;
+			productName = SwiftIconFont;
+			productReference = 29B2BB986744F3ECC2915B4793590ABC /* SwiftIconFont.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = D2EA7EAF198D62B533C64C46E8F54F5B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				01155FE6E0930B22C775422527E46F76 /* Pods-EasyLearn */,
+				F25CE5BA031AF7438667773F50C73D64 /* SwiftIconFont */,
+				105DEE27E6F4FC4B682019BA72F935A6 /* SwiftyJSON */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F03A0389200D7EF1D0A1E86DFFA6DD04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA7C72EEC6F48756CD9E20130DCB668D /* FontAwesome.ttf in Resources */,
+				C19477B45F09C8AF09A1B9026DE9DE14 /* Ionicons.ttf in Resources */,
+				3401FE17A6447B518C9BC786D34A940A /* map-icons.ttf in Resources */,
+				8816F276EF479FC4C115F98BF1B423E4 /* MaterialIcons-Regular.ttf in Resources */,
+				BF0E446647A733D74BCFB22387E96737 /* octicons.ttf in Resources */,
+				2686C23F486B2E1FEBBD219A0EDBF74B /* open-iconic.ttf in Resources */,
+				63268B6F68FEABF3D597BE110FB59C23 /* themify.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3601D24781DA08CB23916DF442707A4D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CA60CD032A1713C5B42642106EE948D /* SwiftyJSON-dummy.m in Sources */,
+				8562CA71219FCD9E23C366054FF5C74A /* SwiftyJSON.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BD834F48D5CAF2DDD0DF4992273A7E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4421ABB383B97C4D9A7C312E00DFA022 /* FontAwesome.swift in Sources */,
+				565AD8EECC603B7A540A0B6EFC92CAC2 /* FontLoader.swift in Sources */,
+				A52F46E1F11EF35F954C0A06067C092D /* Iconic.swift in Sources */,
+				6721569628C87B1E0B8D2D3892A3E364 /* IonIcons.swift in Sources */,
+				9A0855F61F49A489EF77F286F847CC8E /* MapIcon.swift in Sources */,
+				A244DB848CFC98E9015DE9FB081ADE77 /* MaterialIcon.swift in Sources */,
+				D58369F5084F3DD86DC13A7BCDC00CEA /* Octicon.swift in Sources */,
+				9AD68441D36FCDD4B7F4C296E2C7AE62 /* SwiftBarButtonItem.swift in Sources */,
+				2191630948B9D1F6296DA58CDBA3E9DB /* SwiftIconButton.swift in Sources */,
+				86A64C14E172B1C5B8ACAA8612CBBC5D /* SwiftIconFont-dummy.m in Sources */,
+				10B8576B7B7548D9C82E11A0A998C9B9 /* SwiftIconFont.swift in Sources */,
+				5E6F3D23791797FEDFD607DD060A1649 /* SwiftIconLabel.swift in Sources */,
+				E588729940632C879A37B1BC65BB62C4 /* SwiftIconTabBarItem.swift in Sources */,
+				41637E1B8D0D8410333BECD848238ADD /* SwiftIconTextField.swift in Sources */,
+				B30527C9C65CBD2DED0A94EA587E66A0 /* SwiftIconTextView.swift in Sources */,
+				2E675E3253D2005576A091018F5FF235 /* ThemifyIcon.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0EFF6002D40706B458029A5A9AC1B32 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB4C6AD6F2D6DDBF6A755A9C260AB41F /* Pods-EasyLearn-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1BF013547C709B967D2865FF146E4AFF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftIconFont;
+			target = F25CE5BA031AF7438667773F50C73D64 /* SwiftIconFont */;
+			targetProxy = 75DA89FBEDA1812592C5E16AC37446BD /* PBXContainerItemProxy */;
+		};
+		C6F05A3F677B16DE56F0E6D8BA0EE698 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftyJSON;
+			target = 105DEE27E6F4FC4B682019BA72F935A6 /* SwiftyJSON */;
+			targetProxy = CC265BA777A23EB6E3CB7F44CB50C996 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2B16A1EFEEA8F77AE37895A94D20EED9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 847B3B8A7B5B1D217A559360B5085732 /* SwiftIconFont.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftIconFont/SwiftIconFont-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftIconFont/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftIconFont/SwiftIconFont.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SwiftIconFont;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5E6963D2D106B21F64F485C97DEC3A24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6649B1307B28178CF0C149AC3F98BF28 /* Pods-EasyLearn.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-EasyLearn/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-EasyLearn/Pods-EasyLearn.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_EasyLearn;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5FA3C5FD720279855B3D2E8FF27CE423 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 847B3B8A7B5B1D217A559360B5085732 /* SwiftIconFont.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftIconFont/SwiftIconFont-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftIconFont/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftIconFont/SwiftIconFont.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SwiftIconFont;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5FD28B01540450EA59D79603A662187B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64E7E9DE39FA62E357E60C415DF487A5 /* Pods-EasyLearn.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-EasyLearn/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-EasyLearn/Pods-EasyLearn.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_EasyLearn;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		673254EEAF0B5BF4596080C749645884 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		96D74232B1A8212A325DB9E119A17074 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F73F7CAB354C58499E2B0C89D90F6E5 /* SwiftyJSON.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SwiftyJSON;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A555A5479C606301B8CBAF0D4B767887 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F73F7CAB354C58499E2B0C89D90F6E5 /* SwiftyJSON.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SwiftyJSON;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E4F26E6EB105713A6A7E7E2E283AC2DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4F26E6EB105713A6A7E7E2E283AC2DF /* Debug */,
+				673254EEAF0B5BF4596080C749645884 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3081B26333652A6AEC148C6FB53AE666 /* Build configuration list for PBXNativeTarget "SwiftyJSON" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A555A5479C606301B8CBAF0D4B767887 /* Debug */,
+				96D74232B1A8212A325DB9E119A17074 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		453F22A239829A1BDC275E696522B298 /* Build configuration list for PBXNativeTarget "SwiftIconFont" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FA3C5FD720279855B3D2E8FF27CE423 /* Debug */,
+				2B16A1EFEEA8F77AE37895A94D20EED9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB370001F51AEEEA241DE26A5D6C2B5B /* Build configuration list for PBXNativeTarget "Pods-EasyLearn" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E6963D2D106B21F64F485C97DEC3A24 /* Debug */,
+				5FD28B01540450EA59D79603A662187B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
