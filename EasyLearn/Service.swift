@@ -21,7 +21,10 @@ class Service {
     func initialSearch(word: String, completion: @escaping (Word?, Error?) -> ()) {
         
         let word_id = word.lowercased() //word id is case sensitive and lowercase is required
-        let url = URL(string: "https://od-api.oxforddictionaries.com:443/api/v1/entries/\(language)/\(word_id)/lexicalCategory")!
+        guard let url = URL(string: "https://od-api.oxforddictionaries.com:443/api/v1/entries/\(language)/\(word_id)/lexicalCategory") else { return }
+        
+        
+        
         
         var request = URLRequest(url: url)
         request.addValue("application/json", forHTTPHeaderField: "Accept")
@@ -69,7 +72,7 @@ class Service {
         ////lexicalCategory=noun;examples;definitions
         
         let word_id = word.lowercased() //word id is case sensitive and lowercase is required
-        let url = URL(string: "https://od-api.oxforddictionaries.com:443/api/v1/entries/\(language)/\(word_id)/lexicalCategory=\(lexicalCategory);examples;definitions")!
+        guard let url = URL(string: "https://od-api.oxforddictionaries.com:443/api/v1/entries/\(language)/\(word_id)/lexicalCategory=\(lexicalCategory);examples;definitions") else {return}
         
         var request = URLRequest(url: url)
         request.addValue("application/json", forHTTPHeaderField: "Accept")

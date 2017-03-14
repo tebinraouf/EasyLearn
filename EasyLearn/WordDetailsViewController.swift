@@ -30,10 +30,12 @@ class WordDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
         navigationItem.title = word?.word
         setupView()
         registerCells()
+        
+        
     }
     //MARK:- Register Cells and Setup Views
     func registerCells(){
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellID)
+        collectionView.register(DetailsCell.self, forCellWithReuseIdentifier: cellID)
     }
     func setupView(){
         view.addSubview(collectionView)
@@ -49,16 +51,71 @@ class WordDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
         }
         return 0
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! DetailsCell
         cell.backgroundColor = .blue
+    
+        
+        if let formatedString = formatedStringForTextAt(indexPath) {
+            cell.textView.attributedText = formatedString
+        }
+        
         return cell
+        
     }
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = CGSize(width: collectionView.frame.width, height: 50)
+        //give a very large height
+        let size = CGSize(width: collectionView.frame.width, height: 1000)
+        if let formatedString = formatedStringForTextAt(indexPath) {
+            let estimatedFrame = formatedString.boundingRect(with: size, options: .usesLineFragmentOrigin, context: nil)
+            return CGSize(width: collectionView.frame.width, height: estimatedFrame.height + 35)
+        }
         return size
     }
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        collectionView.reloadData()
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
     
+    //MARK:- Custom Functions
+    func formatedStringForTextAt(_ indexPath: IndexPath) -> NSMutableAttributedString? {
+        if let definition = word?.details?[indexPath.item].definition, let examples = word?.details?[indexPath.item].examples {
+            let defAttributedText = NSMutableAttributedString(string: definition, attributes: nil)
+            var exampleAttributedText: NSMutableAttributedString?
+            for element in examples {
+                exampleAttributedText = NSMutableAttributedString(string: "\n\n- \(element.capitalizingFirstLetter())", attributes: nil)
+                defAttributedText.append(exampleAttributedText!)
+            }
+            return defAttributedText
+        }
+        return nil
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

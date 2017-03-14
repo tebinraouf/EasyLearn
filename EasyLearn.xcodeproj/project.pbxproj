@@ -10,6 +10,8 @@
 		04188B771971CC16A77558DA /* Pods_EasyLearn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 976E28507EF0BE8A82DAFA65 /* Pods_EasyLearn.framework */; };
 		CF3FA89F1E71E46600AF392E /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3FA89E1E71E46600AF392E /* Service.swift */; };
 		CF6012D81E763C8D00EA0A3A /* WordDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6012D71E763C8D00EA0A3A /* WordDetailsViewController.swift */; };
+		CF6012DB1E773B8900EA0A3A /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6012DA1E773B8900EA0A3A /* BaseCell.swift */; };
+		CF6012DD1E789B8600EA0A3A /* DetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6012DC1E789B8600EA0A3A /* DetailsCell.swift */; };
 		CFAFE6681E68F9CA0062235E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAFE6671E68F9CA0062235E /* AppDelegate.swift */; };
 		CFAFE66A1E68F9CA0062235E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAFE6691E68F9CA0062235E /* HomeViewController.swift */; };
 		CFAFE66D1E68F9CA0062235E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFAFE66B1E68F9CA0062235E /* Main.storyboard */; };
@@ -26,6 +28,8 @@
 		B8B2FD38BDFDC2C50038BE00 /* Pods-EasyLearn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyLearn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyLearn/Pods-EasyLearn.debug.xcconfig"; sourceTree = "<group>"; };
 		CF3FA89E1E71E46600AF392E /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		CF6012D71E763C8D00EA0A3A /* WordDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordDetailsViewController.swift; sourceTree = "<group>"; };
+		CF6012DA1E773B8900EA0A3A /* BaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
+		CF6012DC1E789B8600EA0A3A /* DetailsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsCell.swift; sourceTree = "<group>"; };
 		CFAFE6641E68F9CA0062235E /* EasyLearn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyLearn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFAFE6671E68F9CA0062235E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFAFE6691E68F9CA0062235E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +63,61 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		CF6012D91E773B7100EA0A3A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CF6012DA1E773B8900EA0A3A /* BaseCell.swift */,
+				CF6012DC1E789B8600EA0A3A /* DetailsCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		CF6012DE1E789BA100EA0A3A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CFAFE6691E68F9CA0062235E /* HomeViewController.swift */,
+				CFAFE67D1E6E0F930062235E /* LexicalEntryViewController.swift */,
+				CF6012D71E763C8D00EA0A3A /* WordDetailsViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		CF6012DF1E789BBE00EA0A3A /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				CF3FA89E1E71E46600AF392E /* Service.swift */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		CF6012E01E789BCB00EA0A3A /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				CFAFE66B1E68F9CA0062235E /* Main.storyboard */,
+				CFAFE6671E68F9CA0062235E /* AppDelegate.swift */,
+				CFAFE66E1E68F9CA0062235E /* Assets.xcassets */,
+				CFAFE6701E68F9CA0062235E /* LaunchScreen.storyboard */,
+				CFAFE6731E68F9CA0062235E /* Info.plist */,
+			);
+			name = Supporting;
+			sourceTree = "<group>";
+		};
+		CF6012E11E789BE600EA0A3A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CFAFE67B1E6B7A130062235E /* Extensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		CF6012E21E789BF200EA0A3A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CFAFE6791E6A87510062235E /* Models.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		CFAFE65B1E68F9CA0062235E = {
 			isa = PBXGroup;
 			children = (
@@ -80,17 +139,12 @@
 		CFAFE6661E68F9CA0062235E /* EasyLearn */ = {
 			isa = PBXGroup;
 			children = (
-				CFAFE6671E68F9CA0062235E /* AppDelegate.swift */,
-				CFAFE6691E68F9CA0062235E /* HomeViewController.swift */,
-				CFAFE67D1E6E0F930062235E /* LexicalEntryViewController.swift */,
-				CF6012D71E763C8D00EA0A3A /* WordDetailsViewController.swift */,
-				CF3FA89E1E71E46600AF392E /* Service.swift */,
-				CFAFE66B1E68F9CA0062235E /* Main.storyboard */,
-				CFAFE66E1E68F9CA0062235E /* Assets.xcassets */,
-				CFAFE6701E68F9CA0062235E /* LaunchScreen.storyboard */,
-				CFAFE6731E68F9CA0062235E /* Info.plist */,
-				CFAFE6791E6A87510062235E /* Models.swift */,
-				CFAFE67B1E6B7A130062235E /* Extensions.swift */,
+				CF6012DE1E789BA100EA0A3A /* Controllers */,
+				CF6012D91E773B7100EA0A3A /* Cells */,
+				CF6012E21E789BF200EA0A3A /* Models */,
+				CF6012E11E789BE600EA0A3A /* Extensions */,
+				CF6012E01E789BCB00EA0A3A /* Supporting */,
+				CF6012DF1E789BBE00EA0A3A /* Networking */,
 			);
 			path = EasyLearn;
 			sourceTree = "<group>";
@@ -227,10 +281,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF6012DD1E789B8600EA0A3A /* DetailsCell.swift in Sources */,
 				CFAFE67E1E6E0F930062235E /* LexicalEntryViewController.swift in Sources */,
 				CF6012D81E763C8D00EA0A3A /* WordDetailsViewController.swift in Sources */,
 				CFAFE67A1E6A87510062235E /* Models.swift in Sources */,
 				CFAFE66A1E68F9CA0062235E /* HomeViewController.swift in Sources */,
+				CF6012DB1E773B8900EA0A3A /* BaseCell.swift in Sources */,
 				CFAFE6681E68F9CA0062235E /* AppDelegate.swift in Sources */,
 				CFAFE67C1E6B7A130062235E /* Extensions.swift in Sources */,
 				CF3FA89F1E71E46600AF392E /* Service.swift in Sources */,
