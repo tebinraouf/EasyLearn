@@ -8,12 +8,24 @@
 
 import Foundation
 import UIKit
-
+import SystemConfiguration
 
 public extension UIColor {
-    public class var appColor: UIColor {
-        return UIColor(red: 255/255, green: 20/255, blue: 106/205, alpha: 1)
+    
+    convenience init(r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat) {
+        self.init(red: r/255, green: g/255, blue: b/255, alpha: a)
     }
+    public class var appColor: UIColor {
+        return UIColor(r: 255, g: 20, b: 106, a: 1)
+    }
+    public class var appGray: UIColor {
+        return UIColor(r: 247, g: 247, b: 247, a: 1)
+    }
+    public class var appRedish: UIColor {
+        return UIColor(r: 244, g: 91, b: 105, a: 1)
+    }
+    
+    
 }
 
 extension String {

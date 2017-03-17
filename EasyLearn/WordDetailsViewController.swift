@@ -17,7 +17,7 @@ class WordDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
-        cv.backgroundColor = .red
+        cv.backgroundColor = .appGray
         cv.dataSource = self
         cv.delegate = self
         return cv
@@ -39,10 +39,10 @@ class WordDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
     }
     func setupView(){
         view.addSubview(collectionView)
-        collectionView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 10).isActive = true
-        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
-        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
-        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10).isActive = true
+        collectionView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor).isActive = true
+        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
     //MARK:- Collection View Functions
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -54,15 +54,19 @@ class WordDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! DetailsCell
-        cell.backgroundColor = .blue
+        //cell.backgroundColor = .blue
     
         
         if let formatedString = formatedStringForTextAt(indexPath) {
+            cell.numberCircle.text = "\(indexPath.item+1)"
             cell.textView.attributedText = formatedString
         }
         
+        cell.completion = {
+            print(self.word?.details?[indexPath.item].definition)
+            print(1223)
+        }
         return cell
-        
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -81,21 +85,24 @@ class WordDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
         
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        return 3
     }
     
     //MARK:- Custom Functions
     func formatedStringForTextAt(_ indexPath: IndexPath) -> NSMutableAttributedString? {
-        if let definition = word?.details?[indexPath.item].definition, let examples = word?.details?[indexPath.item].examples {
-            let defAttributedText = NSMutableAttributedString(string: definition, attributes: nil)
-            var exampleAttributedText: NSMutableAttributedString?
-            for element in examples {
-                exampleAttributedText = NSMutableAttributedString(string: "\n\n- \(element.capitalizingFirstLetter())", attributes: nil)
-                defAttributedText.append(exampleAttributedText!)
-            }
-            return defAttributedText
+        guard let definition = word?.details?[indexPath.item].definition, let examples = word?.details?[indexPath.item].examples else { return nil}
+        
+        let defAttributedText = NSMutableAttributedString(string: "\(definition)\n", attributes: nil)
+        var exampleAttributedText: NSMutableAttributedString?
+        for element in examples {
+            exampleAttributedText = NSMutableAttributedString(string: "\n• \(element.capitalizingFirstLetter())", attributes: nil)
+            defAttributedText.append(exampleAttributedText!)
         }
-        return nil
+        return defAttributedText
+    }
+    
+    func createBullet(){
+        let text = ""
     }
 }
 

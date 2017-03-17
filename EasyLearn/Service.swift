@@ -11,29 +11,34 @@ import SwiftyJSON
 
 class Service {
     
-    let appId = "0edbffb4"
-    let appKey = "e37ace6aa056552f46837f02bd5f0ced"
+    
     let language = "en"
     
     static let sharedInstance = Service()
     
-    
-    func initialSearch(word: String, completion: @escaping (Word?, Error?) -> ()) {
+    func headers(word: String, urlString: String) -> URLRequest? {
         
-        let word_id = word.lowercased() //word id is case sensitive and lowercase is required
-        guard let url = URL(string: "https://od-api.oxforddictionaries.com:443/api/v1/entries/\(language)/\(word_id)/lexicalCategory") else { return }
+        let appId = "0edbffb4"
+        let appKey = "e37ace6aa056552f46837f02bd5f0ced"
         
-        
-        
+        guard let url = URL(string: urlString) else { return nil }
         
         var request = URLRequest(url: url)
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.addValue(appId, forHTTPHeaderField: "app_id")
         request.addValue(appKey, forHTTPHeaderField: "app_key")
+        return request
+    }
+    
+    
+    func initialSearch(word: String, completion: @escaping (Word?, Error?) -> ()) {
         
+        let word_id = word.lowercased() //word id is case sensitive and lowercase is required
+        let url = "https://od-api.oxforddictionaries.com:443/api/v1/entries/\(language)/\(word_id)/lexicalCategory"
+        let request = headers(word: word, urlString: url)
         
         let session = URLSession.shared
-        let result = session.dataTask(with: request, completionHandler: { data, response, error in
+        let result = session.dataTask(with: request!, completionHandler: { data, response, error in
             
             DispatchQueue.main.async {
                 if error == nil {
@@ -70,24 +75,20 @@ class Service {
     func detailsFor(word: String, lexicalCategory: String ,completion: @escaping ([Detail]?, Error?) -> ()) {
         
         ////lexicalCategory=noun;examples;definitions
-        
         let word_id = word.lowercased() //word id is case sensitive and lowercase is required
-        guard let url = URL(string: "https://od-api.oxforddictionaries.com:443/api/v1/entries/\(language)/\(word_id)/lexicalCategory=\(lexicalCategory);examples;definitions") else {return}
+        let url = "https://od-api.oxforddictionaries.com:443/api/v1/entries/\(language)/\(word_id)/lexicalCategory=\(lexicalCategory);examples;definitions"
+        let request = headers(word: word, urlString: url)
         
-        var request = URLRequest(url: url)
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        request.addValue(appId, forHTTPHeaderField: "app_id")
-        request.addValue(appKey, forHTTPHeaderField: "app_key")
         
-    
         let session = URLSession.shared
-        let result = session.dataTask(with: request, completionHandler: { data, response, error in
+        let result = session.dataTask(with: request!, completionHandler: { data, response, error in
             
             DispatchQueue.main.async {
                 if error == nil {
                     
                     guard let data = data else { return }
                     let jsonData = JSON(data: data)
+                    print(jsonData)
                     
                     let results = jsonData["results"][0]["lexicalEntries"][0]["entries"][0]["senses"]
                     
