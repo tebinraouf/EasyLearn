@@ -40,7 +40,7 @@ class Service {
         let session = URLSession.shared
         let result = session.dataTask(with: request!, completionHandler: { data, response, error in
             
-            DispatchQueue.main.async {
+            DispatchQueue.main.sync {
                 if error == nil {
                     
                     guard let data = data else { return }
@@ -59,7 +59,7 @@ class Service {
                         }
                     }
                     word.lexicalEntries = lexicalEntriesArray
-                    
+
                     completion(word, nil)
                 }else {
                     completion(nil, error)

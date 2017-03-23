@@ -8,11 +8,22 @@
 
 import UIKit
 
-protocol HandleSearchDelegate {
+protocol HomeViewDelegate {
     func handleSearch()
+    func handleMoreButton()
+    func handleMenuSlide()
 }
 
 class HomeView: UIView {
+    
+    var containerView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .clear
+        return view
+    }()
+    
+    
     var logoImage: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage()
@@ -32,22 +43,30 @@ class HomeView: UIView {
         textField.layer.borderWidth = 0.7
         return textField
     }()
-    var searchButtonView: UIView = {
-        //put an icon as an image here.
-        let view = UIView()
-        view.backgroundColor = .clear
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
+    
+    var searchButton: UIButton = {
+        let btn = UIButton(type: UIButtonType.system)
+        
+        btn.titleLabel?.font = UIFont.icon(from: .FontAwesome, ofSize: 20)
+        btn.setTitle(String.fontAwesomeIcon("search"), for: .normal)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.showsTouchWhenHighlighted = true
+        btn.tintColor = .gray
+        return btn
     }()
-    var searchButtonLabel: UILabel = {
-        //put an icon as an image here.
-        let label = UILabel()
-        label.font = UIFont.icon(from: .FontAwesome, ofSize: 20)
-        label.text = String.fontAwesomeIcon("search")
-        label.textColor = .gray
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
+    
+    
+    var moreButton: UIButton = {
+        let btn = UIButton(type: UIButtonType.system)
+        
+        btn.titleLabel?.font = UIFont.icon(from: .FontAwesome, ofSize: 20)
+        btn.setTitle(String.fontAwesomeIcon("bars"), for: .normal)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.showsTouchWhenHighlighted = true
+        btn.tintColor = .gray
+        return btn
     }()
+    
     lazy var collectionView: UICollectionView  = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -59,8 +78,25 @@ class HomeView: UIView {
     }()
     
     
+    lazy var collectionViewSlider: UICollectionView  = {
+        let layout = UICollectionViewFlowLayout()
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.translatesAutoresizingMaskIntoConstraints = false
+        cv.backgroundColor = .gray
+        return cv
+    }()
+    
+    var collectionVSLeadingAnchor: NSLayoutConstraint?
     //MARK:- Setup Views
     func setupView(){
+        
+        
+        addSubview(containerView)
+        containerView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        containerView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        containerView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        containerView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        
         
         addSubview(logoImage)
         logoImage.topAnchor.constraint(equalTo: topAnchor, constant: 30).isActive = true
@@ -69,27 +105,41 @@ class HomeView: UIView {
         logoImage.widthAnchor.constraint(equalToConstant: 200).isActive = true
         
         addSubview(searchTextField)
-        addSubview(searchButtonView)
+        addSubview(searchButton)
         
         searchTextField.topAnchor.constraint(equalTo: logoImage.bottomAnchor, constant: 20).isActive = true
         searchTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = true
-        searchTextField.trailingAnchor.constraint(equalTo: searchButtonView.trailingAnchor, constant: 0).isActive = true
+        searchTextField.trailingAnchor.constraint(equalTo: searchButton.trailingAnchor, constant: 0).isActive = true
         searchTextField.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
-        searchButtonView.topAnchor.constraint(equalTo: logoImage.bottomAnchor, constant: 25).isActive = true
-        searchButtonView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20).isActive = true
-        searchButtonView.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        searchButtonView.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        searchButton.topAnchor.constraint(equalTo: logoImage.bottomAnchor, constant: 25).isActive = true
+        searchButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20).isActive = true
+        searchButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        searchButton.widthAnchor.constraint(equalToConstant: 30).isActive = true
         
         addSubview(collectionView)
         collectionView.topAnchor.constraint(equalTo: searchTextField.bottomAnchor, constant: 20).isActive = true
         collectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20).isActive = true
+    
+        addSubview(moreButton)
+        moreButton.topAnchor.constraint(equalTo: topAnchor, constant: 30).isActive = true
+        moreButton.leftAnchor.constraint(equalTo: leftAnchor, constant: 10).isActive = true
+        moreButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        moreButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
         
-        searchButtonView.addSubview(searchButtonLabel)
-        searchButtonLabel.centerXAnchor.constraint(equalTo: searchButtonView.centerXAnchor).isActive = true
-        searchButtonLabel.centerYAnchor.constraint(equalTo: searchButtonView.centerYAnchor).isActive = true
+        
+        addSubview(collectionViewSlider)
+        collectionViewSlider.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        collectionVSLeadingAnchor = collectionViewSlider.leadingAnchor.constraint(equalTo: leadingAnchor)
+
+        collectionVSLeadingAnchor?.constant = -200
+        collectionVSLeadingAnchor?.isActive = true
+        
+        
+        collectionViewSlider.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        collectionViewSlider.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         
         
         

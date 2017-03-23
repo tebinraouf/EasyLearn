@@ -10,6 +10,9 @@ import UIKit
 
 class ErrorEmptyViewController: UIViewController {
     
+    
+    var delegate: HomeViewController?
+    
     let messageLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
@@ -21,7 +24,7 @@ class ErrorEmptyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.isNavigationBarHidden = false
+        delegate?.isNavBarHidden(false)
         view.backgroundColor = .appGray
         setupView()
         

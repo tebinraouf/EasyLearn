@@ -10,8 +10,7 @@ import UIKit
 class CardsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.backgroundColor = .brown
-        navigationController?.isNavigationBarHidden = false
+        
     }
 }

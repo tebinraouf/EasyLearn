@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension HomeViewController: HandleSearchDelegate {
+extension HomeViewController: HomeViewDelegate {
     //MARK:- Handle Search
     func handleSearch(){
         if let text = homeView.searchTextField.text?.trimmingCharacters(in: CharacterSet.whitespaces) {
@@ -31,7 +31,30 @@ extension HomeViewController: HandleSearchDelegate {
     }
     func goToErrorEmptyViewControllerWith(text: String){
         let errorEmptyViewController = ErrorEmptyViewController()
+        errorEmptyViewController.delegate = self
         errorEmptyViewController.messageLabel.text = text
         self.navigationController?.pushViewController(errorEmptyViewController, animated: true)
     }
+    
+    func handleMoreButton() {
+        handleConstant(constant: 0)
+    }
+    func handleMenuSlide() {
+        handleConstant(constant: -200)
+    }
+    func handleMenuSlideLeft(gesture: UIScreenEdgePanGestureRecognizer){
+        switch gesture.state {
+        case .began, .changed:
+            handleConstant(constant: 0)
+        default: break
+        }
+    }
+    
+    func handleConstant(constant: CGFloat){
+        self.homeView.collectionVSLeadingAnchor?.constant = constant
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
 }

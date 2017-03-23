@@ -14,7 +14,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     
     let cellID = "cellID"
     let homeView = HomeView()
-    
     //MARK:- View Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +24,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.isNavigationBarHidden = true
+        isNavBarHidden(true)
     }
     
     //MARK:- Register Cells

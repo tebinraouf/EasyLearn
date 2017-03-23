@@ -11,7 +11,7 @@ import UIKit
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout,UICollectionViewDelegate {
     //MARK:- CollectionView Methods
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 6
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! DashboardCell
@@ -35,21 +35,31 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         return size
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        switch indexPath.item {
-        case 0:
-            pushViewController(CardsViewController())
-            print("cards")
-        case 1:
-            print("custom cards")
-        case 2:
-            print("play")
-        case 3:
-            print("settings")
-        default: break
-            
+        
+        if homeView.collectionVSLeadingAnchor?.constant != -200 {
+            handleMenuSlide()
+        }else {
+            switch indexPath.item {
+            case 0:
+                pushViewController(CardsViewController())
+            case 1:
+                pushViewController(CustomCardsViewController())
+            case 2:
+                pushViewController(PlayViewController())
+            case 3:
+                pushViewController(SettingsViewController())
+            default: break
+            }
         }
     }
     func pushViewController(_ controller: UIViewController){
+        isNavBarHidden(false)
         self.navigationController?.pushViewController(controller, animated: true)
+    }
+    func isNavBarHidden(_ bool: Bool) {
+        UIView.animate(withDuration: 0.5) {
+            self.navigationController?.isNavigationBarHidden = bool
+            self.view.layoutIfNeeded()
+        }
     }
 }

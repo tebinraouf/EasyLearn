@@ -22,8 +22,23 @@ extension HomeViewController {
         homeView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         homeView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleSearch))
-        homeView.searchButtonView.addGestureRecognizer(tap)
+        homeView.searchButton.addTarget(self, action: #selector(handleSearch), for: .touchDown)
+        homeView.moreButton.addTarget(self, action: #selector(handleMoreButton), for: .touchDown)
         
+        handleGestures()
+    }
+    
+    
+    func handleGestures(){
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleMenuSlide))
+        homeView.containerView.addGestureRecognizer(tap)
+        
+        let swipeTap = UISwipeGestureRecognizer(target: self, action: #selector(handleMenuSlide))
+        swipeTap.direction = UISwipeGestureRecognizerDirection.left
+        homeView.collectionViewSlider.addGestureRecognizer(swipeTap)
+        
+        let leftEdgePanGesture = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(handleMenuSlideLeft(gesture:)))
+        leftEdgePanGesture.edges = .left
+        homeView.addGestureRecognizer(leftEdgePanGesture)
     }
 }
