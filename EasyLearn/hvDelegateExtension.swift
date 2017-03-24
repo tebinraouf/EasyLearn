@@ -12,9 +12,16 @@ extension HomeViewController: HomeViewDelegate {
     //MARK:- Handle Search
     func handleSearch(){
         if let text = homeView.searchTextField.text?.trimmingCharacters(in: CharacterSet.whitespaces) {
-            Service.sharedInstance.initialSearch(word: text, completion: { (word, error) in
-                self.handleNextViewController(word, error)
-            })
+            
+            if text.isEmpty {
+                homeView.searchTextField.placeholder = "Please type a word"
+            }else {
+                homeView.searchTextField.placeholder = "Search..."
+                Service.sharedInstance.initialSearch(word: text, completion: { (word, error) in
+                    self.handleNextViewController(word, error)
+                })
+            }
+            
         }
     }
     func handleNextViewController(_ word: Word?, _ error: Error?) {
