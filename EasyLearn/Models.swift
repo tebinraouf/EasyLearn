@@ -21,4 +21,12 @@ class Detail {
     var wordId: String?
     var definition: String?
     var examples: [String]?
+    var register: String?
+    var subdetails: [SubDetail]?
+}
+class SubDetail {
+    var subWordId: String?
+    var subDefinition: String?
+    var subRegister: String?
+    var subExamples: [String]?
 }

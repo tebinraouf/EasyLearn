@@ -8,19 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		04188B771971CC16A77558DA /* Pods_EasyLearn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 976E28507EF0BE8A82DAFA65 /* Pods_EasyLearn.framework */; };
+		CF1C110D1E847C3100EC0181 /* WordSubDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1C110C1E847C3100EC0181 /* WordSubDetailsVC.swift */; };
+		CF1C11101E84BDF400EC0181 /* wdCollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1C110F1E84BDF400EC0181 /* wdCollectionViewExtension.swift */; };
+		CF1C11141E84C42400EC0181 /* wdSetupViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1C11131E84C42400EC0181 /* wdSetupViewExtension.swift */; };
 		CF3FA89F1E71E46600AF392E /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3FA89E1E71E46600AF392E /* Service.swift */; };
 		CF5108981E7B59D5008B2BC0 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5108971E7B59D5008B2BC0 /* CardsViewController.swift */; };
 		CF51089A1E7B5B8D008B2BC0 /* DashboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5108991E7B5B8D008B2BC0 /* DashboardCell.swift */; };
 		CF51089D1E7C61AC008B2BC0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF51089C1E7C61AC008B2BC0 /* HomeView.swift */; };
-		CF51089F1E7C6C3A008B2BC0 /* HomeViewDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF51089E1E7C6C3A008B2BC0 /* HomeViewDelegateExtension.swift */; };
-		CF5108A71E7C6DBD008B2BC0 /* SetupViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5108A61E7C6DBD008B2BC0 /* SetupViewExtension.swift */; };
+		CF51089F1E7C6C3A008B2BC0 /* hvDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF51089E1E7C6C3A008B2BC0 /* hvDelegateExtension.swift */; };
+		CF5108A71E7C6DBD008B2BC0 /* hvSetupViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5108A61E7C6DBD008B2BC0 /* hvSetupViewExtension.swift */; };
 		CF5108A91E7C6FBD008B2BC0 /* LeftPaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5108A81E7C6FBD008B2BC0 /* LeftPaddedTextField.swift */; };
-		CF5108AB1E7C7021008B2BC0 /* CollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5108AA1E7C7021008B2BC0 /* CollectionViewExtension.swift */; };
+		CF5108AB1E7C7021008B2BC0 /* hvCollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5108AA1E7C7021008B2BC0 /* hvCollectionViewExtension.swift */; };
 		CF5108AE1E7CABDE008B2BC0 /* CustomCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5108AD1E7CABDE008B2BC0 /* CustomCardsViewController.swift */; };
 		CF5108B11E7CAC27008B2BC0 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5108B01E7CAC27008B2BC0 /* PlayViewController.swift */; };
 		CF5108B41E7CAC5F008B2BC0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5108B31E7CAC5F008B2BC0 /* SettingsViewController.swift */; };
 		CF5F988D1E7B41B500E84687 /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F988C1E7B41B500E84687 /* ErrorViewController.swift */; };
-		CF6012D81E763C8D00EA0A3A /* WordDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6012D71E763C8D00EA0A3A /* WordDetailsViewController.swift */; };
+		CF6012D81E763C8D00EA0A3A /* WordDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6012D71E763C8D00EA0A3A /* WordDetailsVC.swift */; };
 		CF6012DB1E773B8900EA0A3A /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6012DA1E773B8900EA0A3A /* BaseCell.swift */; };
 		CF6012DD1E789B8600EA0A3A /* DetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6012DC1E789B8600EA0A3A /* DetailsCell.swift */; };
 		CFAFE6681E68F9CA0062235E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAFE6671E68F9CA0062235E /* AppDelegate.swift */; };
@@ -37,19 +40,22 @@
 		6EF7DBD2DA942ED54ADD413D /* Pods-EasyLearn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyLearn.release.xcconfig"; path = "Pods/Target Support Files/Pods-EasyLearn/Pods-EasyLearn.release.xcconfig"; sourceTree = "<group>"; };
 		976E28507EF0BE8A82DAFA65 /* Pods_EasyLearn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyLearn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8B2FD38BDFDC2C50038BE00 /* Pods-EasyLearn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyLearn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyLearn/Pods-EasyLearn.debug.xcconfig"; sourceTree = "<group>"; };
+		CF1C110C1E847C3100EC0181 /* WordSubDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordSubDetailsVC.swift; sourceTree = "<group>"; };
+		CF1C110F1E84BDF400EC0181 /* wdCollectionViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = wdCollectionViewExtension.swift; sourceTree = "<group>"; };
+		CF1C11131E84C42400EC0181 /* wdSetupViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = wdSetupViewExtension.swift; sourceTree = "<group>"; };
 		CF3FA89E1E71E46600AF392E /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		CF5108971E7B59D5008B2BC0 /* CardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
 		CF5108991E7B5B8D008B2BC0 /* DashboardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardCell.swift; sourceTree = "<group>"; };
 		CF51089C1E7C61AC008B2BC0 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		CF51089E1E7C6C3A008B2BC0 /* HomeViewDelegateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewDelegateExtension.swift; sourceTree = "<group>"; };
-		CF5108A61E7C6DBD008B2BC0 /* SetupViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupViewExtension.swift; sourceTree = "<group>"; };
+		CF51089E1E7C6C3A008B2BC0 /* hvDelegateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hvDelegateExtension.swift; sourceTree = "<group>"; };
+		CF5108A61E7C6DBD008B2BC0 /* hvSetupViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hvSetupViewExtension.swift; sourceTree = "<group>"; };
 		CF5108A81E7C6FBD008B2BC0 /* LeftPaddedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftPaddedTextField.swift; sourceTree = "<group>"; };
-		CF5108AA1E7C7021008B2BC0 /* CollectionViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewExtension.swift; sourceTree = "<group>"; };
+		CF5108AA1E7C7021008B2BC0 /* hvCollectionViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hvCollectionViewExtension.swift; sourceTree = "<group>"; };
 		CF5108AD1E7CABDE008B2BC0 /* CustomCardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCardsViewController.swift; sourceTree = "<group>"; };
 		CF5108B01E7CAC27008B2BC0 /* PlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		CF5108B31E7CAC5F008B2BC0 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		CF5F988C1E7B41B500E84687 /* ErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
-		CF6012D71E763C8D00EA0A3A /* WordDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordDetailsViewController.swift; sourceTree = "<group>"; };
+		CF6012D71E763C8D00EA0A3A /* WordDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordDetailsVC.swift; sourceTree = "<group>"; };
 		CF6012DA1E773B8900EA0A3A /* BaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		CF6012DC1E789B8600EA0A3A /* DetailsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsCell.swift; sourceTree = "<group>"; };
 		CFAFE6641E68F9CA0062235E /* EasyLearn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyLearn.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,9 +91,19 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		CF1C110E1E84BD8700EC0181 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CF1C11131E84C42400EC0181 /* wdSetupViewExtension.swift */,
+				CF1C110F1E84BDF400EC0181 /* wdCollectionViewExtension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		CF51089B1E7C6198008B2BC0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CF6012D91E773B7100EA0A3A /* Cells */,
 				CF51089C1E7C61AC008B2BC0 /* HomeView.swift */,
 				CF5108A81E7C6FBD008B2BC0 /* LeftPaddedTextField.swift */,
 			);
@@ -114,7 +130,9 @@
 		CF5108A21E7C6D29008B2BC0 /* WordDetails */ = {
 			isa = PBXGroup;
 			children = (
-				CF6012D71E763C8D00EA0A3A /* WordDetailsViewController.swift */,
+				CF1C110E1E84BD8700EC0181 /* Extensions */,
+				CF6012D71E763C8D00EA0A3A /* WordDetailsVC.swift */,
+				CF1C110C1E847C3100EC0181 /* WordSubDetailsVC.swift */,
 			);
 			name = WordDetails;
 			sourceTree = "<group>";
@@ -138,9 +156,9 @@
 		CF5108A51E7C6D69008B2BC0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				CF51089E1E7C6C3A008B2BC0 /* HomeViewDelegateExtension.swift */,
-				CF5108A61E7C6DBD008B2BC0 /* SetupViewExtension.swift */,
-				CF5108AA1E7C7021008B2BC0 /* CollectionViewExtension.swift */,
+				CF51089E1E7C6C3A008B2BC0 /* hvDelegateExtension.swift */,
+				CF5108A61E7C6DBD008B2BC0 /* hvSetupViewExtension.swift */,
+				CF5108AA1E7C7021008B2BC0 /* hvCollectionViewExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -253,7 +271,6 @@
 			children = (
 				CF51089B1E7C6198008B2BC0 /* Views */,
 				CF6012DE1E789BA100EA0A3A /* Controllers */,
-				CF6012D91E773B7100EA0A3A /* Cells */,
 				CF6012E21E789BF200EA0A3A /* Models */,
 				CF6012E11E789BE600EA0A3A /* Extensions */,
 				CF6012E01E789BCB00EA0A3A /* Supporting */,
@@ -394,26 +411,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF5108A71E7C6DBD008B2BC0 /* SetupViewExtension.swift in Sources */,
+				CF5108A71E7C6DBD008B2BC0 /* hvSetupViewExtension.swift in Sources */,
 				CF5108AE1E7CABDE008B2BC0 /* CustomCardsViewController.swift in Sources */,
 				CF6012DD1E789B8600EA0A3A /* DetailsCell.swift in Sources */,
 				CF5108B41E7CAC5F008B2BC0 /* SettingsViewController.swift in Sources */,
 				CFAFE67E1E6E0F930062235E /* LexicalEntryViewController.swift in Sources */,
 				CF51089D1E7C61AC008B2BC0 /* HomeView.swift in Sources */,
-				CF5108AB1E7C7021008B2BC0 /* CollectionViewExtension.swift in Sources */,
-				CF6012D81E763C8D00EA0A3A /* WordDetailsViewController.swift in Sources */,
+				CF5108AB1E7C7021008B2BC0 /* hvCollectionViewExtension.swift in Sources */,
+				CF6012D81E763C8D00EA0A3A /* WordDetailsVC.swift in Sources */,
 				CFAFE67A1E6A87510062235E /* Models.swift in Sources */,
 				CF5108B11E7CAC27008B2BC0 /* PlayViewController.swift in Sources */,
 				CFAFE66A1E68F9CA0062235E /* HomeViewController.swift in Sources */,
+				CF1C11101E84BDF400EC0181 /* wdCollectionViewExtension.swift in Sources */,
+				CF1C11141E84C42400EC0181 /* wdSetupViewExtension.swift in Sources */,
 				CF6012DB1E773B8900EA0A3A /* BaseCell.swift in Sources */,
 				CFAFE6681E68F9CA0062235E /* AppDelegate.swift in Sources */,
 				CF5108981E7B59D5008B2BC0 /* CardsViewController.swift in Sources */,
 				CF5108A91E7C6FBD008B2BC0 /* LeftPaddedTextField.swift in Sources */,
+				CF1C110D1E847C3100EC0181 /* WordSubDetailsVC.swift in Sources */,
 				CF5F988D1E7B41B500E84687 /* ErrorViewController.swift in Sources */,
 				CFAFE67C1E6B7A130062235E /* Extensions.swift in Sources */,
 				CF51089A1E7B5B8D008B2BC0 /* DashboardCell.swift in Sources */,
 				CF3FA89F1E71E46600AF392E /* Service.swift in Sources */,
-				CF51089F1E7C6C3A008B2BC0 /* HomeViewDelegateExtension.swift in Sources */,
+				CF51089F1E7C6C3A008B2BC0 /* hvDelegateExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

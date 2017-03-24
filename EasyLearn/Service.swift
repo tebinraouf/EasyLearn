@@ -9,24 +9,25 @@
 import UIKit
 import SwiftyJSON
 
+enum Header: String {
+    case language = "en"
+    case appId = "0edbffb4"
+    case appKey = "e37ace6aa056552f46837f02bd5f0ced"
+}
+
 class Service {
-    
-    
-    let language = "en"
     
     static let sharedInstance = Service()
     
     func headers(word: String, urlString: String) -> URLRequest? {
         
-        let appId = "0edbffb4"
-        let appKey = "e37ace6aa056552f46837f02bd5f0ced"
         
         guard let url = URL(string: urlString) else { return nil }
         
         var request = URLRequest(url: url)
         request.addValue("application/json", forHTTPHeaderField: "Accept")
-        request.addValue(appId, forHTTPHeaderField: "app_id")
-        request.addValue(appKey, forHTTPHeaderField: "app_key")
+        request.addValue(Header.appId.rawValue, forHTTPHeaderField: "app_id")
+        request.addValue(Header.appKey.rawValue, forHTTPHeaderField: "app_key")
         return request
     }
     
@@ -34,7 +35,7 @@ class Service {
     func initialSearch(word: String, completion: @escaping (Word?, Error?) -> ()) {
         
         let word_id = word.lowercased() //word id is case sensitive and lowercase is required
-        let url = "https://od-api.oxforddictionaries.com:443/api/v1/entries/\(language)/\(word_id)/lexicalCategory"
+        let url = "https://od-api.oxforddictionaries.com:443/api/v1/entries/\(Header.language.rawValue)/\(word_id)/lexicalCategory"
         let request = headers(word: word, urlString: url)
         
         let session = URLSession.shared
@@ -76,7 +77,7 @@ class Service {
         
         ////lexicalCategory=noun;examples;definitions
         let word_id = word.lowercased() //word id is case sensitive and lowercase is required
-        let url = "https://od-api.oxforddictionaries.com:443/api/v1/entries/\(language)/\(word_id)/lexicalCategory=\(lexicalCategory);examples;definitions"
+        let url = "https://od-api.oxforddictionaries.com:443/api/v1/entries/\(Header.language.rawValue)/\(word_id)/lexicalCategory=\(lexicalCategory);examples;definitions;pronunciations;registers"
         let request = headers(word: word, urlString: url)
         
         
@@ -97,8 +98,10 @@ class Service {
                         
                         let detail = Detail()
                         
+                        //Detail 1: ID
                         detail.wordId = result.1["id"].string
                         
+                        //Detail 2: Definition
                         if let definition = result.1["definitions"][0].string {
                             detail.definition = definition
                         }
@@ -110,8 +113,53 @@ class Service {
                             }
                             examples.append(eachExample)
                         }
-                        
+                        //Detail 3: examples
                         detail.examples = examples
+                        
+                        var subDetails = [SubDetail]()
+                        
+                        for (index, _) in result.1["subsenses"].enumerated() {
+                            let subDetail = SubDetail()
+                            
+                            //sub 1 word ID
+                            if let subWordId = result.1["subsenses"][index]["id"].string {
+                                subDetail.subWordId = subWordId
+                            }
+                           
+                            
+                            //sub 2 word definition
+                            if let subDefinition = result.1["subsenses"][index]["definitions"][0].string {
+                                subDetail.subDefinition = subDefinition
+                            }
+                            
+                            //sub 3 word examples
+                            var subExamples = [String]()
+                            for (subIndex, _) in result.1["subsenses"][index]["examples"].enumerated() {
+                                var subEachExample = String()
+                                if let subExample = result.1["subsenses"][index]["examples"][subIndex]["text"].string {
+                                    subEachExample = subExample
+                                }
+                                subExamples.append(subEachExample)
+                            }
+                            subDetail.subExamples = subExamples
+                            
+                            //sub 4 word register
+                            if let subRegister = result.1["subsenses"][index]["registers"][0].string {
+                                subDetail.subRegister = subRegister
+                            }
+                            
+                            
+                            subDetails.append(subDetail)
+                        }
+                        //Detail 4: sub details
+                        detail.subdetails = subDetails
+                        
+                        
+                        //Detail 5: register (formal or informal)
+                        if let register = result.1["registers"][0].string {
+                            detail.register = register
+                        }
+                        
                         details.append(detail)
                         
                     }

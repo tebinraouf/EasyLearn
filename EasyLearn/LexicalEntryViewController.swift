@@ -81,7 +81,7 @@ class LexicalEntryViewController: UITableViewController {
             if error == nil {
                 self.word?.details = details
                 
-                let detailsViewController = WordDetailsViewController()
+                let detailsViewController = WordDetailsVC()
                 detailsViewController.word = self.word
                 let navController = UINavigationController(rootViewController: detailsViewController)
                 detailsViewController.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.cancelPresentViewController))

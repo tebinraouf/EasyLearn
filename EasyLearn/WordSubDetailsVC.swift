@@ -9,9 +9,10 @@
 import UIKit
 import Foundation
 
-class WordDetailsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class WordSubDetailsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     //MARK:- Variables
-    var word: Word?
+    var wordDetail: Detail?
+    var wdDelegate: WordDetailsVC?
     let cellID = "cellID"
     lazy var collectionView: UICollectionView  = {
         let layout = UICollectionViewFlowLayout()
@@ -27,11 +28,9 @@ class WordDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
         super.viewDidLoad()
         automaticallyAdjustsScrollViewInsets = false
         view.backgroundColor = .white
-        navigationItem.title = word?.word
+        //navigationItem.title = word?.word
         setupView()
         registerCells()
-        
-        
     }
     //MARK:- Register Cells and Setup Views
     func registerCells(){
@@ -46,7 +45,7 @@ class WordDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
     }
     //MARK:- Collection View Functions
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if let count = word?.details?.count {
+        if let count = wordDetail?.subdetails?.count {
             return count
         }
         return 0
@@ -55,7 +54,7 @@ class WordDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! DetailsCell
         //cell.backgroundColor = .blue
-    
+        
         
         if let formatedString = formatedStringForTextAt(indexPath) {
             cell.numberCircle.text = "\(indexPath.item+1)"
@@ -63,25 +62,32 @@ class WordDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
         }
         
         cell.completion = {
-            print(self.word?.details?[indexPath.item].definition)
-            print(1223)
+            //print(self.word?.details?[indexPath.item].definition)
+            print("sub details")
         }
+        
+        cell.btnMoreDetails.isHidden = true
+        
+        
         return cell
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         //give a very large height
+        
         let size = CGSize(width: collectionView.frame.width, height: 1000)
         if let formatedString = formatedStringForTextAt(indexPath) {
             let estimatedFrame = formatedString.boundingRect(with: size, options: .usesLineFragmentOrigin, context: nil)
-            return CGSize(width: collectionView.frame.width, height: estimatedFrame.height + 35)
+            return CGSize(width: collectionView.frame.width, height: estimatedFrame.height + 60)
         }
         return size
+
     }
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         collectionView.reloadData()
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //print(word?.details?[indexPath.item].subdetails?[indexPath.item].subDefinition)
         
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -89,21 +95,28 @@ class WordDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
     }
     
     //MARK:- Custom Functions
+
     func formatedStringForTextAt(_ indexPath: IndexPath) -> NSMutableAttributedString? {
-        guard let definition = word?.details?[indexPath.item].definition, let examples = word?.details?[indexPath.item].examples else { return nil}
         
-        let defAttributedText = NSMutableAttributedString(string: "\(definition)\n", attributes: nil)
-        var exampleAttributedText: NSMutableAttributedString?
-        for element in examples {
-            exampleAttributedText = NSMutableAttributedString(string: "\n• \(element.capitalizingFirstLetter())", attributes: nil)
-            defAttributedText.append(exampleAttributedText!)
+        guard let definition = wordDetail?.subdetails?[indexPath.item].subDefinition, let examples = wordDetail?.subdetails?[indexPath.item].subExamples else { return nil}
+        
+        
+        let result = wdDelegate?.wdDefinition(definition)
+        if let text = wdDelegate?.wdExample(examples) {
+            result?.append(text)
         }
-        return defAttributedText
+        
+        if let text = wordDetail?.subdetails?[indexPath.item].subRegister {
+            if let register = wdDelegate?.wdRegister(text) {
+                result?.insert(register, at: 0)
+            }
+        }
+        
+        return result
     }
+   
     
-    func createBullet(){
-        let text = ""
-    }
+    
 }
 
 
