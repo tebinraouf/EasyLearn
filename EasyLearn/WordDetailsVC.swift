@@ -12,7 +12,7 @@ import Foundation
 class WordDetailsVC: UIViewController {
     //MARK:- Variables
     var word: Word?
-    let cellID = "cellID"
+    
     lazy var collectionView: UICollectionView  = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -33,7 +33,7 @@ class WordDetailsVC: UIViewController {
     }
     //MARK:- Register Cells and Setup Views
     func registerCells(){
-        collectionView.register(DetailsCell.self, forCellWithReuseIdentifier: cellID)
+        collectionView.register(DetailsCell.self, forCellWithReuseIdentifier: CellID.wdCellID.rawValue)
     }
     
     //MARK:- Custom Functions

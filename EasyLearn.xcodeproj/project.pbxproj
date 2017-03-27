@@ -11,6 +11,10 @@
 		CF1C110D1E847C3100EC0181 /* WordSubDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1C110C1E847C3100EC0181 /* WordSubDetailsVC.swift */; };
 		CF1C11101E84BDF400EC0181 /* wdCollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1C110F1E84BDF400EC0181 /* wdCollectionViewExtension.swift */; };
 		CF1C11141E84C42400EC0181 /* wdSetupViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1C11131E84C42400EC0181 /* wdSetupViewExtension.swift */; };
+		CF3871251E8730C5005AA866 /* cvSetupViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3871241E8730C5005AA866 /* cvSetupViewExtension.swift */; };
+		CF3871271E8731D2005AA866 /* cvCollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3871261E8731D2005AA866 /* cvCollectionViewExtension.swift */; };
+		CF38712A1E873CFA005AA866 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3871291E873CFA005AA866 /* Helper.swift */; };
+		CF38712C1E88B4AB005AA866 /* cvGestureExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF38712B1E88B4AB005AA866 /* cvGestureExtension.swift */; };
 		CF3FA89F1E71E46600AF392E /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3FA89E1E71E46600AF392E /* Service.swift */; };
 		CF5108981E7B59D5008B2BC0 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5108971E7B59D5008B2BC0 /* CardsViewController.swift */; };
 		CF51089A1E7B5B8D008B2BC0 /* DashboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5108991E7B5B8D008B2BC0 /* DashboardCell.swift */; };
@@ -43,6 +47,10 @@
 		CF1C110C1E847C3100EC0181 /* WordSubDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordSubDetailsVC.swift; sourceTree = "<group>"; };
 		CF1C110F1E84BDF400EC0181 /* wdCollectionViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = wdCollectionViewExtension.swift; sourceTree = "<group>"; };
 		CF1C11131E84C42400EC0181 /* wdSetupViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = wdSetupViewExtension.swift; sourceTree = "<group>"; };
+		CF3871241E8730C5005AA866 /* cvSetupViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cvSetupViewExtension.swift; sourceTree = "<group>"; };
+		CF3871261E8731D2005AA866 /* cvCollectionViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cvCollectionViewExtension.swift; sourceTree = "<group>"; };
+		CF3871291E873CFA005AA866 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		CF38712B1E88B4AB005AA866 /* cvGestureExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cvGestureExtension.swift; sourceTree = "<group>"; };
 		CF3FA89E1E71E46600AF392E /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		CF5108971E7B59D5008B2BC0 /* CardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
 		CF5108991E7B5B8D008B2BC0 /* DashboardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardCell.swift; sourceTree = "<group>"; };
@@ -100,6 +108,24 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
+		CF3871231E87309A005AA866 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CF3871241E8730C5005AA866 /* cvSetupViewExtension.swift */,
+				CF3871261E8731D2005AA866 /* cvCollectionViewExtension.swift */,
+				CF38712B1E88B4AB005AA866 /* cvGestureExtension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		CF3871281E873CEB005AA866 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				CF3871291E873CFA005AA866 /* Helper.swift */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
 		CF51089B1E7C6198008B2BC0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +174,7 @@
 		CF5108A41E7C6D44008B2BC0 /* CardsView */ = {
 			isa = PBXGroup;
 			children = (
+				CF3871231E87309A005AA866 /* Extensions */,
 				CF5108971E7B59D5008B2BC0 /* CardsViewController.swift */,
 			);
 			name = CardsView;
@@ -269,6 +296,7 @@
 		CFAFE6661E68F9CA0062235E /* EasyLearn */ = {
 			isa = PBXGroup;
 			children = (
+				CF3871281E873CEB005AA866 /* Helper */,
 				CF51089B1E7C6198008B2BC0 /* Views */,
 				CF6012DE1E789BA100EA0A3A /* Controllers */,
 				CF6012E21E789BF200EA0A3A /* Models */,
@@ -418,6 +446,8 @@
 				CFAFE67E1E6E0F930062235E /* LexicalEntryViewController.swift in Sources */,
 				CF51089D1E7C61AC008B2BC0 /* HomeView.swift in Sources */,
 				CF5108AB1E7C7021008B2BC0 /* hvCollectionViewExtension.swift in Sources */,
+				CF38712C1E88B4AB005AA866 /* cvGestureExtension.swift in Sources */,
+				CF3871251E8730C5005AA866 /* cvSetupViewExtension.swift in Sources */,
 				CF6012D81E763C8D00EA0A3A /* WordDetailsVC.swift in Sources */,
 				CFAFE67A1E6A87510062235E /* Models.swift in Sources */,
 				CF5108B11E7CAC27008B2BC0 /* PlayViewController.swift in Sources */,
@@ -425,6 +455,7 @@
 				CF1C11101E84BDF400EC0181 /* wdCollectionViewExtension.swift in Sources */,
 				CF1C11141E84C42400EC0181 /* wdSetupViewExtension.swift in Sources */,
 				CF6012DB1E773B8900EA0A3A /* BaseCell.swift in Sources */,
+				CF3871271E8731D2005AA866 /* cvCollectionViewExtension.swift in Sources */,
 				CFAFE6681E68F9CA0062235E /* AppDelegate.swift in Sources */,
 				CF5108981E7B59D5008B2BC0 /* CardsViewController.swift in Sources */,
 				CF5108A91E7C6FBD008B2BC0 /* LeftPaddedTextField.swift in Sources */,
@@ -432,6 +463,7 @@
 				CF5F988D1E7B41B500E84687 /* ErrorViewController.swift in Sources */,
 				CFAFE67C1E6B7A130062235E /* Extensions.swift in Sources */,
 				CF51089A1E7B5B8D008B2BC0 /* DashboardCell.swift in Sources */,
+				CF38712A1E873CFA005AA866 /* Helper.swift in Sources */,
 				CF3FA89F1E71E46600AF392E /* Service.swift in Sources */,
 				CF51089F1E7C6C3A008B2BC0 /* hvDelegateExtension.swift in Sources */,
 			);

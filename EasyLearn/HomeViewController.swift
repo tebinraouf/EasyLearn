@@ -12,7 +12,6 @@ import SwiftIconFont
 
 class HomeViewController: UIViewController, UITextFieldDelegate {
     
-    let cellID = "cellID"
     let homeView = HomeView()
     //MARK:- View Lifecycles
     override func viewDidLoad() {
@@ -29,7 +28,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     
     //MARK:- Register Cells
     func registerCells(){
-        homeView.collectionView.register(DashboardCell.self, forCellWithReuseIdentifier: cellID)
+        homeView.collectionView.register(DashboardCell.self, forCellWithReuseIdentifier: CellID.hvCellID.rawValue)
     }
     
     //MARK:- Handle Keyboard

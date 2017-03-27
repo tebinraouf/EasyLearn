@@ -13,7 +13,7 @@ class WordSubDetailsVC: UIViewController, UICollectionViewDelegate, UICollection
     //MARK:- Variables
     var wordDetail: Detail?
     var wdDelegate: WordDetailsVC?
-    let cellID = "cellID"
+    
     lazy var collectionView: UICollectionView  = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -34,7 +34,7 @@ class WordSubDetailsVC: UIViewController, UICollectionViewDelegate, UICollection
     }
     //MARK:- Register Cells and Setup Views
     func registerCells(){
-        collectionView.register(DetailsCell.self, forCellWithReuseIdentifier: cellID)
+        collectionView.register(DetailsCell.self, forCellWithReuseIdentifier: CellID.wsdCellID.rawValue)
     }
     func setupView(){
         view.addSubview(collectionView)
@@ -52,7 +52,7 @@ class WordSubDetailsVC: UIViewController, UICollectionViewDelegate, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! DetailsCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellID.wsdCellID.rawValue, for: indexPath) as! DetailsCell
         //cell.backgroundColor = .blue
         
         

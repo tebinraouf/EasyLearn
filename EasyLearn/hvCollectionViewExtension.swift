@@ -14,7 +14,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         return 6
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! DashboardCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellID.hvCellID.rawValue, for: indexPath) as! DashboardCell
         
         switch indexPath.item {
         case 0:
