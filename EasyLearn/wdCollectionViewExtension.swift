@@ -30,9 +30,20 @@ extension WordDetailsVC: UICollectionViewDataSource, UICollectionViewDelegate, U
         
         cell.completion = {
             //print(self.word?.details?[indexPath.item].definition)
-            print("details")
-        }
+            
+            let id = self.word?.details?[indexPath.item].wordId
+            let language = self.word?.language
+            let lexicalEntry = self.lexicalCategory
+            let word = self.word?.word
+            let type = self.word?.type
+            let examples = self.word?.details?[indexPath.item].examples
+
+            let definition = self.word?.details?[indexPath.item].definition
+
+            self.currentDataLayer.saveWord(id, language, lexicalEntry, word, type, examples, definition)
+            
         
+        }
         
         if word?.details?[indexPath.item].subdetails?.count == 0 {
             cell.btnMoreDetails.isHidden = true

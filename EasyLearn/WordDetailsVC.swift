@@ -12,6 +12,9 @@ import Foundation
 class WordDetailsVC: UIViewController {
     //MARK:- Variables
     var word: Word?
+    var lexicalCategory: String?
+    
+    let currentDataLayer = DataLayerSimple()
     
     lazy var collectionView: UICollectionView  = {
         let layout = UICollectionViewFlowLayout()
@@ -30,6 +33,9 @@ class WordDetailsVC: UIViewController {
         navigationItem.title = word?.word
         setupView()
         registerCells()
+        
+        print("Number of results: ",currentDataLayer.numberOfResults)
+        
     }
     //MARK:- Register Cells and Setup Views
     func registerCells(){
@@ -38,13 +44,23 @@ class WordDetailsVC: UIViewController {
     
     //MARK:- Custom Functions
     func formatedStringForTextAt(_ indexPath: IndexPath) -> NSMutableAttributedString? {
-        guard let definition = word?.details?[indexPath.item].definition, let examples = word?.details?[indexPath.item].examples else { return nil }
         
-        let result = wdDefinition(definition)
-        if let text = wdExample(examples) {
-            result.append(text)
+        //definition
+        let result = NSMutableAttributedString()
+        
+        if let def = word?.details?[indexPath.item].definition {
+            result.append(wdDefinition(def))
         }
         
+        if let examples = word?.details?[indexPath.item].examples {
+            //examples
+            for element in examples {
+                let exampleAttributedText = NSMutableAttributedString(string: "\n• \(element.capitalizingFirstLetter())", attributes: [NSFontAttributeName:UIFont(name: UIFont.systemFont(ofSize: UIFont.systemFontSize).fontName, size: UIFont.systemFontSize)!])
+                result.append(exampleAttributedText)
+            }
+        }
+        
+        //register
         if let register = word?.details?[indexPath.item].register {
             result.insert(wdRegister(register), at: 0)
         }
@@ -58,7 +74,7 @@ class WordDetailsVC: UIViewController {
         let defAttributedText = NSMutableAttributedString(string: "\(definition)\n", attributes: [NSFontAttributeName:UIFont(name: UIFont.systemFont(ofSize: UIFont.systemFontSize).fontName, size: UIFont.systemFontSize)!])
         return defAttributedText
     }
-    //Word Example
+    //Word Example (not working now)
     func wdExample(_ examples: [String]) -> NSMutableAttributedString? {
         for element in examples {
             let exampleAttributedText = NSMutableAttributedString(string: "\n• \(element.capitalizingFirstLetter())", attributes: [NSFontAttributeName:UIFont(name: UIFont.systemFont(ofSize: UIFont.systemFontSize).fontName, size: UIFont.systemFontSize)!])

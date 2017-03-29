@@ -74,8 +74,6 @@ class LexicalEntryViewController: UITableViewController {
         
         let selectedWord = word?.lexicalEntries?[indexPath.row]
         
-      
-        
         Service.sharedInstance.detailsFor(word:  (word?.word!)!, lexicalCategory: selectedWord!) { (details, error) in
             
             if error == nil {
@@ -83,6 +81,7 @@ class LexicalEntryViewController: UITableViewController {
                 
                 let detailsViewController = WordDetailsVC()
                 detailsViewController.word = self.word
+                detailsViewController.lexicalCategory = selectedWord
                 let navController = UINavigationController(rootViewController: detailsViewController)
                 detailsViewController.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.cancelPresentViewController))
                 self.present(navController, animated: true, completion: nil)

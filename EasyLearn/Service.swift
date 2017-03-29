@@ -89,7 +89,7 @@ class Service {
                     
                     guard let data = data else { return }
                     let jsonData = JSON(data: data)
-                    print(jsonData)
+                    //print(jsonData)
                     
                     let results = jsonData["results"][0]["lexicalEntries"][0]["entries"][0]["senses"]
                     

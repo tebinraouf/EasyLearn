@@ -15,6 +15,9 @@
 		CF3871271E8731D2005AA866 /* cvCollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3871261E8731D2005AA866 /* cvCollectionViewExtension.swift */; };
 		CF38712A1E873CFA005AA866 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3871291E873CFA005AA866 /* Helper.swift */; };
 		CF38712C1E88B4AB005AA866 /* cvGestureExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF38712B1E88B4AB005AA866 /* cvGestureExtension.swift */; };
+		CF38712F1E89B0DE005AA866 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF38712E1E89B0DE005AA866 /* CoreDataStack.swift */; };
+		CF3871321E89B193005AA866 /* CDWord.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CF3871301E89B193005AA866 /* CDWord.xcdatamodeld */; };
+		CF3871341E89BAEB005AA866 /* DataLayerSimple.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3871331E89BAEB005AA866 /* DataLayerSimple.swift */; };
 		CF3FA89F1E71E46600AF392E /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3FA89E1E71E46600AF392E /* Service.swift */; };
 		CF5108981E7B59D5008B2BC0 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5108971E7B59D5008B2BC0 /* CardsViewController.swift */; };
 		CF51089A1E7B5B8D008B2BC0 /* DashboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5108991E7B5B8D008B2BC0 /* DashboardCell.swift */; };
@@ -51,6 +54,9 @@
 		CF3871261E8731D2005AA866 /* cvCollectionViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cvCollectionViewExtension.swift; sourceTree = "<group>"; };
 		CF3871291E873CFA005AA866 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		CF38712B1E88B4AB005AA866 /* cvGestureExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cvGestureExtension.swift; sourceTree = "<group>"; };
+		CF38712E1E89B0DE005AA866 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		CF3871311E89B193005AA866 /* CDWord.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CDWord.xcdatamodel; sourceTree = "<group>"; };
+		CF3871331E89BAEB005AA866 /* DataLayerSimple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLayerSimple.swift; sourceTree = "<group>"; };
 		CF3FA89E1E71E46600AF392E /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		CF5108971E7B59D5008B2BC0 /* CardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
 		CF5108991E7B5B8D008B2BC0 /* DashboardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardCell.swift; sourceTree = "<group>"; };
@@ -124,6 +130,16 @@
 				CF3871291E873CFA005AA866 /* Helper.swift */,
 			);
 			name = Helper;
+			sourceTree = "<group>";
+		};
+		CF38712D1E89B086005AA866 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				CF38712E1E89B0DE005AA866 /* CoreDataStack.swift */,
+				CF3871331E89BAEB005AA866 /* DataLayerSimple.swift */,
+				CF3871301E89B193005AA866 /* CDWord.xcdatamodeld */,
+			);
+			name = "Core Data";
 			sourceTree = "<group>";
 		};
 		CF51089B1E7C6198008B2BC0 /* Views */ = {
@@ -296,6 +312,7 @@
 		CFAFE6661E68F9CA0062235E /* EasyLearn */ = {
 			isa = PBXGroup;
 			children = (
+				CF38712D1E89B086005AA866 /* Core Data */,
 				CF3871281E873CEB005AA866 /* Helper */,
 				CF51089B1E7C6198008B2BC0 /* Views */,
 				CF6012DE1E789BA100EA0A3A /* Controllers */,
@@ -446,6 +463,7 @@
 				CFAFE67E1E6E0F930062235E /* LexicalEntryViewController.swift in Sources */,
 				CF51089D1E7C61AC008B2BC0 /* HomeView.swift in Sources */,
 				CF5108AB1E7C7021008B2BC0 /* hvCollectionViewExtension.swift in Sources */,
+				CF38712F1E89B0DE005AA866 /* CoreDataStack.swift in Sources */,
 				CF38712C1E88B4AB005AA866 /* cvGestureExtension.swift in Sources */,
 				CF3871251E8730C5005AA866 /* cvSetupViewExtension.swift in Sources */,
 				CF6012D81E763C8D00EA0A3A /* WordDetailsVC.swift in Sources */,
@@ -453,6 +471,7 @@
 				CF5108B11E7CAC27008B2BC0 /* PlayViewController.swift in Sources */,
 				CFAFE66A1E68F9CA0062235E /* HomeViewController.swift in Sources */,
 				CF1C11101E84BDF400EC0181 /* wdCollectionViewExtension.swift in Sources */,
+				CF3871341E89BAEB005AA866 /* DataLayerSimple.swift in Sources */,
 				CF1C11141E84C42400EC0181 /* wdSetupViewExtension.swift in Sources */,
 				CF6012DB1E773B8900EA0A3A /* BaseCell.swift in Sources */,
 				CF3871271E8731D2005AA866 /* cvCollectionViewExtension.swift in Sources */,
@@ -466,6 +485,7 @@
 				CF38712A1E873CFA005AA866 /* Helper.swift in Sources */,
 				CF3FA89F1E71E46600AF392E /* Service.swift in Sources */,
 				CF51089F1E7C6C3A008B2BC0 /* hvDelegateExtension.swift in Sources */,
+				CF3871321E89B193005AA866 /* CDWord.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -634,6 +654,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CF3871301E89B193005AA866 /* CDWord.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CF3871311E89B193005AA866 /* CDWord.xcdatamodel */,
+			);
+			currentVersion = CF3871311E89B193005AA866 /* CDWord.xcdatamodel */;
+			path = CDWord.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CFAFE65C1E68F9CA0062235E /* Project object */;
 }
