@@ -61,8 +61,32 @@ class DataLayerSimple {
         mainContext.trySave()
     }
     
+    func fetchAllWords() -> [CDWord]? {
+        let sort = NSSortDescriptor(key: "id", ascending: true)
+        let fetchRequest: NSFetchRequest<CDWord> = CDWord.fetchRequest()
+        fetchRequest.sortDescriptors = [sort]
+        let words = try? mainContext.fetch(fetchRequest)
+        return words
+    }
     
     
+    /*
+ 
+     func fetchWords() -> [Word] {
+     var favWordsReturn = [Word]()
+     let sort = NSSortDescriptor(key: "id", ascending: true)
+     let sortName = NSSortDescriptor(key: "name", ascending: true, selector: #selector(NSString.localizedStandardCompare(_:)))
+     
+     let fetchRequest: NSFetchRequest<Word> = Word.fetchRequest()
+     fetchRequest.sortDescriptors = [sort, sortName]
+     
+     if let favWords = try? mainContext.fetch(fetchRequest) {
+     favWordsReturn = favWords
+     }
+     return favWordsReturn
+     }
+ 
+     */
     
     
     

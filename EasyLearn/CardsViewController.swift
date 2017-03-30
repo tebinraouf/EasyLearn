@@ -14,7 +14,8 @@ class CardsViewController: UIViewController {
         layout.scrollDirection = .horizontal
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
-        cv.backgroundColor = .red
+        cv.showsHorizontalScrollIndicator = false
+        cv.backgroundColor = .clear
         cv.isPagingEnabled = true
         cv.delegate = self
         cv.dataSource = self
@@ -43,6 +44,9 @@ class CardsViewController: UIViewController {
         return btn
     }()
     
+    let currentDataSimple = DataLayerSimple()
+    var isFlipped = true
+    
     var isNavHidden = false
     var flashCVTopConstraint: NSLayoutConstraint?
     var flashCVBottomConstraint: NSLayoutConstraint?
@@ -51,16 +55,19 @@ class CardsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .brown
+        view.backgroundColor = .appLightGreen
         registerCells()
         setupView()
         handleViewGesture()
         self.automaticallyAdjustsScrollViewInsets = false
         flashCV.reloadData()
-        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        flashCV.reloadData()
     }
     func registerCells(){
-        flashCV.register(UICollectionViewCell.self, forCellWithReuseIdentifier: CellID.cvCellID.rawValue)
+        flashCV.register(FlashCardCell.self, forCellWithReuseIdentifier: CellID.cvCellID.rawValue)
         //flashCV.register(UICollectionViewCell.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: CellID.cvFooterID.rawValue)
     }
     

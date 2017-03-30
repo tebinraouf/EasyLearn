@@ -42,7 +42,7 @@ extension WordDetailsVC: UICollectionViewDataSource, UICollectionViewDelegate, U
 
             self.currentDataLayer.saveWord(id, language, lexicalEntry, word, type, examples, definition)
             
-        
+
         }
         
         if word?.details?[indexPath.item].subdetails?.count == 0 {

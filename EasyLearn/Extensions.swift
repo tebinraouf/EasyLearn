@@ -24,6 +24,9 @@ public extension UIColor {
     public class var appRedish: UIColor {
         return UIColor(r: 244, g: 91, b: 105, a: 1)
     }
+    public class var appLightGreen: UIColor {
+        return UIColor(r: 220, g: 226, b: 202, a: 1)
+    }
     
     
 }

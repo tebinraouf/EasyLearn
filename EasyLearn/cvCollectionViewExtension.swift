@@ -10,12 +10,19 @@ import UIKit
 
 extension CardsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return currentDataSimple.numberOfResults
+        
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = flashCV.dequeueReusableCell(withReuseIdentifier: CellID.cvCellID.rawValue, for: indexPath)
-        cell.backgroundColor = .yellow
+        let cell = flashCV.dequeueReusableCell(withReuseIdentifier: CellID.cvCellID.rawValue, for: indexPath) as! FlashCardCell
+        cell.backgroundColor = .white
         
+        cell.wordName.text = currentDataSimple.fetchAllWords()?[indexPath.item].word
+        //cell.wordDetails.text = currentDataSimple.fetchAllWords()?[indexPath.item].definition
+        
+        cell.handleSlideFlipping = {
+            self.animate(from: cell.wordName, to: cell.wordDetails)
+        }
         
         return cell
     }
@@ -32,10 +39,24 @@ extension CardsViewController: UICollectionViewDelegate, UICollectionViewDataSou
         return UIEdgeInsetsMake(-67, 0, -67, 0)
     }
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        cardNumberLabel.text = "\(indexPath.item + 1) - 10"
+        
+        let total = currentDataSimple.numberOfResults
+        
+        cardNumberLabel.text = "\(indexPath.item + 1) - \(total)"
     }
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         isNavHidden = true
+        isNavBarHidden(true, navigationController: navigationController, view: view)
+    }
+    
+    func animate(from view1: UILabel, to view2: UILabel) {
+        if isFlipped {
+            UIView.transition(from: view1, to: view2, duration: 0.8, options: [.transitionFlipFromLeft, .showHideTransitionViews, .allowUserInteraction], completion: nil)
+            isFlipped = false
+        }else{
+            UIView.transition(from: view2, to: view1, duration: 0.8, options: [.transitionFlipFromRight, .showHideTransitionViews, .allowUserInteraction], completion: nil)
+            isFlipped = true
+        }
         isNavBarHidden(true, navigationController: navigationController, view: view)
     }
 }

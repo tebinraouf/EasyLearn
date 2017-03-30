@@ -41,6 +41,7 @@
 		CFAFE67A1E6A87510062235E /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAFE6791E6A87510062235E /* Models.swift */; };
 		CFAFE67C1E6B7A130062235E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAFE67B1E6B7A130062235E /* Extensions.swift */; };
 		CFAFE67E1E6E0F930062235E /* LexicalEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAFE67D1E6E0F930062235E /* LexicalEntryViewController.swift */; };
+		CFC2949C1E8C31F100938475 /* FlashCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC2949B1E8C31F100938475 /* FlashCardCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		CFAFE6791E6A87510062235E /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		CFAFE67B1E6B7A130062235E /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		CFAFE67D1E6E0F930062235E /* LexicalEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LexicalEntryViewController.swift; sourceTree = "<group>"; };
+		CFC2949B1E8C31F100938475 /* FlashCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashCardCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +238,7 @@
 				CF6012DA1E773B8900EA0A3A /* BaseCell.swift */,
 				CF6012DC1E789B8600EA0A3A /* DetailsCell.swift */,
 				CF5108991E7B5B8D008B2BC0 /* DashboardCell.swift */,
+				CFC2949B1E8C31F100938475 /* FlashCardCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 				CF5108A91E7C6FBD008B2BC0 /* LeftPaddedTextField.swift in Sources */,
 				CF1C110D1E847C3100EC0181 /* WordSubDetailsVC.swift in Sources */,
 				CF5F988D1E7B41B500E84687 /* ErrorViewController.swift in Sources */,
+				CFC2949C1E8C31F100938475 /* FlashCardCell.swift in Sources */,
 				CFAFE67C1E6B7A130062235E /* Extensions.swift in Sources */,
 				CF51089A1E7B5B8D008B2BC0 /* DashboardCell.swift in Sources */,
 				CF38712A1E873CFA005AA866 /* Helper.swift in Sources */,

@@ -25,3 +25,4 @@ public func isNavBarHidden(_ bool: Bool, navigationController: UINavigationContr
         view.layoutIfNeeded()
     }
 }
+
