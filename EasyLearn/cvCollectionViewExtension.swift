@@ -14,26 +14,40 @@ extension CardsViewController: UICollectionViewDelegate, UICollectionViewDataSou
         
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = flashCV.dequeueReusableCell(withReuseIdentifier: CellID.cvCellID.rawValue, for: indexPath) as! FlashCardCell
-        cell.backgroundColor = .white
-        
+        let cell = cardView.flashCV.dequeueReusableCell(withReuseIdentifier: CellID.cvCellID.rawValue, for: indexPath) as! FlashCardCell
         cell.wordName.text = currentDataSimple.fetchAllWords()?[indexPath.item].word
-        //cell.wordDetails.text = currentDataSimple.fetchAllWords()?[indexPath.item].definition
+        
+        var details = String()
+        
+        if let def = currentDataSimple.fetchAllWords()?[indexPath.item].definition {
+            details.append(def)
+            details.append("\n")
+        }
+        
+        if let example = currentDataSimple.fetchAllWords()?[indexPath.item].example {
+            details.append(example)
+        }
+
+        cell.wordDetails.text = details
         
         cell.handleSlideFlipping = {
             self.animate(from: cell.wordName, to: cell.wordDetails)
+            
         }
         
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+        let itemWidth =  collectionView.frame.width
+        
+        return CGSize(width: itemWidth, height: collectionView.frame.height)
         
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsetsMake(-67, 0, -67, 0)
@@ -42,14 +56,22 @@ extension CardsViewController: UICollectionViewDelegate, UICollectionViewDataSou
         
         let total = currentDataSimple.numberOfResults
         
-        cardNumberLabel.text = "\(indexPath.item + 1) - \(total)"
+        cardView.cardNumberLabel.text = "\(indexPath.item + 1) - \(total)"
     }
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         isNavHidden = true
         isNavBarHidden(true, navigationController: navigationController, view: view)
+        
     }
     
-    func animate(from view1: UILabel, to view2: UILabel) {
+    func animate(from view1: UILabel, to view2: UITextView) {
+        
+        if view1.isHidden {
+            isFlipped = false
+        }else{
+            isFlipped = true
+        }
+        
         if isFlipped {
             UIView.transition(from: view1, to: view2, duration: 0.8, options: [.transitionFlipFromLeft, .showHideTransitionViews, .allowUserInteraction], completion: nil)
             isFlipped = false

@@ -42,6 +42,8 @@
 		CFAFE67C1E6B7A130062235E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAFE67B1E6B7A130062235E /* Extensions.swift */; };
 		CFAFE67E1E6E0F930062235E /* LexicalEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAFE67D1E6E0F930062235E /* LexicalEntryViewController.swift */; };
 		CFC2949C1E8C31F100938475 /* FlashCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC2949B1E8C31F100938475 /* FlashCardCell.swift */; };
+		CFFBB4081E8D87F0007DCD66 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFBB4071E8D87F0007DCD66 /* CardView.swift */; };
+		CFFBB40B1E8DB11A007DCD66 /* VerticallyCenteredTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFBB40A1E8DB11A007DCD66 /* VerticallyCenteredTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +86,8 @@
 		CFAFE67B1E6B7A130062235E /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		CFAFE67D1E6E0F930062235E /* LexicalEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LexicalEntryViewController.swift; sourceTree = "<group>"; };
 		CFC2949B1E8C31F100938475 /* FlashCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashCardCell.swift; sourceTree = "<group>"; };
+		CFFBB4071E8D87F0007DCD66 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		CFFBB40A1E8DB11A007DCD66 /* VerticallyCenteredTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticallyCenteredTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +153,7 @@
 			children = (
 				CF6012D91E773B7100EA0A3A /* Cells */,
 				CF51089C1E7C61AC008B2BC0 /* HomeView.swift */,
-				CF5108A81E7C6FBD008B2BC0 /* LeftPaddedTextField.swift */,
+				CFFBB4071E8D87F0007DCD66 /* CardView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -315,6 +319,7 @@
 		CFAFE6661E68F9CA0062235E /* EasyLearn */ = {
 			isa = PBXGroup;
 			children = (
+				CFFBB4091E8DB0FB007DCD66 /* Subclasses */,
 				CF38712D1E89B086005AA866 /* Core Data */,
 				CF3871281E873CEB005AA866 /* Helper */,
 				CF51089B1E7C6198008B2BC0 /* Views */,
@@ -325,6 +330,15 @@
 				CF6012DF1E789BBE00EA0A3A /* Networking */,
 			);
 			path = EasyLearn;
+			sourceTree = "<group>";
+		};
+		CFFBB4091E8DB0FB007DCD66 /* Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				CF5108A81E7C6FBD008B2BC0 /* LeftPaddedTextField.swift */,
+				CFFBB40A1E8DB11A007DCD66 /* VerticallyCenteredTextView.swift */,
+			);
+			name = Subclasses;
 			sourceTree = "<group>";
 		};
 		E8481354995460FEEEB869B9 /* Frameworks */ = {
@@ -459,6 +473,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFFBB40B1E8DB11A007DCD66 /* VerticallyCenteredTextView.swift in Sources */,
 				CF5108A71E7C6DBD008B2BC0 /* hvSetupViewExtension.swift in Sources */,
 				CF5108AE1E7CABDE008B2BC0 /* CustomCardsViewController.swift in Sources */,
 				CF6012DD1E789B8600EA0A3A /* DetailsCell.swift in Sources */,
@@ -489,6 +504,7 @@
 				CF38712A1E873CFA005AA866 /* Helper.swift in Sources */,
 				CF3FA89F1E71E46600AF392E /* Service.swift in Sources */,
 				CF51089F1E7C6C3A008B2BC0 /* hvDelegateExtension.swift in Sources */,
+				CFFBB4081E8D87F0007DCD66 /* CardView.swift in Sources */,
 				CF3871321E89B193005AA866 /* CDWord.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

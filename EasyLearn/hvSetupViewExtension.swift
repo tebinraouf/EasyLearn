@@ -14,8 +14,7 @@ extension HomeViewController {
         homeView.collectionView.delegate = self
         homeView.collectionView.dataSource = self
         homeView.searchTextField.delegate = self
-        homeView.translatesAutoresizingMaskIntoConstraints = false
-        homeView.setupView()
+
         view.addSubview(homeView)
         homeView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         homeView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true

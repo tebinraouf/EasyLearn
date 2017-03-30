@@ -87,6 +87,15 @@ class HomeView: UIView {
     }()
     
     var collectionVSLeadingAnchor: NSLayoutConstraint?
+    
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        translatesAutoresizingMaskIntoConstraints = false
+        setupView()
+    }
+    
+   
     //MARK:- Setup Views
     func setupView(){
         
@@ -146,6 +155,9 @@ class HomeView: UIView {
     }
     
      
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
 
 }
