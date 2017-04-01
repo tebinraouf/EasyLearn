@@ -14,6 +14,6 @@ class CustomCardsViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .red
-        
+        isNavBarHidden(false, navigationController)
     }
 }

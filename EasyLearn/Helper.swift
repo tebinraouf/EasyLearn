@@ -34,3 +34,9 @@ public func isNavBarWithToolBarHidden(_ bool: Bool, _ navigationController: UINa
     }, completion: nil)
 }
 
+public func isNavBarHidden(_ bool: Bool, _ navigationController: UINavigationController?) {
+    
+    UIView.animate(withDuration: 0.5) {
+        navigationController?.isNavigationBarHidden = bool
+    }
+}

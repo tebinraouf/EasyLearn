@@ -19,7 +19,7 @@ class LexicalEntryViewController: UITableViewController {
         super.viewDidLoad()
         registerCells()
         
-        delegate.isNavBarHidden(false)
+        isNavBarHidden(false, navigationController)
         
     }
     

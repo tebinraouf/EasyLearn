@@ -24,7 +24,11 @@ class ErrorEmptyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        delegate?.isNavBarHidden(false)
+        
+        isNavBarHidden(false, navigationController)
+        
+        
+        
         view.backgroundColor = .appGray
         setupView()
         
