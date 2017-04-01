@@ -25,6 +25,10 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         super.viewWillAppear(animated)
         isNavBarHidden(true)
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        isNavBarHidden(false)
+    }
     
     //MARK:- Register Cells
     func registerCells(){

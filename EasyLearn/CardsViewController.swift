@@ -7,7 +7,7 @@
 //
 
 import UIKit
-class CardsViewController: UIViewController {
+class CardsViewController: UIViewController, UIGestureRecognizerDelegate {
     //computed variables
     
     let currentDataSimple = DataLayerSimple()
@@ -35,6 +35,8 @@ class CardsViewController: UIViewController {
         
         favWords = currentDataSimple.fetchAllWords()!
         
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,11 +44,10 @@ class CardsViewController: UIViewController {
         
         let total = currentDataSimple.numberOfResults
         cardView.cardNumberLabel.text = "1 - \(total)"
-
-        
         cardView.flashCV.reloadData()
         
     }
+    
     func registerCells(){
         cardView.flashCV.register(FlashCardCell.self, forCellWithReuseIdentifier: CellID.cvCellID.rawValue)
         //flashCV.register(UICollectionViewCell.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: CellID.cvFooterID.rawValue)
@@ -67,7 +68,7 @@ class CardsViewController: UIViewController {
             cardView.flashCVBottomConstraint?.isActive = true
             cardView.flashCVHeightConstraint.isActive = false
             
-            isNavBarWithToolBarHidden(true, navigationController, cardView.toolBar)
+            isNavBarWithToolBarHidden(true, navigationController, cardView.toolBar, cardView.navBar)
             
         } else {
             
@@ -77,7 +78,7 @@ class CardsViewController: UIViewController {
             
             cardView.cardNumberLabelBottomConstraint?.constant = -70
             cardView.checkButtonBottomConstraint?.constant = -70
-            isNavBarWithToolBarHidden(false, navigationController, cardView.toolBar)
+            isNavBarWithToolBarHidden(false, navigationController, cardView.toolBar, cardView.navBar)
         }
         
         

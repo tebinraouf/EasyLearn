@@ -11,6 +11,11 @@ import UIKit
 extension CardsViewController {
     func handleNavIcons(){
         
+        
+        let backButton = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(handleBackButton))
+        cardView.navBar.items = [backButton]
+        
+        
         var toolBarItems = [UIBarButtonItem]()
         
         let swap = UIBarButtonItem()
@@ -49,17 +54,20 @@ extension CardsViewController {
             
             //self.cardView.flashCV.layer.anchorPoint = CGPoint(x: 1, y: 0.5)
             //self.cardView.flashCV.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
-            self.cardView.flashCV.layer.transform = CATransform3DMakeScale(0.5, 0.5, 1)
+            //self.cardView.flashCV.layer.transform = CATransform3DMakeScale(0.5, 0.5, 1)
+            //self.cellReference?.wordName.layer.transform = CATransform3DMakeScale(0.5, 0.5, 1)
             
+            //self.cardView.flashCV.transform = CGAffineTransform(rotationAngle: 720)
             
-            
-            
-            self.cardView.flashCV.isPagingEnabled = false
         }, completion: nil)
         cardView.flashCV.reloadData()
         
         
         
+    }
+    
+    func handleBackButton(){
+        navigationController?.popViewController(animated: true)
     }
     
     func handleShuffle(){
@@ -76,6 +84,7 @@ extension CardsViewController {
         //let wordDetails = (cellReference?.wordDetails)!
         
         if wordName.isHidden {
+            
             isSwapped = false
         }else{
             isSwapped = true

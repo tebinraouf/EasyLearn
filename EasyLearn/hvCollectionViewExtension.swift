@@ -57,8 +57,9 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         self.navigationController?.pushViewController(controller, animated: true)
     }
     func isNavBarHidden(_ bool: Bool) {
+        
         UIView.animate(withDuration: 0.5) {
-            self.navigationController?.isNavigationBarHidden = bool
+            //self.navigationController?.isNavigationBarHidden = bool
             self.view.layoutIfNeeded()
         }
     }

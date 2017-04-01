@@ -10,6 +10,7 @@ import UIKit
 
 class CardView: UIView {
     
+    
     var flashCV: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -17,7 +18,7 @@ class CardView: UIView {
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
         cv.showsHorizontalScrollIndicator = false
-        cv.backgroundColor = .clear
+        cv.backgroundColor = .blue
         cv.isPagingEnabled = true
         cv.layer.cornerRadius = 10
         cv.layer.masksToBounds = true
@@ -52,6 +53,13 @@ class CardView: UIView {
         return tool
     }()
     
+    var navBar: UIToolbar = {
+        let tool = UIToolbar()
+        tool.translatesAutoresizingMaskIntoConstraints = false
+        return tool
+    }()
+    
+    
     var flashCVTopConstraint: NSLayoutConstraint?
     var flashCVBottomConstraint: NSLayoutConstraint?
     var flashCVLeadingConstraint: NSLayoutConstraint?
@@ -74,10 +82,10 @@ class CardView: UIView {
     }
     
     func setupView(){
+        
         addSubview(flashCV)
         addSubview(cardNumberLabel)
         addSubview(checkButton)
-        
         
         flashCVTopConstraint = flashCV.topAnchor.constraint(equalTo: topAnchor, constant: 80)
         flashCVTopConstraint?.isActive = false
@@ -122,6 +130,13 @@ class CardView: UIView {
         toolBar.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         toolBar.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         toolBar.heightAnchor.constraint(equalToConstant: 35).isActive = true
+        
+        
+        addSubview(navBar)
+        navBar.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        navBar.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        navBar.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        navBar.heightAnchor.constraint(equalToConstant: 64).isActive = true
         
     }
     
