@@ -9,9 +9,11 @@
 import UIKit
 
 class CardView: UIView {
+    
     var flashCV: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
+        layout.minimumInteritemSpacing = 10000.0
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
         cv.showsHorizontalScrollIndicator = false
@@ -25,7 +27,7 @@ class CardView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "1 - 10"
-        label.textColor = .yellow
+        label.textColor = .black
         return label
     }()
     
@@ -44,11 +46,27 @@ class CardView: UIView {
         return btn
     }()
     
+    var toolBar: UIToolbar = {
+        let tool = UIToolbar()
+        tool.translatesAutoresizingMaskIntoConstraints = false
+        return tool
+    }()
+    
     var flashCVTopConstraint: NSLayoutConstraint?
     var flashCVBottomConstraint: NSLayoutConstraint?
+    var flashCVLeadingConstraint: NSLayoutConstraint?
+    var flashCVTrailingConstraint: NSLayoutConstraint?
+    
+    
+    var flashCVHeightConstraint: NSLayoutConstraint!
+    
+    
     var cardNumberLabelBottomConstraint: NSLayoutConstraint?
     var checkButtonBottomConstraint: NSLayoutConstraint?
-
+    
+    
+    var toolBarBottomConstraint: NSLayoutConstraint!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
@@ -56,19 +74,31 @@ class CardView: UIView {
     }
     
     func setupView(){
-        
         addSubview(flashCV)
         addSubview(cardNumberLabel)
         addSubview(checkButton)
         
+        
         flashCVTopConstraint = flashCV.topAnchor.constraint(equalTo: topAnchor, constant: 80)
-        flashCVTopConstraint?.isActive = true
+        flashCVTopConstraint?.isActive = false
         
         flashCVBottomConstraint = flashCV.bottomAnchor.constraint(equalTo: cardNumberLabel.topAnchor, constant: -10)
-        flashCVBottomConstraint?.isActive = true
+        flashCVBottomConstraint?.isActive = false
         
-        flashCV.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        flashCV.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        flashCVLeadingConstraint = flashCV.leadingAnchor.constraint(equalTo: leadingAnchor)
+        flashCVLeadingConstraint?.isActive = true
+        
+        flashCVTrailingConstraint = flashCV.trailingAnchor.constraint(equalTo: trailingAnchor)
+        flashCVTrailingConstraint?.isActive = true
+        
+        
+        flashCVHeightConstraint = flashCV.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 2/3)
+        flashCVHeightConstraint.isActive = true
+        
+        flashCV.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        flashCV.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        
+        
         
         cardNumberLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 10).isActive = true
         cardNumberLabel.topAnchor.constraint(equalTo: flashCV.bottomAnchor).isActive = true
@@ -85,10 +115,16 @@ class CardView: UIView {
         checkButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
         checkButton.widthAnchor.constraint(equalToConstant: 20).isActive = true
         
-        
+         
+        addSubview(toolBar)
+        toolBarBottomConstraint = toolBar.bottomAnchor.constraint(equalTo: bottomAnchor)
+        toolBarBottomConstraint.isActive = true
+        toolBar.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        toolBar.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        toolBar.heightAnchor.constraint(equalToConstant: 35).isActive = true
         
     }
-
+    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

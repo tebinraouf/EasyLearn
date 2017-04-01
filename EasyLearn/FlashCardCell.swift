@@ -11,6 +11,7 @@ import UIKit
 
 class FlashCardCell: BaseCell {
     
+    
  
     var wordName: UILabel = {
         let label = UILabel()
@@ -52,10 +53,11 @@ class FlashCardCell: BaseCell {
     }()
     
     override func setupView() {
-        backgroundColor = .clear
         
+        backgroundColor = .clear
         addSubview(wordName)
         addSubview(wordDetails)
+        
         
         wordName.topAnchor.constraint(equalTo: topAnchor).isActive = true
         wordName.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true

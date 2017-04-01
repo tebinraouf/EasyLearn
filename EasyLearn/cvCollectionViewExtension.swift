@@ -15,16 +15,18 @@ extension CardsViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = cardView.flashCV.dequeueReusableCell(withReuseIdentifier: CellID.cvCellID.rawValue, for: indexPath) as! FlashCardCell
-        cell.wordName.text = currentDataSimple.fetchAllWords()?[indexPath.item].word
+        
+        cellReference = cell
+        cell.wordName.text = favWords[indexPath.item].word
         
         var details = String()
         
-        if let def = currentDataSimple.fetchAllWords()?[indexPath.item].definition {
+        if let def = favWords[indexPath.item].definition {
             details.append(def)
             details.append("\n")
         }
         
-        if let example = currentDataSimple.fetchAllWords()?[indexPath.item].example {
+        if let example = favWords[indexPath.item].example {
             details.append(example)
         }
 
@@ -34,14 +36,20 @@ extension CardsViewController: UICollectionViewDelegate, UICollectionViewDataSou
             self.animate(from: cell.wordName, to: cell.wordDetails)
             
         }
+        indexPathReference = indexPath
+        
+        
+        
+
         
         return cell
     }
+    
+    
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let itemWidth =  collectionView.frame.width
-        
-        return CGSize(width: itemWidth, height: collectionView.frame.height)
+        return CGSize(width: cardView.flashCV.frame.width, height: cardView.flashCV.frame.height)
         
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -54,14 +62,28 @@ extension CardsViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
-        let total = currentDataSimple.numberOfResults
         
-        cardView.cardNumberLabel.text = "\(indexPath.item + 1) - \(total)"
+        let cell = cell as! FlashCardCell
+        if isSwapped {
+            cell.wordName.isHidden = true
+            cell.wordDetails.isHidden = false
+        }else {
+            cell.wordName.isHidden = false
+            cell.wordDetails.isHidden = true
+        }
+        
     }
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         isNavHidden = true
-        isNavBarHidden(true, navigationController: navigationController, view: view)
+        isNavBarWithToolBarHidden(true, navigationController, cardView.toolBar)
         
+        
+        
+    }
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let total = currentDataSimple.numberOfResults
+        let current = cardView.flashCV.indexPathsForVisibleItems[0][1] + 1
+        cardView.cardNumberLabel.text = "\(current) - \(total)"
     }
     
     func animate(from view1: UILabel, to view2: UITextView) {
@@ -72,6 +94,13 @@ extension CardsViewController: UICollectionViewDelegate, UICollectionViewDataSou
             isFlipped = true
         }
         
+        handleFlipping(from: view1, to: view2)
+        
+        isNavBarWithToolBarHidden(true, navigationController, cardView.toolBar)
+    }
+    
+    
+    func handleFlipping(from view1: UILabel, to view2: UITextView){
         if isFlipped {
             UIView.transition(from: view1, to: view2, duration: 0.8, options: [.transitionFlipFromLeft, .showHideTransitionViews, .allowUserInteraction], completion: nil)
             isFlipped = false
@@ -79,6 +108,5 @@ extension CardsViewController: UICollectionViewDelegate, UICollectionViewDataSou
             UIView.transition(from: view2, to: view1, duration: 0.8, options: [.transitionFlipFromRight, .showHideTransitionViews, .allowUserInteraction], completion: nil)
             isFlipped = true
         }
-        isNavBarHidden(true, navigationController: navigationController, view: view)
     }
 }

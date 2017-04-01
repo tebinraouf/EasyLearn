@@ -14,7 +14,7 @@ extension CardsViewController {
         view.addGestureRecognizer(tap)
     }
     func handleViewTap(){
-        isNavBarHidden(!isNavHidden, navigationController: navigationController, view: view)
+        isNavBarWithToolBarHidden(!isNavHidden, navigationController, cardView.toolBar)
         isNavHidden = !isNavHidden
     }
 }

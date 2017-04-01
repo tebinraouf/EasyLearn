@@ -14,7 +14,7 @@ extension CardsViewController {
         cardView.flashCV.dataSource = self
 
         view.addSubview(cardView)
-        cardView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor).isActive = true
+        cardView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         cardView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         cardView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         cardView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true

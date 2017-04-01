@@ -44,6 +44,7 @@
 		CFC2949C1E8C31F100938475 /* FlashCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC2949B1E8C31F100938475 /* FlashCardCell.swift */; };
 		CFFBB4081E8D87F0007DCD66 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFBB4071E8D87F0007DCD66 /* CardView.swift */; };
 		CFFBB40B1E8DB11A007DCD66 /* VerticallyCenteredTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFBB40A1E8DB11A007DCD66 /* VerticallyCenteredTextView.swift */; };
+		CFFBB40D1E8DBE24007DCD66 /* cvCustomFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFBB40C1E8DBE24007DCD66 /* cvCustomFuncs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 		CFC2949B1E8C31F100938475 /* FlashCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashCardCell.swift; sourceTree = "<group>"; };
 		CFFBB4071E8D87F0007DCD66 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		CFFBB40A1E8DB11A007DCD66 /* VerticallyCenteredTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticallyCenteredTextView.swift; sourceTree = "<group>"; };
+		CFFBB40C1E8DBE24007DCD66 /* cvCustomFuncs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cvCustomFuncs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 				CF3871241E8730C5005AA866 /* cvSetupViewExtension.swift */,
 				CF3871261E8731D2005AA866 /* cvCollectionViewExtension.swift */,
 				CF38712B1E88B4AB005AA866 /* cvGestureExtension.swift */,
+				CFFBB40C1E8DBE24007DCD66 /* cvCustomFuncs.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 				CF5108A91E7C6FBD008B2BC0 /* LeftPaddedTextField.swift in Sources */,
 				CF1C110D1E847C3100EC0181 /* WordSubDetailsVC.swift in Sources */,
 				CF5F988D1E7B41B500E84687 /* ErrorViewController.swift in Sources */,
+				CFFBB40D1E8DBE24007DCD66 /* cvCustomFuncs.swift in Sources */,
 				CFC2949C1E8C31F100938475 /* FlashCardCell.swift in Sources */,
 				CFAFE67C1E6B7A130062235E /* Extensions.swift in Sources */,
 				CF51089A1E7B5B8D008B2BC0 /* DashboardCell.swift in Sources */,
