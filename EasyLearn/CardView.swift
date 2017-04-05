@@ -18,7 +18,7 @@ class CardView: UIView {
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
         cv.showsHorizontalScrollIndicator = false
-        cv.backgroundColor = .blue
+        cv.backgroundColor = .clear
         cv.isPagingEnabled = true
         cv.layer.cornerRadius = 10
         cv.layer.masksToBounds = true

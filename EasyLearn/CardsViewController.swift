@@ -21,6 +21,9 @@ class CardsViewController: UIViewController, UIGestureRecognizerDelegate {
     var cellReference: FlashCardCell?
     var indexPathReference: IndexPath?
     var isSwapped = false
+
+    var playTimer: Timer?
+    var isPlayClicked = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,6 +98,7 @@ class CardsViewController: UIViewController, UIGestureRecognizerDelegate {
         coordinator.animate(alongsideTransition: { (context) in
             self.cardView.flashCV.reloadData()
             self.cardView.flashCV.setContentOffset(newOffset, animated: false)
+            
         }, completion: nil)
         
         

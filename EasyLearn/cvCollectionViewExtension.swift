@@ -76,9 +76,6 @@ extension CardsViewController: UICollectionViewDelegate, UICollectionViewDataSou
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         isNavHidden = true
         isNavBarWithToolBarHidden(true, navigationController, cardView.toolBar, cardView.navBar)
-        
-        
-        
     }
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let total = currentDataSimple.numberOfResults

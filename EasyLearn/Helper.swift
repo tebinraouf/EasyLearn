@@ -40,3 +40,4 @@ public func isNavBarHidden(_ bool: Bool, _ navigationController: UINavigationCon
         navigationController?.isNavigationBarHidden = bool
     }
 }
+

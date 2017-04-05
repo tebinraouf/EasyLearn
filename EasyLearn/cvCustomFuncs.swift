@@ -9,111 +9,101 @@
 import UIKit
 
 extension CardsViewController {
-    func handleNavIcons(){
-        
-        
-        let backButton = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(handleBackButton))
-        cardView.navBar.items = [backButton]
-        
-        
-        var toolBarItems = [UIBarButtonItem]()
-        
-        let swap = UIBarButtonItem()
-        swap.icon(from: .FontAwesome, code: "exchange", ofSize: 20)
-        swap.target = self
-        swap.action = #selector(handleSwap)
-        toolBarItems.append(swap)
-        
-        let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        toolBarItems.append(spacer)
-        
-        let shuffle = UIBarButtonItem()
-        shuffle.icon(from: .FontAwesome, code: "random", ofSize: 20)
-        shuffle.target = self
-        shuffle.action = #selector(handleShuffle)
-        toolBarItems.append(shuffle)
-        toolBarItems.append(spacer)
-        
-        let settings = UIBarButtonItem()
-        settings.icon(from: .FontAwesome, code: "cog", ofSize: 20)
-        settings.target = self
-        settings.action = #selector(handleSetting)
-        toolBarItems.append(settings)
 
+    final func handleNavIcons(){
         
+        let backButton = barButtonWith(code: "chevron-left", handleBy:  #selector(handleBackButton))
+        let settings = barButtonWith(code: "cog", handleBy:  #selector(handleSetting))
+        cardView.navBar.items = [backButton, .space, settings]
         
-        cardView.toolBar.items = toolBarItems
+        let swap = barButtonWith(code: "exchange", handleBy:  #selector(handleCardSwap))
+        let shuffle  = barButtonWith(code: "random", handleBy: #selector(handleShuffle))
+        let sortAsc = barButtonWith(code: "sort-alpha-asc", handleBy: #selector(handleSortAsc))
+        let sortDesc = barButtonWith(code: "sort-alpha-desc", handleBy: #selector(handleSortDesc))
+        let play = barButtonWith(code: "play", handleBy: #selector(handlePlay))
+        cardView.toolBar.items = [swap, .space, shuffle, .space, sortAsc, .space, sortDesc, .space, play]
+
     }
     
-    func handleSetting(){
-        print("handleSetting...")
-        
-        UIView.animate(withDuration: 0.7, delay: 0, options: .curveEaseIn, animations: { 
-            //self.cardView.flashCV.frame.size = CGSize(width: 200, height: 200)
-            //self.cardView.flashCV.center = CGPoint(x: 100, y: self.view.center.y)
-            
-            //self.cardView.flashCV.layer.anchorPoint = CGPoint(x: 1, y: 0.5)
-            //self.cardView.flashCV.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
-            //self.cardView.flashCV.layer.transform = CATransform3DMakeScale(0.5, 0.5, 1)
-            //self.cellReference?.wordName.layer.transform = CATransform3DMakeScale(0.5, 0.5, 1)
-            
-            //self.cardView.flashCV.transform = CGAffineTransform(rotationAngle: 720)
-            
-        }, completion: nil)
-        cardView.flashCV.reloadData()
-        
-        
-        
-    }
-    
-    func handleBackButton(){
+    final func handleBackButton(){
         navigationController?.popViewController(animated: true)
     }
+
+    final func handleSetting(){
+        print("handleSetting...")
+    }
     
-    func handleShuffle(){
-        
+    final func handleCardSwap(){
+        let wordName = (cellReference?.wordName)!
+        wordName.isHidden ? (isSwapped = false) : (isSwapped = true)
+        cardView.flashCV.reloadData()
+    }
+
+    final func handleShuffle(){
         favWords.shuffle()
         cardView.flashCV.reloadData()
-        print("handleShuffle...")
-        
     }
-    
-    func handleSwap(){
-        
-        let wordName = (cellReference?.wordName)!
-        //let wordDetails = (cellReference?.wordDetails)!
-        
-        if wordName.isHidden {
-            
-            isSwapped = false
-        }else{
-            isSwapped = true
-        }
+
+    final func handleSortAsc(){
+        favWords.sort { return $0.0.word! < $0.1.word! }
         cardView.flashCV.reloadData()
     }
     
+    final func handleSortDesc(){
+        favWords.sort { return $0.0.word! > $0.1.word! }
+        cardView.flashCV.reloadData()
+    }
+    
+    final func handlePlay(){
+        
+        if isPlayClicked {
+            let play = barButtonWith(code: "play", handleBy: #selector(handlePlay))
+            cardView.toolBar.items?.removeLast()
+            cardView.toolBar.items?.insert(play, at: 8)
+            playTimer?.invalidate()
+            playTimer = nil
+            isPlayClicked = false
+        } else {
+            let play = barButtonWith(code: "pause", handleBy: #selector(handlePlay), size: 18.5)
+            cardView.toolBar.items?.removeLast()
+            cardView.toolBar.items?.insert(play, at: 8)
+            startTimer()
+            playTimer?.fire()
+            isPlayClicked = true
+        }
+        
+    }
+    
+    final func barButtonWith(code: String, handleBy selector: Selector, size: CGFloat? = nil) -> UIBarButtonItem {
+        let btn = UIBarButtonItem()
+        btn.icon(from: .FontAwesome, code: code, ofSize: size ?? 20)
+        btn.target = self
+        btn.action = selector
+        return btn
+    }
+    final func startTimer() {
+        playTimer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(scrollToNextCell), userInfo: nil, repeats: true)
+    }
+    final func scrollToNextCell(){
+        //get cell size
+        let cellSize = CGSize(width: self.cardView.flashCV.frame.width, height: self.cardView.flashCV.frame.height)
+        
+        //get current content Offset of the Collection view
+        let contentOffset = cardView.flashCV.contentOffset;
+        
+        let cgRectX = contentOffset.x + cellSize.width
+        let contentWidth = cardView.flashCV.contentSize.width
+        
+        
+        //scroll to next cell
+        if contentWidth <= cgRectX {
+            cardView.flashCV.scrollRectToVisible(CGRect(x: 0, y: contentOffset.y, width: cellSize.width, height: cellSize.height), animated: true)
+        }else {
+            cardView.flashCV.scrollRectToVisible(CGRect(x: cgRectX, y: contentOffset.y, width: cellSize.width, height: cellSize.height), animated: true)
+        }
+        
+    }
     
 }
 
-extension MutableCollection where Indices.Iterator.Element == Index {
-    /// Shuffles the contents of this collection.
-    mutating func shuffle() {
-        let c = count
-        guard c > 1 else { return }
-        
-        for (firstUnshuffled , unshuffledCount) in zip(indices, stride(from: c, to: 1, by: -1)) {
-            let d: IndexDistance = numericCast(arc4random_uniform(numericCast(unshuffledCount)))
-            guard d != 0 else { continue }
-            let i = index(firstUnshuffled, offsetBy: d)
-            swap(&self[firstUnshuffled], &self[i])
-        }
-    }
-}
-extension Sequence {
-    /// Returns an array with the contents of this sequence, shuffled.
-    func shuffled() -> [Iterator.Element] {
-        var result = Array(self)
-        result.shuffle()
-        return result
-    }
-}
+
