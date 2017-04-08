@@ -36,11 +36,14 @@ extension CardsViewController: UICollectionViewDelegate, UICollectionViewDataSou
             self.animate(from: cell.wordName, to: cell.wordDetails)
             
         }
+        let total = favWords.count
+        cell.cardNumber.text = "\(indexPath.item + 1) - \(total)"
+        
+        
         indexPathReference = indexPath
         
         
-        
-
+        view.backgroundColor = .orange
         
         return cell
     }
@@ -76,11 +79,6 @@ extension CardsViewController: UICollectionViewDelegate, UICollectionViewDataSou
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         isNavHidden = true
         isNavBarWithToolBarHidden(true, navigationController, cardView.toolBar, cardView.navBar)
-    }
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let total = currentDataSimple.numberOfResults
-        let current = cardView.flashCV.indexPathsForVisibleItems[0][1] + 1
-        cardView.cardNumberLabel.text = "\(current) - \(total)"
     }
     
     func animate(from view1: UILabel, to view2: UITextView) {

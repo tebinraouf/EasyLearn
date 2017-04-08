@@ -42,14 +42,8 @@ class CardsViewController: UIViewController, UIGestureRecognizerDelegate {
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        let total = currentDataSimple.numberOfResults
-        cardView.cardNumberLabel.text = "1 - \(total)"
-        cardView.flashCV.reloadData()
-        
-    }
+    
+    
     
     func registerCells(){
         cardView.flashCV.register(FlashCardCell.self, forCellWithReuseIdentifier: CellID.cvCellID.rawValue)
@@ -64,8 +58,6 @@ class CardsViewController: UIViewController, UIGestureRecognizerDelegate {
             
             cardView.flashCVTopConstraint?.constant = 10
             cardView.flashCVBottomConstraint?.constant = -10 //doesn't change but we need this later
-            cardView.cardNumberLabelBottomConstraint?.constant = -10
-            cardView.checkButtonBottomConstraint?.constant = -10
             
             cardView.flashCVTopConstraint?.isActive = true
             cardView.flashCVBottomConstraint?.isActive = true
@@ -79,8 +71,6 @@ class CardsViewController: UIViewController, UIGestureRecognizerDelegate {
             cardView.flashCVBottomConstraint?.isActive = false
             cardView.flashCVHeightConstraint.isActive = true
             
-            cardView.cardNumberLabelBottomConstraint?.constant = -70
-            cardView.checkButtonBottomConstraint?.constant = -70
             isNavBarWithToolBarHidden(false, navigationController, cardView.toolBar, cardView.navBar)
         }
         
@@ -109,7 +99,7 @@ class CardsViewController: UIViewController, UIGestureRecognizerDelegate {
         super.viewWillLayoutSubviews()
         cardView.flashCV.collectionViewLayout.invalidateLayout()
     }
-    
+
 }
 
 

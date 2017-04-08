@@ -11,21 +11,16 @@ import UIKit
 
 class FlashCardCell: BaseCell {
     
-    
- 
     var wordName: UILabel = {
+        let image = UIImage(named: "")
+        let iv = UIImageView(image: image)
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .black
         label.text = "testing..."
         label.font = UIFont.systemFont(ofSize: 30)
-        //tv.isEditable = false
-        
-        //tv.contentInset = UIEdgeInsets(top: 180, left: 0, bottom: 0, right: 0)
         label.backgroundColor = .white
         label.textAlignment = .center
-        label.layer.cornerRadius = 10
-        label.layer.masksToBounds = true
         label.numberOfLines = 0
         return label
     }()
@@ -36,20 +31,21 @@ class FlashCardCell: BaseCell {
         label.textColor = .black
         label.text = "testing"
         label.font = UIFont.systemFont(ofSize: 18)
-        
         label.textAlignment = .center
         label.backgroundColor = .white
-        label.layer.cornerRadius = 10
-        label.layer.masksToBounds = true
         label.isEditable = false
-        //label.numberOfLines = 0
         return label
     }()
     
-    var scrollView: UIScrollView = {
-        let sv = UIScrollView()
-        sv.translatesAutoresizingMaskIntoConstraints = false
-        return sv
+    var cardNumber: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .black
+        label.text = "100"
+        label.font = UIFont.systemFont(ofSize: 15)
+        label.backgroundColor = UIColor(r: 220, g: 220, b: 221, a: 0.2)
+        label.textAlignment = .center
+        return label
     }()
     
     override func setupView() {
@@ -57,7 +53,7 @@ class FlashCardCell: BaseCell {
         backgroundColor = .clear
         addSubview(wordName)
         addSubview(wordDetails)
-        
+        addSubview(cardNumber)
         
         wordName.topAnchor.constraint(equalTo: topAnchor).isActive = true
         wordName.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
@@ -73,6 +69,14 @@ class FlashCardCell: BaseCell {
         wordDetails.isHidden = true
         
         
+        
+        cardNumber.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10).isActive = true
+        cardNumber.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
+        cardNumber.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        cardNumber.heightAnchor.constraint(equalTo: cardNumber.heightAnchor).isActive = true
+        
+        
+        
     let tap = UITapGestureRecognizer(target: self, action: #selector(slideFlashcardHandler))
         addGestureRecognizer(tap)
         
@@ -85,3 +89,24 @@ class FlashCardCell: BaseCell {
     
     
 }
+
+class CardLabel: UILabel {
+    override func drawText(in rect: CGRect) {
+       
+        let insets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
+        super.drawText(in: UIEdgeInsetsInsetRect(rect, insets))
+        
+    }
+}
+
+extension UIView {
+    func roundCorners(corners:UIRectCorner, radius: CGFloat) {
+        let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        self.layer.mask = mask
+    }
+    
+    
+}
+

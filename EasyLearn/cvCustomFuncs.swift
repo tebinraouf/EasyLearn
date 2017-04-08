@@ -30,7 +30,13 @@ extension CardsViewController {
     }
 
     final func handleSetting(){
-        print("handleSetting...")
+        let cardSettingsController = CardSettingsController()
+        let navController = UINavigationController(rootViewController: cardSettingsController)
+        cardSettingsController.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.cancelPresentViewController))
+        self.present(navController, animated: true, completion: nil)
+    }
+    func cancelPresentViewController(){
+        self.dismiss(animated: true, completion: nil)
     }
     
     final func handleCardSwap(){

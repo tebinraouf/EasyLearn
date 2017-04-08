@@ -20,16 +20,7 @@ class CardView: UIView {
         cv.showsHorizontalScrollIndicator = false
         cv.backgroundColor = .clear
         cv.isPagingEnabled = true
-        cv.layer.cornerRadius = 10
-        cv.layer.masksToBounds = true
         return cv
-    }()
-    var cardNumberLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "1 - 10"
-        label.textColor = .black
-        return label
     }()
     
     var checkButton: UIButton = {
@@ -67,12 +58,6 @@ class CardView: UIView {
     
     
     var flashCVHeightConstraint: NSLayoutConstraint!
-    
-    
-    var cardNumberLabelBottomConstraint: NSLayoutConstraint?
-    var checkButtonBottomConstraint: NSLayoutConstraint?
-    
-    
     var toolBarBottomConstraint: NSLayoutConstraint!
     
     override init(frame: CGRect) {
@@ -84,13 +69,11 @@ class CardView: UIView {
     func setupView(){
         
         addSubview(flashCV)
-        addSubview(cardNumberLabel)
-        addSubview(checkButton)
         
         flashCVTopConstraint = flashCV.topAnchor.constraint(equalTo: topAnchor, constant: 80)
         flashCVTopConstraint?.isActive = false
         
-        flashCVBottomConstraint = flashCV.bottomAnchor.constraint(equalTo: cardNumberLabel.topAnchor, constant: -10)
+        flashCVBottomConstraint = flashCV.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
         flashCVBottomConstraint?.isActive = false
         
         flashCVLeadingConstraint = flashCV.leadingAnchor.constraint(equalTo: leadingAnchor)
@@ -106,24 +89,7 @@ class CardView: UIView {
         flashCV.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         flashCV.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         
-        
-        
-        cardNumberLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 10).isActive = true
-        cardNumberLabel.topAnchor.constraint(equalTo: flashCV.bottomAnchor).isActive = true
-        cardNumberLabelBottomConstraint = cardNumberLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -70)
-        cardNumberLabelBottomConstraint?.isActive = true
-        cardNumberLabel.heightAnchor.constraint(equalTo: cardNumberLabel.heightAnchor).isActive = true
-        cardNumberLabel.widthAnchor.constraint(equalTo: cardNumberLabel.widthAnchor).isActive = true
-        
-        
-        checkButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -10).isActive = true
-        checkButton.topAnchor.constraint(equalTo: flashCV.bottomAnchor, constant: 10).isActive = true
-        checkButtonBottomConstraint = cardNumberLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -70)
-        checkButtonBottomConstraint?.isActive = true
-        checkButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        checkButton.widthAnchor.constraint(equalToConstant: 20).isActive = true
-        
-         
+
         addSubview(toolBar)
         toolBarBottomConstraint = toolBar.bottomAnchor.constraint(equalTo: bottomAnchor)
         toolBarBottomConstraint.isActive = true

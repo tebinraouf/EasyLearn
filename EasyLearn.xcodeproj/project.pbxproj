@@ -42,6 +42,7 @@
 		CFAFE67C1E6B7A130062235E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAFE67B1E6B7A130062235E /* Extensions.swift */; };
 		CFAFE67E1E6E0F930062235E /* LexicalEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAFE67D1E6E0F930062235E /* LexicalEntryViewController.swift */; };
 		CFC2949C1E8C31F100938475 /* FlashCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC2949B1E8C31F100938475 /* FlashCardCell.swift */; };
+		CFF0750D1E988AE900F7794D /* CardSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF0750C1E988AE900F7794D /* CardSettingsController.swift */; };
 		CFFBB4081E8D87F0007DCD66 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFBB4071E8D87F0007DCD66 /* CardView.swift */; };
 		CFFBB40B1E8DB11A007DCD66 /* VerticallyCenteredTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFBB40A1E8DB11A007DCD66 /* VerticallyCenteredTextView.swift */; };
 		CFFBB40D1E8DBE24007DCD66 /* cvCustomFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFBB40C1E8DBE24007DCD66 /* cvCustomFuncs.swift */; };
@@ -87,6 +88,7 @@
 		CFAFE67B1E6B7A130062235E /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		CFAFE67D1E6E0F930062235E /* LexicalEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LexicalEntryViewController.swift; sourceTree = "<group>"; };
 		CFC2949B1E8C31F100938475 /* FlashCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashCardCell.swift; sourceTree = "<group>"; };
+		CFF0750C1E988AE900F7794D /* CardSettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardSettingsController.swift; sourceTree = "<group>"; };
 		CFFBB4071E8D87F0007DCD66 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		CFFBB40A1E8DB11A007DCD66 /* VerticallyCenteredTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticallyCenteredTextView.swift; sourceTree = "<group>"; };
 		CFFBB40C1E8DBE24007DCD66 /* cvCustomFuncs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cvCustomFuncs.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				CF5108B21E7CAC4B008B2BC0 /* Settings */,
 				CF5108AF1E7CAC0E008B2BC0 /* Play */,
 				CF5108AC1E7CABC1008B2BC0 /* CustomCards */,
+				CFC779F41E95DB7E00F8FA25 /* CardSettings */,
 				CF5108A41E7C6D44008B2BC0 /* CardsView */,
 				CF5108A31E7C6D38008B2BC0 /* ErrorView */,
 				CF5108A21E7C6D29008B2BC0 /* WordDetails */,
@@ -333,6 +336,14 @@
 				CF6012DF1E789BBE00EA0A3A /* Networking */,
 			);
 			path = EasyLearn;
+			sourceTree = "<group>";
+		};
+		CFC779F41E95DB7E00F8FA25 /* CardSettings */ = {
+			isa = PBXGroup;
+			children = (
+				CFF0750C1E988AE900F7794D /* CardSettingsController.swift */,
+			);
+			name = CardSettings;
 			sourceTree = "<group>";
 		};
 		CFFBB4091E8DB0FB007DCD66 /* Subclasses */ = {
@@ -481,6 +492,7 @@
 				CF5108AE1E7CABDE008B2BC0 /* CustomCardsViewController.swift in Sources */,
 				CF6012DD1E789B8600EA0A3A /* DetailsCell.swift in Sources */,
 				CF5108B41E7CAC5F008B2BC0 /* SettingsViewController.swift in Sources */,
+				CFF0750D1E988AE900F7794D /* CardSettingsController.swift in Sources */,
 				CFAFE67E1E6E0F930062235E /* LexicalEntryViewController.swift in Sources */,
 				CF51089D1E7C61AC008B2BC0 /* HomeView.swift in Sources */,
 				CF5108AB1E7C7021008B2BC0 /* hvCollectionViewExtension.swift in Sources */,
