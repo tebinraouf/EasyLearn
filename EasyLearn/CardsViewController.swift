@@ -7,7 +7,7 @@
 //
 
 import UIKit
-class CardsViewController: UIViewController, UIGestureRecognizerDelegate {
+class CardsViewController: UIViewController {
     //computed variables
     
     let currentDataSimple = DataLayerSimple()
@@ -38,8 +38,9 @@ class CardsViewController: UIViewController, UIGestureRecognizerDelegate {
         
         favWords = currentDataSimple.fetchAllWords()!
         
-        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
-        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+//        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+//        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        
     }
     
     
@@ -63,7 +64,8 @@ class CardsViewController: UIViewController, UIGestureRecognizerDelegate {
             cardView.flashCVBottomConstraint?.isActive = true
             cardView.flashCVHeightConstraint.isActive = false
             
-            isNavBarWithToolBarHidden(true, navigationController, cardView.toolBar, cardView.navBar)
+            
+            isNavBarWithToolBarHidden(true, navigationController, cardView.toolBar)
             
         } else {
             
@@ -71,7 +73,7 @@ class CardsViewController: UIViewController, UIGestureRecognizerDelegate {
             cardView.flashCVBottomConstraint?.isActive = false
             cardView.flashCVHeightConstraint.isActive = true
             
-            isNavBarWithToolBarHidden(false, navigationController, cardView.toolBar, cardView.navBar)
+            isNavBarWithToolBarHidden(false, navigationController, cardView.toolBar)
         }
         
         

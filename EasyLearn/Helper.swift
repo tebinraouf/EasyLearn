@@ -19,17 +19,15 @@ enum CellID: String {
 }
 
 
-public func isNavBarWithToolBarHidden(_ bool: Bool, _ navigationController: UINavigationController?, _ toolBar: UIToolbar, _ navBar: UIToolbar) {
+public func isNavBarWithToolBarHidden(_ bool: Bool, _ navigationController: UINavigationController?, _ toolBar: UIToolbar) {
     
     UIView.animate(withDuration: 0.9, delay: 0, options: .transitionCurlUp, animations: {
         if bool {
             navigationController?.navigationBar.alpha = 0
             toolBar.alpha = 0
-            navBar.alpha = 0
         }else{
             navigationController?.navigationBar.alpha = 1
             toolBar.alpha = 1
-            navBar.alpha = 1
         }
     }, completion: nil)
 }

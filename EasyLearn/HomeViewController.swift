@@ -19,15 +19,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         view.backgroundColor = .white
         setupView()
         registerCells()
-        navigationController?.isNavigationBarHidden = true
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        isNavBarHidden(true, navigationController)
-    }
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        isNavBarHidden(true, navigationController)
+        
     }
     
     //MARK:- Register Cells

@@ -44,12 +44,6 @@ class CardView: UIView {
         return tool
     }()
     
-    var navBar: UIToolbar = {
-        let tool = UIToolbar()
-        tool.translatesAutoresizingMaskIntoConstraints = false
-        return tool
-    }()
-    
     
     var flashCVTopConstraint: NSLayoutConstraint?
     var flashCVBottomConstraint: NSLayoutConstraint?
@@ -98,11 +92,6 @@ class CardView: UIView {
         toolBar.heightAnchor.constraint(equalToConstant: 35).isActive = true
         
         
-        addSubview(navBar)
-        navBar.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        navBar.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        navBar.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        navBar.heightAnchor.constraint(equalToConstant: 64).isActive = true
         
     }
     

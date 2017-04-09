@@ -90,23 +90,4 @@ class FlashCardCell: BaseCell {
     
 }
 
-class CardLabel: UILabel {
-    override func drawText(in rect: CGRect) {
-       
-        let insets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
-        super.drawText(in: UIEdgeInsetsInsetRect(rect, insets))
-        
-    }
-}
-
-extension UIView {
-    func roundCorners(corners:UIRectCorner, radius: CGFloat) {
-        let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
-        let mask = CAShapeLayer()
-        mask.path = path.cgPath
-        self.layer.mask = mask
-    }
-    
-    
-}
 

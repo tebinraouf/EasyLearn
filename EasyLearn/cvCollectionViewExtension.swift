@@ -78,7 +78,7 @@ extension CardsViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         isNavHidden = true
-        isNavBarWithToolBarHidden(true, navigationController, cardView.toolBar, cardView.navBar)
+        isNavBarWithToolBarHidden(true, navigationController, cardView.toolBar)
     }
     
     func animate(from view1: UILabel, to view2: UITextView) {
@@ -91,7 +91,7 @@ extension CardsViewController: UICollectionViewDelegate, UICollectionViewDataSou
         
         handleFlipping(from: view1, to: view2)
         
-        isNavBarWithToolBarHidden(true, navigationController, cardView.toolBar, cardView.navBar)
+        isNavBarWithToolBarHidden(true, navigationController, cardView.toolBar)
     }
     
     

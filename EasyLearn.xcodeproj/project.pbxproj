@@ -43,6 +43,7 @@
 		CFAFE67E1E6E0F930062235E /* LexicalEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAFE67D1E6E0F930062235E /* LexicalEntryViewController.swift */; };
 		CFC2949C1E8C31F100938475 /* FlashCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC2949B1E8C31F100938475 /* FlashCardCell.swift */; };
 		CFF0750D1E988AE900F7794D /* CardSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF0750C1E988AE900F7794D /* CardSettingsController.swift */; };
+		CFF0750F1E98C97000F7794D /* LeftPaddedUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF0750E1E98C97000F7794D /* LeftPaddedUILabel.swift */; };
 		CFFBB4081E8D87F0007DCD66 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFBB4071E8D87F0007DCD66 /* CardView.swift */; };
 		CFFBB40B1E8DB11A007DCD66 /* VerticallyCenteredTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFBB40A1E8DB11A007DCD66 /* VerticallyCenteredTextView.swift */; };
 		CFFBB40D1E8DBE24007DCD66 /* cvCustomFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFBB40C1E8DBE24007DCD66 /* cvCustomFuncs.swift */; };
@@ -89,6 +90,7 @@
 		CFAFE67D1E6E0F930062235E /* LexicalEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LexicalEntryViewController.swift; sourceTree = "<group>"; };
 		CFC2949B1E8C31F100938475 /* FlashCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashCardCell.swift; sourceTree = "<group>"; };
 		CFF0750C1E988AE900F7794D /* CardSettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardSettingsController.swift; sourceTree = "<group>"; };
+		CFF0750E1E98C97000F7794D /* LeftPaddedUILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftPaddedUILabel.swift; sourceTree = "<group>"; };
 		CFFBB4071E8D87F0007DCD66 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		CFFBB40A1E8DB11A007DCD66 /* VerticallyCenteredTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticallyCenteredTextView.swift; sourceTree = "<group>"; };
 		CFFBB40C1E8DBE24007DCD66 /* cvCustomFuncs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cvCustomFuncs.swift; sourceTree = "<group>"; };
@@ -351,6 +353,7 @@
 			children = (
 				CF5108A81E7C6FBD008B2BC0 /* LeftPaddedTextField.swift */,
 				CFFBB40A1E8DB11A007DCD66 /* VerticallyCenteredTextView.swift */,
+				CFF0750E1E98C97000F7794D /* LeftPaddedUILabel.swift */,
 			);
 			name = Subclasses;
 			sourceTree = "<group>";
@@ -512,6 +515,7 @@
 				CF5108981E7B59D5008B2BC0 /* CardsViewController.swift in Sources */,
 				CF5108A91E7C6FBD008B2BC0 /* LeftPaddedTextField.swift in Sources */,
 				CF1C110D1E847C3100EC0181 /* WordSubDetailsVC.swift in Sources */,
+				CFF0750F1E98C97000F7794D /* LeftPaddedUILabel.swift in Sources */,
 				CF5F988D1E7B41B500E84687 /* ErrorViewController.swift in Sources */,
 				CFFBB40D1E8DBE24007DCD66 /* cvCustomFuncs.swift in Sources */,
 				CFC2949C1E8C31F100938475 /* FlashCardCell.swift in Sources */,

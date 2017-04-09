@@ -12,9 +12,9 @@ extension CardsViewController {
 
     final func handleNavIcons(){
         
-        let backButton = barButtonWith(code: "chevron-left", handleBy:  #selector(handleBackButton))
         let settings = barButtonWith(code: "cog", handleBy:  #selector(handleSetting))
-        cardView.navBar.items = [backButton, .space, settings]
+        navigationItem.rightBarButtonItem = settings
+        
         
         let swap = barButtonWith(code: "exchange", handleBy:  #selector(handleCardSwap))
         let shuffle  = barButtonWith(code: "random", handleBy: #selector(handleShuffle))
@@ -24,16 +24,10 @@ extension CardsViewController {
         cardView.toolBar.items = [swap, .space, shuffle, .space, sortAsc, .space, sortDesc, .space, play]
 
     }
-    
-    final func handleBackButton(){
-        navigationController?.popViewController(animated: true)
-    }
 
     final func handleSetting(){
         let cardSettingsController = CardSettingsController()
-        let navController = UINavigationController(rootViewController: cardSettingsController)
-        cardSettingsController.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.cancelPresentViewController))
-        self.present(navController, animated: true, completion: nil)
+        navigationController?.pushViewController(cardSettingsController, animated: true)
     }
     func cancelPresentViewController(){
         self.dismiss(animated: true, completion: nil)
