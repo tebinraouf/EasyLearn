@@ -54,8 +54,6 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     func pushViewController(_ controller: UIViewController){
         self.navigationController?.pushViewController(controller, animated: true)
-        
-        
     }
     
 }

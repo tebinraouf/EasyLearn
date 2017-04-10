@@ -74,11 +74,25 @@ extension UIBarButtonItem {
     public class var space: UIBarButtonItem {
         return UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
     }
-    
-    
-
-    
-    
 }
+
+//public extension UIImage
+//{
+//    public static func icon(from font: Fonts, code: String, imageSize: CGSize, ofSize size: CGFloat) -> UIImage
+//    {
+//        let drawText = String.getIcon(from: font, code: code)
+//        
+//        UIGraphicsBeginImageContextWithOptions(imageSize, false, 0)
+//        let paragraphStyle = NSMutableParagraphStyle()
+//        paragraphStyle.alignment = NSTextAlignment.center
+//        
+//        drawText!.draw(in: CGRect(x:0, y:0, width:imageSize.width, height:imageSize.height), withAttributes: [NSFontAttributeName : UIFont.icon(from: font, ofSize: size), NSParagraphStyleAttributeName: paragraphStyle])
+//        
+//        let image = UIGraphicsGetImageFromCurrentImageContext()
+//        UIGraphicsEndImageContext()
+//        
+//        return image!
+//    }
+//}
 
 

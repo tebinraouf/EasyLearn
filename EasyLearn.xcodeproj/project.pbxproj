@@ -44,6 +44,12 @@
 		CFC2949C1E8C31F100938475 /* FlashCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC2949B1E8C31F100938475 /* FlashCardCell.swift */; };
 		CFF0750D1E988AE900F7794D /* CardSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF0750C1E988AE900F7794D /* CardSettingsController.swift */; };
 		CFF0750F1E98C97000F7794D /* LeftPaddedUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF0750E1E98C97000F7794D /* LeftPaddedUILabel.swift */; };
+		CFF075121E9AF49800F7794D /* csTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF075111E9AF49800F7794D /* csTableViewExtension.swift */; };
+		CFF075141E9AF52700F7794D /* csSetupViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF075131E9AF52700F7794D /* csSetupViewExtension.swift */; };
+		CFF075171E9AF56800F7794D /* PlaySpeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF075161E9AF56800F7794D /* PlaySpeedController.swift */; };
+		CFF075191E9AF5A900F7794D /* BackgroundImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF075181E9AF5A900F7794D /* BackgroundImageController.swift */; };
+		CFF0751D1E9AF60B00F7794D /* biCollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF0751C1E9AF60B00F7794D /* biCollectionViewExtension.swift */; };
+		CFF075211E9B36B500F7794D /* CardBgColorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF075201E9B36B500F7794D /* CardBgColorController.swift */; };
 		CFFBB4081E8D87F0007DCD66 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFBB4071E8D87F0007DCD66 /* CardView.swift */; };
 		CFFBB40B1E8DB11A007DCD66 /* VerticallyCenteredTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFBB40A1E8DB11A007DCD66 /* VerticallyCenteredTextView.swift */; };
 		CFFBB40D1E8DBE24007DCD66 /* cvCustomFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFBB40C1E8DBE24007DCD66 /* cvCustomFuncs.swift */; };
@@ -91,6 +97,12 @@
 		CFC2949B1E8C31F100938475 /* FlashCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashCardCell.swift; sourceTree = "<group>"; };
 		CFF0750C1E988AE900F7794D /* CardSettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardSettingsController.swift; sourceTree = "<group>"; };
 		CFF0750E1E98C97000F7794D /* LeftPaddedUILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftPaddedUILabel.swift; sourceTree = "<group>"; };
+		CFF075111E9AF49800F7794D /* csTableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = csTableViewExtension.swift; sourceTree = "<group>"; };
+		CFF075131E9AF52700F7794D /* csSetupViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = csSetupViewExtension.swift; sourceTree = "<group>"; };
+		CFF075161E9AF56800F7794D /* PlaySpeedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySpeedController.swift; sourceTree = "<group>"; };
+		CFF075181E9AF5A900F7794D /* BackgroundImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundImageController.swift; sourceTree = "<group>"; };
+		CFF0751C1E9AF60B00F7794D /* biCollectionViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = biCollectionViewExtension.swift; sourceTree = "<group>"; };
+		CFF075201E9B36B500F7794D /* CardBgColorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardBgColorController.swift; sourceTree = "<group>"; };
 		CFFBB4071E8D87F0007DCD66 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		CFFBB40A1E8DB11A007DCD66 /* VerticallyCenteredTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticallyCenteredTextView.swift; sourceTree = "<group>"; };
 		CFFBB40C1E8DBE24007DCD66 /* cvCustomFuncs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cvCustomFuncs.swift; sourceTree = "<group>"; };
@@ -343,9 +355,63 @@
 		CFC779F41E95DB7E00F8FA25 /* CardSettings */ = {
 			isa = PBXGroup;
 			children = (
+				CFF075151E9AF55000F7794D /* SubControllers */,
+				CFF075101E9AF47200F7794D /* Extensions */,
 				CFF0750C1E988AE900F7794D /* CardSettingsController.swift */,
 			);
 			name = CardSettings;
+			sourceTree = "<group>";
+		};
+		CFF075101E9AF47200F7794D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CFF075111E9AF49800F7794D /* csTableViewExtension.swift */,
+				CFF075131E9AF52700F7794D /* csSetupViewExtension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		CFF075151E9AF55000F7794D /* SubControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CFF0751F1E9B365000F7794D /* Colors */,
+				CFF0751B1E9AF5E500F7794D /* BackgroundImage */,
+				CFF0751A1E9AF5D900F7794D /* PlaySpeed */,
+			);
+			name = SubControllers;
+			sourceTree = "<group>";
+		};
+		CFF0751A1E9AF5D900F7794D /* PlaySpeed */ = {
+			isa = PBXGroup;
+			children = (
+				CFF075161E9AF56800F7794D /* PlaySpeedController.swift */,
+			);
+			name = PlaySpeed;
+			sourceTree = "<group>";
+		};
+		CFF0751B1E9AF5E500F7794D /* BackgroundImage */ = {
+			isa = PBXGroup;
+			children = (
+				CFF0751E1E9AF68100F7794D /* Extensions */,
+				CFF075181E9AF5A900F7794D /* BackgroundImageController.swift */,
+			);
+			name = BackgroundImage;
+			sourceTree = "<group>";
+		};
+		CFF0751E1E9AF68100F7794D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CFF0751C1E9AF60B00F7794D /* biCollectionViewExtension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		CFF0751F1E9B365000F7794D /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				CFF075201E9B36B500F7794D /* CardBgColorController.swift */,
+			);
+			name = Colors;
 			sourceTree = "<group>";
 		};
 		CFFBB4091E8DB0FB007DCD66 /* Subclasses */ = {
@@ -494,6 +560,7 @@
 				CF5108A71E7C6DBD008B2BC0 /* hvSetupViewExtension.swift in Sources */,
 				CF5108AE1E7CABDE008B2BC0 /* CustomCardsViewController.swift in Sources */,
 				CF6012DD1E789B8600EA0A3A /* DetailsCell.swift in Sources */,
+				CFF075211E9B36B500F7794D /* CardBgColorController.swift in Sources */,
 				CF5108B41E7CAC5F008B2BC0 /* SettingsViewController.swift in Sources */,
 				CFF0750D1E988AE900F7794D /* CardSettingsController.swift in Sources */,
 				CFAFE67E1E6E0F930062235E /* LexicalEntryViewController.swift in Sources */,
@@ -504,7 +571,10 @@
 				CF3871251E8730C5005AA866 /* cvSetupViewExtension.swift in Sources */,
 				CF6012D81E763C8D00EA0A3A /* WordDetailsVC.swift in Sources */,
 				CFAFE67A1E6A87510062235E /* Models.swift in Sources */,
+				CFF075121E9AF49800F7794D /* csTableViewExtension.swift in Sources */,
 				CF5108B11E7CAC27008B2BC0 /* PlayViewController.swift in Sources */,
+				CFF075171E9AF56800F7794D /* PlaySpeedController.swift in Sources */,
+				CFF075191E9AF5A900F7794D /* BackgroundImageController.swift in Sources */,
 				CFAFE66A1E68F9CA0062235E /* HomeViewController.swift in Sources */,
 				CF1C11101E84BDF400EC0181 /* wdCollectionViewExtension.swift in Sources */,
 				CF3871341E89BAEB005AA866 /* DataLayerSimple.swift in Sources */,
@@ -520,7 +590,9 @@
 				CFFBB40D1E8DBE24007DCD66 /* cvCustomFuncs.swift in Sources */,
 				CFC2949C1E8C31F100938475 /* FlashCardCell.swift in Sources */,
 				CFAFE67C1E6B7A130062235E /* Extensions.swift in Sources */,
+				CFF0751D1E9AF60B00F7794D /* biCollectionViewExtension.swift in Sources */,
 				CF51089A1E7B5B8D008B2BC0 /* DashboardCell.swift in Sources */,
+				CFF075141E9AF52700F7794D /* csSetupViewExtension.swift in Sources */,
 				CF38712A1E873CFA005AA866 /* Helper.swift in Sources */,
 				CF3FA89F1E71E46600AF392E /* Service.swift in Sources */,
 				CF51089F1E7C6C3A008B2BC0 /* hvDelegateExtension.swift in Sources */,

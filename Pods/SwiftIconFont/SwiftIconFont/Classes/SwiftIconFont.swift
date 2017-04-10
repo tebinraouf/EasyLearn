@@ -57,7 +57,7 @@ public extension UIFont{
 
 public extension UIImage
 {
-    public static func icon(from font: Fonts, code: String, imageSize: CGSize, ofSize size: CGFloat) -> UIImage
+    public static func icon(from font: Fonts, code: String, imageSize: CGSize, ofSize size: CGFloat, color: UIColor = .black) -> UIImage
     {
         let drawText = String.getIcon(from: font, code: code)
         
@@ -65,7 +65,7 @@ public extension UIImage
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = NSTextAlignment.center
         
-		drawText!.draw(in: CGRect(x:0, y:0, width:imageSize.width, height:imageSize.height), withAttributes: [NSFontAttributeName : UIFont.icon(from: font, ofSize: size), NSParagraphStyleAttributeName: paragraphStyle])
+		drawText!.draw(in: CGRect(x:0, y:0, width:imageSize.width, height:imageSize.height), withAttributes: [NSFontAttributeName : UIFont.icon(from: font, ofSize: size), NSParagraphStyleAttributeName: paragraphStyle, NSForegroundColorAttributeName : color])
         
 		let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
@@ -73,6 +73,7 @@ public extension UIImage
         return image!
     }
 }
+
 
 public extension String {
     
