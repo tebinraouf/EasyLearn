@@ -61,6 +61,7 @@ class WordSubDetailsVC: UIViewController, UICollectionViewDelegate, UICollection
             cell.textView.attributedText = formatedString
         }
         
+        
         cell.completion = {
             //print(self.word?.details?[indexPath.item].definition)
             print("sub details")
@@ -81,7 +82,7 @@ class WordSubDetailsVC: UIViewController, UICollectionViewDelegate, UICollection
             return CGSize(width: collectionView.frame.width, height: estimatedFrame.height + 60)
         }
         return size
-
+        
     }
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         collectionView.reloadData()
@@ -95,27 +96,44 @@ class WordSubDetailsVC: UIViewController, UICollectionViewDelegate, UICollection
     }
     
     //MARK:- Custom Functions
-
+    
     func formatedStringForTextAt(_ indexPath: IndexPath) -> NSMutableAttributedString? {
         
         guard let definition = wordDetail?.subdetails?[indexPath.item].subDefinition, let examples = wordDetail?.subdetails?[indexPath.item].subExamples else { return nil}
         
         
-        let result = wdDelegate?.wdDefinition(definition)
-        if let text = wdDelegate?.wdExample(examples) {
-            result?.append(text)
+        let result = wdDefinition(definition)
+        if let text = wdExample(examples) {
+            result.append(text)
         }
         
         if let text = wordDetail?.subdetails?[indexPath.item].subRegister {
-            if let register = wdDelegate?.wdRegister(text) {
-                result?.insert(register, at: 0)
-            }
+            let register = wdRegister(text)
+            result.insert(register, at: 0)
+            
         }
         
         return result
     }
-   
     
+    //Word Definition
+    func wdDefinition(_ definition: String) -> NSMutableAttributedString {
+        let defAttributedText = NSMutableAttributedString(string: "\(definition)\n", attributes: [NSFontAttributeName:UIFont(name: UIFont.systemFont(ofSize: UIFont.systemFontSize).fontName, size: UIFont.systemFontSize)!])
+        return defAttributedText
+    }
+    //Word Example (not working now)
+    func wdExample(_ examples: [String]) -> NSMutableAttributedString? {
+        for element in examples {
+            let exampleAttributedText = NSMutableAttributedString(string: "\n• \(element.capitalizingFirstLetter())", attributes: [NSFontAttributeName:UIFont(name: UIFont.systemFont(ofSize: UIFont.systemFontSize).fontName, size: UIFont.systemFontSize)!])
+            return exampleAttributedText
+        }
+        return nil
+    }
+    //Word Register
+    func wdRegister(_ register: String) -> NSMutableAttributedString {
+        let registerAttrText = NSMutableAttributedString(string: "(\(register)) ", attributes: [NSFontAttributeName:UIFont(name: UIFont.italicSystemFont(ofSize: UIFont.systemFontSize).fontName, size: UIFont.systemFontSize)!])
+        return registerAttrText
+    }
     
 }
 

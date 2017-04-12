@@ -130,4 +130,10 @@ class DetailsCell: BaseCell {
     }
     
     
+    func displayWordInCell(using detailsViewModel: DetailsViewModel) {
+        textView.attributedText = detailsViewModel.textView
+        numberCircle.text = detailsViewModel.numberCircle
+    }
+    
+    
 }

@@ -11,7 +11,7 @@ import UIKit
 extension WordDetailsVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     //MARK:- Collection View Functions
-     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let count = word?.details?.count {
             return count
         }
@@ -22,11 +22,10 @@ extension WordDetailsVC: UICollectionViewDataSource, UICollectionViewDelegate, U
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellID.wdCellID.rawValue, for: indexPath) as! DetailsCell
         //cell.backgroundColor = .blue
         
+        let detailsViewModel = DetailsViewModel(word: word, indexPath: indexPath)
+        cell.displayWordInCell(using: detailsViewModel)
         
-        if let formatedString = formatedStringForTextAt(indexPath) {
-            cell.numberCircle.text = "\(indexPath.item+1)"
-            cell.textView.attributedText = formatedString
-        }
+        
         
         cell.completion = {
             //print(self.word?.details?[indexPath.item].definition)
@@ -37,12 +36,12 @@ extension WordDetailsVC: UICollectionViewDataSource, UICollectionViewDelegate, U
             let word = self.word?.word
             let type = self.word?.type
             let examples = self.word?.details?[indexPath.item].examples
-
+            
             let definition = self.word?.details?[indexPath.item].definition
-
+            
             self.currentDataLayer.saveWord(id, language, lexicalEntry, word, type, examples, definition)
             
-
+            
         }
         
         if word?.details?[indexPath.item].subdetails?.count == 0 {
@@ -62,11 +61,14 @@ extension WordDetailsVC: UICollectionViewDataSource, UICollectionViewDelegate, U
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let size = CGSize(width: collectionView.frame.width, height: 1000)
-        if let formatedString = formatedStringForTextAt(indexPath) {
-            let estimatedFrame = formatedString.boundingRect(with: size, options: .usesLineFragmentOrigin, context: nil)
-            return CGSize(width: collectionView.frame.width, height: estimatedFrame.height + 60)
-        }
-        return size
+        
+        let dvm = DetailsViewModel(word: word, indexPath: indexPath)
+        
+        let formatedString = dvm.textView
+       
+        let estimatedFrame = formatedString.boundingRect(with: size, options: .usesLineFragmentOrigin, context: nil)
+        return CGSize(width: collectionView.frame.width, height: estimatedFrame.height + 60)
+        
     }
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         collectionView.reloadData()
