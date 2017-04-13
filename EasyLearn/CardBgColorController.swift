@@ -332,40 +332,20 @@ class CardBgColorController: UIViewController {
         
         //sliderRed.thumbTintColor = UIColor(r: CGFloat(sliderRed.value), g: CGFloat(sliderGreen.value), b: CGFloat(sliderBlue.value), a: 1)
         
-        let redImage = progressImage(with: sliderRed.value, color: .red)
+        let redImage = progressImage(with: sliderRed.value, color: .red, textColor: .black)
         sliderRed.setThumbImage(redImage, for: .normal)
         
         
-        let greenImage = progressImage(with: sliderGreen.value, color: .green)
+        let greenImage = progressImage(with: sliderGreen.value, color: .green, textColor: .black)
         sliderGreen.setThumbImage(greenImage, for: .normal)
         
-        let blueImage = progressImage(with: sliderBlue.value, color: .blue)
+        let blueImage = progressImage(with: sliderBlue.value, color: .blue, textColor: .black)
         sliderBlue.setThumbImage(blueImage, for: .normal)
         
         view.backgroundColor = UIColor(r: CGFloat(sliderRed.value), g: CGFloat(sliderGreen.value), b: CGFloat(sliderBlue.value), a: alpha)
     }
     
-    func progressImage(with progress: Float, color: UIColor) -> UIImage {
-        let layer = CALayer()
-        layer.backgroundColor = color.cgColor
-        layer.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        layer.cornerRadius = 15
         
-        let label = UILabel(frame: layer.frame)
-        label.text = "\(Int(progress.rounded()))"
-        label.font = UIFont.systemFont(ofSize: 10)
-        layer.addSublayer(label.layer)
-        label.textAlignment = .center
-        label.tag = 100
-        
-        UIGraphicsBeginImageContext(layer.frame.size)
-        layer.render(in: UIGraphicsGetCurrentContext()!)
-        
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return image!
-    }
-    
     
     
     

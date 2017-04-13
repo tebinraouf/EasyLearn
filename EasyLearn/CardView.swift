@@ -19,6 +19,8 @@ class CardView: UIView {
         cv.translatesAutoresizingMaskIntoConstraints = false
         cv.showsHorizontalScrollIndicator = false
         cv.backgroundColor = .clear
+//        cv.layer.cornerRadius = 10
+        
         cv.isPagingEnabled = true
         return cv
     }()
@@ -30,8 +32,8 @@ class CardView: UIView {
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.layer.borderWidth = 1
         btn.layer.borderColor = UIColor.gray.cgColor
-        btn.layer.cornerRadius = 10
-        btn.layer.masksToBounds = true
+//        btn.layer.cornerRadius = 10
+//        btn.layer.masksToBounds = true
         btn.layer.backgroundColor = UIColor.lightGray.cgColor
         btn.showsTouchWhenHighlighted = true
         btn.tintColor = .gray
@@ -89,7 +91,7 @@ class CardView: UIView {
         toolBarBottomConstraint.isActive = true
         toolBar.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         toolBar.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        toolBar.heightAnchor.constraint(equalToConstant: 35).isActive = true
+        toolBar.heightAnchor.constraint(equalToConstant: 44).isActive = true
         
         
         

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		04188B771971CC16A77558DA /* Pods_EasyLearn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 976E28507EF0BE8A82DAFA65 /* Pods_EasyLearn.framework */; };
+		CF16A9E31E9F2F18003EC2F7 /* csCustomFuctionsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF16A9E21E9F2F18003EC2F7 /* csCustomFuctionsExtension.swift */; };
 		CF1C110D1E847C3100EC0181 /* WordSubDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1C110C1E847C3100EC0181 /* WordSubDetailsVC.swift */; };
 		CF1C11101E84BDF400EC0181 /* wdCollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1C110F1E84BDF400EC0181 /* wdCollectionViewExtension.swift */; };
 		CF1C11141E84C42400EC0181 /* wdSetupViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1C11131E84C42400EC0181 /* wdSetupViewExtension.swift */; };
@@ -60,6 +61,7 @@
 		6EF7DBD2DA942ED54ADD413D /* Pods-EasyLearn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyLearn.release.xcconfig"; path = "Pods/Target Support Files/Pods-EasyLearn/Pods-EasyLearn.release.xcconfig"; sourceTree = "<group>"; };
 		976E28507EF0BE8A82DAFA65 /* Pods_EasyLearn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyLearn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8B2FD38BDFDC2C50038BE00 /* Pods-EasyLearn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyLearn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyLearn/Pods-EasyLearn.debug.xcconfig"; sourceTree = "<group>"; };
+		CF16A9E21E9F2F18003EC2F7 /* csCustomFuctionsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = csCustomFuctionsExtension.swift; sourceTree = "<group>"; };
 		CF1C110C1E847C3100EC0181 /* WordSubDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordSubDetailsVC.swift; sourceTree = "<group>"; };
 		CF1C110F1E84BDF400EC0181 /* wdCollectionViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = wdCollectionViewExtension.swift; sourceTree = "<group>"; };
 		CF1C11131E84C42400EC0181 /* wdSetupViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = wdSetupViewExtension.swift; sourceTree = "<group>"; };
@@ -370,6 +372,7 @@
 			children = (
 				CFF075111E9AF49800F7794D /* csTableViewExtension.swift */,
 				CFF075131E9AF52700F7794D /* csSetupViewExtension.swift */,
+				CF16A9E21E9F2F18003EC2F7 /* csCustomFuctionsExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -592,6 +595,7 @@
 				CF3871341E89BAEB005AA866 /* DataLayerSimple.swift in Sources */,
 				CF1C11141E84C42400EC0181 /* wdSetupViewExtension.swift in Sources */,
 				CF6012DB1E773B8900EA0A3A /* BaseCell.swift in Sources */,
+				CF16A9E31E9F2F18003EC2F7 /* csCustomFuctionsExtension.swift in Sources */,
 				CF3871271E8731D2005AA866 /* cvCollectionViewExtension.swift in Sources */,
 				CFAFE6681E68F9CA0062235E /* AppDelegate.swift in Sources */,
 				CF5108981E7B59D5008B2BC0 /* CardsViewController.swift in Sources */,

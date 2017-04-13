@@ -22,6 +22,10 @@ class FlashCardCell: BaseCell {
         label.backgroundColor = .white
         label.textAlignment = .center
         label.numberOfLines = 0
+        
+        //label.layer.cornerRadius = 10
+        //label.layer.masksToBounds = true
+        
         return label
     }()
     
@@ -34,6 +38,10 @@ class FlashCardCell: BaseCell {
         label.textAlignment = .center
         label.backgroundColor = .white
         label.isEditable = false
+        
+        //label.layer.cornerRadius = 10
+        //label.layer.masksToBounds = true
+        
         return label
     }()
     
@@ -73,12 +81,22 @@ class FlashCardCell: BaseCell {
         cardNumber.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10).isActive = true
         cardNumber.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
         cardNumber.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        cardNumber.heightAnchor.constraint(equalTo: cardNumber.heightAnchor).isActive = true
+        cardNumber.heightAnchor.constraint(equalToConstant: 20).isActive = true
         
         
         
     let tap = UITapGestureRecognizer(target: self, action: #selector(slideFlashcardHandler))
         addGestureRecognizer(tap)
+        
+        
+        
+        let isCardNumberLabelHidden = UserDefaults.standard.bool(forKey: UserDefaultsKeys.cardNumberLabel.rawValue)
+        if !isCardNumberLabelHidden {
+            cardNumber.isHidden = true
+        } else {
+            cardNumber.isHidden = false
+        }
+        
         
     }
     
@@ -90,4 +108,14 @@ class FlashCardCell: BaseCell {
     
 }
 
-
+//This is to round any view corner (per corner)
+class RoundedLabelView: UILabel {
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: [.bottomLeft, .bottomRight], cornerRadii: CGSize(width: 10, height: 10)).cgPath
+        layer.mask = shapeLayer
+        
+    }
+}

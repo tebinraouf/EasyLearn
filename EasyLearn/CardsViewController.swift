@@ -34,16 +34,25 @@ class CardsViewController: UIViewController {
         handleViewGesture()
         cardView.flashCV.reloadData()
         handleNavIcons()
-        
+        playCardSpeedInitialValue()
         
         favWords = currentDataSimple.fetchAllWords()!
         
 //        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
 //        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-        
+     
+        //initial value
+        UserDefaults.standard.register(defaults: [UserDefaultsKeys.cardNumberLabel.rawValue : true])
     }
     
-    
+    func playCardSpeedInitialValue(){
+        //Initial Value for play card speed.
+        let speedValue = UserDefaults.standard.double(forKey: UserDefaultsKeys.cardSpeedValue.rawValue)
+        if speedValue == 0 {
+            UserDefaults.standard.set(3.0, forKey: UserDefaultsKeys.cardSpeedValue.rawValue)
+            UserDefaults.standard.synchronize()
+        }
+    }
     
     
     func registerCells(){

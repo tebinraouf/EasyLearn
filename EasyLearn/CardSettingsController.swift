@@ -10,7 +10,8 @@ import UIKit
 
 class CardSettingsController: UIViewController {
     
-    let sections = ["Play Speed", "Hide/Show", "Colors", "Flipping","Background Image"]
+    let sectionTitles = ["Play Speed", "Hide/Show", "Colors", "Flipping", "Background Image"]
+    let sectionItems = [["Play Speed"],["Card number - total", "Card check circle"], ["Background Color", "Text Color"], ["Flipping style"], ["Patterns for background"] ]
     
     lazy var tableView: UITableView = {
        let tableView = UITableView(frame: .zero, style: .grouped)
@@ -19,6 +20,7 @@ class CardSettingsController: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,12 +29,12 @@ class CardSettingsController: UIViewController {
         
         registerCells()
         setupView()
+        
     }
     
     func registerCells(){
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "tableCell")
     }
-
     
 }
 

@@ -36,8 +36,12 @@ extension CardsViewController: UICollectionViewDelegate, UICollectionViewDataSou
             self.animate(from: cell.wordName, to: cell.wordDetails)
             
         }
+        
         let total = favWords.count
+        
         cell.cardNumber.text = "\(indexPath.item + 1) - \(total)"
+        
+        
         
         
         indexPathReference = indexPath
@@ -74,6 +78,8 @@ extension CardsViewController: UICollectionViewDelegate, UICollectionViewDataSou
             cell.wordName.isHidden = false
             cell.wordDetails.isHidden = true
         }
+        
+
         
     }
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {

@@ -18,6 +18,11 @@ enum CellID: String {
     case cvFooterID
 }
 
+enum UserDefaultsKeys: String {
+    case cardSpeedValue
+    case cardNumberLabel
+}
+
 
 public func isNavBarWithToolBarHidden(_ bool: Bool, _ navigationController: UINavigationController?, _ toolBar: UIToolbar) {
     
@@ -33,9 +38,35 @@ public func isNavBarWithToolBarHidden(_ bool: Bool, _ navigationController: UINa
 }
 
 public func isNavBarHidden(_ bool: Bool, _ navigationController: UINavigationController?) {
-    
     UIView.animate(withDuration: 0.5) {
         navigationController?.isNavigationBarHidden = bool
     }
 }
+
+public func progressImage(with progress: Float, color: UIColor, textColor: UIColor) -> UIImage {
+    let layer = CALayer()
+    layer.backgroundColor = color.cgColor
+    layer.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+    layer.cornerRadius = 15
+    
+    let label = UILabel(frame: layer.frame)
+    label.text = "\(Int(progress.rounded()))"
+    label.font = UIFont.systemFont(ofSize: 10)
+    label.textColor = textColor
+    layer.addSublayer(label.layer)
+    label.textAlignment = .center
+    label.tag = 100
+    
+    //UIGraphicsBeginImageContext(layer.frame.size) //this uses a scale one 1
+    //use the following func with third parameter of 0.0
+    
+    UIGraphicsBeginImageContextWithOptions(layer.frame.size, false, 0.0)
+    
+    layer.render(in: UIGraphicsGetCurrentContext()!)
+    
+    let image = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    return image!
+}
+
 

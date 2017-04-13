@@ -82,7 +82,9 @@ extension CardsViewController {
         return btn
     }
     final func startTimer() {
-        playTimer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(scrollToNextCell), userInfo: nil, repeats: true)
+        let speedValue = UserDefaults.standard.double(forKey: UserDefaultsKeys.cardSpeedValue.rawValue)
+        
+        playTimer = Timer.scheduledTimer(timeInterval: speedValue, target: self, selector: #selector(scrollToNextCell), userInfo: nil, repeats: true)
     }
     final func scrollToNextCell(){
         //get cell size
