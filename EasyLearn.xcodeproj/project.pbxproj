@@ -10,6 +10,10 @@
 		04188B771971CC16A77558DA /* Pods_EasyLearn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 976E28507EF0BE8A82DAFA65 /* Pods_EasyLearn.framework */; };
 		CF16A9E31E9F2F18003EC2F7 /* csCustomFuctionsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF16A9E21E9F2F18003EC2F7 /* csCustomFuctionsExtension.swift */; };
 		CF16A9F01EA1BF75003EC2F7 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF16A9EF1EA1BF75003EC2F7 /* CircleButton.swift */; };
+		CF16A9F21EA1C21A003EC2F7 /* BackgroundColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF16A9F11EA1C21A003EC2F7 /* BackgroundColorView.swift */; };
+		CF16A9F51EA1C308003EC2F7 /* cbgcSetupViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF16A9F41EA1C308003EC2F7 /* cbgcSetupViewExtension.swift */; };
+		CF16A9F71EA1C511003EC2F7 /* cbgcDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF16A9F61EA1C511003EC2F7 /* cbgcDelegateExtension.swift */; };
+		CF16A9F91EA1C6CB003EC2F7 /* cbgcCustomFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF16A9F81EA1C6CB003EC2F7 /* cbgcCustomFunctions.swift */; };
 		CF1C110D1E847C3100EC0181 /* WordSubDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1C110C1E847C3100EC0181 /* WordSubDetailsVC.swift */; };
 		CF1C11101E84BDF400EC0181 /* wdCollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1C110F1E84BDF400EC0181 /* wdCollectionViewExtension.swift */; };
 		CF1C11141E84C42400EC0181 /* wdSetupViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1C11131E84C42400EC0181 /* wdSetupViewExtension.swift */; };
@@ -64,6 +68,10 @@
 		B8B2FD38BDFDC2C50038BE00 /* Pods-EasyLearn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyLearn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyLearn/Pods-EasyLearn.debug.xcconfig"; sourceTree = "<group>"; };
 		CF16A9E21E9F2F18003EC2F7 /* csCustomFuctionsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = csCustomFuctionsExtension.swift; sourceTree = "<group>"; };
 		CF16A9EF1EA1BF75003EC2F7 /* CircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
+		CF16A9F11EA1C21A003EC2F7 /* BackgroundColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundColorView.swift; sourceTree = "<group>"; };
+		CF16A9F41EA1C308003EC2F7 /* cbgcSetupViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cbgcSetupViewExtension.swift; sourceTree = "<group>"; };
+		CF16A9F61EA1C511003EC2F7 /* cbgcDelegateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cbgcDelegateExtension.swift; sourceTree = "<group>"; };
+		CF16A9F81EA1C6CB003EC2F7 /* cbgcCustomFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cbgcCustomFunctions.swift; sourceTree = "<group>"; };
 		CF1C110C1E847C3100EC0181 /* WordSubDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordSubDetailsVC.swift; sourceTree = "<group>"; };
 		CF1C110F1E84BDF400EC0181 /* wdCollectionViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = wdCollectionViewExtension.swift; sourceTree = "<group>"; };
 		CF1C11131E84C42400EC0181 /* wdSetupViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = wdSetupViewExtension.swift; sourceTree = "<group>"; };
@@ -135,6 +143,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		CF16A9F31EA1C2B4003EC2F7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CF16A9F41EA1C308003EC2F7 /* cbgcSetupViewExtension.swift */,
+				CF16A9F61EA1C511003EC2F7 /* cbgcDelegateExtension.swift */,
+				CF16A9F81EA1C6CB003EC2F7 /* cbgcCustomFunctions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		CF1C110E1E84BD8700EC0181 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +196,7 @@
 			children = (
 				CF6012D91E773B7100EA0A3A /* Cells */,
 				CF51089C1E7C61AC008B2BC0 /* HomeView.swift */,
+				CF16A9F11EA1C21A003EC2F7 /* BackgroundColorView.swift */,
 				CFFBB4071E8D87F0007DCD66 /* CardView.swift */,
 			);
 			name = Views;
@@ -417,6 +436,7 @@
 		CFF0751F1E9B365000F7794D /* Colors */ = {
 			isa = PBXGroup;
 			children = (
+				CF16A9F31EA1C2B4003EC2F7 /* Extensions */,
 				CFF075201E9B36B500F7794D /* CardBgColorController.swift */,
 			);
 			name = Colors;
@@ -584,14 +604,17 @@
 				CF51089D1E7C61AC008B2BC0 /* HomeView.swift in Sources */,
 				CF5108AB1E7C7021008B2BC0 /* hvCollectionViewExtension.swift in Sources */,
 				CF38712F1E89B0DE005AA866 /* CoreDataStack.swift in Sources */,
+				CF16A9F91EA1C6CB003EC2F7 /* cbgcCustomFunctions.swift in Sources */,
 				CF38712C1E88B4AB005AA866 /* cvGestureExtension.swift in Sources */,
 				CF3871251E8730C5005AA866 /* cvSetupViewExtension.swift in Sources */,
 				CF6012D81E763C8D00EA0A3A /* WordDetailsVC.swift in Sources */,
 				CFF075241E9B5F3500F7794D /* DetailsViewModel.swift in Sources */,
 				CFAFE67A1E6A87510062235E /* Models.swift in Sources */,
+				CF16A9F21EA1C21A003EC2F7 /* BackgroundColorView.swift in Sources */,
 				CFF075121E9AF49800F7794D /* csTableViewExtension.swift in Sources */,
 				CF5108B11E7CAC27008B2BC0 /* PlayViewController.swift in Sources */,
 				CFF075171E9AF56800F7794D /* PlaySpeedController.swift in Sources */,
+				CF16A9F51EA1C308003EC2F7 /* cbgcSetupViewExtension.swift in Sources */,
 				CFF075191E9AF5A900F7794D /* BackgroundImageController.swift in Sources */,
 				CFAFE66A1E68F9CA0062235E /* HomeViewController.swift in Sources */,
 				CF1C11101E84BDF400EC0181 /* wdCollectionViewExtension.swift in Sources */,
@@ -616,6 +639,7 @@
 				CF38712A1E873CFA005AA866 /* Helper.swift in Sources */,
 				CF3FA89F1E71E46600AF392E /* Service.swift in Sources */,
 				CF51089F1E7C6C3A008B2BC0 /* hvDelegateExtension.swift in Sources */,
+				CF16A9F71EA1C511003EC2F7 /* cbgcDelegateExtension.swift in Sources */,
 				CFFBB4081E8D87F0007DCD66 /* CardView.swift in Sources */,
 				CF3871321E89B193005AA866 /* CDWord.xcdatamodeld in Sources */,
 			);
