@@ -34,7 +34,7 @@ extension CardsViewController {
     }
     
     final func handleCardSwap(){
-        let wordName = (cellReference?.wordName)!
+        let wordName = (cellReference?.flashCardView.wordName)!
         wordName.isHidden ? (isSwapped = false) : (isSwapped = true)
         cardView.flashCV.reloadData()
     }

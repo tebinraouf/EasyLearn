@@ -11,93 +11,27 @@ import UIKit
 
 class FlashCardCell: BaseCell {
     
-    var wordName: UILabel = {
-        let image = UIImage(named: "")
-        let iv = UIImageView(image: image)
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .black
-        label.text = "testing..."
-        label.font = UIFont.systemFont(ofSize: 30)
-        label.backgroundColor = .white
-        label.textAlignment = .center
-        label.numberOfLines = 0
-        
-        //label.layer.cornerRadius = 10
-        //label.layer.masksToBounds = true
-        
-        return label
-    }()
-    
-    var wordDetails: VerticallyCenteredTextView = {
-        let label = VerticallyCenteredTextView()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .black
-        label.text = "testing"
-        label.font = UIFont.systemFont(ofSize: 18)
-        label.textAlignment = .center
-        label.backgroundColor = .white
-        label.isEditable = false
-        
-        //label.layer.cornerRadius = 10
-        //label.layer.masksToBounds = true
-        
-        return label
-    }()
-    
-    var cardNumber: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .black
-        label.text = "100"
-        label.font = UIFont.systemFont(ofSize: 15)
-        label.backgroundColor = UIColor(r: 220, g: 220, b: 221, a: 0.2)
-        label.textAlignment = .center
-        return label
-    }()
+    let flashCardView = FlashCardView()
     
     override func setupView() {
-        
         backgroundColor = .clear
-        addSubview(wordName)
-        addSubview(wordDetails)
-        addSubview(cardNumber)
-        
-        wordName.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        wordName.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        wordName.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10).isActive = true
-        wordName.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
-        wordName.isHidden = false
-        
-        
-        wordDetails.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        wordDetails.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        wordDetails.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10).isActive = true
-        wordDetails.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
-        wordDetails.isHidden = true
-        
-        
-        
-        cardNumber.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10).isActive = true
-        cardNumber.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
-        cardNumber.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        cardNumber.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        
-        
+        addSubview(flashCardView)
+        NSLayoutConstraint.activate([
+            flashCardView.topAnchor.constraint(equalTo: topAnchor),
+            flashCardView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            flashCardView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            flashCardView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
+        ])
         
     let tap = UITapGestureRecognizer(target: self, action: #selector(slideFlashcardHandler))
         addGestureRecognizer(tap)
         
-        
-        
         let isCardNumberLabelHidden = UserDefaults.standard.bool(forKey: UserDefaultsKeys.cardNumberLabel.rawValue)
         if !isCardNumberLabelHidden {
-            cardNumber.isHidden = true
+            flashCardView.cardNumber.isHidden = true
         } else {
-            cardNumber.isHidden = false
+            flashCardView.cardNumber.isHidden = false
         }
-        
-        
     }
     
     var handleSlideFlipping: (() -> ())?

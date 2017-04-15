@@ -17,7 +17,7 @@ extension CardsViewController: UICollectionViewDelegate, UICollectionViewDataSou
         let cell = cardView.flashCV.dequeueReusableCell(withReuseIdentifier: CellID.cvCellID.rawValue, for: indexPath) as! FlashCardCell
         
         cellReference = cell
-        cell.wordName.text = favWords[indexPath.item].word
+        cell.flashCardView.wordName.text = favWords[indexPath.item].word
         
         var details = String()
         
@@ -30,16 +30,16 @@ extension CardsViewController: UICollectionViewDelegate, UICollectionViewDataSou
             details.append(example)
         }
 
-        cell.wordDetails.text = details
+        cell.flashCardView.wordDetails.text = details
         
         cell.handleSlideFlipping = {
-            self.animate(from: cell.wordName, to: cell.wordDetails)
+            self.animate(from: cell.flashCardView.wordName, to: cell.flashCardView.wordDetails)
             
         }
         
         let total = favWords.count
         
-        cell.cardNumber.text = "\(indexPath.item + 1) - \(total)"
+        cell.flashCardView.cardNumber.text = "\(indexPath.item + 1) - \(total)"
         
         
         
@@ -72,11 +72,11 @@ extension CardsViewController: UICollectionViewDelegate, UICollectionViewDataSou
         
         let cell = cell as! FlashCardCell
         if isSwapped {
-            cell.wordName.isHidden = true
-            cell.wordDetails.isHidden = false
+            cell.flashCardView.wordName.isHidden = true
+            cell.flashCardView.wordDetails.isHidden = false
         }else {
-            cell.wordName.isHidden = false
-            cell.wordDetails.isHidden = true
+            cell.flashCardView.wordName.isHidden = false
+            cell.flashCardView.wordDetails.isHidden = true
         }
         
 
