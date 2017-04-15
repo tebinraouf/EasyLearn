@@ -74,6 +74,15 @@ class CardBgColorController: UIViewController {
         return label
     }()
     
+    var circleButton: CircleButton = {
+        let btn = CircleButton(frame: CGRect(x: 0, y: 0, width: 60, height: 60))
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.layer.cornerRadius = 30
+        btn.backgroundColor = .clear
+        btn.setImage(UIImage.icon(from: .FontAwesome, code: "plus", imageSize: CGSize(width: 30, height: 30), ofSize: 30, color: .white), for: .normal)
+        return btn
+    }()
+    
     let bgLayer = CAShapeLayer()
     let bgColor = UIColor.appGray
     
@@ -160,11 +169,26 @@ class CardBgColorController: UIViewController {
         fgLayer.strokeColor = fgColor.cgColor
         view.layer.addSublayer(fgLayer)
         
-        
-        
+        //setup circle
+        setupCircleView()
         
         //random background color when view is loaded
         handleRandomColor()
+    }
+    
+    //Setup Circle View
+    func setupCircleView() {
+        view.addSubview(circleButton)
+        circleButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10).isActive = true
+        circleButton.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 10).isActive = true
+        circleButton.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        circleButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        
+        
+        circleButton.addTarget(self, action: #selector(handleNewColor), for: .touchDown)
+    }
+    func handleNewColor(){
+        circleButton.animate()
     }
     
     func handleRandomColor(){

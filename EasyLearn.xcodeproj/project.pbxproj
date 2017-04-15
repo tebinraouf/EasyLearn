@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		04188B771971CC16A77558DA /* Pods_EasyLearn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 976E28507EF0BE8A82DAFA65 /* Pods_EasyLearn.framework */; };
 		CF16A9E31E9F2F18003EC2F7 /* csCustomFuctionsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF16A9E21E9F2F18003EC2F7 /* csCustomFuctionsExtension.swift */; };
+		CF16A9F01EA1BF75003EC2F7 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF16A9EF1EA1BF75003EC2F7 /* CircleButton.swift */; };
 		CF1C110D1E847C3100EC0181 /* WordSubDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1C110C1E847C3100EC0181 /* WordSubDetailsVC.swift */; };
 		CF1C11101E84BDF400EC0181 /* wdCollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1C110F1E84BDF400EC0181 /* wdCollectionViewExtension.swift */; };
 		CF1C11141E84C42400EC0181 /* wdSetupViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1C11131E84C42400EC0181 /* wdSetupViewExtension.swift */; };
@@ -62,6 +63,7 @@
 		976E28507EF0BE8A82DAFA65 /* Pods_EasyLearn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyLearn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8B2FD38BDFDC2C50038BE00 /* Pods-EasyLearn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyLearn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyLearn/Pods-EasyLearn.debug.xcconfig"; sourceTree = "<group>"; };
 		CF16A9E21E9F2F18003EC2F7 /* csCustomFuctionsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = csCustomFuctionsExtension.swift; sourceTree = "<group>"; };
+		CF16A9EF1EA1BF75003EC2F7 /* CircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		CF1C110C1E847C3100EC0181 /* WordSubDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordSubDetailsVC.swift; sourceTree = "<group>"; };
 		CF1C110F1E84BDF400EC0181 /* wdCollectionViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = wdCollectionViewExtension.swift; sourceTree = "<group>"; };
 		CF1C11131E84C42400EC0181 /* wdSetupViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = wdSetupViewExtension.swift; sourceTree = "<group>"; };
@@ -431,6 +433,7 @@
 		CFFBB4091E8DB0FB007DCD66 /* Subclasses */ = {
 			isa = PBXGroup;
 			children = (
+				CF16A9EF1EA1BF75003EC2F7 /* CircleButton.swift */,
 				CF5108A81E7C6FBD008B2BC0 /* LeftPaddedTextField.swift */,
 				CFFBB40A1E8DB11A007DCD66 /* VerticallyCenteredTextView.swift */,
 				CFF0750E1E98C97000F7794D /* LeftPaddedUILabel.swift */,
@@ -600,6 +603,7 @@
 				CFAFE6681E68F9CA0062235E /* AppDelegate.swift in Sources */,
 				CF5108981E7B59D5008B2BC0 /* CardsViewController.swift in Sources */,
 				CF5108A91E7C6FBD008B2BC0 /* LeftPaddedTextField.swift in Sources */,
+				CF16A9F01EA1BF75003EC2F7 /* CircleButton.swift in Sources */,
 				CF1C110D1E847C3100EC0181 /* WordSubDetailsVC.swift in Sources */,
 				CFF0750F1E98C97000F7794D /* LeftPaddedUILabel.swift in Sources */,
 				CF5F988D1E7B41B500E84687 /* ErrorViewController.swift in Sources */,
