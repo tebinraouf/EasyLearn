@@ -15,6 +15,10 @@
 		CF16A9F71EA1C511003EC2F7 /* cbgcDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF16A9F61EA1C511003EC2F7 /* cbgcDelegateExtension.swift */; };
 		CF16A9F91EA1C6CB003EC2F7 /* cbgcCustomFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF16A9F81EA1C6CB003EC2F7 /* cbgcCustomFunctions.swift */; };
 		CF16A9FB1EA1E19C003EC2F7 /* AlphaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF16A9FA1EA1E19C003EC2F7 /* AlphaView.swift */; };
+		CF16A9FE1EA2A266003EC2F7 /* ColorImageSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF16A9FD1EA2A266003EC2F7 /* ColorImageSelector.swift */; };
+		CF16AA001EA2A8D6003EC2F7 /* ColorImageSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF16A9FF1EA2A8D6003EC2F7 /* ColorImageSelectorView.swift */; };
+		CF16AA031EA2AA91003EC2F7 /* cisSetupViewsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF16AA021EA2AA91003EC2F7 /* cisSetupViewsExtension.swift */; };
+		CF16AA051EA2AFA4003EC2F7 /* FlashCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF16AA041EA2AFA4003EC2F7 /* FlashCardView.swift */; };
 		CF1C110D1E847C3100EC0181 /* WordSubDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1C110C1E847C3100EC0181 /* WordSubDetailsVC.swift */; };
 		CF1C11101E84BDF400EC0181 /* wdCollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1C110F1E84BDF400EC0181 /* wdCollectionViewExtension.swift */; };
 		CF1C11141E84C42400EC0181 /* wdSetupViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1C11131E84C42400EC0181 /* wdSetupViewExtension.swift */; };
@@ -74,6 +78,10 @@
 		CF16A9F61EA1C511003EC2F7 /* cbgcDelegateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cbgcDelegateExtension.swift; sourceTree = "<group>"; };
 		CF16A9F81EA1C6CB003EC2F7 /* cbgcCustomFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cbgcCustomFunctions.swift; sourceTree = "<group>"; };
 		CF16A9FA1EA1E19C003EC2F7 /* AlphaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphaView.swift; sourceTree = "<group>"; };
+		CF16A9FD1EA2A266003EC2F7 /* ColorImageSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorImageSelector.swift; sourceTree = "<group>"; };
+		CF16A9FF1EA2A8D6003EC2F7 /* ColorImageSelectorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorImageSelectorView.swift; sourceTree = "<group>"; };
+		CF16AA021EA2AA91003EC2F7 /* cisSetupViewsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cisSetupViewsExtension.swift; sourceTree = "<group>"; };
+		CF16AA041EA2AFA4003EC2F7 /* FlashCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashCardView.swift; sourceTree = "<group>"; };
 		CF1C110C1E847C3100EC0181 /* WordSubDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordSubDetailsVC.swift; sourceTree = "<group>"; };
 		CF1C110F1E84BDF400EC0181 /* wdCollectionViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = wdCollectionViewExtension.swift; sourceTree = "<group>"; };
 		CF1C11131E84C42400EC0181 /* wdSetupViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = wdSetupViewExtension.swift; sourceTree = "<group>"; };
@@ -155,6 +163,23 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
+		CF16A9FC1EA2A24C003EC2F7 /* ColorImageSelector */ = {
+			isa = PBXGroup;
+			children = (
+				CF16AA011EA2AA74003EC2F7 /* Extensions */,
+				CF16A9FD1EA2A266003EC2F7 /* ColorImageSelector.swift */,
+			);
+			name = ColorImageSelector;
+			sourceTree = "<group>";
+		};
+		CF16AA011EA2AA74003EC2F7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CF16AA021EA2AA91003EC2F7 /* cisSetupViewsExtension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		CF1C110E1E84BD8700EC0181 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +225,8 @@
 				CF51089C1E7C61AC008B2BC0 /* HomeView.swift */,
 				CF16A9F11EA1C21A003EC2F7 /* BackgroundColorView.swift */,
 				CFFBB4071E8D87F0007DCD66 /* CardView.swift */,
+				CF16A9FF1EA2A8D6003EC2F7 /* ColorImageSelectorView.swift */,
+				CF16AA041EA2AFA4003EC2F7 /* FlashCardView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -403,6 +430,7 @@
 		CFF075151E9AF55000F7794D /* SubControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CF16A9FC1EA2A24C003EC2F7 /* ColorImageSelector */,
 				CFF0751F1E9B365000F7794D /* Colors */,
 				CFF0751B1E9AF5E500F7794D /* BackgroundImage */,
 				CFF0751A1E9AF5D900F7794D /* PlaySpeed */,
@@ -599,6 +627,7 @@
 				CFFBB40B1E8DB11A007DCD66 /* VerticallyCenteredTextView.swift in Sources */,
 				CF5108A71E7C6DBD008B2BC0 /* hvSetupViewExtension.swift in Sources */,
 				CF5108AE1E7CABDE008B2BC0 /* CustomCardsViewController.swift in Sources */,
+				CF16AA051EA2AFA4003EC2F7 /* FlashCardView.swift in Sources */,
 				CF6012DD1E789B8600EA0A3A /* DetailsCell.swift in Sources */,
 				CFF075211E9B36B500F7794D /* CardBgColorController.swift in Sources */,
 				CF5108B41E7CAC5F008B2BC0 /* SettingsViewController.swift in Sources */,
@@ -621,10 +650,12 @@
 				CFF075191E9AF5A900F7794D /* BackgroundImageController.swift in Sources */,
 				CFAFE66A1E68F9CA0062235E /* HomeViewController.swift in Sources */,
 				CF1C11101E84BDF400EC0181 /* wdCollectionViewExtension.swift in Sources */,
+				CF16AA031EA2AA91003EC2F7 /* cisSetupViewsExtension.swift in Sources */,
 				CF3871341E89BAEB005AA866 /* DataLayerSimple.swift in Sources */,
 				CF1C11141E84C42400EC0181 /* wdSetupViewExtension.swift in Sources */,
 				CF6012DB1E773B8900EA0A3A /* BaseCell.swift in Sources */,
 				CF16A9E31E9F2F18003EC2F7 /* csCustomFuctionsExtension.swift in Sources */,
+				CF16AA001EA2A8D6003EC2F7 /* ColorImageSelectorView.swift in Sources */,
 				CF3871271E8731D2005AA866 /* cvCollectionViewExtension.swift in Sources */,
 				CFAFE6681E68F9CA0062235E /* AppDelegate.swift in Sources */,
 				CF5108981E7B59D5008B2BC0 /* CardsViewController.swift in Sources */,
@@ -645,6 +676,7 @@
 				CF51089F1E7C6C3A008B2BC0 /* hvDelegateExtension.swift in Sources */,
 				CF16A9F71EA1C511003EC2F7 /* cbgcDelegateExtension.swift in Sources */,
 				CFFBB4081E8D87F0007DCD66 /* CardView.swift in Sources */,
+				CF16A9FE1EA2A266003EC2F7 /* ColorImageSelector.swift in Sources */,
 				CF3871321E89B193005AA866 /* CDWord.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

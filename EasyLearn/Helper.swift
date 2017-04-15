@@ -82,3 +82,13 @@ public func setUserSettings(for value: CGFloat, forKey: String) {
 }
 
 
+public func handleFlipping(from view1: UILabel, to view2: UITextView, isFlipped: inout Bool){
+    if isFlipped {
+        UIView.transition(from: view1, to: view2, duration: 0.8, options: [.transitionFlipFromLeft, .showHideTransitionViews, .allowUserInteraction], completion: nil)
+        isFlipped = false
+    }else{
+        UIView.transition(from: view2, to: view1, duration: 0.8, options: [.transitionFlipFromRight, .showHideTransitionViews, .allowUserInteraction], completion: nil)
+        isFlipped = true
+    }
+}
+

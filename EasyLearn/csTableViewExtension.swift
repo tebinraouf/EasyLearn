@@ -50,6 +50,8 @@ extension CardSettingsController: UITableViewDataSource, UITableViewDelegate {
             switch indexPath.row {
             case 0:
                 pushViewController(CardBgColorController())
+            case 1:
+                pushViewController(ColorImageSelector())
             default:
                 break
             }

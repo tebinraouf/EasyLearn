@@ -62,9 +62,6 @@ extension CardBgColorController: BackgroundColorProtocol {
     }
     func handlePinchGesture(gesture: UIPinchGestureRecognizer){
 
-        if alpha <= 0.01 {
-            
-        }
         
         if gesture.scale > 1 && alpha < 1 {
             alpha += 0.01

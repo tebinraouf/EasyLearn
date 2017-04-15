@@ -21,7 +21,6 @@ extension CardBgColorController {
         
         view.backgroundColor = UIColor(r: CGFloat(colorView.sliderRed.value), g: CGFloat(colorView.sliderGreen.value), b: CGFloat(colorView.sliderBlue.value), a: alpha)
     }
-
     func handleRandomColor(){
         let randomRed = arc4random_uniform(255)
         let randomGreen = arc4random_uniform(255)

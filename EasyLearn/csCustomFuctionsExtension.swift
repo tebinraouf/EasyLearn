@@ -80,9 +80,9 @@ extension CardSettingsController {
     func handleColors(_ cell: UITableViewCell, _ indexPath: IndexPath){
         switch indexPath.row {
         case 0:
-            cell.imageView?.image = UIImage.icon(from: .MaterialIcon, code: "format.color.fill", imageSize: CGSize(width: 25, height: 25), ofSize: 25, color: .appColor)
+            cell.imageView?.image = UIImage.icon(from: .MaterialIcon, code: "colorize", imageSize: CGSize(width: 25, height: 25), ofSize: 25, color: .appColor)
         case 1:
-            cell.imageView?.image = UIImage.icon(from: .MaterialIcon, code: "format.color.text", imageSize: CGSize(width: 25, height: 25), ofSize: 25, color: .appColor)
+            cell.imageView?.image = UIImage.icon(from: .MaterialIcon, code: "color.lens", imageSize: CGSize(width: 25, height: 25), ofSize: 25, color: .appColor)
         default:
             break
         }
