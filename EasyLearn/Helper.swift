@@ -68,5 +68,17 @@ public func progressImage(with progress: Float, color: UIColor, textColor: UICol
     UIGraphicsEndImageContext()
     return image!
 }
+public func DegreesToRadians (_ value:CGFloat) -> CGFloat {
+    return value * CGFloat(Double.pi) / 180.0
+}
+
+public func setUserSettings(for value: Float, forKey: String) {
+    UserDefaults.standard.setValue(value, forKey: forKey)
+    UserDefaults.standard.synchronize()
+}
+public func setUserSettings(for value: CGFloat, forKey: String) {
+    UserDefaults.standard.setValue(value, forKey: forKey)
+    UserDefaults.standard.synchronize()
+}
 
 

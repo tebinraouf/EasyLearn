@@ -21,17 +21,18 @@ class CardBgColorController: UIViewController {
     let fgLayer = CAShapeLayer()
     let fgColor = UIColor.black
     
+    let alphaView: AlphaView = {
+        let av = AlphaView()
+        av.translatesAutoresizingMaskIntoConstraints = false
+        return av
+    }()
     
-    let userSettings = UserDefaults.standard
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupView()
         handleRandomColor()
-        
     }
     
- 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         setupShapeLayer(shapeLayer: bgLayer)
@@ -48,9 +49,7 @@ class CardBgColorController: UIViewController {
         let path = UIBezierPath(arcCenter: center, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: true)
         shapeLayer.path = path.cgPath
     }
-    func DegreesToRadians (_ value:CGFloat) -> CGFloat {
-        return value * CGFloat(Double.pi) / 180.0
-    }
+
     
     //not seeing the effect!
     func animate(fromValue: Float, toValue: Float) {
@@ -70,19 +69,21 @@ class CardBgColorController: UIViewController {
         bgLayer.opacity = toValue
         fgLayer.opacity = toValue
     }
-    
-    func setUserSettings(for value: Float, forKey: String) {
-        userSettings.setValue(value, forKey: forKey)
-        userSettings.synchronize()
-    }
 
-    
-        
-    
-    
-    
 }
 
+
+class AlphaView: UIView {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        
+    }
+ 
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
 
 
 
