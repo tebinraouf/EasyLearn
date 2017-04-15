@@ -33,5 +33,19 @@ extension CardBgColorController {
         
         handleBackgroundColor()
     }
+    func updateSubViews(){
+        colorView.alphaView.setupShapeLayer(colorView.alphaView.bgLayer)
+        colorView.alphaView.setupShapeLayer(colorView.alphaView.fgLayer)
+        colorView.alphaLabel.text = String(format: "%1.2f", alpha)
+        updateAlphaStartEnd()
+    }
+    func updateAlphaStartEnd(){
+        if alpha <= 0.01 {
+            colorView.alphaLabel.text = String(format: "%1.2f", 0.00)
+            colorView.alphaView.fgLayer.strokeEnd = 1
+        } else if alpha >= 1.00 {
+            colorView.alphaView.fgLayer.strokeEnd = 0
+        }
+    }
     
 }

@@ -62,29 +62,27 @@ extension CardBgColorController: BackgroundColorProtocol {
     }
     func handlePinchGesture(gesture: UIPinchGestureRecognizer){
 
-        if gesture.scale > 1 {
-            alpha += 0.01
+        if alpha <= 0.01 {
             
-            if alpha > 1 {
-                alpha = 1
-            }
-            fgLayer.strokeEnd -= 0.01
-        } else if gesture.scale < 1 {
-            alpha -= 0.01
-            
-            if alpha <= 0 {
-                alpha = 0.01
-            }
-            //add to strokeEnd
-            fgLayer.strokeEnd += 0.01
         }
         
+        if gesture.scale > 1 && alpha < 1 {
+            alpha += 0.01
+            colorView.alphaView.fgLayer.strokeEnd -= 0.01
+        } else if gesture.scale < 1 && alpha > 0.01 {
+            alpha -= 0.01
+            //add to strokeEnd
+            colorView.alphaView.fgLayer.strokeEnd += 0.01
+        }
+        
+
+        
         if gesture.state == .began {
-            animate(fromValue: 0, toValue: 0.5)
+            colorView.alphaView.animate(fromValue: 0, toValue: 0.5)
             colorView.alphaLabel.layer.opacity = 0.5
         }else if gesture.state == .ended {
             colorView.alphaLabel.layer.opacity = 0
-            animate(fromValue: 0.5, toValue: 0)
+            colorView.alphaView.animate(fromValue: 0.5, toValue: 0)
         }
         handleBackgroundColor()
     }

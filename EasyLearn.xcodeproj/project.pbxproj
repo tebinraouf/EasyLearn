@@ -14,6 +14,7 @@
 		CF16A9F51EA1C308003EC2F7 /* cbgcSetupViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF16A9F41EA1C308003EC2F7 /* cbgcSetupViewExtension.swift */; };
 		CF16A9F71EA1C511003EC2F7 /* cbgcDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF16A9F61EA1C511003EC2F7 /* cbgcDelegateExtension.swift */; };
 		CF16A9F91EA1C6CB003EC2F7 /* cbgcCustomFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF16A9F81EA1C6CB003EC2F7 /* cbgcCustomFunctions.swift */; };
+		CF16A9FB1EA1E19C003EC2F7 /* AlphaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF16A9FA1EA1E19C003EC2F7 /* AlphaView.swift */; };
 		CF1C110D1E847C3100EC0181 /* WordSubDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1C110C1E847C3100EC0181 /* WordSubDetailsVC.swift */; };
 		CF1C11101E84BDF400EC0181 /* wdCollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1C110F1E84BDF400EC0181 /* wdCollectionViewExtension.swift */; };
 		CF1C11141E84C42400EC0181 /* wdSetupViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1C11131E84C42400EC0181 /* wdSetupViewExtension.swift */; };
@@ -72,6 +73,7 @@
 		CF16A9F41EA1C308003EC2F7 /* cbgcSetupViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cbgcSetupViewExtension.swift; sourceTree = "<group>"; };
 		CF16A9F61EA1C511003EC2F7 /* cbgcDelegateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cbgcDelegateExtension.swift; sourceTree = "<group>"; };
 		CF16A9F81EA1C6CB003EC2F7 /* cbgcCustomFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cbgcCustomFunctions.swift; sourceTree = "<group>"; };
+		CF16A9FA1EA1E19C003EC2F7 /* AlphaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphaView.swift; sourceTree = "<group>"; };
 		CF1C110C1E847C3100EC0181 /* WordSubDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordSubDetailsVC.swift; sourceTree = "<group>"; };
 		CF1C110F1E84BDF400EC0181 /* wdCollectionViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = wdCollectionViewExtension.swift; sourceTree = "<group>"; };
 		CF1C11131E84C42400EC0181 /* wdSetupViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = wdSetupViewExtension.swift; sourceTree = "<group>"; };
@@ -457,6 +459,7 @@
 				CF5108A81E7C6FBD008B2BC0 /* LeftPaddedTextField.swift */,
 				CFFBB40A1E8DB11A007DCD66 /* VerticallyCenteredTextView.swift */,
 				CFF0750E1E98C97000F7794D /* LeftPaddedUILabel.swift */,
+				CF16A9FA1EA1E19C003EC2F7 /* AlphaView.swift */,
 			);
 			name = Subclasses;
 			sourceTree = "<group>";
@@ -634,6 +637,7 @@
 				CFC2949C1E8C31F100938475 /* FlashCardCell.swift in Sources */,
 				CFAFE67C1E6B7A130062235E /* Extensions.swift in Sources */,
 				CFF0751D1E9AF60B00F7794D /* biCollectionViewExtension.swift in Sources */,
+				CF16A9FB1EA1E19C003EC2F7 /* AlphaView.swift in Sources */,
 				CF51089A1E7B5B8D008B2BC0 /* DashboardCell.swift in Sources */,
 				CFF075141E9AF52700F7794D /* csSetupViewExtension.swift in Sources */,
 				CF38712A1E873CFA005AA866 /* Helper.swift in Sources */,

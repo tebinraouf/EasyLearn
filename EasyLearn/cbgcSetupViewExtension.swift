@@ -19,28 +19,12 @@ extension CardBgColorController {
 
         navigationItems()
         setupClickableViews()
-        initialCALayerSetups()
+        
     }
     func navigationItems(){
         navigationItem.titleView = colorView.segmentedControl
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(handleRandomColor))
     }
-    func initialCALayerSetups(){
-        bgLayer.opacity = 0
-        bgLayer.lineWidth = 10.0
-        bgLayer.fillColor = nil
-        bgLayer.strokeEnd = 1
-        bgLayer.strokeColor = bgColor.cgColor
-        view.layer.addSublayer(bgLayer)
-        
-        fgLayer.opacity = 0
-        fgLayer.lineWidth = 10.0
-        fgLayer.fillColor = nil
-        fgLayer.strokeEnd = 0
-        fgLayer.strokeColor = fgColor.cgColor
-        view.layer.addSublayer(fgLayer)
-    }
-    
     
     func setupClickableViews(){
         colorView.sliderRed.addTarget(self, action: #selector(handleRed), for: .valueChanged)

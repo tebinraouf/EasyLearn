@@ -69,10 +69,17 @@ class BackgroundColorView: UIView {
     var alphaLabel: UILabel = {
         let label = UILabel()
         label.text = "1"
+        label.textColor = .white
         label.layer.opacity = 0
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
+    }()
+    let alphaView: AlphaView = {
+        let av = AlphaView()
+        av.translatesAutoresizingMaskIntoConstraints = false
+        av.backgroundColor = .clear
+        return av
     }()
     var circleButton: CircleButton = {
         let btn = CircleButton(frame: CGRect(x: 0, y: 0, width: 60, height: 60))
@@ -88,6 +95,7 @@ class BackgroundColorView: UIView {
         setupView()
     }
     func addViewsToMainView(){
+        addSubview(alphaView)
         addSubview(touchableView)
         addSubview(sliderRed)
         addSubview(sliderGreen)
@@ -102,6 +110,7 @@ class BackgroundColorView: UIView {
         sliderGreenSetup()
         sliderBlueSetup()
         alphaLabelSetup()
+        alphaViewSetup()
         circleViewSetup()
     }
     func touchableViewSetup(){
@@ -134,13 +143,21 @@ class BackgroundColorView: UIView {
         alphaLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
         alphaLabel.widthAnchor.constraint(equalToConstant: 80).isActive = true
     }
+    func alphaViewSetup(){
+        NSLayoutConstraint.activate([
+            alphaView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            alphaView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            alphaView.heightAnchor.constraint(equalToConstant: 160),
+            alphaView.widthAnchor.constraint(equalToConstant: 160)
+            ])
+    }
     func circleViewSetup() {
         NSLayoutConstraint.activate([
             circleButton.leftAnchor.constraint(equalTo: leftAnchor, constant: 10),
             circleButton.topAnchor.constraint(equalTo: topAnchor, constant: 10),
             circleButton.widthAnchor.constraint(equalToConstant: 60),
             circleButton.heightAnchor.constraint(equalToConstant: 60)
-        ])
+            ])
     }
     
     required init?(coder aDecoder: NSCoder) {
