@@ -26,9 +26,16 @@ class ColorImageSelectorView: UIView {
         lv.wordName.font = UIFont.systemFont(ofSize: 20)
         return lv
     }()
+    let collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.translatesAutoresizingMaskIntoConstraints = false
+        cv.backgroundColor = .clear
+        return cv
+    }()
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .green
+        backgroundColor = .clear
         translatesAutoresizingMaskIntoConstraints = false
         setupView()
     }
@@ -36,12 +43,14 @@ class ColorImageSelectorView: UIView {
         addSubview(mainCardView)
         mainCardView.addSubview(sampleCardView)
         sampleCardView.addSubview(labelViews)
+        addSubview(collectionView)
     }
     func setupView(){
         addSubViews()
         setupCardViewMain()
         setupSampleCardView()
         setupLabelViews()
+        setupCollectionView()
     }
     func setupCardViewMain(){
         NSLayoutConstraint.activate([
@@ -65,6 +74,14 @@ class ColorImageSelectorView: UIView {
             labelViews.bottomAnchor.constraint(equalTo: sampleCardView.bottomAnchor),
             labelViews.leadingAnchor.constraint(equalTo: sampleCardView.leadingAnchor),
             labelViews.trailingAnchor.constraint(equalTo: sampleCardView.trailingAnchor)
+        ])
+    }
+    func setupCollectionView(){
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: mainCardView.bottomAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
     required init?(coder aDecoder: NSCoder) {

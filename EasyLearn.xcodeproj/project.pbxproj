@@ -19,6 +19,8 @@
 		CF16AA001EA2A8D6003EC2F7 /* ColorImageSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF16A9FF1EA2A8D6003EC2F7 /* ColorImageSelectorView.swift */; };
 		CF16AA031EA2AA91003EC2F7 /* cisSetupViewsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF16AA021EA2AA91003EC2F7 /* cisSetupViewsExtension.swift */; };
 		CF16AA051EA2AFA4003EC2F7 /* FlashCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF16AA041EA2AFA4003EC2F7 /* FlashCardView.swift */; };
+		CF16AA071EA2ECE0003EC2F7 /* cisCollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF16AA061EA2ECE0003EC2F7 /* cisCollectionViewExtension.swift */; };
+		CF16AA091EA2EEF6003EC2F7 /* ColorImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF16AA081EA2EEF6003EC2F7 /* ColorImageCell.swift */; };
 		CF1C110D1E847C3100EC0181 /* WordSubDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1C110C1E847C3100EC0181 /* WordSubDetailsVC.swift */; };
 		CF1C11101E84BDF400EC0181 /* wdCollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1C110F1E84BDF400EC0181 /* wdCollectionViewExtension.swift */; };
 		CF1C11141E84C42400EC0181 /* wdSetupViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1C11131E84C42400EC0181 /* wdSetupViewExtension.swift */; };
@@ -53,6 +55,7 @@
 		CFAFE67C1E6B7A130062235E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAFE67B1E6B7A130062235E /* Extensions.swift */; };
 		CFAFE67E1E6E0F930062235E /* LexicalEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAFE67D1E6E0F930062235E /* LexicalEntryViewController.swift */; };
 		CFC2949C1E8C31F100938475 /* FlashCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC2949B1E8C31F100938475 /* FlashCardCell.swift */; };
+		CFC61E211EA2FCFC003A1200 /* SectionCellsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC61E201EA2FCFC003A1200 /* SectionCellsExtension.swift */; };
 		CFF0750D1E988AE900F7794D /* CardSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF0750C1E988AE900F7794D /* CardSettingsController.swift */; };
 		CFF0750F1E98C97000F7794D /* LeftPaddedUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF0750E1E98C97000F7794D /* LeftPaddedUILabel.swift */; };
 		CFF075121E9AF49800F7794D /* csTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF075111E9AF49800F7794D /* csTableViewExtension.swift */; };
@@ -82,6 +85,8 @@
 		CF16A9FF1EA2A8D6003EC2F7 /* ColorImageSelectorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorImageSelectorView.swift; sourceTree = "<group>"; };
 		CF16AA021EA2AA91003EC2F7 /* cisSetupViewsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cisSetupViewsExtension.swift; sourceTree = "<group>"; };
 		CF16AA041EA2AFA4003EC2F7 /* FlashCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashCardView.swift; sourceTree = "<group>"; };
+		CF16AA061EA2ECE0003EC2F7 /* cisCollectionViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cisCollectionViewExtension.swift; sourceTree = "<group>"; };
+		CF16AA081EA2EEF6003EC2F7 /* ColorImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorImageCell.swift; sourceTree = "<group>"; };
 		CF1C110C1E847C3100EC0181 /* WordSubDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordSubDetailsVC.swift; sourceTree = "<group>"; };
 		CF1C110F1E84BDF400EC0181 /* wdCollectionViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = wdCollectionViewExtension.swift; sourceTree = "<group>"; };
 		CF1C11131E84C42400EC0181 /* wdSetupViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = wdSetupViewExtension.swift; sourceTree = "<group>"; };
@@ -118,6 +123,7 @@
 		CFAFE67B1E6B7A130062235E /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		CFAFE67D1E6E0F930062235E /* LexicalEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LexicalEntryViewController.swift; sourceTree = "<group>"; };
 		CFC2949B1E8C31F100938475 /* FlashCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashCardCell.swift; sourceTree = "<group>"; };
+		CFC61E201EA2FCFC003A1200 /* SectionCellsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionCellsExtension.swift; sourceTree = "<group>"; };
 		CFF0750C1E988AE900F7794D /* CardSettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardSettingsController.swift; sourceTree = "<group>"; };
 		CFF0750E1E98C97000F7794D /* LeftPaddedUILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftPaddedUILabel.swift; sourceTree = "<group>"; };
 		CFF075111E9AF49800F7794D /* csTableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = csTableViewExtension.swift; sourceTree = "<group>"; };
@@ -176,8 +182,17 @@
 			isa = PBXGroup;
 			children = (
 				CF16AA021EA2AA91003EC2F7 /* cisSetupViewsExtension.swift */,
+				CF16AA061EA2ECE0003EC2F7 /* cisCollectionViewExtension.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		CF16AA0A1EA2F26A003EC2F7 /* ColorImageCellExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				CFC61E201EA2FCFC003A1200 /* SectionCellsExtension.swift */,
+			);
+			name = ColorImageCellExtensions;
 			sourceTree = "<group>";
 		};
 		CF1C110E1E84BD8700EC0181 /* Extensions */ = {
@@ -316,6 +331,8 @@
 				CF6012DC1E789B8600EA0A3A /* DetailsCell.swift */,
 				CF5108991E7B5B8D008B2BC0 /* DashboardCell.swift */,
 				CFC2949B1E8C31F100938475 /* FlashCardCell.swift */,
+				CF16AA0A1EA2F26A003EC2F7 /* ColorImageCellExtensions */,
+				CF16AA081EA2EEF6003EC2F7 /* ColorImageCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -624,12 +641,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF16AA071EA2ECE0003EC2F7 /* cisCollectionViewExtension.swift in Sources */,
 				CFFBB40B1E8DB11A007DCD66 /* VerticallyCenteredTextView.swift in Sources */,
 				CF5108A71E7C6DBD008B2BC0 /* hvSetupViewExtension.swift in Sources */,
 				CF5108AE1E7CABDE008B2BC0 /* CustomCardsViewController.swift in Sources */,
 				CF16AA051EA2AFA4003EC2F7 /* FlashCardView.swift in Sources */,
 				CF6012DD1E789B8600EA0A3A /* DetailsCell.swift in Sources */,
 				CFF075211E9B36B500F7794D /* CardBgColorController.swift in Sources */,
+				CFC61E211EA2FCFC003A1200 /* SectionCellsExtension.swift in Sources */,
 				CF5108B41E7CAC5F008B2BC0 /* SettingsViewController.swift in Sources */,
 				CFF0750D1E988AE900F7794D /* CardSettingsController.swift in Sources */,
 				CFAFE67E1E6E0F930062235E /* LexicalEntryViewController.swift in Sources */,
@@ -656,6 +675,7 @@
 				CF6012DB1E773B8900EA0A3A /* BaseCell.swift in Sources */,
 				CF16A9E31E9F2F18003EC2F7 /* csCustomFuctionsExtension.swift in Sources */,
 				CF16AA001EA2A8D6003EC2F7 /* ColorImageSelectorView.swift in Sources */,
+				CF16AA091EA2EEF6003EC2F7 /* ColorImageCell.swift in Sources */,
 				CF3871271E8731D2005AA866 /* cvCollectionViewExtension.swift in Sources */,
 				CFAFE6681E68F9CA0062235E /* AppDelegate.swift in Sources */,
 				CF5108981E7B59D5008B2BC0 /* CardsViewController.swift in Sources */,

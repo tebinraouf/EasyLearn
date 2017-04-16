@@ -14,8 +14,9 @@ class ColorImageSelector: UIViewController {
     var isFlipped = true
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .yellow
+        view.backgroundColor = .white
         setupViews()
+        setupDelegateDataSource()
+        
     }
 }

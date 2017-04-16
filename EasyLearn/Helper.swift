@@ -16,6 +16,8 @@ enum CellID: String {
     case wsdCellID
     case cvCellID
     case cvFooterID
+    case cisSelector
+    case cisSelectorCell
 }
 
 enum UserDefaultsKeys: String {
