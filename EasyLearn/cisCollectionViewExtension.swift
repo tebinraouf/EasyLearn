@@ -21,10 +21,11 @@ extension ColorImageSelector: UICollectionViewDataSource, UICollectionViewDelega
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return sectionTitles.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellID.cisSelector.rawValue, for: indexPath) as! ColorImageCell
+        cell.sectionTitle.text = sectionTitles[indexPath.item]
         
         cell.handleCellClick = { cellItemIndex in
             self.handleClicks(row: indexPath, item: cellItemIndex)
@@ -41,6 +42,7 @@ extension ColorImageSelector: UICollectionViewDataSource, UICollectionViewDelega
     }
     func handleClicks(row: IndexPath, item: IndexPath){
         print("Row: ", row, "Item: ", item)
+        selectorView.labelViews.wordName.text = "\(item)"
     }
 
 }

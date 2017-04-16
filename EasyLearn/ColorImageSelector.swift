@@ -12,6 +12,9 @@ class ColorImageSelector: UIViewController {
     
     let selectorView = ColorImageSelectorView()
     var isFlipped = true
+    
+    var sectionTitles = ["Card Background Color", "Text Color", "View Background Color", "Card Background Image"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
