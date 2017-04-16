@@ -9,20 +9,15 @@
 import UIKit
 
 class AlphaView: UIView {
-    
     let bgLayer = CAShapeLayer()
     let bgColor = UIColor.appGray
-    
     let fgLayer = CAShapeLayer()
     let fgColor = UIColor.black
-    
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         initialCALayerSetups()
     }
-    
-    func setupShapeLayer(_ shapeLayer: CAShapeLayer){
+    func setupShapeLayer(_ shapeLayer: CAShapeLayer) {
         let startAngle = DegreesToRadians(135.0)
         let endAngle = DegreesToRadians(45.0)
         let center = CGPoint(x: frame.size.width / 2, y: frame.size.height / 2)
@@ -30,15 +25,15 @@ class AlphaView: UIView {
         let path = UIBezierPath(arcCenter: center, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: true)
         shapeLayer.path = path.cgPath
     }
-    
-    func initialCALayerSetups(){
+    func initialCALayerSetups() {
+        //Background Layer
         bgLayer.opacity = 0
         bgLayer.lineWidth = 10.0
         bgLayer.fillColor = nil
         bgLayer.strokeEnd = 1
         bgLayer.strokeColor = bgColor.cgColor
         layer.addSublayer(bgLayer)
-        
+        //Foreground Layer
         fgLayer.opacity = 0
         fgLayer.lineWidth = 10.0
         fgLayer.fillColor = nil
@@ -46,11 +41,9 @@ class AlphaView: UIView {
         fgLayer.strokeColor = fgColor.cgColor
         layer.addSublayer(fgLayer)
     }
-    
     //not seeing the effect!
     func animate(fromValue: Float, toValue: Float) {
         //let toValue: Float = 0
-        
         // 1
         let animation = CABasicAnimation(keyPath: "opacity")
         animation.fromValue = fromValue
@@ -58,14 +51,12 @@ class AlphaView: UIView {
         // 2
         bgLayer.removeAnimation(forKey: "opacityKey")
         bgLayer.add(animation, forKey: "opacityKey")
-        
         fgLayer.removeAnimation(forKey: "opacityKey2")
         fgLayer.add(animation, forKey: "opacityKey2")
-        
+        //opacity
         bgLayer.opacity = toValue
         fgLayer.opacity = toValue
     }
-    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

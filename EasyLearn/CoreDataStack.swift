@@ -13,7 +13,7 @@ class CoreDataStack {
     
     static let sharedInstance = CoreDataStack()
     
-    //MARK: - default Core Data methods
+    //MARK:- default Core Data methods
     lazy var applicationDocumentsDirectory: URL = {
         let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         //print(urls)

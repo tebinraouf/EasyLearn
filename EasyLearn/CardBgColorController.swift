@@ -9,24 +9,15 @@
 import UIKit
 
 class CardBgColorController: UIViewController {
-    
     var alpha: CGFloat = 1
     let colorView = BackgroundColorView()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         handleRandomColor()
     }
-    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         updateSubViews()
     }
-    
 }
-
-
-
-
-

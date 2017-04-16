@@ -18,9 +18,9 @@ protocol BackgroundColorProtocol {
 }
 
 class BackgroundColorView: UIView {
-    
     var segmentedControl: UISegmentedControl = {
-        let sc = UISegmentedControl(items: ["Card","New"]) //this view controller becomes segment 0 and segment 1 becomes another view controller
+        //this view controller becomes segment 0 and segment 1 becomes another view controller
+        let sc = UISegmentedControl(items: ["Card","New"])
         sc.selectedSegmentIndex = 0
         sc.setWidth(100, forSegmentAt: 0)
         sc.setWidth(100, forSegmentAt: 1)
@@ -94,7 +94,7 @@ class BackgroundColorView: UIView {
         translatesAutoresizingMaskIntoConstraints = false
         setupView()
     }
-    func addViewsToMainView(){
+    func addViewsToMainView() {
         addSubview(alphaView)
         addSubview(touchableView)
         addSubview(sliderRed)
@@ -103,7 +103,7 @@ class BackgroundColorView: UIView {
         addSubview(alphaLabel)
         addSubview(circleButton)
     }
-    func setupView(){
+    func setupView() {
         addViewsToMainView()
         touchableViewSetup()
         sliderRedSetup()
@@ -113,37 +113,37 @@ class BackgroundColorView: UIView {
         alphaViewSetup()
         circleViewSetup()
     }
-    func touchableViewSetup(){
+    func touchableViewSetup() {
         touchableView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         touchableView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         touchableView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         touchableView.bottomAnchor.constraint(equalTo: sliderRed.topAnchor, constant: -20).isActive = true
     }
-    func sliderRedSetup(){
+    func sliderRedSetup() {
         sliderRed.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10).isActive = true
         sliderRed.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
         sliderRed.heightAnchor.constraint(equalToConstant: 20).isActive = true
         sliderRed.bottomAnchor.constraint(equalTo: sliderGreen.topAnchor, constant: -20).isActive = true
     }
-    func sliderGreenSetup(){
+    func sliderGreenSetup() {
         sliderGreen.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10).isActive = true
         sliderGreen.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
         sliderGreen.heightAnchor.constraint(equalToConstant: 20).isActive = true
         sliderGreen.bottomAnchor.constraint(equalTo: sliderBlue.topAnchor, constant: -20).isActive = true
     }
-    func sliderBlueSetup(){
+    func sliderBlueSetup() {
         sliderBlue.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10).isActive = true
         sliderBlue.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
         sliderBlue.heightAnchor.constraint(equalToConstant: 20).isActive = true
         sliderBlue.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20).isActive = true
     }
-    func alphaLabelSetup(){
+    func alphaLabelSetup() {
         alphaLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         alphaLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         alphaLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
         alphaLabel.widthAnchor.constraint(equalToConstant: 80).isActive = true
     }
-    func alphaViewSetup(){
+    func alphaViewSetup() {
         NSLayoutConstraint.activate([
             alphaView.centerXAnchor.constraint(equalTo: centerXAnchor),
             alphaView.centerYAnchor.constraint(equalTo: centerYAnchor),
@@ -159,7 +159,6 @@ class BackgroundColorView: UIView {
             circleButton.heightAnchor.constraint(equalToConstant: 60)
             ])
     }
-    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

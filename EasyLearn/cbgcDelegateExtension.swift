@@ -9,60 +9,50 @@
 import UIKit
 
 extension CardBgColorController: BackgroundColorProtocol {
-    func handleRed(){
+    func handleRed() {
         setUserSettings(for: colorView.sliderRed.value, forKey: "red")
         handleBackgroundColor()
     }
-    func handleGreen(){
+    func handleGreen() {
         setUserSettings(for: colorView.sliderGreen.value, forKey: "green")
         handleBackgroundColor()
     }
-    func handleBlue(){
+    func handleBlue() {
         handleBackgroundColor()
     }
-    func handleNewColor(){
+    func handleNewColor() {
         colorView.circleButton.animate()
     }
-    func handlePanGesture(gesture: UIPanGestureRecognizer){
-        
+    func handlePanGesture(gesture: UIPanGestureRecognizer) {
         let translation = gesture.translation(in: view)
         gesture.setTranslation(translation, in: view)
         gesture.maximumNumberOfTouches = 1
-        
         let lastRed = CGFloat(UserDefaults.standard.float(forKey: "red"))
         let lastGreen = CGFloat(UserDefaults.standard.float(forKey: "green"))
-        
         //remove existing value
         if lastRed > 255 {
             UserDefaults.standard.removeObject(forKey: "red")
             UserDefaults.standard.synchronize()
         }
-        
         if lastGreen > 255 {
             UserDefaults.standard.removeObject(forKey: "green")
             UserDefaults.standard.synchronize()
         }
-        
         let red = translation.x + lastRed
         let green = translation.y + lastGreen
         let blue = red + green
-        
         if gesture.state == .changed {
             colorView.sliderRed.value = Float(red)
             colorView.sliderGreen.value = Float(green)
             colorView.sliderBlue.value = Float(blue)
         }
-        
         if gesture.state == .ended {
             setUserSettings(for: red, forKey: "red")
             setUserSettings(for: green, forKey: "green")
         }
-        
         handleBackgroundColor()
     }
-    func handlePinchGesture(gesture: UIPinchGestureRecognizer){
-
-        
+    func handlePinchGesture(gesture: UIPinchGestureRecognizer) {
         if gesture.scale > 1 && alpha < 1 {
             alpha += 0.01
             colorView.alphaView.fgLayer.strokeEnd -= 0.01
@@ -71,13 +61,10 @@ extension CardBgColorController: BackgroundColorProtocol {
             //add to strokeEnd
             colorView.alphaView.fgLayer.strokeEnd += 0.01
         }
-        
-
-        
         if gesture.state == .began {
             colorView.alphaView.animate(fromValue: 0, toValue: 0.5)
             colorView.alphaLabel.layer.opacity = 0.5
-        }else if gesture.state == .ended {
+        } else if gesture.state == .ended {
             colorView.alphaLabel.layer.opacity = 0
             colorView.alphaView.animate(fromValue: 0.5, toValue: 0)
         }

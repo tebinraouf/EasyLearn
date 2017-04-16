@@ -9,9 +9,7 @@
 import UIKit
 
 extension BackgroundImageController:  UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
-    
-    //MARK:- CollectionView
+    // MARK: CollectionView
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -24,7 +22,6 @@ extension BackgroundImageController:  UICollectionViewDataSource, UICollectionVi
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
         return CGSize(width: collectionView.frame.size.width/3 - 1.5, height: collectionView.frame.size.width/3 - 1.5)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -33,5 +30,4 @@ extension BackgroundImageController:  UICollectionViewDataSource, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 2
     }
-    
 }
