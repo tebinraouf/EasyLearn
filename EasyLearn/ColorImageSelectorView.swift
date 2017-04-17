@@ -69,6 +69,14 @@ class ColorImageSelectorView: UIView {
             labelViews.wordDetails.textColor = newValue
         }
     }
+    var cardNumberTextColor: UIColor? {
+        get {
+            return labelViews.cardNumber.textColor
+        }
+        set {
+            labelViews.cardNumber.textColor = newValue
+        }
+    }
     //Property 01
     var viewBgColor: UIColor? {
         get {

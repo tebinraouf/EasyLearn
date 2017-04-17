@@ -27,6 +27,7 @@ class SelectorViewModel {
             //Text Color (The text's color) Property 02
             selectorView.wordNameTextColor = colorModel.backgroundColorForItemAt(item)
             selectorView.wordDetailsTextColor = colorModel.backgroundColorForItemAt(item)
+            selectorView.cardNumberTextColor = colorModel.backgroundColorForItemAt(item)
         case 2:
             //View Background Property 03
             selectorView.viewBgColor = colorModel.backgroundColorForItemAt(item)
