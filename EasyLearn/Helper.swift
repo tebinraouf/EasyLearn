@@ -45,14 +45,14 @@ public func isNavBarHidden(_ bool: Bool, _ navigationController: UINavigationCon
     }
 }
 
-public func progressImage(with progress: Float, color: UIColor, textColor: UIColor) -> UIImage {
+public func progressImage(with progress: Int, color: UIColor, textColor: UIColor) -> UIImage {
     let layer = CALayer()
     layer.backgroundColor = color.cgColor
     layer.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
     layer.cornerRadius = 15
     
     let label = UILabel(frame: layer.frame)
-    label.text = "\(Int(progress.rounded()))"
+    label.text = "\(progress)"
     label.font = UIFont.systemFont(ofSize: 10)
     label.textColor = textColor
     layer.addSublayer(label.layer)
@@ -74,6 +74,10 @@ public func DegreesToRadians (_ value:CGFloat) -> CGFloat {
     return value * CGFloat(Double.pi) / 180.0
 }
 
+public func setUserSettings(for value: Int, forKey: String) {
+    UserDefaults.standard.setValue(value, forKey: forKey)
+    UserDefaults.standard.synchronize()
+}
 public func setUserSettings(for value: Float, forKey: String) {
     UserDefaults.standard.setValue(value, forKey: forKey)
     UserDefaults.standard.synchronize()

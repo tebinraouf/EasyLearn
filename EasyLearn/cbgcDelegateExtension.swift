@@ -10,18 +10,23 @@ import UIKit
 
 extension CardBgColorController: BackgroundColorProtocol {
     func handleRed() {
-        setUserSettings(for: colorView.sliderRed.value, forKey: "red")
+        setUserSettings(for: colorView.redValue, forKey: "red")
         handleBackgroundColor()
     }
     func handleGreen() {
-        setUserSettings(for: colorView.sliderGreen.value, forKey: "green")
+        setUserSettings(for: colorView.greenValue, forKey: "green")
         handleBackgroundColor()
     }
     func handleBlue() {
+        setUserSettings(for: colorView.blueValue, forKey: "blue")
         handleBackgroundColor()
     }
     func handleNewColor() {
         colorView.circleButton.animate()
+        let cvm = ColorViewModel(colorView: colorView)
+        let newColor = cvm.newColor()
+        let currentLayer = ColorCoreDataLayer()
+        currentLayer.addColor(rgb: newColor)
     }
     func handlePanGesture(gesture: UIPanGestureRecognizer) {
         let translation = gesture.translation(in: view)
@@ -40,11 +45,9 @@ extension CardBgColorController: BackgroundColorProtocol {
         }
         let red = translation.x + lastRed
         let green = translation.y + lastGreen
-        let blue = red + green
         if gesture.state == .changed {
-            colorView.sliderRed.value = Float(red)
-            colorView.sliderGreen.value = Float(green)
-            colorView.sliderBlue.value = Float(blue)
+            colorView.redValue = Int(red)
+            colorView.greenValue = Int(green)
         }
         if gesture.state == .ended {
             setUserSettings(for: red, forKey: "red")

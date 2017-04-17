@@ -10,21 +10,17 @@ import UIKit
 
 extension CardBgColorController {
     func handleBackgroundColor() {
-        let redImage = progressImage(with: colorView.sliderRed.value, color: .red, textColor: .black)
+        let redImage = progressImage(with: colorView.redValue, color: .red, textColor: .black)
         colorView.sliderRed.setThumbImage(redImage, for: .normal)
-        let greenImage = progressImage(with: colorView.sliderGreen.value, color: .green, textColor: .black)
+        let greenImage = progressImage(with: colorView.greenValue, color: .green, textColor: .black)
         colorView.sliderGreen.setThumbImage(greenImage, for: .normal)
-        let blueImage = progressImage(with: colorView.sliderBlue.value, color: .blue, textColor: .black)
+        let blueImage = progressImage(with: colorView.blueValue, color: .blue, textColor: .black)
         colorView.sliderBlue.setThumbImage(blueImage, for: .normal)
-        view.backgroundColor = UIColor(r: CGFloat(colorView.sliderRed.value), g: CGFloat(colorView.sliderGreen.value), b: CGFloat(colorView.sliderBlue.value), a: alpha)
+        view.backgroundColor = UIColor(r: CGFloat(colorView.redValue), g: CGFloat(colorView.greenValue), b: CGFloat(colorView.blueValue), a: alpha)
     }
     func handleRandomColor() {
-        let randomRed = arc4random_uniform(255)
-        let randomGreen = arc4random_uniform(255)
-        let randomBlue = arc4random_uniform(255)
-        colorView.sliderRed.value = Float(randomRed)
-        colorView.sliderGreen.value = Float(randomGreen)
-        colorView.sliderBlue.value = Float(randomBlue)
+        let cvm = ColorViewModel(colorView: colorView)
+        cvm.updateSliders()
         handleBackgroundColor()
     }
     func updateSubViews() {

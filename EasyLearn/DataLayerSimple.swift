@@ -10,15 +10,12 @@ import Foundation
 import CoreData
 
 class DataLayerSimple {
-    
     let mainContext = CoreDataStack.sharedInstance.mainContext
-    
     lazy var numberOfResults: Int = {
         let fetchRequest: NSFetchRequest<CDWord> = CDWord.fetchRequest()
         let count = try! self.mainContext.count(for: fetchRequest)
         return count
     }()
-    
     func saveWord(_ id: String?, _ language: String?, _ lexicalEntry: String?, _ word: String?, _ type: String?, _ examples: [String]?, _ definition: String?) {
         let cdWord = CDWord(context: mainContext)
         
@@ -60,7 +57,6 @@ class DataLayerSimple {
         
         mainContext.trySave()
     }
-    
     func fetchAllWords() -> [CDWord]? {
         let sort = NSSortDescriptor(key: "id", ascending: true)
         let fetchRequest: NSFetchRequest<CDWord> = CDWord.fetchRequest()
@@ -69,35 +65,44 @@ class DataLayerSimple {
         return words
     }
     
-    
-    /*
- 
-     func fetchWords() -> [Word] {
-     var favWordsReturn = [Word]()
-     let sort = NSSortDescriptor(key: "id", ascending: true)
-     let sortName = NSSortDescriptor(key: "name", ascending: true, selector: #selector(NSString.localizedStandardCompare(_:)))
-     
-     let fetchRequest: NSFetchRequest<Word> = Word.fetchRequest()
-     fetchRequest.sortDescriptors = [sort, sortName]
-     
-     if let favWords = try? mainContext.fetch(fetchRequest) {
-     favWordsReturn = favWords
-     }
-     return favWordsReturn
-     }
- 
-     */
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
+
+
+
+
+class ColorCoreDataLayer {
+    let mainContext = CoreDataStack.sharedInstance.mainContext
+    //Color Model
+    lazy var numberOfColors: Int = {
+        let fetchRequest: NSFetchRequest<Color> = Color.fetchRequest()
+        let count = try! self.mainContext.count(for: fetchRequest)
+        return count
+    }()
+    init() {
+        if numberOfColors <= 0 {
+            addColor(rgb: (r: 255, g: 255, b: 255))
+            addColor(rgb: (r: 0, g: 0, b: 0))
+        }
+    }
+    func fetchColors() -> [Color]? {
+        let fetchRequest: NSFetchRequest<Color> = Color.fetchRequest()
+        let colors = try? mainContext.fetch(fetchRequest)
+        return colors
+    }
+    func addColor(rgb: (r: Int, g: Int, b: Int)) {
+        let color = Color(context: mainContext)
+        color.red = Float(rgb.r)
+        color.green = Float(rgb.g)
+        color.blue = Float(rgb.b)
+        mainContext.trySave()
+    }
+}
+
+
+
+
+
+
+
+
+

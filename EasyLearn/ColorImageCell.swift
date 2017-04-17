@@ -9,8 +9,8 @@
 import UIKit
 
 class ColorImageCell: BaseCell {
-    var sectionTitle: UILabel = {
-        let label = UILabel()
+    var sectionTitle: LeftPaddedUILabel = {
+        let label = LeftPaddedUILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Section Label"
         label.backgroundColor = .appGray
@@ -21,12 +21,14 @@ class ColorImageCell: BaseCell {
         layout.scrollDirection = .horizontal
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
-        cv.backgroundColor = .red
+        cv.backgroundColor = .appGray
         cv.alwaysBounceHorizontal = true
+        cv.showsHorizontalScrollIndicator = false
         cv.delegate = self
         cv.dataSource = self
         return cv
     }()
+    let colors = ColorCellsViewModel()
     var handleCellClick: ((_ indexPath: IndexPath)->())?
     
     override func setupView() {
@@ -42,9 +44,9 @@ class ColorImageCell: BaseCell {
     func setupSectionTitle(){
         NSLayoutConstraint.activate([
             sectionTitle.topAnchor.constraint(equalTo: topAnchor),
-            sectionTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            sectionTitle.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-            sectionTitle.heightAnchor.constraint(equalTo: sectionTitle.heightAnchor)
+            sectionTitle.leadingAnchor.constraint(equalTo: leadingAnchor),
+            sectionTitle.trailingAnchor.constraint(equalTo: trailingAnchor),
+            sectionTitle.heightAnchor.constraint(equalToConstant: 40)
         ])
     }
     func setupCollectionView(){
@@ -57,7 +59,6 @@ class ColorImageCell: BaseCell {
     }
     
 }
-
 extension ColorImageCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func registerCells(){
@@ -67,11 +68,11 @@ extension ColorImageCell: UICollectionViewDelegate, UICollectionViewDataSource, 
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return colors.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellID.cisSelectorCell.rawValue, for: indexPath)
-        cell.backgroundColor = .yellow
+        cell.backgroundColor = colors.backgroundColorForItemAt(indexPath)
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

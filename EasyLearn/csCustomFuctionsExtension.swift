@@ -39,7 +39,7 @@ extension CardSettingsController {
     }
     
     func handleSpeedSliderControl(slider: UISlider){
-        slider.setThumbImage(progressImage(with: slider.value, color: .appColor, textColor: .black), for: .normal)
+        slider.setThumbImage(progressImage(with: Int(slider.value), color: .appColor, textColor: .black), for: .normal)
         UserDefaults.standard.set(slider.value, forKey: "cardSpeedValue")
         UserDefaults.standard.synchronize()
     }

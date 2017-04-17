@@ -56,6 +56,8 @@
 		CFAFE67E1E6E0F930062235E /* LexicalEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAFE67D1E6E0F930062235E /* LexicalEntryViewController.swift */; };
 		CFC2949C1E8C31F100938475 /* FlashCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC2949B1E8C31F100938475 /* FlashCardCell.swift */; };
 		CFC61E211EA2FCFC003A1200 /* SectionCellsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC61E201EA2FCFC003A1200 /* SectionCellsExtension.swift */; };
+		CFE9F9F81EA40B3500FB4CFD /* ColorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE9F9F71EA40B3500FB4CFD /* ColorViewModel.swift */; };
+		CFE9F9FA1EA43B0E00FB4CFD /* ColorCellsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE9F9F91EA43B0E00FB4CFD /* ColorCellsViewModel.swift */; };
 		CFF0750D1E988AE900F7794D /* CardSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF0750C1E988AE900F7794D /* CardSettingsController.swift */; };
 		CFF0750F1E98C97000F7794D /* LeftPaddedUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF0750E1E98C97000F7794D /* LeftPaddedUILabel.swift */; };
 		CFF075121E9AF49800F7794D /* csTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF075111E9AF49800F7794D /* csTableViewExtension.swift */; };
@@ -124,6 +126,8 @@
 		CFAFE67D1E6E0F930062235E /* LexicalEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LexicalEntryViewController.swift; sourceTree = "<group>"; };
 		CFC2949B1E8C31F100938475 /* FlashCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashCardCell.swift; sourceTree = "<group>"; };
 		CFC61E201EA2FCFC003A1200 /* SectionCellsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionCellsExtension.swift; sourceTree = "<group>"; };
+		CFE9F9F71EA40B3500FB4CFD /* ColorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorViewModel.swift; sourceTree = "<group>"; };
+		CFE9F9F91EA43B0E00FB4CFD /* ColorCellsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCellsViewModel.swift; sourceTree = "<group>"; };
 		CFF0750C1E988AE900F7794D /* CardSettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardSettingsController.swift; sourceTree = "<group>"; };
 		CFF0750E1E98C97000F7794D /* LeftPaddedUILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftPaddedUILabel.swift; sourceTree = "<group>"; };
 		CFF075111E9AF49800F7794D /* csTableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = csTableViewExtension.swift; sourceTree = "<group>"; };
@@ -241,6 +245,7 @@
 				CF16A9F11EA1C21A003EC2F7 /* BackgroundColorView.swift */,
 				CFFBB4071E8D87F0007DCD66 /* CardView.swift */,
 				CF16A9FF1EA2A8D6003EC2F7 /* ColorImageSelectorView.swift */,
+				CF16A9FA1EA1E19C003EC2F7 /* AlphaView.swift */,
 				CF16AA041EA2AFA4003EC2F7 /* FlashCardView.swift */,
 			);
 			name = Views;
@@ -493,6 +498,8 @@
 			isa = PBXGroup;
 			children = (
 				CFF075231E9B5F3500F7794D /* DetailsViewModel.swift */,
+				CFE9F9F71EA40B3500FB4CFD /* ColorViewModel.swift */,
+				CFE9F9F91EA43B0E00FB4CFD /* ColorCellsViewModel.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -504,7 +511,6 @@
 				CF5108A81E7C6FBD008B2BC0 /* LeftPaddedTextField.swift */,
 				CFFBB40A1E8DB11A007DCD66 /* VerticallyCenteredTextView.swift */,
 				CFF0750E1E98C97000F7794D /* LeftPaddedUILabel.swift */,
-				CF16A9FA1EA1E19C003EC2F7 /* AlphaView.swift */,
 			);
 			name = Subclasses;
 			sourceTree = "<group>";
@@ -642,6 +648,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF16AA071EA2ECE0003EC2F7 /* cisCollectionViewExtension.swift in Sources */,
+				CFE9F9FA1EA43B0E00FB4CFD /* ColorCellsViewModel.swift in Sources */,
 				CFFBB40B1E8DB11A007DCD66 /* VerticallyCenteredTextView.swift in Sources */,
 				CF5108A71E7C6DBD008B2BC0 /* hvSetupViewExtension.swift in Sources */,
 				CF5108AE1E7CABDE008B2BC0 /* CustomCardsViewController.swift in Sources */,
@@ -689,6 +696,7 @@
 				CFAFE67C1E6B7A130062235E /* Extensions.swift in Sources */,
 				CFF0751D1E9AF60B00F7794D /* biCollectionViewExtension.swift in Sources */,
 				CF16A9FB1EA1E19C003EC2F7 /* AlphaView.swift in Sources */,
+				CFE9F9F81EA40B3500FB4CFD /* ColorViewModel.swift in Sources */,
 				CF51089A1E7B5B8D008B2BC0 /* DashboardCell.swift in Sources */,
 				CFF075141E9AF52700F7794D /* csSetupViewExtension.swift in Sources */,
 				CF38712A1E873CFA005AA866 /* Helper.swift in Sources */,

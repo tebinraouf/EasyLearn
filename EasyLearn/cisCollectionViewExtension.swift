@@ -34,7 +34,7 @@ extension ColorImageSelector: UICollectionViewDataSource, UICollectionViewDelega
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = CGSize(width: selectorView.frame.width, height: 130)
+        let size = CGSize(width: selectorView.frame.width, height: 150)
         return size
     }
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -44,5 +44,4 @@ extension ColorImageSelector: UICollectionViewDataSource, UICollectionViewDelega
         print("Row: ", row, "Item: ", item)
         selectorView.labelViews.wordName.text = "\(item)"
     }
-
 }

@@ -15,6 +15,9 @@ public extension UIColor {
     convenience init(r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat) {
         self.init(red: r/255, green: g/255, blue: b/255, alpha: a)
     }
+//    convenience init(r: Int, g: Int, b: Int, a: CGFloat) {
+//        self.init(red: CGFloat(r/255), green: CGFloat(g/255), blue: CGFloat(b/255), alpha: a)
+//    }
     public class var appColor: UIColor {
         return UIColor(r: 255, g: 20, b: 106, a: 1)
     }

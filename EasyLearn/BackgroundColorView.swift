@@ -89,6 +89,30 @@ class BackgroundColorView: UIView {
         btn.setImage(UIImage.icon(from: .FontAwesome, code: "plus", imageSize: CGSize(width: 30, height: 30), ofSize: 30, color: .white), for: .normal)
         return btn
     }()
+    var redValue: Int {
+        get {
+            return Int(sliderRed.value)
+        }
+        set {
+            sliderRed.value = Float(newValue)
+        }
+    }
+    var greenValue: Int {
+        get {
+            return Int(sliderGreen.value)
+        }
+        set {
+            sliderGreen.value = Float(newValue)
+        }
+    }
+    var blueValue: Int {
+        get {
+            return Int(sliderBlue.value)
+        }
+        set {
+            sliderBlue.value = Float(newValue)
+        }
+    }
     override init(frame: CGRect) {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
