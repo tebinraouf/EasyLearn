@@ -84,6 +84,11 @@ class Service {
         let session = URLSession.shared
         let result = session.dataTask(with: request!, completionHandler: { data, response, error in
             
+//            let queue = DispatchQueue(label: "tech.tebin.fetchData")
+//            queue.async {
+//                <#code#>
+//            }
+            
             DispatchQueue.main.async {
                 if error == nil {
                     

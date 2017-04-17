@@ -14,6 +14,7 @@ class ColorImageSelector: UIViewController {
     var sectionTitles = ["Card Background Color", "Text Color", "View Background Color", "Card Background Image"]
     let coreDataLayer = DataLayerSimple()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white

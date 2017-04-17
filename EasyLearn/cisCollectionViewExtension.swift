@@ -41,7 +41,7 @@ extension ColorImageSelector: UICollectionViewDataSource, UICollectionViewDelega
         selectorView.collectionView.reloadData()
     }
     func handleClicks(row: IndexPath, item: IndexPath){
-        print("Row: ", row, "Item: ", item)
-        selectorView.labelViews.wordName.text = "\(item)"
+        let selectorModel = SelectorViewModel(selectorView: selectorView)
+        selectorModel.changeColors(row, item)
     }
 }

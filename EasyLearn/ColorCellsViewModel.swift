@@ -12,7 +12,7 @@ import UIKit
 class ColorCellsViewModel {
     let coreDataLayer = ColorCoreDataLayer()
     var colors: [Color] {
-        return coreDataLayer.fetchColors()!
+        return coreDataLayer.fetchColors()!.reversed()
     }
     var cellBackground: UIColor {
         return .green

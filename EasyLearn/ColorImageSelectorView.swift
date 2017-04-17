@@ -12,13 +12,13 @@ class ColorImageSelectorView: UIView {
     let mainCardView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .blue
+        view.backgroundColor = .appColor
         return view
     }()
     let sampleCardView: UIView = {
        let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .yellow
+        view.backgroundColor = .clear
         return view
     }()
     let labelViews: FlashCardView = {
@@ -33,6 +33,55 @@ class ColorImageSelectorView: UIView {
         cv.backgroundColor = .clear
         return cv
     }()
+    
+    
+    //Property 01
+    var wordNameBgColor: UIColor? {
+        get {
+            return labelViews.wordName.backgroundColor
+        }
+        set {
+            labelViews.wordName.backgroundColor = newValue
+        }
+    }
+    var wordDetailsBgColor: UIColor? {
+        get {
+            return labelViews.wordDetails.backgroundColor
+        }
+        set {
+            labelViews.wordDetails.backgroundColor = newValue
+        }
+    }
+    //Property 02
+    var wordNameTextColor: UIColor? {
+        get {
+            return labelViews.wordName.textColor
+        }
+        set {
+            labelViews.wordName.textColor = newValue
+        }
+    }
+    var wordDetailsTextColor: UIColor? {
+        get {
+            return labelViews.wordDetails.textColor
+        }
+        set {
+            labelViews.wordDetails.textColor = newValue
+        }
+    }
+    //Property 01
+    var viewBgColor: UIColor? {
+        get {
+            return mainCardView.backgroundColor
+        }
+        set {
+            mainCardView.backgroundColor = newValue
+        }
+    }
+    
+    
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .clear
