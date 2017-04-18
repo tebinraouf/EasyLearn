@@ -38,3 +38,9 @@ class SelectorViewModel {
     }
     
 }
+
+enum sectionOption: Int {
+    case CardBackground
+    case TextColor
+    case ViewBackground
+}
