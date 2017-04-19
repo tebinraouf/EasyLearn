@@ -9,9 +9,9 @@
 import UIKit
 
 class ColorViewModel {
-    var red: Int
-    var green: Int
-    var blue: Int
+    var red: Int16
+    var green: Int16
+    var blue: Int16
     var colorView: BackgroundColorView
     
     init(colorView: BackgroundColorView) {
@@ -29,13 +29,13 @@ class ColorViewModel {
         setUserSettings(for: colorView.greenValue, forKey: "green")
         setUserSettings(for: colorView.blueValue, forKey: "blue")
     }
-    func generateRandomColors() -> (red: Int, green: Int, blue: Int) {
-        let randomRed = Int(arc4random_uniform(255))
-        let randomGreen = Int(arc4random_uniform(255))
-        let randomBlue = Int(arc4random_uniform(255))
+    func generateRandomColors() -> (red: Int16, green: Int16, blue: Int16) {
+        let randomRed = Int16(arc4random_uniform(255))
+        let randomGreen = Int16(arc4random_uniform(255))
+        let randomBlue = Int16(arc4random_uniform(255))
         return (randomRed, randomGreen, randomBlue)
     }
-    func newColor() -> (r: Int, g: Int, b: Int) {
+    func newColor() -> (r: Int16, g: Int16, b: Int16) {
         return (red, green, blue)
     }
 }

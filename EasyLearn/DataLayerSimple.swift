@@ -89,11 +89,23 @@ class ColorCoreDataLayer {
         let colors = try? mainContext.fetch(fetchRequest)
         return colors
     }
-    func addColor(rgb: (r: Int, g: Int, b: Int)) {
+    func addColor(rgb: (r: Int16, g: Int16, b: Int16)) {
         let color = Color(context: mainContext)
-        color.red = Float(rgb.r)
-        color.green = Float(rgb.g)
-        color.blue = Float(rgb.b)
+        color.red = Int16(rgb.r)
+        color.green = Int16(rgb.g)
+        color.blue = Int16(rgb.b)
+        mainContext.trySave()
+    }
+    func saveDefault(_ color: Color) {
+        let fetchRequest: NSFetchRequest<Color> = Color.fetchRequest()
+        //fetchRequest.predicate = NSPredicate(format: "red == %@ && green == %@ && blue == %@", "\(color.red)", "\(color.green)", "\(color.blue)")
+        fetchRequest.predicate = NSPredicate(format: "red == %D && green == %D && blue == %D", color.red, color.green, color.blue)
+
+        if let colors = try? mainContext.fetch(fetchRequest) {
+            for aColor in colors {
+                aColor.isTextColor = 1
+            }
+        }
         mainContext.trySave()
     }
 }

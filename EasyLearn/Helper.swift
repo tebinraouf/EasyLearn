@@ -45,7 +45,7 @@ public func isNavBarHidden(_ bool: Bool, _ navigationController: UINavigationCon
     }
 }
 
-public func progressImage(with progress: Int, color: UIColor, textColor: UIColor) -> UIImage {
+public func progressImage(with progress: Int16, color: UIColor, textColor: UIColor) -> UIImage {
     let layer = CALayer()
     layer.backgroundColor = color.cgColor
     layer.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
@@ -73,7 +73,10 @@ public func progressImage(with progress: Int, color: UIColor, textColor: UIColor
 public func DegreesToRadians (_ value:CGFloat) -> CGFloat {
     return value * CGFloat(Double.pi) / 180.0
 }
-
+public func setUserSettings(for value: Int16, forKey: String) {
+    UserDefaults.standard.setValue(value, forKey: forKey)
+    UserDefaults.standard.synchronize()
+}
 public func setUserSettings(for value: Int, forKey: String) {
     UserDefaults.standard.setValue(value, forKey: forKey)
     UserDefaults.standard.synchronize()

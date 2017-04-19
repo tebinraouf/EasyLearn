@@ -46,8 +46,8 @@ extension CardBgColorController: BackgroundColorProtocol {
         let red = translation.x + lastRed
         let green = translation.y + lastGreen
         if gesture.state == .changed {
-            colorView.redValue = Int(red)
-            colorView.greenValue = Int(green)
+            colorView.redValue = Int16(red)
+            colorView.greenValue = Int16(green)
         }
         if gesture.state == .ended {
             setUserSettings(for: red, forKey: "red")

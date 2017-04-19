@@ -27,4 +27,9 @@ class ColorCellsViewModel {
         let color = colors[indexPath.item]
         return UIColor(r: CGFloat(color.red), g: CGFloat(color.green), b: CGFloat(color.blue), a: 1)
     }
+    func saveDefaultColor(at indexPath: IndexPath) {
+        let rgb = colors[indexPath.item]
+        print(rgb.red, rgb.green, rgb.blue)
+        coreDataLayer.saveDefault(rgb)
+    }
 }

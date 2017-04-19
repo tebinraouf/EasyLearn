@@ -12,7 +12,6 @@ extension HomeViewController: HomeViewDelegate {
     //MARK:- Handle Search
     func handleSearch(){
         if let text = homeView.searchTextField.text?.trimmingCharacters(in: CharacterSet.whitespaces) {
-            
             if text.isEmpty {
                 homeView.searchTextField.placeholder = "Please type a word"
             }else {
@@ -21,7 +20,6 @@ extension HomeViewController: HomeViewDelegate {
                     self.handleNextViewController(word, error)
                 })
             }
-            
         }
     }
     func handleNextViewController(_ word: Word?, _ error: Error?) {
@@ -42,7 +40,6 @@ extension HomeViewController: HomeViewDelegate {
         errorEmptyViewController.messageLabel.text = text
         self.navigationController?.pushViewController(errorEmptyViewController, animated: true)
     }
-    
     func handleMoreButton() {
         handleConstant(constant: 0)
     }
@@ -56,12 +53,10 @@ extension HomeViewController: HomeViewDelegate {
         default: break
         }
     }
-    
     func handleConstant(constant: CGFloat){
         self.homeView.collectionVSLeadingAnchor?.constant = constant
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
         }
     }
-    
 }

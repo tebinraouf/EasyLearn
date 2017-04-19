@@ -89,25 +89,25 @@ class BackgroundColorView: UIView {
         btn.setImage(UIImage.icon(from: .FontAwesome, code: "plus", imageSize: CGSize(width: 30, height: 30), ofSize: 30, color: .white), for: .normal)
         return btn
     }()
-    var redValue: Int {
+    var redValue: Int16 {
         get {
-            return Int(sliderRed.value)
+            return Int16(sliderRed.value)
         }
         set {
             sliderRed.value = Float(newValue)
         }
     }
-    var greenValue: Int {
+    var greenValue: Int16 {
         get {
-            return Int(sliderGreen.value)
+            return Int16(sliderGreen.value)
         }
         set {
             sliderGreen.value = Float(newValue)
         }
     }
-    var blueValue: Int {
+    var blueValue: Int16 {
         get {
-            return Int(sliderBlue.value)
+            return Int16(sliderBlue.value)
         }
         set {
             sliderBlue.value = Float(newValue)

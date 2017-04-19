@@ -45,7 +45,6 @@ class Service {
             }
         })
         result.resume()
-        
     }
     func detailsFor(word: String, lexicalCategory: String ,completion: @escaping ([Detail]?, Error?) -> ()) {
         ////lexicalCategory=noun;examples;definitions
