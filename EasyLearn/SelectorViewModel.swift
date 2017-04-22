@@ -23,15 +23,17 @@ class SelectorViewModel {
             //Card Background - Text Background (wordName & wordDetails) Property 01
             selectorView.wordNameBgColor = colorModel.backgroundColorForItemAt(item)
             selectorView.wordDetailsBgColor = colorModel.backgroundColorForItemAt(item)
-            colorModel.saveDefaultColor(at: item)
+            colorModel.saveDefaultColor(for: row.item, at: item)
         case 1:
             //Text Color (The text's color) Property 02
             selectorView.wordNameTextColor = colorModel.backgroundColorForItemAt(item)
             selectorView.wordDetailsTextColor = colorModel.backgroundColorForItemAt(item)
             selectorView.cardNumberTextColor = colorModel.backgroundColorForItemAt(item)
+            colorModel.saveDefaultColor(for: row.item, at: item)
         case 2:
             //View Background Property 03
             selectorView.viewBgColor = colorModel.backgroundColorForItemAt(item)
+            colorModel.saveDefaultColor(for: row.item, at: item)
         default:
             break
         }

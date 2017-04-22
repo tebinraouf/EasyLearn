@@ -15,6 +15,9 @@ extension CardsViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = cardView.flashCV.dequeueReusableCell(withReuseIdentifier: CellID.cvCellID.rawValue, for: indexPath) as! FlashCardCell
+        //Settings Updates
+        updateColors(cell)
+        updateCardLabel(cell)
         
         cellReference = cell
         cell.flashCardView.wordName.text = favWords[indexPath.item].word
@@ -40,15 +43,7 @@ extension CardsViewController: UICollectionViewDelegate, UICollectionViewDataSou
         let total = favWords.count
         
         cell.flashCardView.cardNumber.text = "\(indexPath.item + 1) - \(total)"
-        
-        
-        
-        
         indexPathReference = indexPath
-        
-        
-        view.backgroundColor = .orange
-        
         return cell
     }
     
@@ -79,7 +74,9 @@ extension CardsViewController: UICollectionViewDelegate, UICollectionViewDataSou
             cell.flashCardView.wordDetails.isHidden = true
         }
         
-
+        //Settings Updates
+        updateColors(cell)
+        updateCardLabel(cell)
         
     }
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {

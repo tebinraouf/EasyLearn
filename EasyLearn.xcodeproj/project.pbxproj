@@ -56,6 +56,7 @@
 		CFAFE67E1E6E0F930062235E /* LexicalEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAFE67D1E6E0F930062235E /* LexicalEntryViewController.swift */; };
 		CFC2949C1E8C31F100938475 /* FlashCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC2949B1E8C31F100938475 /* FlashCardCell.swift */; };
 		CFC61E211EA2FCFC003A1200 /* SectionCellsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC61E201EA2FCFC003A1200 /* SectionCellsExtension.swift */; };
+		CFCD98661EAAE04A0048C119 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCD98651EAAE04A0048C119 /* CardViewModel.swift */; };
 		CFE9F9F81EA40B3500FB4CFD /* ColorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE9F9F71EA40B3500FB4CFD /* ColorViewModel.swift */; };
 		CFE9F9FA1EA43B0E00FB4CFD /* ColorCellsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE9F9F91EA43B0E00FB4CFD /* ColorCellsViewModel.swift */; };
 		CFE9F9FC1EA5182200FB4CFD /* SelectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE9F9FB1EA5182200FB4CFD /* SelectorViewModel.swift */; };
@@ -127,6 +128,7 @@
 		CFAFE67D1E6E0F930062235E /* LexicalEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LexicalEntryViewController.swift; sourceTree = "<group>"; };
 		CFC2949B1E8C31F100938475 /* FlashCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashCardCell.swift; sourceTree = "<group>"; };
 		CFC61E201EA2FCFC003A1200 /* SectionCellsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionCellsExtension.swift; sourceTree = "<group>"; };
+		CFCD98651EAAE04A0048C119 /* CardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		CFE9F9F71EA40B3500FB4CFD /* ColorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorViewModel.swift; sourceTree = "<group>"; };
 		CFE9F9F91EA43B0E00FB4CFD /* ColorCellsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCellsViewModel.swift; sourceTree = "<group>"; };
 		CFE9F9FB1EA5182200FB4CFD /* SelectorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectorViewModel.swift; sourceTree = "<group>"; };
@@ -503,6 +505,7 @@
 				CFE9F9F71EA40B3500FB4CFD /* ColorViewModel.swift */,
 				CFE9F9F91EA43B0E00FB4CFD /* ColorCellsViewModel.swift */,
 				CFE9F9FB1EA5182200FB4CFD /* SelectorViewModel.swift */,
+				CFCD98651EAAE04A0048C119 /* CardViewModel.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -651,6 +654,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF16AA071EA2ECE0003EC2F7 /* cisCollectionViewExtension.swift in Sources */,
+				CFCD98661EAAE04A0048C119 /* CardViewModel.swift in Sources */,
 				CFE9F9FA1EA43B0E00FB4CFD /* ColorCellsViewModel.swift in Sources */,
 				CFFBB40B1E8DB11A007DCD66 /* VerticallyCenteredTextView.swift in Sources */,
 				CF5108A71E7C6DBD008B2BC0 /* hvSetupViewExtension.swift in Sources */,

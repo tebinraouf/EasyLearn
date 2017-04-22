@@ -12,6 +12,7 @@ extension ColorImageSelector {
     func setupViews(){
         selectorViewSetup()
         handleClickableViews()
+        selectedColorsForSampleCard()
     }
     func selectorViewSetup(){
         view.addSubview(selectorView)
@@ -29,4 +30,19 @@ extension ColorImageSelector {
     func handleSampleCardFlipping(){
         handleFlipping(from: selectorView.labelViews.wordName, to: selectorView.labelViews.wordDetails, isFlipped: &isFlipped)
     }
+    
+    func selectedColorsForSampleCard(){
+        let colorCells = ColorCellsViewModel()
+        selectorView.wordNameBgColor = colorCells.saveSampleCardProperties()[0]
+        selectorView.wordDetailsBgColor = colorCells.saveSampleCardProperties()[0]
+        
+        selectorView.wordNameTextColor = colorCells.saveSampleCardProperties()[1]
+        selectorView.wordDetailsTextColor = colorCells.saveSampleCardProperties()[1]
+        selectorView.cardNumberTextColor = colorCells.saveSampleCardProperties()[1]
+        
+        selectorView.viewBgColor = colorCells.saveSampleCardProperties()[2]
+
+    }
+    
+    
 }

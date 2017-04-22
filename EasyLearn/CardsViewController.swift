@@ -76,4 +76,11 @@ class CardsViewController: UIViewController {
         super.viewWillLayoutSubviews()
         cardView.flashCV.collectionViewLayout.invalidateLayout()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        //Settings Update
+        updateColors(cellReference)
+        updateCardLabel(cellReference)
+    }
+    
+    
 }

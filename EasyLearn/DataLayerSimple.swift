@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 class DataLayerSimple {
     let mainContext = CoreDataStack.sharedInstance.mainContext
@@ -96,18 +97,62 @@ class ColorCoreDataLayer {
         color.blue = Int16(rgb.b)
         mainContext.trySave()
     }
-    func saveDefault(_ color: Color) {
+    
+    //MARK: Card Background Color
+    func saveDefaultColor(_ color: Color, for row: Int) {
         let fetchRequest: NSFetchRequest<Color> = Color.fetchRequest()
-        //fetchRequest.predicate = NSPredicate(format: "red == %@ && green == %@ && blue == %@", "\(color.red)", "\(color.green)", "\(color.blue)")
         fetchRequest.predicate = NSPredicate(format: "red == %D && green == %D && blue == %D", color.red, color.green, color.blue)
 
         if let colors = try? mainContext.fetch(fetchRequest) {
             for aColor in colors {
-                aColor.isTextColor = 1
+                
+                switch row {
+                case 0:
+                    aColor.isCardColor = 1
+                case 1:
+                    aColor.isTextColor = 1
+                case 2:
+                    aColor.isViewColor = 1
+                default:
+                    break
+                }
+                
             }
         }
         mainContext.trySave()
     }
+    func resetPreviousDefault(for row: Int) {
+        let fetchRequest: NSFetchRequest<Color> = Color.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "isCardColor == 1 || isTextColor == 1 || isViewColor == 1")
+        if let colors = try? mainContext.fetch(fetchRequest) {
+            for color in colors {
+                
+                switch row {
+                case 0:
+                    color.isCardColor = 0
+                case 1:
+                    color.isTextColor = 0
+                case 2:
+                    color.isViewColor = 0
+                default:
+                    break
+                }
+                
+            }
+        }
+    }
+    func getColor(for property: String) -> Color? {
+        let fetchRequest: NSFetchRequest<Color> = Color.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "\(property) == 1")
+        if let colors = try? mainContext.fetch(fetchRequest) {
+            if let color = colors.first {
+                return color
+            }
+        }
+        return nil
+    }
+    
+
 }
 
 

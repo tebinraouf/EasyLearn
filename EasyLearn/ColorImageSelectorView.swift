@@ -12,7 +12,7 @@ class ColorImageSelectorView: UIView {
     let mainCardView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .appColor
+        view.backgroundColor = .appLightGreen
         return view
     }()
     let sampleCardView: UIView = {

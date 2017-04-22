@@ -106,6 +106,26 @@ extension CardsViewController {
         
     }
     
+    //Settings Updates
+    func updateColors(_ cell: FlashCardCell?){
+        if let cell = cell {
+            let cardViewModel = CardViewModel(cell, cardView)
+            cardViewModel.changeCellBackgroundColor()
+        }
+    }
+    func updateCardLabel(_ cell: FlashCardCell?){
+        
+        if let cell = cell {
+            let isCardNumberLabelHidden = UserDefaults.standard.bool(forKey: UserDefaultsKeys.cardNumberLabel.rawValue)
+            if !isCardNumberLabelHidden {
+                cell.flashCardView.cardNumber.isHidden = true
+            } else {
+                cell.flashCardView.cardNumber.isHidden = false
+            }
+        }
+        
+    }
+    
 }
 
 

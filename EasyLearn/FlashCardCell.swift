@@ -26,12 +26,7 @@ class FlashCardCell: BaseCell {
     let tap = UITapGestureRecognizer(target: self, action: #selector(slideFlashcardHandler))
         addGestureRecognizer(tap)
         
-        let isCardNumberLabelHidden = UserDefaults.standard.bool(forKey: UserDefaultsKeys.cardNumberLabel.rawValue)
-        if !isCardNumberLabelHidden {
-            flashCardView.cardNumber.isHidden = true
-        } else {
-            flashCardView.cardNumber.isHidden = false
-        }
+        
     }
     
     var handleSlideFlipping: (() -> ())?

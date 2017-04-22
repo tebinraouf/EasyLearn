@@ -44,6 +44,25 @@ class FlashCardView: UIView {
         label.textAlignment = .center
         return label
     }()
+    var cardColor: UIColor? {
+        get {
+            return wordName.backgroundColor
+        }
+        set {
+            wordName.backgroundColor = newValue
+            wordDetails.backgroundColor = newValue
+        }
+    }
+    var textColor: UIColor? {
+        get {
+            return wordName.textColor
+        }
+        set {
+            wordName.textColor = newValue
+            wordDetails.textColor = newValue
+            cardNumber.textColor = newValue
+        }
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
