@@ -25,29 +25,29 @@ class ColorCellsViewModel {
     }
     func backgroundColorForItemAt(_ indexPath: IndexPath) -> UIColor {
         let color = colors[indexPath.item]
-        return UIColor(r: CGFloat(color.red), g: CGFloat(color.green), b: CGFloat(color.blue), a: 1)
+        return UIColor(r: CGFloat(color.red), g: CGFloat(color.green), b: CGFloat(color.blue), a: CGFloat(color.alpha))
     }
     func saveDefaultColor(for row: Int, at indexPath: IndexPath) {
         let rgb = colors[indexPath.item]
         coreDataLayer.resetPreviousDefault(for: row)
         coreDataLayer.saveDefaultColor(rgb, for: row)
     }
-    func saveSampleCardProperties() -> [UIColor] {
+    func saveSampleCardProperties() -> [UIColor]? {
         let properties = ["isCardColor","isTextColor","isViewColor"]
         var color: Color!
         var colors = [UIColor]()
         
         color = coreDataLayer.getColor(for: properties[0])
-        if let red = color?.red, let green = color?.green, let blue = color?.blue {
-             colors.append(UIColor(r: CGFloat(red), g: CGFloat(green), b: CGFloat(blue), a: 1))
+        if let red = color?.red, let green = color?.green, let blue = color?.blue, let alpha = color?.alpha {
+             colors.append(UIColor(r: CGFloat(red), g: CGFloat(green), b: CGFloat(blue), a: CGFloat(alpha)))
         }
         color = coreDataLayer.getColor(for: properties[1])
-        if let red = color?.red, let green = color?.green, let blue = color?.blue {
-            colors.append(UIColor(r: CGFloat(red), g: CGFloat(green), b: CGFloat(blue), a: 1))
+        if let red = color?.red, let green = color?.green, let blue = color?.blue, let alpha = color?.alpha {
+            colors.append(UIColor(r: CGFloat(red), g: CGFloat(green), b: CGFloat(blue), a: CGFloat(alpha)))
         }
         color = coreDataLayer.getColor(for: properties[2])
-        if let red = color?.red, let green = color?.green, let blue = color?.blue {
-            colors.append(UIColor(r: CGFloat(red), g: CGFloat(green), b: CGFloat(blue), a: 1))
+        if let red = color?.red, let green = color?.green, let blue = color?.blue, let alpha = color?.alpha {
+            colors.append(UIColor(r: CGFloat(red), g: CGFloat(green), b: CGFloat(blue), a: CGFloat(alpha)))
         }
         return colors
     }

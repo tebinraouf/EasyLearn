@@ -81,8 +81,10 @@ class ColorCoreDataLayer {
     }()
     init() {
         if numberOfColors <= 0 {
-            addColor(rgb: (r: 255, g: 255, b: 255))
-            addColor(rgb: (r: 0, g: 0, b: 0))
+            
+            addColor(rgb: (r: 255, g: 255, b: 255), alpha: 1, isCardColor: 1, isTextColor: 0, isViewColor: 0)
+            addColor(rgb: (r: 0, g: 0, b: 0), alpha: 1, isCardColor: 0, isTextColor: 1, isViewColor: 0)
+            addColor(rgb: (r: 220, g: 226, b: 202), alpha: 1, isCardColor: 0, isTextColor: 0, isViewColor: 1)
         }
     }
     func fetchColors() -> [Color]? {
@@ -90,11 +92,23 @@ class ColorCoreDataLayer {
         let colors = try? mainContext.fetch(fetchRequest)
         return colors
     }
-    func addColor(rgb: (r: Int16, g: Int16, b: Int16)) {
+    func addColor(rgb: (r: Int16, g: Int16, b: Int16), alpha: Double) {
         let color = Color(context: mainContext)
         color.red = Int16(rgb.r)
         color.green = Int16(rgb.g)
         color.blue = Int16(rgb.b)
+        color.alpha = Double(String(format: "%.2f", alpha))!
+        mainContext.trySave()
+    }
+    func addColor(rgb: (r: Int16, g: Int16, b: Int16), alpha: Double, isCardColor: Int16, isTextColor: Int16, isViewColor: Int16) {
+        let color = Color(context: mainContext)
+        color.red = Int16(rgb.r)
+        color.green = Int16(rgb.g)
+        color.blue = Int16(rgb.b)
+        color.alpha = Double(String(format: "%.2f", alpha))!
+        color.isCardColor = isCardColor
+        color.isTextColor = isTextColor
+        color.isViewColor = isViewColor
         mainContext.trySave()
     }
     
@@ -154,9 +168,6 @@ class ColorCoreDataLayer {
     
 
 }
-
-
-
 
 
 

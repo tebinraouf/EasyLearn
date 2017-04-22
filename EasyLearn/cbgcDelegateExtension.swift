@@ -26,7 +26,7 @@ extension CardBgColorController: BackgroundColorProtocol {
         let cvm = ColorViewModel(colorView: colorView)
         let newColor = cvm.newColor()
         let currentLayer = ColorCoreDataLayer()
-        currentLayer.addColor(rgb: newColor)
+        currentLayer.addColor(rgb: newColor, alpha: Double(alpha))
     }
     func handlePanGesture(gesture: UIPanGestureRecognizer) {
         let translation = gesture.translation(in: view)

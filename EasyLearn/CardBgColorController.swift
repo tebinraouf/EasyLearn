@@ -15,6 +15,7 @@ class CardBgColorController: UIViewController {
         super.viewDidLoad()
         setupView()
         handleRandomColor()
+        
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()

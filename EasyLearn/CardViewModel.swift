@@ -23,16 +23,16 @@ class CardViewModel {
         var color: Color!
         
         color = currentDataLayer.getColor(for: properties[0])
-        if let red = color?.red, let green = color?.green, let blue = color?.blue {
-            cell?.flashCardView.cardColor = UIColor(r: CGFloat(red), g: CGFloat(green), b: CGFloat(blue), a: 1)
+        if let red = color?.red, let green = color?.green, let blue = color?.blue, let alpha = color?.alpha {
+            cell?.flashCardView.cardColor = UIColor(r: CGFloat(red), g: CGFloat(green), b: CGFloat(blue), a: CGFloat(alpha))
         }
         color = currentDataLayer.getColor(for: properties[1])
-        if let red = color?.red, let green = color?.green, let blue = color?.blue {
-            cell?.flashCardView.textColor = UIColor(r: CGFloat(red), g: CGFloat(green), b: CGFloat(blue), a: 1)
+        if let red = color?.red, let green = color?.green, let blue = color?.blue, let alpha = color?.alpha {
+            cell?.flashCardView.textColor = UIColor(r: CGFloat(red), g: CGFloat(green), b: CGFloat(blue), a: CGFloat(alpha))
         }
         color = currentDataLayer.getColor(for: properties[2])
-        if let red = color?.red, let green = color?.green, let blue = color?.blue {
-            cardView.backgroundColor = UIColor(r: CGFloat(red), g: CGFloat(green), b: CGFloat(blue), a: 1)
+        if let red = color?.red, let green = color?.green, let blue = color?.blue, let alpha = color?.alpha {
+            cardView.backgroundColor = UIColor(r: CGFloat(red), g: CGFloat(green), b: CGFloat(blue), a: CGFloat(alpha))
         }
     }
 }

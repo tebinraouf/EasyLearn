@@ -33,14 +33,22 @@ extension ColorImageSelector {
     
     func selectedColorsForSampleCard(){
         let colorCells = ColorCellsViewModel()
-        selectorView.wordNameBgColor = colorCells.saveSampleCardProperties()[0]
-        selectorView.wordDetailsBgColor = colorCells.saveSampleCardProperties()[0]
         
-        selectorView.wordNameTextColor = colorCells.saveSampleCardProperties()[1]
-        selectorView.wordDetailsTextColor = colorCells.saveSampleCardProperties()[1]
-        selectorView.cardNumberTextColor = colorCells.saveSampleCardProperties()[1]
+        if let backgroundColor = colorCells.saveSampleCardProperties()?.first {
+            selectorView.wordNameBgColor = backgroundColor
+            selectorView.wordDetailsBgColor = backgroundColor
+        }
         
-        selectorView.viewBgColor = colorCells.saveSampleCardProperties()[2]
+        if let textColor = colorCells.saveSampleCardProperties()?[1] {
+            selectorView.wordNameTextColor = textColor
+            selectorView.wordDetailsTextColor = textColor
+            selectorView.cardNumberTextColor = textColor
+        }
+        
+        if let viewColor = colorCells.saveSampleCardProperties()?[2] {
+            selectorView.viewBgColor = viewColor
+        }
+        
 
     }
     
