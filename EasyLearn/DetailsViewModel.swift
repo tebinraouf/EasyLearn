@@ -11,7 +11,7 @@ import UIKit
 struct DetailsViewModel {
     let textView: NSAttributedString
     let numberCircle: String
-    let bookmarkLabel: String
+    let bookmarkTitle: String
     
     init(word: Word?, indexPath: IndexPath) {
         
@@ -39,7 +39,7 @@ struct DetailsViewModel {
         
         self.textView = result
         self.numberCircle = "\(indexPath.item+1)"
-        self.bookmarkLabel = DetailsViewModel.updateBookmarkLabel(word,indexPath)
+        self.bookmarkTitle = DetailsViewModel.updateBookmarkLabel(word,indexPath)
     }
     
     func getFormatedString() -> NSAttributedString {

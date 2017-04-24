@@ -11,7 +11,7 @@ import UIKit
 //custom funcs
 extension WordDetailsVC {
     func handleAddingWord(_ cell: DetailsCell, _ indexPath: IndexPath){
-        cell.completion = {
+        cell.handleBookmarkTapFunc = {
             let id = self.word?.details?[indexPath.item].wordId
             let language = self.word?.language
             let lexicalEntry = self.lexicalCategory
@@ -23,10 +23,10 @@ extension WordDetailsVC {
             if let wordID = self.word?.details?[indexPath.item].wordId {
                 let isWord = self.currentDataLayer.isWordSavedWith(id: wordID)
                 if isWord {
-                    cell.bookmarkLabel.text = String.fontAwesomeIcon("bookmark-o")
+                    cell.btnBookmark.setTitle(String.fontAwesomeIcon("bookmark-o"), for: .normal)
                     self.currentDataLayer.removeWordBy(id: wordID)
                 } else {
-                    cell.bookmarkLabel.text = String.fontAwesomeIcon("bookmark")
+                    cell.btnBookmark.setTitle(String.fontAwesomeIcon("bookmark"), for: .normal)
                     self.currentDataLayer.saveWord(id, language, lexicalEntry, word, type, examples, definition)
                 }
             }
@@ -45,7 +45,7 @@ extension WordDetailsVC {
         }
     }
     func subWordContents(_ cell: DetailsCell, _ indexPath: IndexPath){
-        cell.handleSubWordCompletion = {
+        cell.handleSubWordDetailsFunc = {
             let subDetailsController = WordSubDetailsVC()
             subDetailsController.wdDelegate = self
             subDetailsController.wordDetail = self.word?.details?[indexPath.item]
