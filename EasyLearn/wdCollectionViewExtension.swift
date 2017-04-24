@@ -20,53 +20,20 @@ extension WordDetailsVC: UICollectionViewDataSource, UICollectionViewDelegate, U
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellID.wdCellID.rawValue, for: indexPath) as! DetailsCell
-        //cell.backgroundColor = .blue
         
-        let detailsViewModel = DetailsViewModel(word: word, indexPath: indexPath)
-        cell.displayWordInCell(using: detailsViewModel)
-
+        textFormatter(cell, indexPath)
+        handleAddingWord(cell, indexPath)
+        handleMoreDetails(cell, indexPath)
+        subWordContents(cell, indexPath)
         
-        cell.completion = {
-            //print(self.word?.details?[indexPath.item].definition)
-            
-            let id = self.word?.details?[indexPath.item].wordId
-            let language = self.word?.language
-            let lexicalEntry = self.lexicalCategory
-            let word = self.word?.word
-            let type = self.word?.type
-            let examples = self.word?.details?[indexPath.item].examples
-            
-            let definition = self.word?.details?[indexPath.item].definition
-            
-            self.currentDataLayer.saveWord(id, language, lexicalEntry, word, type, examples, definition)
-            
-        }
-        
-        if word?.details?[indexPath.item].subdetails?.count == 0 {
-            cell.btnMoreDetails.isHidden = true
-            
-        } else {
-            cell.btnMoreDetails.isHidden = false
-        }
-        
-        cell.handleSubWordCompletion = {
-            let subDetailsController = WordSubDetailsVC()
-            subDetailsController.wdDelegate = self
-            subDetailsController.wordDetail = self.word?.details?[indexPath.item]
-            self.navigationController?.pushViewController(subDetailsController, animated: true)
-        }
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let size = CGSize(width: collectionView.frame.width, height: 1000)
-        
         let dvm = DetailsViewModel(word: word, indexPath: indexPath)
-        
         let formatedString = dvm.textView
-       
         let estimatedFrame = formatedString.boundingRect(with: size, options: .usesLineFragmentOrigin, context: nil)
         return CGSize(width: collectionView.frame.width, height: estimatedFrame.height + 60)
-        
     }
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         collectionView.reloadData()
@@ -77,7 +44,6 @@ extension WordDetailsVC: UICollectionViewDataSource, UICollectionViewDelegate, U
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 3
     }
-    
-    
-    
 }
+
+

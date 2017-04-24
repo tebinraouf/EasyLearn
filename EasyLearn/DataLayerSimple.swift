@@ -80,7 +80,7 @@ class DataLayerSimple {
         fetchRequest.predicate = NSPredicate(format: "id == %@", id)
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         try! self.mainContext.execute(deleteRequest)
-        self.mainContext.trySave()
+        self.mainContext.reset()
     }
 }
 

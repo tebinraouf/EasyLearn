@@ -57,6 +57,7 @@
 		CFC2949C1E8C31F100938475 /* FlashCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC2949B1E8C31F100938475 /* FlashCardCell.swift */; };
 		CFC61E211EA2FCFC003A1200 /* SectionCellsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC61E201EA2FCFC003A1200 /* SectionCellsExtension.swift */; };
 		CFCD98661EAAE04A0048C119 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCD98651EAAE04A0048C119 /* CardViewModel.swift */; };
+		CFCD986C1EAEA4E30048C119 /* wdCustomFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCD986B1EAEA4E30048C119 /* wdCustomFuncs.swift */; };
 		CFE9F9F81EA40B3500FB4CFD /* ColorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE9F9F71EA40B3500FB4CFD /* ColorViewModel.swift */; };
 		CFE9F9FA1EA43B0E00FB4CFD /* ColorCellsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE9F9F91EA43B0E00FB4CFD /* ColorCellsViewModel.swift */; };
 		CFE9F9FC1EA5182200FB4CFD /* SelectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE9F9FB1EA5182200FB4CFD /* SelectorViewModel.swift */; };
@@ -129,6 +130,7 @@
 		CFC2949B1E8C31F100938475 /* FlashCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashCardCell.swift; sourceTree = "<group>"; };
 		CFC61E201EA2FCFC003A1200 /* SectionCellsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionCellsExtension.swift; sourceTree = "<group>"; };
 		CFCD98651EAAE04A0048C119 /* CardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
+		CFCD986B1EAEA4E30048C119 /* wdCustomFuncs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = wdCustomFuncs.swift; sourceTree = "<group>"; };
 		CFE9F9F71EA40B3500FB4CFD /* ColorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorViewModel.swift; sourceTree = "<group>"; };
 		CFE9F9F91EA43B0E00FB4CFD /* ColorCellsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCellsViewModel.swift; sourceTree = "<group>"; };
 		CFE9F9FB1EA5182200FB4CFD /* SelectorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectorViewModel.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 			children = (
 				CF1C11131E84C42400EC0181 /* wdSetupViewExtension.swift */,
 				CF1C110F1E84BDF400EC0181 /* wdCollectionViewExtension.swift */,
+				CFCD986B1EAEA4E30048C119 /* wdCustomFuncs.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -676,6 +679,7 @@
 				CFF075241E9B5F3500F7794D /* DetailsViewModel.swift in Sources */,
 				CFAFE67A1E6A87510062235E /* Models.swift in Sources */,
 				CF16A9F21EA1C21A003EC2F7 /* BackgroundColorView.swift in Sources */,
+				CFCD986C1EAEA4E30048C119 /* wdCustomFuncs.swift in Sources */,
 				CFF075121E9AF49800F7794D /* csTableViewExtension.swift in Sources */,
 				CF5108B11E7CAC27008B2BC0 /* PlayViewController.swift in Sources */,
 				CFF075171E9AF56800F7794D /* PlaySpeedController.swift in Sources */,

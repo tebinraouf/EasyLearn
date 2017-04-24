@@ -13,7 +13,7 @@ class WordDetailsVC: UIViewController {
     //MARK:- Variables
     var word: Word?
     var lexicalCategory: String?
-    var indexPathReference: IndexPath?
+    var isClicked = true
     
     let currentDataLayer = DataLayerSimple()
     
