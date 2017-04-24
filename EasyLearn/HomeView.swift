@@ -23,7 +23,12 @@ class HomeView: UIView {
         return view
     }()
     
-    
+    var activityIndicatorView: UIActivityIndicatorView = {
+        let ac = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.whiteLarge)
+        ac.translatesAutoresizingMaskIntoConstraints = false
+        ac.color = .appColor
+        return ac
+    }()
     var logoImage: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage()
@@ -95,16 +100,9 @@ class HomeView: UIView {
         setupView()
     }
     
-   
+    
     //MARK:- Setup Views
     func setupView(){
-        
-        
-        addSubview(containerView)
-        containerView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        containerView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        containerView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        containerView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         
         
         addSubview(logoImage)
@@ -131,7 +129,7 @@ class HomeView: UIView {
         collectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20).isActive = true
-    
+        
         addSubview(moreButton)
         moreButton.topAnchor.constraint(equalTo: topAnchor, constant: 30).isActive = true
         moreButton.leftAnchor.constraint(equalTo: leftAnchor, constant: 10).isActive = true
@@ -142,7 +140,7 @@ class HomeView: UIView {
         addSubview(collectionViewSlider)
         collectionViewSlider.topAnchor.constraint(equalTo: topAnchor).isActive = true
         collectionVSLeadingAnchor = collectionViewSlider.leadingAnchor.constraint(equalTo: leadingAnchor)
-
+        
         collectionVSLeadingAnchor?.constant = -200
         collectionVSLeadingAnchor?.isActive = true
         
@@ -152,12 +150,30 @@ class HomeView: UIView {
         
         
         
+        addSubview(containerView)
+        containerView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        containerView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        containerView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        containerView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        containerView.isHidden = true
+        
+        addSubview(activityIndicatorView)
+        activityIndicatorView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        activityIndicatorView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        activityIndicatorView.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        activityIndicatorView.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        
+        
+        
+        
+        
+        
     }
     
-     
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-
+    
 }

@@ -19,6 +19,8 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         view.backgroundColor = .white
         setupView()
         registerCells()
+        handleNavigationBars()
+       
         
     }
     
@@ -35,6 +37,18 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         handleSearch()
         homeView.searchTextField.resignFirstResponder()
         return true
+    }
+    //MARK: Navigation Bar
+    func handleNavigationBars(){
+        let back = UIBarButtonItem(title: "Cards", style: .plain, target: self, action: nil)
+        navigationItem.backBarButtonItem = back
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        homeView.containerView.isHidden = true
+        homeView.activityIndicatorView.stopAnimating()
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        print("Test...")
     }
     
 }

@@ -17,7 +17,7 @@ protocol DetailCellDelegate {
 class DetailsCell: BaseCell {
     
     var delegate: WordDetailsVC!
-    
+    var indexPath: IndexPath!
     
     var textView: UITextView = {
         let tv = UITextView()
@@ -121,8 +121,20 @@ class DetailsCell: BaseCell {
         
     }
     var completion: (() -> ())?
+    
     func handleBookmarkTap(){
         completion?()
+        //TODO: Handle BookmarkTap
+        /* 
+         1. create a func in DataLayerSimple (isWordSaved)
+         2. returns true if the (wordName && examples && definitions ) are in database.
+         3. then bookmarkLabel.text should be filled.
+         4. If bookmarkLabel is filled, word is in database, and if it is tapped again, remove it from database.
+         print("Word ID: ", word?.details?[indexPath.item].wordId)
+        */
+        
+        bookmarkLabel.text = String.fontAwesomeIcon("bookmark")
+        
     }
     var handleSubWordCompletion: (()->())?
     func handleSubWordDetails(){
@@ -133,7 +145,7 @@ class DetailsCell: BaseCell {
     func displayWordInCell(using detailsViewModel: DetailsViewModel) {
         textView.attributedText = detailsViewModel.textView
         numberCircle.text = detailsViewModel.numberCircle
+        bookmarkLabel.text = detailsViewModel.bookmarkLabel
     }
-    
     
 }

@@ -27,12 +27,10 @@ class CardsViewController: UIViewController {
         setupView()
         handleViewGesture()
         cardView.flashCV.reloadData()
-        handleNavIcons()
+        handleBars()
         playCardSpeedInitialValue()
         favWords = currentDataSimple.fetchAllWords()!
-//        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
-//        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-     
+
         //initial value
         UserDefaults.standard.register(defaults: [UserDefaultsKeys.cardNumberLabel.rawValue: true])
     }

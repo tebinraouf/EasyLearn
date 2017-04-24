@@ -10,21 +10,22 @@ import UIKit
 
 extension CardsViewController {
 
-    final func handleNavIcons(){
-        
+    final func handleBars(){
+        handleNavigationIcons()
+        handleToolBarIcons()
+    }
+    func handleNavigationIcons(){
         let settings = barButtonWith(code: "cog", handleBy:  #selector(handleSetting))
         navigationItem.rightBarButtonItem = settings
-        
-        
+    }
+    func handleToolBarIcons(){
         let swap = barButtonWith(code: "exchange", handleBy:  #selector(handleCardSwap))
         let shuffle  = barButtonWith(code: "random", handleBy: #selector(handleShuffle))
         let sortAsc = barButtonWith(code: "sort-alpha-asc", handleBy: #selector(handleSortAsc))
         let sortDesc = barButtonWith(code: "sort-alpha-desc", handleBy: #selector(handleSortDesc))
         let play = barButtonWith(code: "play", handleBy: #selector(handlePlay))
         cardView.toolBar.items = [swap, .space, shuffle, .space, sortAsc, .space, sortDesc, .space, play]
-
     }
-
     final func handleSetting(){
         let cardSettingsController = CardSettingsController()
         navigationController?.pushViewController(cardSettingsController, animated: true)
@@ -74,7 +75,7 @@ extension CardsViewController {
         
     }
     
-    final func barButtonWith(code: String, handleBy selector: Selector, size: CGFloat? = nil) -> UIBarButtonItem {
+    final func barButtonWith(code: String, handleBy selector: Selector?, size: CGFloat? = nil) -> UIBarButtonItem {
         let btn = UIBarButtonItem()
         btn.icon(from: .FontAwesome, code: code, ofSize: size ?? 20)
         btn.target = self

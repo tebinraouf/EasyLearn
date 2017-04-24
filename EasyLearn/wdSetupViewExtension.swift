@@ -17,5 +17,4 @@ extension WordDetailsVC  {
         collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
- 
 }

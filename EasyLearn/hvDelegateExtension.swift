@@ -19,8 +19,12 @@ extension HomeViewController: HomeViewDelegate {
                 Service.sharedInstance.initialSearch(word: text, completion: { (word, error) in
                     self.handleNextViewController(word, error)
                 })
+                homeView.containerView.isHidden = false
+                //homeView.containerView.backgroundColor = UIColor(r: 240, g: 240, b: 240, a: 0.5)
+                homeView.activityIndicatorView.startAnimating()
             }
         }
+        
     }
     func handleNextViewController(_ word: Word?, _ error: Error?) {
         if error == nil && word?.id != nil {

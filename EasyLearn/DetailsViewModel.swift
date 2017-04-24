@@ -11,8 +11,7 @@ import UIKit
 struct DetailsViewModel {
     let textView: NSAttributedString
     let numberCircle: String
-    
-    
+    let bookmarkLabel: String
     
     init(word: Word?, indexPath: IndexPath) {
         
@@ -40,6 +39,7 @@ struct DetailsViewModel {
         
         self.textView = result
         self.numberCircle = "\(indexPath.item+1)"
+        self.bookmarkLabel = DetailsViewModel.updateBookmarkLabel(word,indexPath)
     }
     
     func getFormatedString() -> NSAttributedString {
@@ -64,6 +64,20 @@ struct DetailsViewModel {
     private static func wdRegister(_ register: String) -> NSMutableAttributedString {
         let registerAttrText = NSMutableAttributedString(string: "(\(register)) ", attributes: [NSFontAttributeName:UIFont(name: UIFont.italicSystemFont(ofSize: UIFont.systemFontSize).fontName, size: UIFont.systemFontSize)!])
         return registerAttrText
+    }
+    
+    private static func updateBookmarkLabel(_ word: Word?, _ indexPath: IndexPath) -> String {
+        
+        let coreLayer = DataLayerSimple()
+        if let wordID = word?.details?[indexPath.item].wordId {
+            let isWord = coreLayer.isWordSavedWith(id: wordID)
+            if isWord {
+                return String.fontAwesomeIcon("bookmark")!
+            } else {
+               return String.fontAwesomeIcon("bookmark-o")!
+            }
+        }
+        return ""
     }
     
     

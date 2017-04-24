@@ -16,7 +16,9 @@ enum Header: String {
     case appKey = "e37ace6aa056552f46837f02bd5f0ced"
 }
 class Service {
+    
     static let sharedInstance = Service()
+    
     func headers(word: String, urlString: String) -> URLRequest? {
         guard let url = URL(string: urlString) else { return nil }
         var request = URLRequest(url: url)

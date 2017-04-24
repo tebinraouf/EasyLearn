@@ -65,7 +65,23 @@ class DataLayerSimple {
         let words = try? mainContext.fetch(fetchRequest)
         return words
     }
-    
+    func isWordSavedWith(id: String) -> Bool {
+        let fetchRequest: NSFetchRequest<CDWord> = CDWord.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id == %@", id)
+        let words = try? mainContext.fetch(fetchRequest)
+        if let _ = words?.first {
+            return true
+        } else {
+            return false
+        }
+    }
+    func removeWordBy(id: String) {
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "CDWord")
+        fetchRequest.predicate = NSPredicate(format: "id == %@", id)
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        try! self.mainContext.execute(deleteRequest)
+        self.mainContext.trySave()
+    }
 }
 
 

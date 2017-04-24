@@ -13,6 +13,7 @@ class WordDetailsVC: UIViewController {
     //MARK:- Variables
     var word: Word?
     var lexicalCategory: String?
+    var indexPathReference: IndexPath?
     
     let currentDataLayer = DataLayerSimple()
     
@@ -33,8 +34,6 @@ class WordDetailsVC: UIViewController {
         navigationItem.title = word?.word
         setupView()
         registerCells()
-        
-        print("Number of results: ",currentDataLayer.numberOfResults)
         
     }
     //MARK:- Register Cells and Setup Views

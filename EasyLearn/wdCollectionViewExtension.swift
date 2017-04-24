@@ -24,8 +24,7 @@ extension WordDetailsVC: UICollectionViewDataSource, UICollectionViewDelegate, U
         
         let detailsViewModel = DetailsViewModel(word: word, indexPath: indexPath)
         cell.displayWordInCell(using: detailsViewModel)
-        
-        
+
         
         cell.completion = {
             //print(self.word?.details?[indexPath.item].definition)
@@ -40,7 +39,6 @@ extension WordDetailsVC: UICollectionViewDataSource, UICollectionViewDelegate, U
             let definition = self.word?.details?[indexPath.item].definition
             
             self.currentDataLayer.saveWord(id, language, lexicalEntry, word, type, examples, definition)
-            
             
         }
         
