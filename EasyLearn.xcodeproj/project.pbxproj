@@ -48,6 +48,7 @@
 		CF6012D81E763C8D00EA0A3A /* WordDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6012D71E763C8D00EA0A3A /* WordDetailsVC.swift */; };
 		CF6012DB1E773B8900EA0A3A /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6012DA1E773B8900EA0A3A /* BaseCell.swift */; };
 		CF6012DD1E789B8600EA0A3A /* DetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6012DC1E789B8600EA0A3A /* DetailsCell.swift */; };
+		CF6BB13D1EB136C6003A8D54 /* HomeVCAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BB13C1EB136C6003A8D54 /* HomeVCAction.swift */; };
 		CFAFE6681E68F9CA0062235E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAFE6671E68F9CA0062235E /* AppDelegate.swift */; };
 		CFAFE66A1E68F9CA0062235E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAFE6691E68F9CA0062235E /* HomeViewController.swift */; };
 		CFAFE66D1E68F9CA0062235E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFAFE66B1E68F9CA0062235E /* Main.storyboard */; };
@@ -121,6 +122,7 @@
 		CF6012D71E763C8D00EA0A3A /* WordDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordDetailsVC.swift; sourceTree = "<group>"; };
 		CF6012DA1E773B8900EA0A3A /* BaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		CF6012DC1E789B8600EA0A3A /* DetailsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsCell.swift; sourceTree = "<group>"; };
+		CF6BB13C1EB136C6003A8D54 /* HomeVCAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVCAction.swift; sourceTree = "<group>"; };
 		CFAFE6641E68F9CA0062235E /* EasyLearn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyLearn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFAFE6671E68F9CA0062235E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFAFE6691E68F9CA0062235E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 			children = (
 				CF5108A51E7C6D69008B2BC0 /* Extensions */,
 				CFAFE6691E68F9CA0062235E /* HomeViewController.swift */,
+				CF6BB13C1EB136C6003A8D54 /* HomeVCAction.swift */,
 			);
 			name = HomeView;
 			sourceTree = "<group>";
@@ -719,6 +722,7 @@
 				CF16AA001EA2A8D6003EC2F7 /* ColorImageSelectorView.swift in Sources */,
 				CF16AA091EA2EEF6003EC2F7 /* ColorImageCell.swift in Sources */,
 				CF3871271E8731D2005AA866 /* cvCollectionViewExtension.swift in Sources */,
+				CF6BB13D1EB136C6003A8D54 /* HomeVCAction.swift in Sources */,
 				CFAFE6681E68F9CA0062235E /* AppDelegate.swift in Sources */,
 				CF5108981E7B59D5008B2BC0 /* CardsViewController.swift in Sources */,
 				CF5108A91E7C6FBD008B2BC0 /* LeftPaddedTextField.swift in Sources */,

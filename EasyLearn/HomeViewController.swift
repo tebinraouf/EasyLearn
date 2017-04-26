@@ -22,6 +22,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         setupView()
         registerCells()
         handleNavigationBars()
+        
         homeViewAction.homeView = homeView
         homeViewAction.view = view
     }
