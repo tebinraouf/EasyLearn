@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		04188B771971CC16A77558DA /* Pods_EasyLearn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 976E28507EF0BE8A82DAFA65 /* Pods_EasyLearn.framework */; };
+		CF0A82E11EAEFDC800D2BFB1 /* HomeControllerObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0A82E01EAEFDC800D2BFB1 /* HomeControllerObserver.swift */; };
+		CF0A82E41EB1031500D2BFB1 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0A82E31EB1031500D2BFB1 /* App.swift */; };
 		CF16A9E31E9F2F18003EC2F7 /* csCustomFuctionsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF16A9E21E9F2F18003EC2F7 /* csCustomFuctionsExtension.swift */; };
 		CF16A9F01EA1BF75003EC2F7 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF16A9EF1EA1BF75003EC2F7 /* CircleButton.swift */; };
 		CF16A9F21EA1C21A003EC2F7 /* BackgroundColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF16A9F11EA1C21A003EC2F7 /* BackgroundColorView.swift */; };
@@ -79,6 +81,8 @@
 		6EF7DBD2DA942ED54ADD413D /* Pods-EasyLearn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyLearn.release.xcconfig"; path = "Pods/Target Support Files/Pods-EasyLearn/Pods-EasyLearn.release.xcconfig"; sourceTree = "<group>"; };
 		976E28507EF0BE8A82DAFA65 /* Pods_EasyLearn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyLearn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8B2FD38BDFDC2C50038BE00 /* Pods-EasyLearn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyLearn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyLearn/Pods-EasyLearn.debug.xcconfig"; sourceTree = "<group>"; };
+		CF0A82E01EAEFDC800D2BFB1 /* HomeControllerObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeControllerObserver.swift; sourceTree = "<group>"; };
+		CF0A82E31EB1031500D2BFB1 /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		CF16A9E21E9F2F18003EC2F7 /* csCustomFuctionsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = csCustomFuctionsExtension.swift; sourceTree = "<group>"; };
 		CF16A9EF1EA1BF75003EC2F7 /* CircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		CF16A9F11EA1C21A003EC2F7 /* BackgroundColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundColorView.swift; sourceTree = "<group>"; };
@@ -167,6 +171,22 @@
 				6EF7DBD2DA942ED54ADD413D /* Pods-EasyLearn.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		CF0A82DF1EAEFC6A00D2BFB1 /* Observers */ = {
+			isa = PBXGroup;
+			children = (
+				CF0A82E01EAEFDC800D2BFB1 /* HomeControllerObserver.swift */,
+			);
+			name = Observers;
+			sourceTree = "<group>";
+		};
+		CF0A82E21EB102F400D2BFB1 /* AppNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				CF0A82E31EB1031500D2BFB1 /* App.swift */,
+			);
+			name = AppNavigation;
 			sourceTree = "<group>";
 		};
 		CF16A9F31EA1C2B4003EC2F7 /* Extensions */ = {
@@ -422,6 +442,7 @@
 		CFAFE6661E68F9CA0062235E /* EasyLearn */ = {
 			isa = PBXGroup;
 			children = (
+				CF0A82DF1EAEFC6A00D2BFB1 /* Observers */,
 				CFFBB4091E8DB0FB007DCD66 /* Subclasses */,
 				CF38712D1E89B086005AA866 /* Core Data */,
 				CF3871281E873CEB005AA866 /* Helper */,
@@ -430,6 +451,7 @@
 				CF6012DE1E789BA100EA0A3A /* Controllers */,
 				CF6012E21E789BF200EA0A3A /* Models */,
 				CF6012E11E789BE600EA0A3A /* Extensions */,
+				CF0A82E21EB102F400D2BFB1 /* AppNavigation */,
 				CF6012E01E789BCB00EA0A3A /* Supporting */,
 				CF6012DF1E789BBE00EA0A3A /* Networking */,
 			);
@@ -661,6 +683,7 @@
 				CFE9F9FA1EA43B0E00FB4CFD /* ColorCellsViewModel.swift in Sources */,
 				CFFBB40B1E8DB11A007DCD66 /* VerticallyCenteredTextView.swift in Sources */,
 				CF5108A71E7C6DBD008B2BC0 /* hvSetupViewExtension.swift in Sources */,
+				CF0A82E41EB1031500D2BFB1 /* App.swift in Sources */,
 				CF5108AE1E7CABDE008B2BC0 /* CustomCardsViewController.swift in Sources */,
 				CF16AA051EA2AFA4003EC2F7 /* FlashCardView.swift in Sources */,
 				CF6012DD1E789B8600EA0A3A /* DetailsCell.swift in Sources */,
@@ -679,6 +702,7 @@
 				CFF075241E9B5F3500F7794D /* DetailsViewModel.swift in Sources */,
 				CFAFE67A1E6A87510062235E /* Models.swift in Sources */,
 				CF16A9F21EA1C21A003EC2F7 /* BackgroundColorView.swift in Sources */,
+				CF0A82E11EAEFDC800D2BFB1 /* HomeControllerObserver.swift in Sources */,
 				CFCD986C1EAEA4E30048C119 /* wdCustomFuncs.swift in Sources */,
 				CFF075121E9AF49800F7794D /* csTableViewExtension.swift in Sources */,
 				CF5108B11E7CAC27008B2BC0 /* PlayViewController.swift in Sources */,

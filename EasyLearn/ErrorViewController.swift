@@ -9,10 +9,6 @@
 import UIKit
 
 class ErrorEmptyViewController: UIViewController {
-    
-    
-    var delegate: HomeViewController?
-    
     let messageLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
@@ -21,19 +17,12 @@ class ErrorEmptyViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         isNavBarHidden(false, navigationController)
-        
-        
-        
         view.backgroundColor = .appGray
         setupView()
-        
     }
-    
     func setupView(){
         view.addSubview(messageLabel)
         messageLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true

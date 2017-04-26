@@ -12,7 +12,7 @@ import UIKit
 class LexicalEntryViewController: UITableViewController {
     
     var word: Word?
-    var delegate: HomeViewController!
+    //var delegate: HomeViewController!
     let cellID = "cellID"
     
     override func viewDidLoad() {

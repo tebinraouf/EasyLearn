@@ -38,22 +38,10 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         
         if homeView.collectionVSLeadingAnchor?.constant != -200 {
             handleMenuSlide()
-        }else {
-            switch indexPath.item {
-            case 0:
-                pushViewController(CardsViewController())
-            case 1:
-                pushViewController(CustomCardsViewController())
-            case 2:
-                pushViewController(PlayViewController())
-            case 3:
-                pushViewController(SettingsViewController())
-            default: break
-            }
+        } else {
+            didSelectNextViewController(indexPath)
         }
     }
-    func pushViewController(_ controller: UIViewController){
-        self.navigationController?.pushViewController(controller, animated: true)
-    }
+    
     
 }

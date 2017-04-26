@@ -9,6 +9,9 @@
 import UIKit
 import Foundation
 
+class CONSTANTS {
+    static let SearchButton = Notification.Name("HomeViewControllerSearchButton")
+}
 
 enum CellID: String {
     case hvCellID

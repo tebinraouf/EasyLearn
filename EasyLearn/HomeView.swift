@@ -77,8 +77,6 @@ class HomeView: UIView {
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
         cv.backgroundColor = .clear
-        //cv.dataSource = self
-        //cv.delegate = self
         return cv
     }()
     
@@ -163,17 +161,67 @@ class HomeView: UIView {
         activityIndicatorView.heightAnchor.constraint(equalToConstant: 40).isActive = true
         activityIndicatorView.widthAnchor.constraint(equalToConstant: 40).isActive = true
         
-        
-        
-        
-        
-        
     }
     
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
+}
+
+
+extension HomeView {
+    public var searchText: String? {
+        get {
+            return searchTextField.text?.trimmingCharacters(in: CharacterSet.whitespaces)
+        }
+        set {
+            searchTextField.text = newValue
+        }
+    }
+    public var searchPlaceHolder: String? {
+        get {
+            return searchTextField.placeholder
+        }
+        set {
+            searchTextField.placeholder = newValue
+        }
+    }
+    public var searchTextFieldDelegate: UITextFieldDelegate? {
+        get {
+            return searchTextField.delegate
+        }
+        set {
+            searchTextField.delegate = newValue
+        }
+    }
+}
+
+
+extension HomeView {
+    public func setSearchButton(_ target: Any?, action: Selector) {
+        searchButton.addTarget(target, action: action, for: .touchDown)
+    }
+    public func setMoreButton(_ target: Any?, action: Selector) {
+        moreButton.addTarget(target, action: action, for: .touchDown)
+    }
+}
+
+extension HomeView {
+    var collectionViewDelegate: UICollectionViewDelegate? {
+        get {
+            return collectionView.delegate
+        }
+        set {
+            collectionView.delegate = newValue
+        }
+    }
+    var collectionViewDataSource: UICollectionViewDataSource? {
+        get {
+            return collectionView.dataSource
+        }
+        set {
+            collectionView.dataSource = newValue
+        }
+    }
 }

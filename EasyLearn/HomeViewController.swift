@@ -9,10 +9,12 @@
 import UIKit
 import SwiftIconFont
 
-
 class HomeViewController: UIViewController, UITextFieldDelegate {
     
     let homeView = HomeView()
+    var didSelectNextViewController: (IndexPath) -> () = { _ in }
+    var homeViewAction = HomeVCAction()
+
     //MARK:- View Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +22,8 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         setupView()
         registerCells()
         handleNavigationBars()
-       
-        
+        homeViewAction.homeView = homeView
+        homeViewAction.view = view
     }
     
     //MARK:- Register Cells
@@ -47,8 +49,15 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         homeView.containerView.isHidden = true
         homeView.activityIndicatorView.stopAnimating()
     }
-    override func viewWillDisappear(_ animated: Bool) {
-        print("Test...")
+}
+
+extension HomeViewController {
+    var getNextViewController: (Word?, Error?) -> () {
+        get {
+            return homeViewAction.pushToNextViewController
+        }
+        set {
+            homeViewAction.pushToNextViewController = newValue
+        }
     }
-    
 }

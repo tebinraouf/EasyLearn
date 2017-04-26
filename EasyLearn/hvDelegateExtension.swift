@@ -8,41 +8,30 @@
 
 import UIKit
 
-extension HomeViewController: HomeViewDelegate {
+
+
+
+class HomeVCAction: HomeViewDelegate {
+    
+    var homeView: HomeView!
+    var view: UIView!
+    var pushToNextViewController: (Word?, Error?) -> () = { _ in }
+
     //MARK:- Handle Search
     func handleSearch(){
-        if let text = homeView.searchTextField.text?.trimmingCharacters(in: CharacterSet.whitespaces) {
+        if let text = homeView.searchText {
             if text.isEmpty {
-                homeView.searchTextField.placeholder = "Please type a word"
+                homeView.searchPlaceHolder = "Please type a word"
             }else {
-                homeView.searchTextField.placeholder = "Search..."
+                homeView.searchPlaceHolder = "Search..."
                 Service.sharedInstance.initialSearch(word: text, completion: { (word, error) in
-                    self.handleNextViewController(word, error)
+                    //self.handleNextViewController(word, error)
+                    self.pushToNextViewController(word, error)
                 })
                 homeView.containerView.isHidden = false
-                //homeView.containerView.backgroundColor = UIColor(r: 240, g: 240, b: 240, a: 0.5)
                 homeView.activityIndicatorView.startAnimating()
             }
         }
-        
-    }
-    func handleNextViewController(_ word: Word?, _ error: Error?) {
-        if error == nil && word?.id != nil {
-            let lexicalEntryVC = LexicalEntryViewController()
-            lexicalEntryVC.delegate = self
-            lexicalEntryVC.word = word
-            self.navigationController?.pushViewController(lexicalEntryVC, animated: true)
-        } else if word?.id == nil && error == nil {
-            goToErrorEmptyViewControllerWith(text: "No result. Please try another word.")
-        } else {
-            goToErrorEmptyViewControllerWith(text: "The Internet connection appears to be offline.")
-        }
-    }
-    func goToErrorEmptyViewControllerWith(text: String){
-        let errorEmptyViewController = ErrorEmptyViewController()
-        errorEmptyViewController.delegate = self
-        errorEmptyViewController.messageLabel.text = text
-        self.navigationController?.pushViewController(errorEmptyViewController, animated: true)
     }
     func handleMoreButton() {
         handleConstant(constant: 0)
@@ -57,10 +46,28 @@ extension HomeViewController: HomeViewDelegate {
         default: break
         }
     }
-    func handleConstant(constant: CGFloat){
+    private func handleConstant(constant: CGFloat){
         self.homeView.collectionVSLeadingAnchor?.constant = constant
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
         }
+    }
+    
+}
+
+
+extension HomeViewController {
+    //MARK:- Handle Search
+    func handleSearch(){
+        homeViewAction.handleSearch()
+    }
+    func handleMoreButton() {
+        homeViewAction.handleMoreButton()
+    }
+    func handleMenuSlide() {
+        homeViewAction.handleMenuSlide()
+    }
+    func handleMenuSlideLeft(gesture: UIScreenEdgePanGestureRecognizer){
+        homeViewAction.handleMenuSlideLeft(gesture: gesture)
     }
 }
