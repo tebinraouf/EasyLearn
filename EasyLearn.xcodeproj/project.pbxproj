@@ -72,6 +72,7 @@
 		CF6BB1B01EB1A924003A8D54 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BB1AF1EB1A924003A8D54 /* Models.swift */; };
 		CF6BB1B21EB1A952003A8D54 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BB1B11EB1A952003A8D54 /* Extensions.swift */; };
 		CF6BB1B41EB1AA81003A8D54 /* CellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BB1B31EB1AA81003A8D54 /* CellData.swift */; };
+		CF6BB1B61EB24131003A8D54 /* ShowDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BB1B51EB24131003A8D54 /* ShowDetails.swift */; };
 		CFAFE6681E68F9CA0062235E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAFE6671E68F9CA0062235E /* AppDelegate.swift */; };
 		CFAFE66D1E68F9CA0062235E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFAFE66B1E68F9CA0062235E /* Main.storyboard */; };
 		CFAFE66F1E68F9CA0062235E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFAFE66E1E68F9CA0062235E /* Assets.xcassets */; };
@@ -146,6 +147,7 @@
 		CF6BB1AF1EB1A924003A8D54 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Models.swift; path = Models/Models.swift; sourceTree = "<group>"; };
 		CF6BB1B11EB1A952003A8D54 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Extensions/Extensions.swift; sourceTree = "<group>"; };
 		CF6BB1B31EB1AA81003A8D54 /* CellData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CellData.swift; path = Controllers/LexicalController/CellData.swift; sourceTree = "<group>"; };
+		CF6BB1B51EB24131003A8D54 /* ShowDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowDetails.swift; path = Controllers/LexicalController/ShowDetails.swift; sourceTree = "<group>"; };
 		CFAFE6641E68F9CA0062235E /* EasyLearn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyLearn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFAFE6671E68F9CA0062235E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFAFE66C1E68F9CA0062235E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 			children = (
 				CF6BB1751EB1A48D003A8D54 /* LexicalEntryViewController.swift */,
 				CF6BB1B31EB1AA81003A8D54 /* CellData.swift */,
+				CF6BB1B51EB24131003A8D54 /* ShowDetails.swift */,
 			);
 			name = LexicalEntry;
 			sourceTree = "<group>";
@@ -696,6 +699,7 @@
 				CF6BB1B41EB1AA81003A8D54 /* CellData.swift in Sources */,
 				CF6BB1941EB1A654003A8D54 /* Service.swift in Sources */,
 				CF6BB1A71EB1A7D2003A8D54 /* cbgcDelegateExtension.swift in Sources */,
+				CF6BB1B61EB24131003A8D54 /* ShowDetails.swift in Sources */,
 				CF6BB1541EB1A286003A8D54 /* FlashCardCell.swift in Sources */,
 				CF6BB1421EB1A0A9003A8D54 /* HomeView.swift in Sources */,
 				CF6BB1921EB1A610003A8D54 /* SettingsViewController.swift in Sources */,
