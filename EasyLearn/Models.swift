@@ -16,6 +16,20 @@ class Word: NSObject {
     var type: String?
     var lexicalEntries: [String]?
     var details: [Detail]?
+    
+    
+    var lexicalCount: Int? {
+        get {
+            return lexicalEntries?.count
+        }
+    }
+    var getLexicalEntries: [String]? {
+        get {
+            return lexicalEntries
+        }
+    }
+    
+    
 }
 class Detail {
     var wordId: String?

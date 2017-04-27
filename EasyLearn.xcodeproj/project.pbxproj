@@ -49,6 +49,7 @@
 		CF6012DB1E773B8900EA0A3A /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6012DA1E773B8900EA0A3A /* BaseCell.swift */; };
 		CF6012DD1E789B8600EA0A3A /* DetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6012DC1E789B8600EA0A3A /* DetailsCell.swift */; };
 		CF6BB13D1EB136C6003A8D54 /* HomeVCAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BB13C1EB136C6003A8D54 /* HomeVCAction.swift */; };
+		CF6BB1401EB19FF4003A8D54 /* CustomAttributtedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BB13F1EB19FF4003A8D54 /* CustomAttributtedString.swift */; };
 		CFAFE6681E68F9CA0062235E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAFE6671E68F9CA0062235E /* AppDelegate.swift */; };
 		CFAFE66A1E68F9CA0062235E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAFE6691E68F9CA0062235E /* HomeViewController.swift */; };
 		CFAFE66D1E68F9CA0062235E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFAFE66B1E68F9CA0062235E /* Main.storyboard */; };
@@ -123,6 +124,7 @@
 		CF6012DA1E773B8900EA0A3A /* BaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		CF6012DC1E789B8600EA0A3A /* DetailsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsCell.swift; sourceTree = "<group>"; };
 		CF6BB13C1EB136C6003A8D54 /* HomeVCAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVCAction.swift; sourceTree = "<group>"; };
+		CF6BB13F1EB19FF4003A8D54 /* CustomAttributtedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomAttributtedString.swift; path = ReusableClass/CustomAttributtedString.swift; sourceTree = "<group>"; };
 		CFAFE6641E68F9CA0062235E /* EasyLearn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyLearn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFAFE6671E68F9CA0062235E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFAFE6691E68F9CA0062235E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -424,6 +426,14 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		CF6BB13E1EB19FC4003A8D54 /* ReusableClass */ = {
+			isa = PBXGroup;
+			children = (
+				CF6BB13F1EB19FF4003A8D54 /* CustomAttributtedString.swift */,
+			);
+			name = ReusableClass;
+			sourceTree = "<group>";
+		};
 		CFAFE65B1E68F9CA0062235E = {
 			isa = PBXGroup;
 			children = (
@@ -445,6 +455,7 @@
 		CFAFE6661E68F9CA0062235E /* EasyLearn */ = {
 			isa = PBXGroup;
 			children = (
+				CF6BB13E1EB19FC4003A8D54 /* ReusableClass */,
 				CF0A82DF1EAEFC6A00D2BFB1 /* Observers */,
 				CFFBB4091E8DB0FB007DCD66 /* Subclasses */,
 				CF38712D1E89B086005AA866 /* Core Data */,
@@ -685,6 +696,7 @@
 				CFCD98661EAAE04A0048C119 /* CardViewModel.swift in Sources */,
 				CFE9F9FA1EA43B0E00FB4CFD /* ColorCellsViewModel.swift in Sources */,
 				CFFBB40B1E8DB11A007DCD66 /* VerticallyCenteredTextView.swift in Sources */,
+				CF6BB1401EB19FF4003A8D54 /* CustomAttributtedString.swift in Sources */,
 				CF5108A71E7C6DBD008B2BC0 /* hvSetupViewExtension.swift in Sources */,
 				CF0A82E41EB1031500D2BFB1 /* App.swift in Sources */,
 				CF5108AE1E7CABDE008B2BC0 /* CustomCardsViewController.swift in Sources */,
