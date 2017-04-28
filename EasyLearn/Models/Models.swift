@@ -8,6 +8,77 @@
 
 import Foundation
 
+class WordWord {
+    private var language: String?
+    private var id: String?
+    private var word: String?
+    private var type: String?
+    private var lexicalEntries: [String]?
+    private var details: [DetailDetail]?
+    
+    public init(_ language: String, id: String, word: String, type: String) {
+        self.language = language
+        self.id = id
+        self.word = word
+        self.type = type
+    }
+    //MARK: Main Word Setters
+    
+    
+    
+    //MARK: Main Word Getters
+    public func getID(at indexPath: IndexPath) -> String {
+        guard let id = details?[indexPath.item].wordId else { return "" }
+        return id
+    }
+    public func getExamples(at indexPath: IndexPath) -> [String] {
+        guard let examples = details?[indexPath.item].examples else { return [""] }
+        return examples
+    }
+    public func getRegister(at indexPath: IndexPath) -> String {
+        guard let register = details?[indexPath.item].register else { return "" }
+        return register
+    }
+    public func getDefinition(at indexPath: IndexPath) -> String {
+        guard let definition = details?[indexPath.item].definition else { return "" }
+        return definition
+    }
+    //MARK: Sub Word Getters
+    
+    
+    
+    //MARK: Main Word Computed Properties
+    public var lexicalCount: Int {
+        get {
+            guard let count = lexicalEntries?.count else { return 0 }
+            return count
+        }
+    }
+    public var getLexicalEntries: [String] {
+        get {
+            guard let entries = lexicalEntries else { return [""] }
+            return entries
+        }
+    }
+    
+    
+}
+
+class DetailDetail {
+    var wordId: String?
+    var definition: String?
+    var examples: [String]?
+    var register: String?
+    var subdetails: [SubDetailSubDetail]?
+}
+class SubDetailSubDetail {
+    var subWordId: String?
+    var subDefinition: String?
+    var subRegister: String?
+    var subExamples: [String]?
+}
+
+
 
 class Word: NSObject {
     var language: String?
@@ -18,18 +89,25 @@ class Word: NSObject {
     var details: [Detail]?
     
     
-    var lexicalCount: Int? {
+    public func getWordID(at indexPath: IndexPath) -> String {
+        return details?[indexPath.item].wordId ?? ""
+    }
+    public func getExamples(at indexPath: IndexPath) -> [String] {
+        return details?[indexPath.item].examples ?? [""]
+    }
+    
+    
+    //Computed Properties
+    public var lexicalCount: Int? {
         get {
             return lexicalEntries?.count
         }
     }
-    var getLexicalEntries: [String]? {
+    public var getLexicalEntries: [String]? {
         get {
             return lexicalEntries
         }
     }
-    
-    
 }
 class Detail {
     var wordId: String?

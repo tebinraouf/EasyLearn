@@ -28,7 +28,6 @@
 		CF6BB15C1EB1A34E003A8D54 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BB1571EB1A34E003A8D54 /* CardViewModel.swift */; };
 		CF6BB15D1EB1A34E003A8D54 /* ColorCellsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BB1581EB1A34E003A8D54 /* ColorCellsViewModel.swift */; };
 		CF6BB15E1EB1A34E003A8D54 /* ColorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BB1591EB1A34E003A8D54 /* ColorViewModel.swift */; };
-		CF6BB15F1EB1A34E003A8D54 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BB15A1EB1A34E003A8D54 /* DetailsViewModel.swift */; };
 		CF6BB1601EB1A34E003A8D54 /* SelectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BB15B1EB1A34E003A8D54 /* SelectorViewModel.swift */; };
 		CF6BB1621EB1A37B003A8D54 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BB1611EB1A37B003A8D54 /* Helper.swift */; };
 		CF6BB1671EB1A3DA003A8D54 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BB1631EB1A3DA003A8D54 /* CircleButton.swift */; };
@@ -103,7 +102,6 @@
 		CF6BB1571EB1A34E003A8D54 /* CardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardViewModel.swift; path = ViewModels/CardViewModel.swift; sourceTree = "<group>"; };
 		CF6BB1581EB1A34E003A8D54 /* ColorCellsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorCellsViewModel.swift; path = ViewModels/ColorCellsViewModel.swift; sourceTree = "<group>"; };
 		CF6BB1591EB1A34E003A8D54 /* ColorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorViewModel.swift; path = ViewModels/ColorViewModel.swift; sourceTree = "<group>"; };
-		CF6BB15A1EB1A34E003A8D54 /* DetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailsViewModel.swift; path = ViewModels/DetailsViewModel.swift; sourceTree = "<group>"; };
 		CF6BB15B1EB1A34E003A8D54 /* SelectorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectorViewModel.swift; path = ViewModels/SelectorViewModel.swift; sourceTree = "<group>"; };
 		CF6BB1611EB1A37B003A8D54 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helper.swift; path = Helper/Helper.swift; sourceTree = "<group>"; };
 		CF6BB1631EB1A3DA003A8D54 /* CircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleButton.swift; path = SubClasses/CircleButton.swift; sourceTree = "<group>"; };
@@ -519,7 +517,6 @@
 				CF6BB1571EB1A34E003A8D54 /* CardViewModel.swift */,
 				CF6BB1581EB1A34E003A8D54 /* ColorCellsViewModel.swift */,
 				CF6BB1591EB1A34E003A8D54 /* ColorViewModel.swift */,
-				CF6BB15A1EB1A34E003A8D54 /* DetailsViewModel.swift */,
 				CF6BB15B1EB1A34E003A8D54 /* SelectorViewModel.swift */,
 			);
 			name = ViewModels;
@@ -676,7 +673,6 @@
 				CF6BB1A61EB1A7D2003A8D54 /* cbgcCustomFunctions.swift in Sources */,
 				CF6BB17B1EB1A4C9003A8D54 /* wdCustomFuncs.swift in Sources */,
 				CF6BB19C1EB1A743003A8D54 /* ColorImageSelector.swift in Sources */,
-				CF6BB15F1EB1A34E003A8D54 /* DetailsViewModel.swift in Sources */,
 				CF6BB1401EB19FF4003A8D54 /* CustomAttributtedString.swift in Sources */,
 				CF6BB18C1EB1A558003A8D54 /* CardsViewController.swift in Sources */,
 				CF6BB1681EB1A3DA003A8D54 /* LeftPaddedTextField.swift in Sources */,

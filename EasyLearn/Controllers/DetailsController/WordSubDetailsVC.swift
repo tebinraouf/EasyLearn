@@ -62,7 +62,7 @@ class WordSubDetailsVC: UIViewController, UICollectionViewDelegate, UICollection
         }
         
         
-        cell.handleBookmarkTapFunc = {
+        cell.didTapBookmark = {
             //print(self.word?.details?[indexPath.item].definition)
             print("sub details")
         }

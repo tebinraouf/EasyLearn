@@ -17,8 +17,9 @@ protocol DetailCellDelegate {
 class DetailsCell: BaseCell {
     
     var delegate: WordDetailsVC!
-    var handleBookmarkTapFunc: (() -> ())?
-    var handleSubWordDetailsFunc: (()->())?
+    var didTapBookmark: (() -> ()) = { _ in}
+    var handleSubWordDetailsFunc: (()->()) = { _ in}
+    
     var textView: UITextView = {
         let tv = UITextView()
         tv.text = "Testing...."
@@ -67,7 +68,6 @@ class DetailsCell: BaseCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
     override func setupView() {
         addSubViews()
         setupContainerView()
@@ -127,15 +127,44 @@ class DetailsCell: BaseCell {
         btnMoreDetails.addTarget(self, action: #selector(handleSubWordDetails), for: .touchDown)
     }
     func handleBookmarkTap(){
-        handleBookmarkTapFunc?()
+        didTapBookmark()
     }
     func handleSubWordDetails(){
-        handleSubWordDetailsFunc?()
+        handleSubWordDetailsFunc()
     }
-    func displayWordInCell(using detailsViewModel: DetailsViewModel) {
-        textView.attributedText = detailsViewModel.textView
-        numberCircle.text = detailsViewModel.numberCircle
-        btnBookmark.setTitle(detailsViewModel.bookmarkTitle, for: .normal)
-    }
-    
 }
+
+
+
+extension DetailsCell {
+    public var textViewText: NSAttributedString? {
+        get {
+            return textView.attributedText
+        }
+        set {
+            textView.attributedText = newValue
+        }
+    }
+    public var cellNumberText: String? {
+        get {
+            return numberCircle.text
+        }
+        set {
+            numberCircle.text = newValue
+        }
+    }
+    public var bookmarkIconText: String? {
+        get {
+            return btnBookmark.titleLabel?.text
+        }
+        set {
+            btnBookmark.setTitle(newValue, for: .normal)
+        }
+    }
+}
+
+
+
+
+
+

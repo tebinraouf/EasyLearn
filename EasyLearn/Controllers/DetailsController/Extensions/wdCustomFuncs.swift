@@ -11,7 +11,7 @@ import UIKit
 //custom funcs
 extension WordDetailsVC {
     func handleAddingWord(_ cell: DetailsCell, _ indexPath: IndexPath){
-        cell.handleBookmarkTapFunc = {
+        cell.didTapBookmark = {
             let id = self.word?.details?[indexPath.item].wordId
             let language = self.word?.language
             let lexicalEntry = self.lexicalCategory
@@ -20,21 +20,17 @@ extension WordDetailsVC {
             let examples = self.word?.details?[indexPath.item].examples
             let definition = self.word?.details?[indexPath.item].definition
             
-            if let wordID = self.word?.details?[indexPath.item].wordId {
-                let isWord = self.currentDataLayer.isWordSavedWith(id: wordID)
-                if isWord {
-                    cell.btnBookmark.setTitle(String.fontAwesomeIcon("bookmark-o"), for: .normal)
-                    self.currentDataLayer.removeWordBy(id: wordID)
-                } else {
-                    cell.btnBookmark.setTitle(String.fontAwesomeIcon("bookmark"), for: .normal)
-                    self.currentDataLayer.saveWord(id, language, lexicalEntry, word, type, examples, definition)
-                }
+            let wordID = self.word?.getWordID(at: indexPath)
+            
+            let isWord = self.currentDataLayer.isWordSavedWith(id: wordID!)
+            if isWord {
+                cell.btnBookmark.setTitle(String.fontAwesomeIcon("bookmark-o"), for: .normal)
+                self.currentDataLayer.removeWordBy(id: wordID!)
+            } else {
+                cell.btnBookmark.setTitle(String.fontAwesomeIcon("bookmark"), for: .normal)
+                self.currentDataLayer.saveWord(id, language, lexicalEntry, word, type, examples, definition)
             }
         }
-    }
-    func textFormatter(_ cell: DetailsCell, _ indexPath: IndexPath){
-        let detailsViewModel = DetailsViewModel(word: word, indexPath: indexPath)
-        cell.displayWordInCell(using: detailsViewModel)
     }
     func handleMoreDetails(_ cell: DetailsCell, _ indexPath: IndexPath) {
         if word?.details?[indexPath.item].subdetails?.count == 0 {
