@@ -45,7 +45,7 @@ class WordSubDetailsVC: UIViewController, UICollectionViewDelegate, UICollection
     }
     //MARK:- Collection View Functions
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if let count = wordDetail?.subdetails?.count {
+        if let count = wordDetail?.subDetails?.count {
             return count
         }
         return 0
@@ -99,7 +99,7 @@ class WordSubDetailsVC: UIViewController, UICollectionViewDelegate, UICollection
     
     func formatedStringForTextAt(_ indexPath: IndexPath) -> NSMutableAttributedString? {
         
-        guard let definition = wordDetail?.subdetails?[indexPath.item].subDefinition, let examples = wordDetail?.subdetails?[indexPath.item].subExamples else { return nil}
+        guard let definition = wordDetail?.subDetails?[indexPath.item].subDefinition, let examples = wordDetail?.subDetails?[indexPath.item].subExamples else { return nil}
         
         
         let result = wdDefinition(definition)
@@ -107,7 +107,7 @@ class WordSubDetailsVC: UIViewController, UICollectionViewDelegate, UICollection
             result.append(text)
         }
         
-        if let text = wordDetail?.subdetails?[indexPath.item].subRegister {
+        if let text = wordDetail?.subDetails?[indexPath.item].subRegister {
             let register = wdRegister(text)
             result.insert(register, at: 0)
             

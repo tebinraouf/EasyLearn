@@ -30,8 +30,8 @@ extension WordDetailsVC: UICollectionViewDataSource, UICollectionViewDelegate, U
         interaction.didInteract()
         
         //handleAddingWord(cell, indexPath)
-        //handleMoreDetails(cell, indexPath)
-        //subWordContents(cell, indexPath)
+        handleMoreDetails(cell, indexPath)
+        subWordContents(cell, indexPath)
         
         
         return cell

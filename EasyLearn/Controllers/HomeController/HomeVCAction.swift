@@ -21,6 +21,7 @@ class HomeVCAction: HomeViewDelegate {
                 homeView.searchPlaceHolder = "Please type a word"
             }else {
                 homeView.searchPlaceHolder = "Search..."
+                
                 Service.sharedInstance.initialSearch(word: text, completion: { (word, error) in
                     self.pushToNextViewController(word, error)
                 })

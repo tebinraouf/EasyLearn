@@ -23,7 +23,9 @@ class WordWord {
         self.type = type
     }
     //MARK: Main Word Setters
-    
+    public func setLexicalEntries(_ entries: [String]) {
+        self.lexicalEntries = entries
+    }
     
     
     //MARK: Main Word Getters
@@ -80,7 +82,7 @@ class SubDetailSubDetail {
 
 
 
-class Word: NSObject {
+public class Word: NSObject {
     var language: String?
     var id: String?
     var word: String?
@@ -95,7 +97,7 @@ class Word: NSObject {
     public func getExamples(at indexPath: IndexPath) -> [String] {
         return details?[indexPath.item].examples ?? [""]
     }
-    
+
     
     //Computed Properties
     public var lexicalCount: Int? {
@@ -109,14 +111,28 @@ class Word: NSObject {
         }
     }
 }
-class Detail {
+public class Detail {
     var wordId: String?
     var definition: String?
-    var examples: [String]?
     var register: String?
-    var subdetails: [SubDetail]?
+    var examples: [String]?
+    var subDetails: [SubDetail]?
+    
+    
+    init() {
+        
+    }
+    public init(_ id: String, _ definition: String, _ register: String?, _ examples: [String], _ subDetails: [SubDetail]) {
+        self.wordId = id
+        self.definition = definition
+        self.register = register
+        self.examples = examples
+        self.subDetails = subDetails
+    }
+    
+    
 }
-class SubDetail {
+public class SubDetail {
     var subWordId: String?
     var subDefinition: String?
     var subRegister: String?

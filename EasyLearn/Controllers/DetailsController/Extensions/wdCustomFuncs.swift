@@ -33,7 +33,7 @@ extension WordDetailsVC {
         }
     }
     func handleMoreDetails(_ cell: DetailsCell, _ indexPath: IndexPath) {
-        if word?.details?[indexPath.item].subdetails?.count == 0 {
+        if word?.details?[indexPath.item].subDetails?.count == 0 {
             cell.btnMoreDetails.isHidden = true
             
         } else {
