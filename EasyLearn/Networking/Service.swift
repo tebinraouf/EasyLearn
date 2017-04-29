@@ -21,23 +21,32 @@ class Resource {
     public init(_ url: String) {
         self.url = url
     }
-    public init(_ url: String, args: String...) {
-        self.url = "\(url)/"
-        args.forEach { (arg) in
-            self.url.append("\(arg)/")
+    public init(_ url: String, _ word: String, _ filters: [OxfordFilters]) {
+        self.url = url
+        self.setURL(url, word, filters)
+    }
+    
+    private func setURL(_ url: String, _ word: String, _ filters: [OxfordFilters]) {
+        self.url = url + word.lowercased() + "/"
+        
+        var i = 0
+        filters.forEach { (filter) in
+            let f = filter.rawValue
+            self.url.append(f)
+            while i < filters.count - 1 {
+                self.url.append("/")
+                i += 1
+            }
         }
     }
+    
     public var request: URLRequest? {
         guard let url = URL(string: url) else { return nil }
         var request = URLRequest(url: url)
-        print("url: ",url)
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.addValue(appId, forHTTPHeaderField: "app_id")
         request.addValue(appKey, forHTTPHeaderField: "app_key")
         return request
-    }
-    public var getURL: String {
-        return url
     }
     func load(completion: @escaping (JSON)->()) {
         let session = URLSession.shared
@@ -45,18 +54,53 @@ class Resource {
         session.dataTask(with: request) { (data, response, error) in
             guard let data = data else { return }
             let result = JSON(data: data)
+            print(response)
             completion(result)
             }.resume()
+        
     }
 }
 
-class WebService {
-    
-    
+class Builder {
+    func wordFromData(_ data: JSON) -> Word {
+        let deserializer = WordDeserializer(data: data)
+        let wordCreator = WordCreator(deserializer)
+        let word = wordCreator.create
+        return word
+    }
 }
 
 
+class WebService {
+    
+    private var url = "https://od-api.oxforddictionaries.com:443/api/v1/entries/en/"
+    private var resource: Resource
+    
+    public init(_ word: String, filters: [OxfordFilters]) {
+        resource = Resource(url, word, filters)
+    }
+    
+    public func get(_ completion: @escaping (Word) -> ()) {
+        let builder = Builder()
+        resource.load { (data) in
+            let model = builder.wordFromData(data)
+            completion(model)
+        }
+    }
+}
 
+enum OxfordFilters: String {
+    case lexicalCategory
+    case definitions
+    case domains
+    case etymologies
+    case examples
+    case grammaticalFeatures
+    case pronunciations
+    case regions
+    case registers
+    case variantForms
+}
 
 
 enum Header: String {
@@ -69,7 +113,7 @@ class Service {
     
     static let sharedInstance = Service()
     
-    func headers(urlString: String) -> URLRequest? {
+    func headers(word: String, urlString: String) -> URLRequest? {
         guard let url = URL(string: urlString) else { return nil }
         var request = URLRequest(url: url)
         request.addValue("application/json", forHTTPHeaderField: "Accept")
@@ -80,7 +124,7 @@ class Service {
     func initialSearch(word: String, completion: @escaping (Word?, Error?) -> ()) {
         let word_id = word.lowercased() //word id is case sensitive and lowercase is required
         let url = "https://od-api.oxforddictionaries.com:443/api/v1/entries/\(Header.language.rawValue)/\(word_id)/lexicalCategory"
-        let request = headers(urlString: url)
+        let request = headers(word: word, urlString: url)
         let session = URLSession.shared
         
         let result = session.dataTask(with: request!, completionHandler: { data, response, error in
@@ -105,7 +149,7 @@ class Service {
         ////lexicalCategory=noun;examples;definitions
         let word_id = word.lowercased() //word id is case sensitive and lowercase is required
         let url = "https://od-api.oxforddictionaries.com:443/api/v1/entries/\(Header.language.rawValue)/\(word_id)/lexicalCategory=\(lexicalCategory);examples;definitions;pronunciations;registers"
-        let request = headers(urlString: url)
+        let request = headers(word: word, urlString: url)
         let session = URLSession.shared
         let result = session.dataTask(with: request!, completionHandler: { data, response, error in
             guard let data = data else { return }

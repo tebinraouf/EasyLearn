@@ -14,6 +14,7 @@ class HomeVCAction: HomeViewDelegate {
     var view: UIView!
     var pushToNextViewController: (Word?, Error?) -> () = { _ in }
     
+    
     //MARK:- Handle Search
     func handleSearch(){
         if let text = homeView.searchText {
@@ -21,6 +22,12 @@ class HomeVCAction: HomeViewDelegate {
                 homeView.searchPlaceHolder = "Please type a word"
             }else {
                 homeView.searchPlaceHolder = "Search..."
+                
+                let webService = WebService(text, filters: [.lexicalCategory])
+                webService.get{ word in
+                    print(word.lexicalCount)
+                }
+                
                 
                 Service.sharedInstance.initialSearch(word: text, completion: { (word, error) in
                     self.pushToNextViewController(word, error)
