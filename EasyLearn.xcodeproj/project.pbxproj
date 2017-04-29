@@ -10,6 +10,12 @@
 		04188B771971CC16A77558DA /* Pods_EasyLearn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 976E28507EF0BE8A82DAFA65 /* Pods_EasyLearn.framework */; };
 		CF0A82E11EAEFDC800D2BFB1 /* HomeControllerObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0A82E01EAEFDC800D2BFB1 /* HomeControllerObserver.swift */; };
 		CF0A82E41EB1031500D2BFB1 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0A82E31EB1031500D2BFB1 /* App.swift */; };
+		CF3209FA1EB50C2E001BF89D /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3209F91EB50C2E001BF89D /* Reachability.swift */; };
+		CF3209FC1EB5265E001BF89D /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3209FB1EB5265E001BF89D /* Resource.swift */; };
+		CF3209FE1EB526D8001BF89D /* DetailDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3209FD1EB526D8001BF89D /* DetailDeserializer.swift */; };
+		CF320A001EB5270D001BF89D /* WordDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3209FF1EB5270D001BF89D /* WordDeserializer.swift */; };
+		CF320A021EB527A5001BF89D /* WordCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF320A011EB527A5001BF89D /* WordCreator.swift */; };
+		CF320A051EB527EB001BF89D /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF320A041EB527EB001BF89D /* Builder.swift */; };
 		CF38712F1E89B0DE005AA866 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF38712E1E89B0DE005AA866 /* CoreDataStack.swift */; };
 		CF3871321E89B193005AA866 /* CDWord.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CF3871301E89B193005AA866 /* CDWord.xcdatamodeld */; };
 		CF3871341E89BAEB005AA866 /* DataLayerSimple.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3871331E89BAEB005AA866 /* DataLayerSimple.swift */; };
@@ -84,6 +90,12 @@
 		B8B2FD38BDFDC2C50038BE00 /* Pods-EasyLearn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyLearn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyLearn/Pods-EasyLearn.debug.xcconfig"; sourceTree = "<group>"; };
 		CF0A82E01EAEFDC800D2BFB1 /* HomeControllerObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeControllerObserver.swift; sourceTree = "<group>"; };
 		CF0A82E31EB1031500D2BFB1 /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		CF3209F91EB50C2E001BF89D /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = Networking/Reachability.swift; sourceTree = "<group>"; };
+		CF3209FB1EB5265E001BF89D /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Resource.swift; path = Networking/Resource.swift; sourceTree = "<group>"; };
+		CF3209FD1EB526D8001BF89D /* DetailDeserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailDeserializer.swift; path = Models/DetailDeserializer.swift; sourceTree = "<group>"; };
+		CF3209FF1EB5270D001BF89D /* WordDeserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordDeserializer.swift; path = Models/WordDeserializer.swift; sourceTree = "<group>"; };
+		CF320A011EB527A5001BF89D /* WordCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordCreator.swift; sourceTree = "<group>"; };
+		CF320A041EB527EB001BF89D /* Builder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Builder.swift; path = Networking/Builder.swift; sourceTree = "<group>"; };
 		CF38712E1E89B0DE005AA866 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		CF3871311E89B193005AA866 /* CDWord.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CDWord.xcdatamodel; sourceTree = "<group>"; };
 		CF3871331E89BAEB005AA866 /* DataLayerSimple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLayerSimple.swift; sourceTree = "<group>"; };
@@ -388,6 +400,9 @@
 			isa = PBXGroup;
 			children = (
 				CF6BB1931EB1A654003A8D54 /* Service.swift */,
+				CF3209F91EB50C2E001BF89D /* Reachability.swift */,
+				CF3209FB1EB5265E001BF89D /* Resource.swift */,
+				CF320A041EB527EB001BF89D /* Builder.swift */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -416,6 +431,9 @@
 			isa = PBXGroup;
 			children = (
 				CF6BB1AF1EB1A924003A8D54 /* Models.swift */,
+				CF3209FD1EB526D8001BF89D /* DetailDeserializer.swift */,
+				CF3209FF1EB5270D001BF89D /* WordDeserializer.swift */,
+				CF320A011EB527A5001BF89D /* WordCreator.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -690,6 +708,7 @@
 				CF6BB17C1EB1A4C9003A8D54 /* wdSetupViewExtension.swift in Sources */,
 				CF6BB14A1EB1A1B8003A8D54 /* AlphaView.swift in Sources */,
 				CF0A82E11EAEFDC800D2BFB1 /* HomeControllerObserver.swift in Sources */,
+				CF3209FE1EB526D8001BF89D /* DetailDeserializer.swift in Sources */,
 				CF6BB1761EB1A48D003A8D54 /* LexicalEntryViewController.swift in Sources */,
 				CF6BB1B21EB1A952003A8D54 /* Extensions.swift in Sources */,
 				CF6BB1B41EB1AA81003A8D54 /* CellData.swift in Sources */,
@@ -698,6 +717,7 @@
 				CF6BB1B61EB24131003A8D54 /* ShowDetails.swift in Sources */,
 				CF6BB1541EB1A286003A8D54 /* FlashCardCell.swift in Sources */,
 				CF6BB1421EB1A0A9003A8D54 /* HomeView.swift in Sources */,
+				CF320A051EB527EB001BF89D /* Builder.swift in Sources */,
 				CF6BB1921EB1A610003A8D54 /* SettingsViewController.swift in Sources */,
 				CF3871341E89BAEB005AA866 /* DataLayerSimple.swift in Sources */,
 				CF6BB15D1EB1A34E003A8D54 /* ColorCellsViewModel.swift in Sources */,
@@ -706,8 +726,10 @@
 				CF6BB1891EB1A54F003A8D54 /* cvGestureExtension.swift in Sources */,
 				CF6BB1AC1EB1A873003A8D54 /* biCollectionViewExtension.swift in Sources */,
 				CF6BB1AA1EB1A7E1003A8D54 /* CardBgColorController.swift in Sources */,
+				CF320A021EB527A5001BF89D /* WordCreator.swift in Sources */,
 				CF6BB1901EB1A5B2003A8D54 /* PlayViewController.swift in Sources */,
 				CF6BB16F1EB1A455003A8D54 /* hvDelegateExtension.swift in Sources */,
+				CF3209FC1EB5265E001BF89D /* Resource.swift in Sources */,
 				CFAFE6681E68F9CA0062235E /* AppDelegate.swift in Sources */,
 				CF6BB1731EB1A461003A8D54 /* HomeVCAction.swift in Sources */,
 				CF6BB16A1EB1A3DA003A8D54 /* VerticallyCenteredTextView.swift in Sources */,
@@ -727,9 +749,11 @@
 				CF6BB16E1EB1A455003A8D54 /* hvCollectionViewExtension.swift in Sources */,
 				CF6BB1871EB1A54F003A8D54 /* cvCollectionViewExtension.swift in Sources */,
 				CF6BB1991EB1A73C003A8D54 /* cisCollectionViewExtension.swift in Sources */,
+				CF3209FA1EB50C2E001BF89D /* Reachability.swift in Sources */,
 				CF6BB1461EB1A1A3003A8D54 /* CardView.swift in Sources */,
 				CF6BB1881EB1A54F003A8D54 /* cvCustomFuncs.swift in Sources */,
 				CF3871321E89B193005AA866 /* CDWord.xcdatamodeld in Sources */,
+				CF320A001EB5270D001BF89D /* WordDeserializer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

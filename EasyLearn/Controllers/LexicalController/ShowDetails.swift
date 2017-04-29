@@ -18,23 +18,24 @@ class ShowDetails {
         controller.didSelect = showWord
     }
     func showWord(word: Word?, selectedWord: String?) {
-        Service.sharedInstance.detailsFor(word:  (word?.word!)!, lexicalCategory: selectedWord!) { (details, error) in
+        
+        let webService = WebService((word?.word!)!, selectedWord!, filters: [.examples,.definitions,.registers,.pronunciations])
+        
+        webService.get(details:  { (details, status) in
             
-            if error == nil {
-                
-                word?.details = details
-                
-                let detailsViewController = WordDetailsVC()
-                detailsViewController.word = word
-                detailsViewController.lexicalCategory = selectedWord
-                
-                let navController = UINavigationController(rootViewController: detailsViewController)
-                
-                detailsViewController.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.cancelPresentViewController))
-                
-                self.controller.present(navController, animated: true, completion: nil)
-            }
-        }
+            word?.details = details
+            
+            let detailsViewController = WordDetailsVC()
+            detailsViewController.word = word
+            detailsViewController.lexicalCategory = selectedWord
+            
+            let navController = UINavigationController(rootViewController: detailsViewController)
+            
+            detailsViewController.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.cancelPresentViewController))
+            
+            self.controller.present(navController, animated: true, completion: nil)
+        })
+ 
     }
     @objc func cancelPresentViewController(){
         controller.dismiss(animated: true, completion: nil)

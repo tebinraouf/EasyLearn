@@ -34,7 +34,6 @@ class WordDetailsVC: UIViewController {
         navigationItem.title = word?.word
         setupView()
         registerCells()
-        
     }
     //MARK:- Register Cells and Setup Views
     func registerCells(){

@@ -12,7 +12,7 @@ class HomeVCAction: HomeViewDelegate {
     
     var homeView: HomeView!
     var view: UIView!
-    var pushToNextViewController: (Word?, Error?) -> () = { _ in }
+    var pushToNextViewController: (Word?, Status) -> () = { _ in }
     
     
     //MARK:- Handle Search
@@ -23,17 +23,24 @@ class HomeVCAction: HomeViewDelegate {
             }else {
                 homeView.searchPlaceHolder = "Search..."
                 
-                let webService = WebService(text, filters: [.lexicalCategory])
-                webService.get{ word in
-                    print(word.lexicalCount)
+                
+                if Reachability.isConnectedToNetwork {
+                    let webService = WebService(text, filters: [.lexicalCategory])
+                    
+                    webService.get({ (word, status) in
+                        self.pushToNextViewController(word, status)
+                    })
+                    
+                    if webService.request != nil {
+                        homeView.containerView.isHidden = false
+                        homeView.activityIndicatorView.startAnimating()
+                    }
+                    
+                } else {
+                    print("No internet connection")
                 }
                 
-                
-                Service.sharedInstance.initialSearch(word: text, completion: { (word, error) in
-                    self.pushToNextViewController(word, error)
-                })
-                homeView.containerView.isHidden = false
-                homeView.activityIndicatorView.startAnimating()
+
             }
         }
     }

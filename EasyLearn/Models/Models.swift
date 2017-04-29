@@ -122,7 +122,7 @@ public class Detail {
     init() {
         
     }
-    public init(_ id: String, _ definition: String, _ register: String?, _ examples: [String], _ subDetails: [SubDetail]) {
+    public init(_ id: String?, _ definition: String?, _ register: String?, _ examples: [String], _ subDetails: [SubDetail]) {
         self.wordId = id
         self.definition = definition
         self.register = register

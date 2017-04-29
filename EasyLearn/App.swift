@@ -34,16 +34,21 @@ class App {
         default: break
         }
     }
-    private func handleNextViewController(_ word: Word?, _ error: Error?) {
-        if error == nil && word?.id != nil {
+    private func handleNextViewController(_ word: Word?, _ status: Status) {
+        
+        
+        switch status {
+        case .Success:
             let lexicalEntryVC = LexicalEntryViewController()
             lexicalEntryVC.word = word
             push(lexicalEntryVC)
-        } else if word?.id == nil && error == nil {
+        case .NotFound:
             goToErrorEmptyViewControllerWith(text: "No result. Please try another word.")
-        } else {
-            goToErrorEmptyViewControllerWith(text: "The Internet connection appears to be offline.")
         }
+        
+        
+        //goToErrorEmptyViewControllerWith(text: "The Internet connection appears to be offline.")
+        
     }
     private func goToErrorEmptyViewControllerWith(text: String){
         let errorEmptyViewController = ErrorEmptyViewController()

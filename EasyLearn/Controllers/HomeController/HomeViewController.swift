@@ -53,7 +53,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
 }
 
 extension HomeViewController {
-    var getNextViewController: (Word?, Error?) -> () {
+    var getNextViewController: (Word?, Status) -> () {
         get {
             return homeViewAction.pushToNextViewController
         }

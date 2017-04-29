@@ -10,5 +10,19 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "HomeVCAction.handleSearch() -&gt; ():HomeVCAction.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "word">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "App.handleNextViewController(Word?, Error?) -&gt; ():App.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ShowDetails.(showWord(word : Word?, selectedWord : String?) -&gt; ()).(closure #1):ShowDetails.swift">
+      </ContextState>
    </ContextStates>
 </VariablesViewState>
