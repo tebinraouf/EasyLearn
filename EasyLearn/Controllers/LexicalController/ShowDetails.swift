@@ -26,7 +26,7 @@ class ShowDetails {
             word?.details = details
             word?.lexicalEntry = selectedWord
             
-            let detailsViewController = WordDetailsVC()
+            let detailsViewController = WordDetailsVC(collectionViewLayout: UICollectionViewFlowLayout())
             detailsViewController.word = word
             
             let navController = UINavigationController(rootViewController: detailsViewController)
