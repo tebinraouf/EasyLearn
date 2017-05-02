@@ -40,8 +40,14 @@ extension WordDetailsVC: UICollectionViewDataSource, UICollectionViewDelegate, U
         return CGSize(width: collectionView.frame.width, height: estimatedFrame.height + 60)
     }
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
-        layout?.reload()
+        
+        layout?.invalidate()
+        DispatchQueue.main.async {
+            self.layout?.reload()
+        }
+        
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Tap Tap More...")
     }

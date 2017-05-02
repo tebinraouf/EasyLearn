@@ -35,7 +35,6 @@ class WordDetailsVC: UIViewController {
         //setupView()
         //registerCells()
         
-        
         layout = MainLayout(target: self)
         layout?.layout(in: view)
         
@@ -84,6 +83,9 @@ struct MainLayout {
     mutating func reload() {
         collectionView.reloadData()
     }
+    mutating func invalidate() {
+        collectionView.collectionViewLayout.invalidateLayout()
+    }
     
     private mutating func setupView(in view: UIView){
         view.addSubview(collectionView)
@@ -92,6 +94,9 @@ struct MainLayout {
         collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
+    
+    
+    
     
 }
 
