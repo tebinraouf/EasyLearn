@@ -54,7 +54,7 @@ struct UserInteraction {
         }
     }
     private func didTapMoreCell(){
-        let subDetailsController = WordSubDetailsVC()
+        let subDetailsController = WordSubDetailsVC(collectionViewLayout: UICollectionViewFlowLayout())
         subDetailsController.wordDetail = self.word.getDetail(at: indexPath)
         navigationController?.pushViewController(subDetailsController, animated: true)
     }

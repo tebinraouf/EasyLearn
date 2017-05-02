@@ -9,48 +9,31 @@
 import UIKit
 import Foundation
 
-class WordSubDetailsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class WordSubDetailsVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     //MARK:- Variables
     var wordDetail: Detail?
     
-    lazy var collectionView: UICollectionView  = {
-        let layout = UICollectionViewFlowLayout()
-        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.translatesAutoresizingMaskIntoConstraints = false
-        cv.backgroundColor = .appGray
-        cv.dataSource = self
-        cv.delegate = self
-        return cv
-    }()
     //MARK:- View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
         automaticallyAdjustsScrollViewInsets = false
-        view.backgroundColor = .white
-        //navigationItem.title = word?.word
-        setupView()
-        registerCells()
+        collectionViewSetup()
     }
-    //MARK:- Register Cells and Setup Views
-    func registerCells(){
-        collectionView.register(DetailsCell.self, forCellWithReuseIdentifier: CellID.wsdCellID.rawValue)
-    }
-    func setupView(){
-        view.addSubview(collectionView)
-        collectionView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor).isActive = true
-        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+    //MARK:- CollectionView Usual Setup
+    func collectionViewSetup(){
+        collectionView?.register(DetailsCell.self, forCellWithReuseIdentifier: CellID.wsdCellID.rawValue)
+        collectionView?.backgroundColor = .appGray
     }
     //MARK:- Collection View Functions
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if let count = wordDetail?.subDetails?.count {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        if let count = wordDetail?.subDetailsCount.flatMap({ $0 }) {
             return count
         }
         return 0
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellID.wsdCellID.rawValue, for: indexPath) as! DetailsCell
         //cell.backgroundColor = .blue
         
@@ -84,18 +67,25 @@ class WordSubDetailsVC: UIViewController, UICollectionViewDelegate, UICollection
         
     }
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
-        collectionView.reloadData()
+        collectionView?.collectionViewLayout.invalidateLayout()
+        DispatchQueue.main.async {
+            self.collectionView?.reloadData()
+        }
     }
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //print(word?.details?[indexPath.item].subdetails?[indexPath.item].subDefinition)
-        
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 3
     }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        let top: CGFloat = DeviceState.isPortrait.state ? 64 : 35
+        collectionView.scrollIndicatorInsets = UIEdgeInsets(top: top, left: 0, bottom: 0, right: 0)
+        return collectionView.scrollIndicatorInsets
+    }
+
     
     //MARK:- Custom Functions
-    
     func formatedStringForTextAt(_ indexPath: IndexPath) -> NSMutableAttributedString? {
         
         guard let definition = wordDetail?.subDetails?[indexPath.item].subDefinition, let examples = wordDetail?.subDetails?[indexPath.item].subExamples else { return nil}

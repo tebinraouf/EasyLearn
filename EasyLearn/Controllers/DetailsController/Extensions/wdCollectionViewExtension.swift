@@ -53,9 +53,7 @@ extension WordDetailsVC: UICollectionViewDelegateFlowLayout {
         return 3
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        
         let top: CGFloat = DeviceState.isPortrait.state ? 64 : 35
-
         collectionView.scrollIndicatorInsets = UIEdgeInsets(top: top, left: 0, bottom: 0, right: 0)
         return collectionView.scrollIndicatorInsets
     }
