@@ -47,8 +47,6 @@
 		CF6BB1741EB1A461003A8D54 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BB1721EB1A461003A8D54 /* HomeViewController.swift */; };
 		CF6BB1761EB1A48D003A8D54 /* LexicalEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BB1751EB1A48D003A8D54 /* LexicalEntryViewController.swift */; };
 		CF6BB17A1EB1A4C9003A8D54 /* wdCollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BB1771EB1A4C9003A8D54 /* wdCollectionViewExtension.swift */; };
-		CF6BB17B1EB1A4C9003A8D54 /* wdCustomFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BB1781EB1A4C9003A8D54 /* wdCustomFuncs.swift */; };
-		CF6BB17C1EB1A4C9003A8D54 /* wdSetupViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BB1791EB1A4C9003A8D54 /* wdSetupViewExtension.swift */; };
 		CF6BB17F1EB1A4D5003A8D54 /* WordDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BB17D1EB1A4D5003A8D54 /* WordDetailsVC.swift */; };
 		CF6BB1801EB1A4D5003A8D54 /* WordSubDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BB17E1EB1A4D5003A8D54 /* WordSubDetailsVC.swift */; };
 		CF6BB1821EB1A503003A8D54 /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BB1811EB1A503003A8D54 /* ErrorViewController.swift */; };
@@ -82,6 +80,10 @@
 		CFAFE66D1E68F9CA0062235E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFAFE66B1E68F9CA0062235E /* Main.storyboard */; };
 		CFAFE66F1E68F9CA0062235E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFAFE66E1E68F9CA0062235E /* Assets.xcassets */; };
 		CFAFE6721E68F9CA0062235E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFAFE6701E68F9CA0062235E /* LaunchScreen.storyboard */; };
+		CFFCA31D1EB8E1990055D54B /* UserInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFCA31C1EB8E1990055D54B /* UserInteraction.swift */; };
+		CFFCA31F1EB8E1EE0055D54B /* DetailCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFCA31E1EB8E1EE0055D54B /* DetailCellData.swift */; };
+		CFFCA3211EB8E2750055D54B /* DataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFCA3201EB8E2750055D54B /* DataGenerator.swift */; };
+		CFFCA3231EB8E39B0055D54B /* TextFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFCA3221EB8E39B0055D54B /* TextFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -127,8 +129,6 @@
 		CF6BB1721EB1A461003A8D54 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Controllers/HomeController/HomeViewController.swift; sourceTree = "<group>"; };
 		CF6BB1751EB1A48D003A8D54 /* LexicalEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LexicalEntryViewController.swift; path = Controllers/LexicalController/LexicalEntryViewController.swift; sourceTree = "<group>"; };
 		CF6BB1771EB1A4C9003A8D54 /* wdCollectionViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = wdCollectionViewExtension.swift; path = Controllers/DetailsController/Extensions/wdCollectionViewExtension.swift; sourceTree = "<group>"; };
-		CF6BB1781EB1A4C9003A8D54 /* wdCustomFuncs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = wdCustomFuncs.swift; path = Controllers/DetailsController/Extensions/wdCustomFuncs.swift; sourceTree = "<group>"; };
-		CF6BB1791EB1A4C9003A8D54 /* wdSetupViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = wdSetupViewExtension.swift; path = Controllers/DetailsController/Extensions/wdSetupViewExtension.swift; sourceTree = "<group>"; };
 		CF6BB17D1EB1A4D5003A8D54 /* WordDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordDetailsVC.swift; path = Controllers/DetailsController/WordDetailsVC.swift; sourceTree = "<group>"; };
 		CF6BB17E1EB1A4D5003A8D54 /* WordSubDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordSubDetailsVC.swift; path = Controllers/DetailsController/WordSubDetailsVC.swift; sourceTree = "<group>"; };
 		CF6BB1811EB1A503003A8D54 /* ErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorViewController.swift; path = Controllers/ErrorController/ErrorViewController.swift; sourceTree = "<group>"; };
@@ -164,6 +164,10 @@
 		CFAFE66E1E68F9CA0062235E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFAFE6711E68F9CA0062235E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CFAFE6731E68F9CA0062235E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFFCA31C1EB8E1990055D54B /* UserInteraction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserInteraction.swift; path = Controllers/DetailsController/UserInteraction.swift; sourceTree = "<group>"; };
+		CFFCA31E1EB8E1EE0055D54B /* DetailCellData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailCellData.swift; path = Controllers/DetailsController/DetailCellData.swift; sourceTree = "<group>"; };
+		CFFCA3201EB8E2750055D54B /* DataGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataGenerator.swift; path = Controllers/DetailsController/DataGenerator.swift; sourceTree = "<group>"; };
+		CFFCA3221EB8E39B0055D54B /* TextFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFormatter.swift; path = Controllers/DetailsController/TextFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,8 +239,6 @@
 			isa = PBXGroup;
 			children = (
 				CF6BB1771EB1A4C9003A8D54 /* wdCollectionViewExtension.swift */,
-				CF6BB1781EB1A4C9003A8D54 /* wdCustomFuncs.swift */,
-				CF6BB1791EB1A4C9003A8D54 /* wdSetupViewExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -310,6 +312,10 @@
 				CF1C110E1E84BD8700EC0181 /* Extensions */,
 				CF6BB17D1EB1A4D5003A8D54 /* WordDetailsVC.swift */,
 				CF6BB17E1EB1A4D5003A8D54 /* WordSubDetailsVC.swift */,
+				CFFCA31C1EB8E1990055D54B /* UserInteraction.swift */,
+				CFFCA31E1EB8E1EE0055D54B /* DetailCellData.swift */,
+				CFFCA3201EB8E2750055D54B /* DataGenerator.swift */,
+				CFFCA3221EB8E39B0055D54B /* TextFormatter.swift */,
 			);
 			name = WordDetails;
 			sourceTree = "<group>";
@@ -683,13 +689,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFFCA3231EB8E39B0055D54B /* TextFormatter.swift in Sources */,
 				CF6BB1601EB1A34E003A8D54 /* SelectorViewModel.swift in Sources */,
 				CF6BB1821EB1A503003A8D54 /* ErrorViewController.swift in Sources */,
 				CF6BB1A01EB1A782003A8D54 /* csCustomFuctionsExtension.swift in Sources */,
 				CF6BB1A81EB1A7D2003A8D54 /* cbgcSetupViewExtension.swift in Sources */,
 				CF6BB15C1EB1A34E003A8D54 /* CardViewModel.swift in Sources */,
 				CF6BB1A61EB1A7D2003A8D54 /* cbgcCustomFunctions.swift in Sources */,
-				CF6BB17B1EB1A4C9003A8D54 /* wdCustomFuncs.swift in Sources */,
 				CF6BB19C1EB1A743003A8D54 /* ColorImageSelector.swift in Sources */,
 				CF6BB1401EB19FF4003A8D54 /* CustomAttributtedString.swift in Sources */,
 				CF6BB18C1EB1A558003A8D54 /* CardsViewController.swift in Sources */,
@@ -700,12 +706,12 @@
 				CF6BB1481EB1A1AE003A8D54 /* ColorImageSelectorView.swift in Sources */,
 				CF6BB1621EB1A37B003A8D54 /* Helper.swift in Sources */,
 				CF6BB1701EB1A455003A8D54 /* hvSetupViewExtension.swift in Sources */,
+				CFFCA31F1EB8E1EE0055D54B /* DetailCellData.swift in Sources */,
 				CF38712F1E89B0DE005AA866 /* CoreDataStack.swift in Sources */,
 				CF6BB17A1EB1A4C9003A8D54 /* wdCollectionViewExtension.swift in Sources */,
 				CF6BB1521EB1A275003A8D54 /* DashboardCell.swift in Sources */,
 				CF6BB14C1EB1A1C0003A8D54 /* FlashCardView.swift in Sources */,
 				CF6BB18E1EB1A593003A8D54 /* CustomCardsViewController.swift in Sources */,
-				CF6BB17C1EB1A4C9003A8D54 /* wdSetupViewExtension.swift in Sources */,
 				CF6BB14A1EB1A1B8003A8D54 /* AlphaView.swift in Sources */,
 				CF0A82E11EAEFDC800D2BFB1 /* HomeControllerObserver.swift in Sources */,
 				CF3209FE1EB526D8001BF89D /* DetailDeserializer.swift in Sources */,
@@ -753,7 +759,9 @@
 				CF6BB1461EB1A1A3003A8D54 /* CardView.swift in Sources */,
 				CF6BB1881EB1A54F003A8D54 /* cvCustomFuncs.swift in Sources */,
 				CF3871321E89B193005AA866 /* CDWord.xcdatamodeld in Sources */,
+				CFFCA3211EB8E2750055D54B /* DataGenerator.swift in Sources */,
 				CF320A001EB5270D001BF89D /* WordDeserializer.swift in Sources */,
+				CFFCA31D1EB8E1990055D54B /* UserInteraction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

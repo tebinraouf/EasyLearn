@@ -12,7 +12,6 @@ import Foundation
 class WordSubDetailsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     //MARK:- Variables
     var wordDetail: Detail?
-    var wdDelegate: WordDetailsVC?
     
     lazy var collectionView: UICollectionView  = {
         let layout = UICollectionViewFlowLayout()

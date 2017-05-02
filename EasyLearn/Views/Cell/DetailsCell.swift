@@ -18,7 +18,7 @@ class DetailsCell: BaseCell {
     
     var delegate: WordDetailsVC!
     var didTapBookmark: (() -> ()) = { _ in}
-    var handleSubWordDetailsFunc: (()->()) = { _ in}
+    var didTapMoreCell: (()->()) = { _ in}
     
     var textView: UITextView = {
         let tv = UITextView()
@@ -130,7 +130,7 @@ class DetailsCell: BaseCell {
         didTapBookmark()
     }
     func handleSubWordDetails(){
-        handleSubWordDetailsFunc()
+        didTapMoreCell()
     }
 }
 
@@ -159,6 +159,14 @@ extension DetailsCell {
         }
         set {
             btnBookmark.setTitle(newValue, for: .normal)
+        }
+    }
+    public var isMore: Bool {
+        get {
+            return btnMoreDetails.isHidden
+        }
+        set {
+            btnMoreDetails.isHidden = newValue
         }
     }
 }

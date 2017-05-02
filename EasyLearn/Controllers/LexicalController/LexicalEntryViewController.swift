@@ -12,7 +12,7 @@ import UIKit
 class LexicalEntryViewController: UITableViewController {
     var word: Word?
     let cellID = "cellID"
-    var didSelect: (Word?, String?) -> () = { _ in }
+    var didSelect: (Word?, String) -> () = { _ in }
     
     
     override func viewDidLoad() {
@@ -38,7 +38,7 @@ class LexicalEntryViewController: UITableViewController {
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedWord = word?.lexicalEntries?[indexPath.row]
+        guard let selectedWord = word?.lexicalEntries?[indexPath.row] else { return }
         didSelect(word, selectedWord)
     }
 }

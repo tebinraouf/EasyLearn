@@ -28,23 +28,23 @@ class WordWord {
     }
     
     
-    //MARK: Main Word Getters
-    public func getID(at indexPath: IndexPath) -> String {
-        guard let id = details?[indexPath.item].wordId else { return "" }
-        return id
-    }
-    public func getExamples(at indexPath: IndexPath) -> [String] {
-        guard let examples = details?[indexPath.item].examples else { return [""] }
-        return examples
-    }
-    public func getRegister(at indexPath: IndexPath) -> String {
-        guard let register = details?[indexPath.item].register else { return "" }
-        return register
-    }
-    public func getDefinition(at indexPath: IndexPath) -> String {
-        guard let definition = details?[indexPath.item].definition else { return "" }
-        return definition
-    }
+//    //MARK: Main Word Getters
+//    public func getID(at indexPath: IndexPath) -> String {
+//        guard let id = details?[indexPath.item].wordId else { return "" }
+//        return id
+//    }
+//    public func getExamples(at indexPath: IndexPath) -> [String] {
+//        guard let examples = details?[indexPath.item].examples else { return [""] }
+//        return examples
+//    }
+//    public func getRegister(at indexPath: IndexPath) -> String {
+//        guard let register = details?[indexPath.item].register else { return "" }
+//        return register
+//    }
+//    public func getDefinition(at indexPath: IndexPath) -> String {
+//        guard let definition = details?[indexPath.item].definition else { return "" }
+//        return definition
+//    }
     //MARK: Sub Word Getters
     
     
@@ -83,20 +83,99 @@ class SubDetailSubDetail {
 
 
 public class Word: NSObject {
-    var language: String?
-    var id: String?
-    var word: String?
-    var type: String?
-    var lexicalEntries: [String]?
+    private var _language: String?
+    private var _id: String?
+    private var _word: String?
+    private var _type: String?
+    private var _lexicalEntries: [String]?
     var details: [Detail]?
     
+    private var _lexicalEntry: String = ""
     
-    public func getWordID(at indexPath: IndexPath) -> String {
-        return details?[indexPath.item].wordId ?? ""
+    
+    //MARK: Main Word Getters & Setters
+    public var language: String? {
+        get {
+            return _language
+        }
+        set {
+            _language = newValue
+        }
     }
-    public func getExamples(at indexPath: IndexPath) -> [String] {
-        return details?[indexPath.item].examples ?? [""]
+    public var id: String? {
+        get {
+            return _id
+        }
+        set {
+            _id = newValue
+        }
     }
+    public var word: String? {
+        get {
+            return _word
+        }
+        set {
+            _word = newValue
+        }
+    }
+    public var type: String? {
+        get {
+            return _type
+        }
+        set {
+            _type = newValue
+        }
+    }
+    public var lexicalEntries: [String]? {
+        get {
+            return _lexicalEntries
+        }
+        set {
+            _lexicalEntries = newValue
+        }
+    }
+    public var lexicalEntry: String {
+        get {
+            return _lexicalEntry
+        }
+        set {
+            _lexicalEntry = newValue
+        }
+    }
+    
+    
+    
+
+    //Word Detail Getters
+    public func getWordID(at indexPath: IndexPath) -> String? {
+        guard let id = details?[indexPath.item].wordId else { return nil }
+        return id
+    }
+    public func getExamples(at indexPath: IndexPath) -> [String]? {
+        guard let examples = details?[indexPath.item].examples else { return nil }
+        return examples
+    }
+    public func getRegister(at indexPath: IndexPath) -> String? {
+        guard let register = details?[indexPath.item].register else { return nil }
+        return register
+    }
+    public func getDefinition(at indexPath: IndexPath) -> String? {
+        guard let definition = details?[indexPath.item].definition else { return nil }
+        return definition
+    }
+    public func getSubDetails(at indexPath: IndexPath) -> [SubDetail]? {
+        guard let subs = details?[indexPath.item].subDetails else { return nil }
+        return subs
+    }
+    public func getSubCount(at indexPath: IndexPath) -> Int? {
+        guard let count = details?[indexPath.item].subDetailsCount else { return nil }
+        return count
+    }
+    public func getDetail(at indexPath: IndexPath) -> Detail? {
+        return details?[indexPath.item]
+    }
+    
+    
 
     
     //Computed Properties
@@ -105,11 +184,7 @@ public class Word: NSObject {
             return lexicalEntries?.count
         }
     }
-    public var getLexicalEntries: [String]? {
-        get {
-            return lexicalEntries
-        }
-    }
+    
 }
 public class Detail {
     var wordId: String?
@@ -130,6 +205,12 @@ public class Detail {
         self.subDetails = subDetails
     }
     
+    //Computed Properties
+    public var subDetailsCount: Int? {
+        get {
+            return subDetails?.count
+        }
+    }
     
 }
 public class SubDetail {

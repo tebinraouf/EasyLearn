@@ -17,17 +17,17 @@ class ShowDetails {
         controller = navigationController?.topViewController as! LexicalEntryViewController
         controller.didSelect = showWord
     }
-    func showWord(word: Word?, selectedWord: String?) {
+    func showWord(word: Word?, selectedWord: String) {
         
-        let webService = WebService((word?.word!)!, selectedWord!, filters: [.examples,.definitions,.registers,.pronunciations])
+        let webService = WebService((word?.word!)!, selectedWord, filters: [.examples, .definitions, .registers, .pronunciations])
         
         webService.get(details:  { (details, status) in
             
             word?.details = details
+            word?.lexicalEntry = selectedWord
             
             let detailsViewController = WordDetailsVC()
             detailsViewController.word = word
-            detailsViewController.lexicalCategory = selectedWord
             
             let navController = UINavigationController(rootViewController: detailsViewController)
             
