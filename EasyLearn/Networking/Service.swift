@@ -39,9 +39,9 @@ class WebService {
         let builder = Builder()
         resource.load { (data, status) in
             //filter the data
-            //let detailData = data?["results"][0]["lexicalEntries"][0]["entries"][0]["senses"]
+            let detailData = data?["results"][0]["lexicalEntries"][0]["entries"][0]["senses"]
             DispatchQueue.main.async {
-                let word = builder.wordFromData(data)
+                let word = builder.wordFromData(detailData)
                 completion(word?.details, status)
             }
         }
