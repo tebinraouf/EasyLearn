@@ -48,6 +48,7 @@ class Resource {
             let f = filter.rawValue
             self.url.append(f)
         }
+        
     }
     private func setURL(_ url: String, _ word: String, _ filters: [OxfordFilters]) {
         self.url = url + word.lowercased().trimmingCharacters(in: CharacterSet.whitespaces) + "/"
@@ -73,6 +74,7 @@ class Resource {
     func load(completion: @escaping (JSON?, Status)->()) {
         let session = URLSession.shared
         guard let request = request else { return }
+        print(request)
         session.dataTask(with: request) { (data, response, error) in
             guard let data = data else { return }
             let result = JSON(data: data)

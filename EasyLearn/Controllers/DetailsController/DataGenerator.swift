@@ -8,30 +8,33 @@
 
 import UIKit
 
-struct DataGenerator {
-    private var indexPath: IndexPath
-    private var word: Word
-    private var coreData: DataLayerSimple
+
+
+struct DataGenerator<T: WordPresentable> {
+    var indexPath: IndexPath
+    var word: T
+    var coreData: DataLayerSimple
     
-    public init(_ word: Word, _ indexPath: IndexPath) {
+    public init(_ word: T, _ indexPath: IndexPath) {
         self.word = word
         self.indexPath = indexPath
         coreData = DataLayerSimple()
     }
     public func getRegister() -> String {
-        if let register = word.details?[indexPath.item].register {
+
+        if let register = word.getRegister(at: indexPath) {
             return "(\(register)) "
         }
         return ""
     }
     public func getDefinition() -> String {
-        if let def = word.details?[indexPath.item].definition {
+        if let def = word.getDefinition(at: indexPath) {
             return "\(def)\n"
         }
         return ""
     }
     public func getExample() -> String {
-        if let examples = word.details?[indexPath.item].examples {
+        if let examples = word.getExamples(at: indexPath) {
             var elements = String()
             for element in examples {
                 elements.append("\n• \(element.capitalizingFirstLetter())")
@@ -60,7 +63,8 @@ struct DataGenerator {
         return "\(indexPath.item + 1)"
     }
     public var bookmarkText: String {
-        if let wordID = word.details?[indexPath.item].wordId {
+        
+        if let wordID = word.getWordID(at: indexPath) {
             let isWord = coreData.isWordSavedWith(id: wordID)
             if isWord {
                 return String.fontAwesomeIcon("bookmark")!
@@ -72,3 +76,4 @@ struct DataGenerator {
     }
     
 }
+

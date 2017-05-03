@@ -19,7 +19,7 @@ class ShowDetails {
     }
     func showWord(word: Word?, selectedWord: String) {
         
-        let webService = WebService((word?.word!)!, selectedWord, filters: [.examples, .definitions, .registers, .pronunciations])
+        let webService = WebService((word?.word)!, selectedWord, filters: [.lexicalCategory, .examples, .definitions, .registers, .pronunciations])
         
         webService.get(details:  { (details, status) in
             

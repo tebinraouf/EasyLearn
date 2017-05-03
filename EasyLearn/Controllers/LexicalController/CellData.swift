@@ -18,8 +18,9 @@ class CellData {
         self.indexPath = indexPath
     }
     private func getFormattedWord() -> NSAttributedString? {
-        if let word = word, let wordName = word.word, let entries = word.lexicalEntries {
+        if let word = word, let entries = word.lexicalEntries {
             
+            let wordName = word.word
             let wordNameString = mainText(wordName)
             let entryString = lexicalCategoryString(entries)
             

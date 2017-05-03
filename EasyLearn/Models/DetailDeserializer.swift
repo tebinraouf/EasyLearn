@@ -10,6 +10,7 @@ import UIKit
 import Foundation
 import SwiftyJSON
 
+//data["results"][0]["lexicalEntries"][0]["entries"][0]["senses"][0]
 
 public struct DetailDeserializer {
     private var data: JSON
@@ -52,12 +53,12 @@ public struct DetailDeserializer {
             
             //sub 1 word ID
             if let subWordId = data["subsenses"][index]["id"].string {
-                subDetail.subWordId = subWordId
+                subDetail.id = subWordId
             }
             
             //sub 2 word definition
             if let subDefinition = data["subsenses"][index]["definitions"][0].string {
-                subDetail.subDefinition = subDefinition
+                subDetail.definition = subDefinition
             }
             
             //sub 3 word examples
@@ -69,11 +70,11 @@ public struct DetailDeserializer {
                 }
                 subExamples.append(subEachExample)
             }
-            subDetail.subExamples = subExamples
+            subDetail.examples = subExamples
             
             //sub 4 word register
             if let subRegister = data["subsenses"][index]["registers"][0].string {
-                subDetail.subRegister = subRegister
+                subDetail.register = subRegister
             }
             subDetails.append(subDetail)
         }

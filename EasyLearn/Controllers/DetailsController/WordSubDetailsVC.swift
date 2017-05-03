@@ -37,21 +37,44 @@ class WordSubDetailsVC: UICollectionViewController, UICollectionViewDelegateFlow
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellID.wsdCellID.rawValue, for: indexPath) as! DetailsCell
         //cell.backgroundColor = .blue
         
+        let generator = DataGenerator(wordDetail!, indexPath)
+        let cellData = DetailCellData(generator, cell)
+        cellData.populateCell()
         
-        if let formatedString = formatedStringForTextAt(indexPath) {
-            cell.numberCircle.text = "\(indexPath.item+1)"
-            cell.textView.attributedText = formatedString
-        }
-        
-        
-        cell.didTapBookmark = {
-            //print(self.word?.details?[indexPath.item].definition)
-            print("sub details")
-        }
-        
-        cell.btnMoreDetails.isHidden = true
+    
         
         
+        let interaction = UserInteraction(target: self, wordDetail!, cell, indexPath)
+        interaction.didInteract()
+        
+        
+        
+        //Use Protocol
+        //        let generator = DataGenerator(wordDetail!, indexPath)
+        //        let cellData = DetailCellData(generator, cell)
+        //        cellData.populateCell()
+        //
+        //
+        //        let interaction = UserInteraction(target: self, wordDetail!, cell, indexPath)
+        //        interaction.didInteract()
+        //
+        //
+        
+        //
+        //        if let formatedString = formatedStringForTextAt(indexPath) {
+        //            cell.numberCircle.text = "\(indexPath.item+1)"
+        //            cell.textView.attributedText = formatedString
+        //        }
+        //
+        //
+        //        cell.didTapBookmark = {
+        //            //print(self.word?.details?[indexPath.item].definition)
+        //            print("sub details")
+        //        }
+        //
+        //        cell.btnMoreDetails.isHidden = true
+        //
+        //
         return cell
     }
     
@@ -83,12 +106,12 @@ class WordSubDetailsVC: UICollectionViewController, UICollectionViewDelegateFlow
         collectionView.scrollIndicatorInsets = UIEdgeInsets(top: top, left: 0, bottom: 0, right: 0)
         return collectionView.scrollIndicatorInsets
     }
-
+    
     
     //MARK:- Custom Functions
     func formatedStringForTextAt(_ indexPath: IndexPath) -> NSMutableAttributedString? {
         
-        guard let definition = wordDetail?.subDetails?[indexPath.item].subDefinition, let examples = wordDetail?.subDetails?[indexPath.item].subExamples else { return nil}
+        guard let definition = wordDetail?.details?[indexPath.item].definition, let examples = wordDetail?.details?[indexPath.item].examples else { return nil}
         
         
         let result = wdDefinition(definition)
@@ -96,7 +119,7 @@ class WordSubDetailsVC: UICollectionViewController, UICollectionViewDelegateFlow
             result.append(text)
         }
         
-        if let text = wordDetail?.subDetails?[indexPath.item].subRegister {
+        if let text = wordDetail?.details?[indexPath.item].register {
             let register = wdRegister(text)
             result.insert(register, at: 0)
             

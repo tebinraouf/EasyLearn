@@ -8,13 +8,13 @@
 
 import UIKit
 
-struct UserInteraction {
-    private var word: Word
+struct UserInteraction<T: WordPresentable> {
+    private var word: T
     private var cell: DetailsCell
     private var indexPath: IndexPath
     private var navigationController: UINavigationController?
     
-    public init(target: UIViewController, _ word: Word, _ cell: DetailsCell, _ indexPath: IndexPath) {
+    public init(target: UIViewController, _ word: T, _ cell: DetailsCell, _ indexPath: IndexPath) {
         self.navigationController = target.navigationController
         self.word = word
         self.cell = cell
@@ -26,10 +26,8 @@ struct UserInteraction {
         isSubCellIcon()
     }
     private func didTapBookmark() {
-        let language = self.word.language
         let lexicalEntry = self.word.lexicalEntry
         let word = self.word.word
-        let type = self.word.type
         
         let id = self.word.getWordID(at: indexPath)
         let examples = self.word.getExamples(at: indexPath)
@@ -43,20 +41,25 @@ struct UserInteraction {
             coreData.removeWordBy(id: id!)
         } else {
             cell.btnBookmark.setTitle(String.fontAwesomeIcon("bookmark"), for: .normal)
-            coreData.saveWord(id, language, lexicalEntry, word, type, examples, definition)
+            coreData.saveWord(id, lexicalEntry, word, examples, definition)
         }
     }
     private func isSubCellIcon() {
-        if word.getSubCount(at: indexPath) == 0 {
-            cell.isMore = true
-        } else {
-            cell.isMore = false
+        if word.isWord {
+            if word.getCount(at: indexPath) == 0 {
+                cell.isMore = true
+            } else {
+                cell.isMore = false
+            }
         }
     }
     private func didTapMoreCell(){
-        let subDetailsController = WordSubDetailsVC(collectionViewLayout: UICollectionViewFlowLayout())
-        subDetailsController.wordDetail = self.word.getDetail(at: indexPath)
-        navigationController?.pushViewController(subDetailsController, animated: true)
+        if word.isWord {
+            let subDetailsController = WordSubDetailsVC(collectionViewLayout: UICollectionViewFlowLayout())
+            subDetailsController.wordDetail = self.word.getDetail(at: indexPath)
+            navigationController?.pushViewController(subDetailsController, animated: true)
+        }
     }
     
 }
+

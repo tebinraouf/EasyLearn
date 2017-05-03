@@ -52,6 +52,7 @@ class DetailsCell: BaseCell {
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.showsTouchWhenHighlighted = true
         btn.tintColor = .appRedish
+        btn.isHidden = true
         btn.backgroundColor = .white
         return btn
     }()

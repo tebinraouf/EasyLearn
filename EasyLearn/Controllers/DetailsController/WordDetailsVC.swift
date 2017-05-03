@@ -18,7 +18,7 @@ class WordDetailsVC: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         automaticallyAdjustsScrollViewInsets = false
-        navigationItem.title = word?.word?.capitalized
+        navigationItem.title = word?.word.capitalized
         
         collectionViewSetup()
     }
