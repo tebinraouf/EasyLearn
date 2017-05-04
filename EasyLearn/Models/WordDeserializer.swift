@@ -32,10 +32,14 @@ public struct WordDeserializer {
         }
         return lexicalEntriesArray
     }
+    public var lexicalEntry: String {
+        return lexicalEntries.first!
+    }
     public var details: [Detail] {
         var details = [Detail]()
-        for (_, result):(String,JSON) in data {
-            let detailsDeserializer = DetailDeserializer(result)
+        let detailData = data["results"][0]["lexicalEntries"][0]["entries"][0]["senses"]
+        for (_, result):(String,JSON) in detailData {
+            let detailsDeserializer = DetailDeserializer(result, word, lexicalEntry)
             details.append(detailsDeserializer.detail)
         }
         return details

@@ -74,7 +74,6 @@ class Resource {
     func load(completion: @escaping (JSON?, Status)->()) {
         let session = URLSession.shared
         guard let request = request else { return }
-        print(request)
         session.dataTask(with: request) { (data, response, error) in
             guard let data = data else { return }
             let result = JSON(data: data)

@@ -11,7 +11,7 @@ import Foundation
 
 class WordDetailsVC: UICollectionViewController {
     //MARK:- Variables
-    var word: Word?
+    var word: Word!
     var isClicked = true
     
     //MARK:- View Did Load
@@ -19,7 +19,6 @@ class WordDetailsVC: UICollectionViewController {
         super.viewDidLoad()
         automaticallyAdjustsScrollViewInsets = false
         navigationItem.title = word?.word.capitalized
-        
         collectionViewSetup()
     }
     

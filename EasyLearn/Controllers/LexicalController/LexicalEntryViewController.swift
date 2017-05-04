@@ -19,17 +19,14 @@ class LexicalEntryViewController: UITableViewController {
         super.viewDidLoad()
         registerCells()
         isNavBarHidden(false, navigationController)
-        
         let _ = ShowDetails(nav: navigationController)
     }
     func registerCells(){
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let count = word?.lexicalCount {
-            return count
-        }
-        return 0
+        guard let count = word?.lexicalCount else { return 0 }
+        return count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)

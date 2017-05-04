@@ -59,6 +59,7 @@ struct UserInteraction<T: WordPresentable> {
             subDetailsController.wordDetail = self.word.getDetail(at: indexPath)
             navigationController?.pushViewController(subDetailsController, animated: true)
         }
+        
     }
     
 }

@@ -154,7 +154,7 @@ public class Word: WordPresentable {
         return subs
     }
     public func getCount(at indexPath: IndexPath) -> Int? {
-        guard let count = details?[indexPath.item].subDetailsCount else { return nil }
+        guard let count = details?[indexPath.item].count else { return nil }
         return count
     }
     public func getDetail(at indexPath: IndexPath) -> Detail? {
@@ -170,14 +170,14 @@ public class Word: WordPresentable {
             return lexicalEntries?.count
         }
     }
+    var count: Int? {
+        return details?.count
+    }
     
 }
 public class Detail: WordPresentable {
     
-    
-
     typealias DetailType = SubDetail
-
     var id: String?
     var definition: String?
     var register: String?
@@ -193,20 +193,20 @@ public class Detail: WordPresentable {
     init() {
         
     }
-    public init(_ id: String?, _ definition: String?, _ register: String?, _ examples: [String], _ subDetails: [SubDetail]) {
+    public init(_ id: String?, _ word: String, _ lexicalEntry: String, _ definition: String?, _ register: String?, _ examples: [String], _ subDetails: [SubDetail]) {
         self.id = id
+        self.word = word
         self.definition = definition
         self.register = register
         self.examples = examples
         self.details = subDetails
+        self.lexicalEntry = lexicalEntry
+    }
+    var count: Int? {
+        return details?.count
     }
     
-    //Computed Properties
-    public var subDetailsCount: Int? {
-        get {
-            return details?.count
-        }
-    }
+    
     
     public func getWordID(at indexPath: IndexPath) -> String? {
         guard let id = details?[indexPath.item].id else { return nil }
@@ -230,6 +230,7 @@ public class Detail: WordPresentable {
     func getDetail(at indexPath: IndexPath) -> Detail? {
         return nil
     }
+    
 
     
 }
@@ -240,17 +241,8 @@ public class SubDetail {
     var register: String?
     var examples: [String]?
     
-    
-    
-    
-    
-    
-    
-//    var subWordId: String?
-//    var subDefinition: String?
-//    var subRegister: String?
-//    var subExamples: [String]?
 }
+    
 
 protocol WordPresentable {
     associatedtype DetailType
@@ -258,6 +250,8 @@ protocol WordPresentable {
     var isDetail: Bool { get set }
     var lexicalEntry: String { get set }
     var word: String { get set }
+    var count: Int? { get }
+    
     func getRegister(at indexPath: IndexPath) -> String?
     func getDefinition(at indexPath: IndexPath) -> String?
     func getExamples(at indexPath: IndexPath) -> [String]?

@@ -12,10 +12,8 @@ extension WordDetailsVC: UICollectionViewDelegateFlowLayout {
     
     //MARK:- Collection View Functions
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if let count = word?.details?.count {
-            return count
-        }
-        return 0
+        guard let count = word.count else { return 0 }
+        return count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

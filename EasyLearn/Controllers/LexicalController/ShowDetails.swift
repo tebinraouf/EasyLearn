@@ -21,14 +21,14 @@ class ShowDetails {
         
         let webService = WebService((word?.word)!, selectedWord, filters: [.lexicalCategory, .examples, .definitions, .registers, .pronunciations])
         
-        webService.get(details:  { (details, status) in
+        webService.get(details:  { (word, status) in
             
-            word?.details = details
+            //word?.details = word?.details
             word?.lexicalEntry = selectedWord
             
             let detailsViewController = WordDetailsVC(collectionViewLayout: UICollectionViewFlowLayout())
             detailsViewController.word = word
-            
+
             let navController = UINavigationController(rootViewController: detailsViewController)
             
             detailsViewController.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.cancelPresentViewController))

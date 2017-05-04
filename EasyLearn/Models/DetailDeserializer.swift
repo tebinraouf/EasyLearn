@@ -14,12 +14,16 @@ import SwiftyJSON
 
 public struct DetailDeserializer {
     private var data: JSON
+    private var word: String
+    private var lexicalEntry: String
     
-    public init(_ data: JSON) {
+    public init(_ data: JSON, _ word: String, _ lexicalEntry: String) {
         self.data = data
+        self.word = word
+        self.lexicalEntry = lexicalEntry
     }
     public var detail: Detail {
-        return Detail(id, definition, register, examples, subDetails)
+        return Detail(id, word, lexicalEntry, definition, register, examples, subDetails)
     }
     
     //Detail
