@@ -165,13 +165,11 @@ public class Word: WordPresentable {
 
     
     //Computed Properties
-    public var lexicalCount: Int? {
-        get {
-            return lexicalEntries?.count
-        }
+    public var lexicalCount: Int {
+        return lexicalEntries?.count ?? 0
     }
-    var count: Int? {
-        return details?.count
+    var count: Int {
+        return details?.count ?? 0
     }
     
 }
@@ -202,8 +200,8 @@ public class Detail: WordPresentable {
         self.details = subDetails
         self.lexicalEntry = lexicalEntry
     }
-    var count: Int? {
-        return details?.count
+    var count: Int {
+        return details?.count ?? 0
     }
     
     
@@ -250,7 +248,7 @@ protocol WordPresentable {
     var isDetail: Bool { get set }
     var lexicalEntry: String { get set }
     var word: String { get set }
-    var count: Int? { get }
+    var count: Int { get }
     
     func getRegister(at indexPath: IndexPath) -> String?
     func getDefinition(at indexPath: IndexPath) -> String?

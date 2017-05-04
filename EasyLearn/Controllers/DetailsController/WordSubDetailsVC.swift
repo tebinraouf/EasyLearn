@@ -26,8 +26,7 @@ class WordSubDetailsVC: UICollectionViewController, UICollectionViewDelegateFlow
     }
     //MARK:- Collection View Functions
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let count = wordDetail?.count else { return 0 }
-        return count
+        return wordDetail.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

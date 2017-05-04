@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 
 class LexicalEntryViewController: UITableViewController {
-    var word: Word?
+    var word: Word!
     let cellID = "cellID"
-    var didSelect: (Word?, String) -> () = { _ in }
+    var didSelect: (Word, String) -> () = { _ in }
     
     
     override func viewDidLoad() {
@@ -25,8 +25,7 @@ class LexicalEntryViewController: UITableViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let count = word?.lexicalCount else { return 0 }
-        return count
+        return word.lexicalCount
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
@@ -35,7 +34,7 @@ class LexicalEntryViewController: UITableViewController {
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let selectedWord = word?.lexicalEntries?[indexPath.row] else { return }
+        guard let selectedWord = word.lexicalEntries?[indexPath.row] else { return }
         didSelect(word, selectedWord)
     }
 }
