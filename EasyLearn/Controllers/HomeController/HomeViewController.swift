@@ -18,7 +18,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     //MARK:- View Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .appGray
         setupView()
         registerCells()
         handleNavigationBars()

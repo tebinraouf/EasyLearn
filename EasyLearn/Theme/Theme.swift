@@ -20,15 +20,21 @@ enum Theme: Int {
     var mainColor: UIColor {
         switch self {
         case .custom:
-            return UIColor(r: 255, g: 56, b: 63, a: 1)
+            return .appColor
         }
     }
     
     func apply() {
-        
         UIApplication.shared.delegate?.window??.tintColor = mainColor
-        
         UINavigationBar.appearance().barTintColor = .appGray
+        
+        
+        //Controls
+        UISwitch.appearance().onTintColor = mainColor.withAlphaComponent(0.3)
+        UISwitch.appearance().thumbTintColor = mainColor
+        
+        UISlider.appearance().tintColor = mainColor
+        
     }
     
 }

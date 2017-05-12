@@ -28,6 +28,7 @@ class WordDetailsVC: UIViewController {
         super.viewDidLoad()
         automaticallyAdjustsScrollViewInsets = false
         navigationItem.title = word?.word.capitalized
+        navigationController?.navigationBar.isTranslucent = false
         collectionViewSetup()
     }
     

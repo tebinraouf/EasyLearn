@@ -37,7 +37,6 @@ extension WordDetailsVC: UICollectionViewDelegate, UICollectionViewDataSource,UI
         return CGSize(width: collectionView.frame.width, height: estimatedFrame.height + 60)
     }
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
-        //collectionView.collectionViewLayout.invalidateLayout()
         DispatchQueue.main.async {
             self.collectionView.reloadData()
         }

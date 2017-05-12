@@ -19,13 +19,13 @@ public extension UIColor {
 //        self.init(red: CGFloat(r/255), green: CGFloat(g/255), blue: CGFloat(b/255), alpha: a)
 //    }
     public class var appColor: UIColor {
-        return UIColor(r: 255, g: 20, b: 106, a: 1)
+        return UIColor(r: 255, g: 56, b: 63, a: 1)
     }
     public class var appGray: UIColor {
         return UIColor(r: 247, g: 247, b: 247, a: 1)
     }
     public class var appRedish: UIColor {
-        return UIColor(r: 244, g: 91, b: 105, a: 1)
+        return UIColor(r: 255, g: 56, b: 63, a: 1)
     }
     public class var appLightGreen: UIColor {
         return UIColor(r: 220, g: 226, b: 202, a: 1)
