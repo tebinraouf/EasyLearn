@@ -19,6 +19,7 @@
 		CF38712F1E89B0DE005AA866 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF38712E1E89B0DE005AA866 /* CoreDataStack.swift */; };
 		CF3871321E89B193005AA866 /* CDWord.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CF3871301E89B193005AA866 /* CDWord.xcdatamodeld */; };
 		CF3871341E89BAEB005AA866 /* DataLayerSimple.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3871331E89BAEB005AA866 /* DataLayerSimple.swift */; };
+		CF67C8101EC55FD0005D1F6D /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF67C80F1EC55FD0005D1F6D /* Theme.swift */; };
 		CF6BB1401EB19FF4003A8D54 /* CustomAttributtedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BB13F1EB19FF4003A8D54 /* CustomAttributtedString.swift */; };
 		CF6BB1421EB1A0A9003A8D54 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BB1411EB1A0A9003A8D54 /* HomeView.swift */; };
 		CF6BB1441EB1A197003A8D54 /* BackgroundColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BB1431EB1A197003A8D54 /* BackgroundColorView.swift */; };
@@ -101,6 +102,7 @@
 		CF38712E1E89B0DE005AA866 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		CF3871311E89B193005AA866 /* CDWord.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CDWord.xcdatamodel; sourceTree = "<group>"; };
 		CF3871331E89BAEB005AA866 /* DataLayerSimple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLayerSimple.swift; sourceTree = "<group>"; };
+		CF67C80F1EC55FD0005D1F6D /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Theme.swift; path = Theme/Theme.swift; sourceTree = "<group>"; };
 		CF6BB13F1EB19FF4003A8D54 /* CustomAttributtedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomAttributtedString.swift; path = ReusableClass/CustomAttributtedString.swift; sourceTree = "<group>"; };
 		CF6BB1411EB1A0A9003A8D54 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = Views/HomeView.swift; sourceTree = "<group>"; };
 		CF6BB1431EB1A197003A8D54 /* BackgroundColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackgroundColorView.swift; path = Views/BackgroundColorView.swift; sourceTree = "<group>"; };
@@ -444,6 +446,14 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		CF67C80E1EC55FB4005D1F6D /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				CF67C80F1EC55FD0005D1F6D /* Theme.swift */,
+			);
+			name = Theme;
+			sourceTree = "<group>";
+		};
 		CF6BB13E1EB19FC4003A8D54 /* ReusableClass */ = {
 			isa = PBXGroup;
 			children = (
@@ -473,6 +483,7 @@
 		CFAFE6661E68F9CA0062235E /* EasyLearn */ = {
 			isa = PBXGroup;
 			children = (
+				CF67C80E1EC55FB4005D1F6D /* Theme */,
 				CF6BB13E1EB19FC4003A8D54 /* ReusableClass */,
 				CF0A82DF1EAEFC6A00D2BFB1 /* Observers */,
 				CFFBB4091E8DB0FB007DCD66 /* Subclasses */,
@@ -714,6 +725,7 @@
 				CF6BB18E1EB1A593003A8D54 /* CustomCardsViewController.swift in Sources */,
 				CF6BB14A1EB1A1B8003A8D54 /* AlphaView.swift in Sources */,
 				CF0A82E11EAEFDC800D2BFB1 /* HomeControllerObserver.swift in Sources */,
+				CF67C8101EC55FD0005D1F6D /* Theme.swift in Sources */,
 				CF3209FE1EB526D8001BF89D /* DetailDeserializer.swift in Sources */,
 				CF6BB1761EB1A48D003A8D54 /* LexicalEntryViewController.swift in Sources */,
 				CF6BB1B21EB1A952003A8D54 /* Extensions.swift in Sources */,
