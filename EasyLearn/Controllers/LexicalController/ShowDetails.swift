@@ -22,11 +22,10 @@ class ShowDetails {
         let webService = WebService((word?.word)!, selectedWord, filters: [.lexicalCategory, .examples, .definitions, .registers, .pronunciations])
         
         webService.get(details:  { (word, status) in
-            
-            //word?.details = word?.details
+
             word?.lexicalEntry = selectedWord
             
-            let detailsViewController = WordDetailsVC(collectionViewLayout: UICollectionViewFlowLayout())
+            let detailsViewController = WordDetailsVC()
             detailsViewController.word = word
 
             let navController = UINavigationController(rootViewController: detailsViewController)

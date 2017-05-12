@@ -16,14 +16,16 @@ public struct DetailDeserializer {
     private var data: JSON
     private var word: String
     private var lexicalEntry: String
+    private var pronunciations: [Pronunciation]
     
-    public init(_ data: JSON, _ word: String, _ lexicalEntry: String) {
+    public init(_ data: JSON, _ word: String, _ lexicalEntry: String, _ pronunciations: [Pronunciation]) {
         self.data = data
         self.word = word
         self.lexicalEntry = lexicalEntry
+        self.pronunciations = pronunciations
     }
     public var detail: Detail {
-        return Detail(id, word, lexicalEntry, definition, register, examples, subDetails)
+        return Detail(id, word, lexicalEntry, definition, register, examples, subDetails, pronunciations)
     }
     
     //Detail

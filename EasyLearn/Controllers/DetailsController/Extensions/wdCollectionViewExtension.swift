@@ -8,14 +8,14 @@
 
 import UIKit
 
-extension WordDetailsVC: UICollectionViewDelegateFlowLayout {
+extension WordDetailsVC: UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
     //MARK:- Collection View Functions
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return word.count
     }
     
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellID.wdCellID.rawValue, for: indexPath) as! DetailsCell
         
         let generator = DataGenerator(word!, indexPath)
@@ -37,24 +37,18 @@ extension WordDetailsVC: UICollectionViewDelegateFlowLayout {
         return CGSize(width: collectionView.frame.width, height: estimatedFrame.height + 60)
     }
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
-        collectionView?.collectionViewLayout.invalidateLayout()
+        //collectionView.collectionViewLayout.invalidateLayout()
         DispatchQueue.main.async {
-            self.collectionView?.reloadData()
+            self.collectionView.reloadData()
         }
     }
     
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Tap Tap More...")
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 3
     }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        let top: CGFloat = DeviceState.isPortrait.state ? 64 : 35
-        collectionView.scrollIndicatorInsets = UIEdgeInsets(top: top, left: 0, bottom: 0, right: 0)
-        return collectionView.scrollIndicatorInsets
-    }
-    
 }
 
 

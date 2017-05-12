@@ -7,80 +7,7 @@
 //
 
 import Foundation
-
-class WordWord {
-    private var language: String?
-    private var id: String?
-    private var word: String?
-    private var type: String?
-    private var lexicalEntries: [String]?
-    private var details: [DetailDetail]?
-    
-    public init(_ language: String, id: String, word: String, type: String) {
-        self.language = language
-        self.id = id
-        self.word = word
-        self.type = type
-    }
-    //MARK: Main Word Setters
-    public func setLexicalEntries(_ entries: [String]) {
-        self.lexicalEntries = entries
-    }
-    
-    
-//    //MARK: Main Word Getters
-//    public func getID(at indexPath: IndexPath) -> String {
-//        guard let id = details?[indexPath.item].wordId else { return "" }
-//        return id
-//    }
-//    public func getExamples(at indexPath: IndexPath) -> [String] {
-//        guard let examples = details?[indexPath.item].examples else { return [""] }
-//        return examples
-//    }
-//    public func getRegister(at indexPath: IndexPath) -> String {
-//        guard let register = details?[indexPath.item].register else { return "" }
-//        return register
-//    }
-//    public func getDefinition(at indexPath: IndexPath) -> String {
-//        guard let definition = details?[indexPath.item].definition else { return "" }
-//        return definition
-//    }
-    //MARK: Sub Word Getters
-    
-    
-    
-    //MARK: Main Word Computed Properties
-    public var lexicalCount: Int {
-        get {
-            guard let count = lexicalEntries?.count else { return 0 }
-            return count
-        }
-    }
-    public var getLexicalEntries: [String] {
-        get {
-            guard let entries = lexicalEntries else { return [""] }
-            return entries
-        }
-    }
-    
-    
-}
-
-class DetailDetail {
-    var wordId: String?
-    var definition: String?
-    var examples: [String]?
-    var register: String?
-    var subdetails: [SubDetailSubDetail]?
-}
-class SubDetailSubDetail {
-    var subWordId: String?
-    var subDefinition: String?
-    var subRegister: String?
-    var subExamples: [String]?
-}
-
-
+import SwiftyJSON
 
 public class Word: WordPresentable {
     typealias DetailType = Detail
@@ -160,6 +87,10 @@ public class Word: WordPresentable {
     public func getDetail(at indexPath: IndexPath) -> Detail? {
         return details?[indexPath.item]
     }
+    //the pronunciation is the same either for word or details
+    public func getPronunciation() -> [Pronunciation]? {
+        return details?[0].getPronunciation()
+    }
     
     
 
@@ -181,6 +112,9 @@ public class Detail: WordPresentable {
     var register: String?
     var examples: [String]?
     var details: [DetailType]?
+    var pronunciations: [Pronunciation]?
+    
+    
     
     var lexicalEntry: String = ""
     var word: String = ""
@@ -191,7 +125,7 @@ public class Detail: WordPresentable {
     init() {
         
     }
-    public init(_ id: String?, _ word: String, _ lexicalEntry: String, _ definition: String?, _ register: String?, _ examples: [String], _ subDetails: [SubDetail]) {
+    public init(_ id: String?, _ word: String, _ lexicalEntry: String, _ definition: String?, _ register: String?, _ examples: [String], _ subDetails: [SubDetail], _ pronunciations: [Pronunciation]) {
         self.id = id
         self.word = word
         self.definition = definition
@@ -199,6 +133,7 @@ public class Detail: WordPresentable {
         self.examples = examples
         self.details = subDetails
         self.lexicalEntry = lexicalEntry
+        self.pronunciations = pronunciations
     }
     var count: Int {
         return details?.count ?? 0
@@ -228,19 +163,29 @@ public class Detail: WordPresentable {
     func getDetail(at indexPath: IndexPath) -> Detail? {
         return nil
     }
-    
-
+    func getPronunciation() -> [Pronunciation]? {
+        return pronunciations
+    }
     
 }
 public class SubDetail {
-    
     var id: String?
     var definition: String?
     var register: String?
     var examples: [String]?
-    
 }
+
+public struct Pronunciation {
+    var dialects: String?
+    var phoneticSpelling: String?
+    var audioFile: String?
+    var phoneticNotation: String?
+
     
+
+}
+
+
 
 protocol WordPresentable {
     associatedtype DetailType
@@ -256,6 +201,7 @@ protocol WordPresentable {
     func getWordID(at indexPath: IndexPath) -> String?
     func getCount(at indexPath: IndexPath) -> Int?
     func getDetail(at indexPath: IndexPath) -> Detail?
+    func getPronunciation() -> [Pronunciation]?
     
 }
 
