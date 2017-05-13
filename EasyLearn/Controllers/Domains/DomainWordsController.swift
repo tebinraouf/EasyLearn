@@ -12,7 +12,6 @@ class DomainWordsController: UITableViewController {
     
     var domain: String!
     
-    
     var cellID = "cellID"
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +19,9 @@ class DomainWordsController: UITableViewController {
         handleNavigationBar()
     }
     func handleNavigationBar() {
+        
         navigationItem.title = domain
+        
     }
     
     func registerCells(){
@@ -36,6 +37,6 @@ class DomainWordsController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        
+        print(domain)
     }
 }
