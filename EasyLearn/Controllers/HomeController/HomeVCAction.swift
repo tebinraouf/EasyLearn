@@ -12,6 +12,7 @@ class HomeVCAction: HomeViewDelegate {
     
     var homeView: HomeView!
     var view: UIView!
+    var navigationController: UINavigationController?
     var pushToNextViewController: (Word?, Status) -> () = { _ in }
     
     
@@ -40,7 +41,7 @@ class HomeVCAction: HomeViewDelegate {
                     print("No internet connection")
                 }
                 
-
+                
             }
         }
     }
@@ -50,6 +51,13 @@ class HomeVCAction: HomeViewDelegate {
     func handleMenuSlide() {
         handleConstant(constant: -200)
     }
+    func handleCard() {
+        navigationController?.pushViewController(CardsViewController(), animated: true)
+    }
+    func handleMoreCategory() {
+        navigationController?.pushViewController(DomainController(), animated: true)
+    }
+    
     func handleMenuSlideLeft(gesture: UIScreenEdgePanGestureRecognizer){
         switch gesture.state {
         case .began, .changed:

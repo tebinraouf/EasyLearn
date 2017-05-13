@@ -78,6 +78,38 @@ class DataLayerSimple {
 
 
 
+class DomainCoreData {
+    let mainContext = CoreDataStack.sharedInstance.mainContext
+    
+    
+    func saveDomain(_ name: String, key: String) {
+        let cdDomain = CDDomain(context: mainContext)
+        cdDomain.name = name
+        cdDomain.key = key
+        
+        
+        mainContext.trySave()
+    }
+    
+    func fetchAllDomains() -> [CDDomain]? {
+        //let sort = NSSortDescriptor(key: "id", ascending: true)
+        let fetchRequest: NSFetchRequest<CDDomain> = CDDomain.fetchRequest()
+        //fetchRequest.sortDescriptors = [sort]
+        let domains = try? mainContext.fetch(fetchRequest)
+        return domains
+    }
+    
+    func removeManuallyCreatedDomains() {
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "CDDomain")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        try! self.mainContext.execute(deleteRequest)
+        self.mainContext.reset()
+    }
+    
+}
+
+
+
 
 class ColorCoreDataLayer {
     let mainContext = CoreDataStack.sharedInstance.mainContext

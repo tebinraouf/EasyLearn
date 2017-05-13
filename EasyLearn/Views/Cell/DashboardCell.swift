@@ -13,7 +13,7 @@ class DashboardCell: BaseCell {
     
     let deckNameLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .white
+        label.textColor = .black
         label.numberOfLines = 2
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -22,7 +22,9 @@ class DashboardCell: BaseCell {
     
     override func setupView() {
         
-        backgroundColor = .appRedish
+        //layer.cornerRadius = 20
+        //layer.masksToBounds = true
+        backgroundColor = .appGray
         addSubview(deckNameLabel)
         deckNameLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         deckNameLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true

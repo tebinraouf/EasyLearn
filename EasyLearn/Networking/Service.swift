@@ -14,7 +14,12 @@ import SwiftyJSON
 
 class WebService {
     
+    
+    public static let shared = WebService()
+    
     private var url = "https://od-api.oxforddictionaries.com:443/api/v1/entries/en/"
+    private var domainURL = "https://od-api.oxforddictionaries.com:443/api/v1/domains/en"
+    
     private var resource: Resource
     
     public init(_ word: String, filters: [OxfordFilters]) {
@@ -23,6 +28,11 @@ class WebService {
     public init(_ word: String, _ lexicalCategory: String, filters: [OxfordFilters]) {
         resource = Resource(url, word, lexicalCategory, filters)
     }
+    public init() {
+        resource = Resource(domainURL)
+    }
+    
+    
     public var request: URLRequest? {
         return resource.request
     }
@@ -46,9 +56,24 @@ class WebService {
             }
         }
     }
+    
+    public func getDomains(_ completion: @escaping ([Domain]?, Status)->()) {
+        let builder = Builder()
+        resource.load { (json, status) in
+            DispatchQueue.main.async {
+                let domains = builder.domainsFromData(json)
+                completion(domains, status)
+            }
+            
+        }
+    }
+    
 }
 
-
+struct Domain {
+    var key: String
+    var name: String
+}
 
 
 

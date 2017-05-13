@@ -19,10 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let window = window {
             app = App(window)
         }
-        
         Theme.current.apply()
-        
-        
         return true
     }
 

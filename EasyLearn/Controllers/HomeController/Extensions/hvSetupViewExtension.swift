@@ -24,7 +24,9 @@ extension HomeViewController {
         
         
         homeView.setSearchButton(self, action: #selector(handleSearch))
-        homeView.setMoreButton(self, action: #selector(handleSearch))
+        homeView.setMoreButton(self, action: #selector(handleMenuSlide))
+        homeView.setCardButton(self, action: #selector(handleCard))
+        homeView.setMoreCategories(self, action: #selector(handleMoreCategory))
         
         handleGestures()
     }

@@ -20,6 +20,8 @@
 		CF3871321E89B193005AA866 /* CDWord.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CF3871301E89B193005AA866 /* CDWord.xcdatamodeld */; };
 		CF3871341E89BAEB005AA866 /* DataLayerSimple.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3871331E89BAEB005AA866 /* DataLayerSimple.swift */; };
 		CF67C8101EC55FD0005D1F6D /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF67C80F1EC55FD0005D1F6D /* Theme.swift */; };
+		CF67C8171EC69D8B005D1F6D /* DomainWordsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF67C8161EC69D8B005D1F6D /* DomainWordsController.swift */; };
+		CF67C8191EC69F53005D1F6D /* DomainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF67C8181EC69F53005D1F6D /* DomainController.swift */; };
 		CF6BB1401EB19FF4003A8D54 /* CustomAttributtedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BB13F1EB19FF4003A8D54 /* CustomAttributtedString.swift */; };
 		CF6BB1421EB1A0A9003A8D54 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BB1411EB1A0A9003A8D54 /* HomeView.swift */; };
 		CF6BB1441EB1A197003A8D54 /* BackgroundColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BB1431EB1A197003A8D54 /* BackgroundColorView.swift */; };
@@ -103,6 +105,8 @@
 		CF3871311E89B193005AA866 /* CDWord.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CDWord.xcdatamodel; sourceTree = "<group>"; };
 		CF3871331E89BAEB005AA866 /* DataLayerSimple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataLayerSimple.swift; sourceTree = "<group>"; };
 		CF67C80F1EC55FD0005D1F6D /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Theme.swift; path = Theme/Theme.swift; sourceTree = "<group>"; };
+		CF67C8161EC69D8B005D1F6D /* DomainWordsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DomainWordsController.swift; path = Controllers/Domains/DomainWordsController.swift; sourceTree = "<group>"; };
+		CF67C8181EC69F53005D1F6D /* DomainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DomainController.swift; path = Controllers/Domains/DomainController.swift; sourceTree = "<group>"; };
 		CF6BB13F1EB19FF4003A8D54 /* CustomAttributtedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomAttributtedString.swift; path = ReusableClass/CustomAttributtedString.swift; sourceTree = "<group>"; };
 		CF6BB1411EB1A0A9003A8D54 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = Views/HomeView.swift; sourceTree = "<group>"; };
 		CF6BB1431EB1A197003A8D54 /* BackgroundColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackgroundColorView.swift; path = Views/BackgroundColorView.swift; sourceTree = "<group>"; };
@@ -388,6 +392,7 @@
 		CF6012DE1E789BA100EA0A3A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CF67C8111EC69A56005D1F6D /* Domains */,
 				CF16A9FC1EA2A24C003EC2F7 /* ColorImageSelector */,
 				CFF0751F1E9B365000F7794D /* Colors */,
 				CFF0751B1E9AF5E500F7794D /* BackgroundImage */,
@@ -452,6 +457,15 @@
 				CF67C80F1EC55FD0005D1F6D /* Theme.swift */,
 			);
 			name = Theme;
+			sourceTree = "<group>";
+		};
+		CF67C8111EC69A56005D1F6D /* Domains */ = {
+			isa = PBXGroup;
+			children = (
+				CF67C8181EC69F53005D1F6D /* DomainController.swift */,
+				CF67C8161EC69D8B005D1F6D /* DomainWordsController.swift */,
+			);
+			name = Domains;
 			sourceTree = "<group>";
 		};
 		CF6BB13E1EB19FC4003A8D54 /* ReusableClass */ = {
@@ -705,7 +719,9 @@
 				CF6BB1821EB1A503003A8D54 /* ErrorViewController.swift in Sources */,
 				CF6BB1A01EB1A782003A8D54 /* csCustomFuctionsExtension.swift in Sources */,
 				CF6BB1A81EB1A7D2003A8D54 /* cbgcSetupViewExtension.swift in Sources */,
+				CF67C8171EC69D8B005D1F6D /* DomainWordsController.swift in Sources */,
 				CF6BB15C1EB1A34E003A8D54 /* CardViewModel.swift in Sources */,
+				CF67C8191EC69F53005D1F6D /* DomainController.swift in Sources */,
 				CF6BB1A61EB1A7D2003A8D54 /* cbgcCustomFunctions.swift in Sources */,
 				CF6BB19C1EB1A743003A8D54 /* ColorImageSelector.swift in Sources */,
 				CF6BB1401EB19FF4003A8D54 /* CustomAttributtedString.swift in Sources */,

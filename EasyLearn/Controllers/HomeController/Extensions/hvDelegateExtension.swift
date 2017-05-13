@@ -16,10 +16,17 @@ extension HomeViewController {
     func handleMoreButton() {
         homeViewAction.handleMoreButton()
     }
+    func handleCard() {
+        homeViewAction.handleCard()
+    }
     func handleMenuSlide() {
         homeViewAction.handleMenuSlide()
     }
     func handleMenuSlideLeft(gesture: UIScreenEdgePanGestureRecognizer){
         homeViewAction.handleMenuSlideLeft(gesture: gesture)
     }
+    func handleMoreCategory() {
+        homeViewAction.handleMoreCategory()
+    }
+    
 }
