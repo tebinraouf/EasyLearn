@@ -22,6 +22,7 @@
 		CF67C8101EC55FD0005D1F6D /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF67C80F1EC55FD0005D1F6D /* Theme.swift */; };
 		CF67C8171EC69D8B005D1F6D /* DomainWordsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF67C8161EC69D8B005D1F6D /* DomainWordsController.swift */; };
 		CF67C8191EC69F53005D1F6D /* DomainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF67C8181EC69F53005D1F6D /* DomainController.swift */; };
+		CF67C81B1EC7E856005D1F6D /* UITableViewControllerWithViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF67C81A1EC7E856005D1F6D /* UITableViewControllerWithViews.swift */; };
 		CF6BB1401EB19FF4003A8D54 /* CustomAttributtedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BB13F1EB19FF4003A8D54 /* CustomAttributtedString.swift */; };
 		CF6BB1421EB1A0A9003A8D54 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BB1411EB1A0A9003A8D54 /* HomeView.swift */; };
 		CF6BB1441EB1A197003A8D54 /* BackgroundColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BB1431EB1A197003A8D54 /* BackgroundColorView.swift */; };
@@ -107,6 +108,7 @@
 		CF67C80F1EC55FD0005D1F6D /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Theme.swift; path = Theme/Theme.swift; sourceTree = "<group>"; };
 		CF67C8161EC69D8B005D1F6D /* DomainWordsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DomainWordsController.swift; path = Controllers/Domains/DomainWordsController.swift; sourceTree = "<group>"; };
 		CF67C8181EC69F53005D1F6D /* DomainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DomainController.swift; path = Controllers/Domains/DomainController.swift; sourceTree = "<group>"; };
+		CF67C81A1EC7E856005D1F6D /* UITableViewControllerWithViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITableViewControllerWithViews.swift; path = SubClasses/UITableViewControllerWithViews.swift; sourceTree = "<group>"; };
 		CF6BB13F1EB19FF4003A8D54 /* CustomAttributtedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomAttributtedString.swift; path = ReusableClass/CustomAttributtedString.swift; sourceTree = "<group>"; };
 		CF6BB1411EB1A0A9003A8D54 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = Views/HomeView.swift; sourceTree = "<group>"; };
 		CF6BB1431EB1A197003A8D54 /* BackgroundColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackgroundColorView.swift; path = Views/BackgroundColorView.swift; sourceTree = "<group>"; };
@@ -578,6 +580,7 @@
 				CF6BB1641EB1A3DA003A8D54 /* LeftPaddedTextField.swift */,
 				CF6BB1651EB1A3DA003A8D54 /* LeftPaddedUILabel.swift */,
 				CF6BB1661EB1A3DA003A8D54 /* VerticallyCenteredTextView.swift */,
+				CF67C81A1EC7E856005D1F6D /* UITableViewControllerWithViews.swift */,
 			);
 			name = Subclasses;
 			sourceTree = "<group>";
@@ -749,6 +752,7 @@
 				CF6BB1941EB1A654003A8D54 /* Service.swift in Sources */,
 				CF6BB1A71EB1A7D2003A8D54 /* cbgcDelegateExtension.swift in Sources */,
 				CF6BB1B61EB24131003A8D54 /* ShowDetails.swift in Sources */,
+				CF67C81B1EC7E856005D1F6D /* UITableViewControllerWithViews.swift in Sources */,
 				CF6BB1541EB1A286003A8D54 /* FlashCardCell.swift in Sources */,
 				CF6BB1421EB1A0A9003A8D54 /* HomeView.swift in Sources */,
 				CF320A051EB527EB001BF89D /* Builder.swift in Sources */,

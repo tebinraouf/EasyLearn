@@ -21,9 +21,9 @@ class ShowDetails {
         
         if Reachability.isConnectedToNetwork {
             
-            let webService = WebService((word?.id)!, selectedWord, filters: [.lexicalCategory, .examples, .definitions, .registers, .pronunciations])
+            let web = WebService((word?.id)!, selectedWord, filters: [.lexicalCategory, .examples, .definitions, .registers, .pronunciations])
             
-            webService.get(details:  { (word, status) in
+            web.get { (word, status) in
                 
                 word?.lexicalEntry = selectedWord
                 
@@ -35,7 +35,12 @@ class ShowDetails {
                 detailsViewController.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.cancelPresentViewController))
                 
                 self.controller.present(navController, animated: true, completion: nil)
-            })
+            }
+            
+            if web.request != nil {
+                controller.activityIndicatorView.startAnimating()
+            }
+            
             
         } else {
             noInternetAlert(controller)

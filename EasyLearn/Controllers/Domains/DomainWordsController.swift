@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DomainWordsController: UITableViewController {
+class DomainWordsController: UITableViewControllerWithViews {
     
     var domain: Domain!
     
@@ -46,19 +46,27 @@ class DomainWordsController: UITableViewController {
         let text = words?[indexPath.item].id
         
         
-        let webService = WebService(text!, filters: [.lexicalCategory])
-        
-        webService.get({ (word, status) in
-            let lexicalEntryVC = LexicalEntryViewController()
-            lexicalEntryVC.word = word
-            self.navigationController?.pushViewController(lexicalEntryVC, animated: true)
-        })
-        
-        
-        
-        
-        
-        
+        if Reachability.isConnectedToNetwork {
+            let web = WebService(text!, filters: [.lexicalCategory])
+            
+            
+            web.get { (word, status) in
+                let lexicalEntryVC = LexicalEntryViewController()
+                lexicalEntryVC.word = word
+                self.navigationController?.pushViewController(lexicalEntryVC, animated: true)
+            }
+            if web.request != nil {
+                //homeView.containerView.isHidden = false
+                activityIndicatorView.startAnimating()
+            }
+            
+            
+        } else {
+            noInternetAlert(self)
+        }
         
     }
 }
+
+
+

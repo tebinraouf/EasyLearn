@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class LexicalEntryViewController: UITableViewController {
+class LexicalEntryViewController: UITableViewControllerWithViews {
     var word: Word!
     let cellID = "cellID"
     var didSelect: (Word, String) -> () = { _ in }
@@ -18,7 +18,7 @@ class LexicalEntryViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCells()
-        isNavBarHidden(false, navigationController)
+        //isNavBarHidden(false, navigationController)
         let _ = ShowDetails(nav: navigationController)
     }
     func registerCells(){

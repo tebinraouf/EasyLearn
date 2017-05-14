@@ -49,17 +49,17 @@ class WebService {
             }
         }
     }
-    public func get(details completion: @escaping (Word?, Status)->()) {
-        let builder = Builder()
-        resource.load { (data, status) in
-            //filter the data
-            //let detailData = data?["results"][0]["lexicalEntries"][0]["entries"][0]["senses"]
-            DispatchQueue.main.async {
-                let word = builder.wordFromData(data)
-                completion(word, status)
-            }
-        }
-    }
+//    public func get(details completion: @escaping (Word?, Status)->()) {
+//        let builder = Builder()
+//        resource.load { (data, status) in
+//            //filter the data
+//            //let detailData = data?["results"][0]["lexicalEntries"][0]["entries"][0]["senses"]
+//            DispatchQueue.main.async {
+//                let word = builder.wordFromData(data)
+//                completion(word, status)
+//            }
+//        }
+//    }
     public func getDomains(_ completion: @escaping ([Domain]?, Status)->()) {
         let builder = Builder()
         resource.load { (json, status) in
