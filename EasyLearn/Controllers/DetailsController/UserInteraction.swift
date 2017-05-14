@@ -86,6 +86,7 @@ public struct PronunciationDownloader {
         let session = URLSession.shared
         var url: URL!
         //some words have more than one pronunciations such as 'often'
+        //Bug: if the word doesn't have pronunciation, it crashes.
         
         for i in 0...pronunciations.count-1 {
             

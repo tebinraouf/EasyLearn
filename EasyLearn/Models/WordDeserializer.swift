@@ -45,9 +45,6 @@ public struct WordDeserializer {
         let pd = PronunDeserializer(pronunciationData)
         return pd.pronunciations
     }
-    
-    
-    
     public var details: [Detail] {
         var details = [Detail]()
         let detailData = data["results"][0]["lexicalEntries"][0]["entries"][0]["senses"]

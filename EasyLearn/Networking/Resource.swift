@@ -50,6 +50,9 @@ class Resource {
         }
         
     }
+    public init(_ url: String, _ domain: String) {
+        self.url = url + domain
+    }
     private func setURL(_ url: String, _ word: String, _ filters: [OxfordFilters]) {
         self.url = url + word.lowercased().trimmingCharacters(in: CharacterSet.whitespaces) + "/"
         

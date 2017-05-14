@@ -39,12 +39,21 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             let dwc = DomainWordsController()
             
             if domains?.count == 0 {
-                dwc.domain = tmpDomains[indexPath.item].name
+                dwc.domain = tmpDomains[indexPath.item]
             } else {
-                dwc.domain = domains?[indexPath.item].name
+                let name = domains?[indexPath.item].name
+                let key = domains?[indexPath.item].key
+                let domain = Domain(key: key!, name: name!)
+                dwc.domain = domain
             }
-            
-            navigationController?.pushViewController(dwc, animated: true)
+
+            let web = WebService(tmpDomains[indexPath.item].key)
+            web.getDomainWords { (words, status) in
+                dwc.words = words
+                DispatchQueue.main.async {
+                    self.navigationController?.pushViewController(dwc, animated: true)
+                }
+            }
             
         }
     }

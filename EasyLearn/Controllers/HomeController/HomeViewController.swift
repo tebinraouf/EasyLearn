@@ -97,10 +97,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
                 print(domains ?? "")
             }
         }
-        
-        
-        
-        
     }
     
 

@@ -19,6 +19,7 @@ class WebService {
     
     private var url = "https://od-api.oxforddictionaries.com:443/api/v1/entries/en/"
     private var domainURL = "https://od-api.oxforddictionaries.com:443/api/v1/domains/en"
+    private var wordListURL = "https://od-api.oxforddictionaries.com:443/api/v1/wordlist/en/domains%3D"
     
     private var resource: Resource
     
@@ -30,6 +31,9 @@ class WebService {
     }
     public init() {
         resource = Resource(domainURL)
+    }
+    public init(_ domainKey: String) {
+        resource = Resource(wordListURL, domainKey)
     }
     
     
@@ -56,15 +60,24 @@ class WebService {
             }
         }
     }
-    
     public func getDomains(_ completion: @escaping ([Domain]?, Status)->()) {
         let builder = Builder()
         resource.load { (json, status) in
             DispatchQueue.main.async {
                 let domains = builder.domainsFromData(json)
+                
                 completion(domains, status)
             }
             
+        }
+    }
+    public func getDomainWords(completion: @escaping ([Word]?, Status)->()) {
+        let builder = Builder()
+        resource.load { (json, status) in
+            DispatchQueue.main.async {
+                let domainWords = builder.domainWords(json)
+                completion(domainWords, status)
+            }
         }
     }
     

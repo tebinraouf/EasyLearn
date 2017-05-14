@@ -43,10 +43,24 @@ class DomainController: UITableViewController {
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedDomain = domains[indexPath.row].name
+        let selectedDomain = domains[indexPath.row]
+        
+        let domain = Domain(key: selectedDomain.key!, name: selectedDomain.name!)
+        
         let domainWordsController = DomainWordsController()
-        domainWordsController.domain = selectedDomain
-        self.navigationController?.pushViewController(domainWordsController, animated: true)
+        domainWordsController.domain = domain
+        
+        let web = WebService(domain.key)
+        web.getDomainWords { (words, status) in
+            domainWordsController.words = words
+            
+            DispatchQueue.main.async {
+                self.navigationController?.pushViewController(domainWordsController, animated: true)
+                
+            }
+            
+        }
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
