@@ -47,13 +47,26 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
                 dwc.domain = domain
             }
 
-            let web = WebService(tmpDomains[indexPath.item].key)
-            web.getDomainWords { (words, status) in
-                dwc.words = words
-                DispatchQueue.main.async {
-                    self.navigationController?.pushViewController(dwc, animated: true)
+            
+            if Reachability.isConnectedToNetwork {
+                let web = WebService(tmpDomains[indexPath.item].key)
+                web.getDomainWords { (words, status) in
+                    dwc.words = words
+                    DispatchQueue.main.async {
+                        self.navigationController?.pushViewController(dwc, animated: true)
+                    }
                 }
+                
+                if web.request != nil {
+                    homeView.containerView.isHidden = false
+                    homeView.activityIndicatorView.startAnimating()
+                }
+                
+                
+            } else {
+                noInternetAlert(self)
             }
+            
             
         }
     }

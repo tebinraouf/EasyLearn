@@ -32,6 +32,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         homeViewAction.homeView = homeView
         homeViewAction.view = view
         homeViewAction.navigationController = navigationController
+        homeViewAction.delegate = self
         
         let dg = DomainGenerator()
         tmpDomains = dg.domains

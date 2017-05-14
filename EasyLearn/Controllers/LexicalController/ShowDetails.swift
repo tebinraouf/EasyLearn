@@ -19,21 +19,29 @@ class ShowDetails {
     }
     func showWord(word: Word?, selectedWord: String) {
         
-        let webService = WebService((word?.id)!, selectedWord, filters: [.lexicalCategory, .examples, .definitions, .registers, .pronunciations])
+        if Reachability.isConnectedToNetwork {
+            
+            let webService = WebService((word?.id)!, selectedWord, filters: [.lexicalCategory, .examples, .definitions, .registers, .pronunciations])
+            
+            webService.get(details:  { (word, status) in
+                
+                word?.lexicalEntry = selectedWord
+                
+                let detailsViewController = WordDetailsVC()
+                detailsViewController.word = word
+                
+                let navController = UINavigationController(rootViewController: detailsViewController)
+                
+                detailsViewController.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.cancelPresentViewController))
+                
+                self.controller.present(navController, animated: true, completion: nil)
+            })
+            
+        } else {
+            noInternetAlert(controller)
+        }
         
-        webService.get(details:  { (word, status) in
-
-            word?.lexicalEntry = selectedWord
-            
-            let detailsViewController = WordDetailsVC()
-            detailsViewController.word = word
-
-            let navController = UINavigationController(rootViewController: detailsViewController)
-            
-            detailsViewController.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.cancelPresentViewController))
-            
-            self.controller.present(navController, animated: true, completion: nil)
-        })
+        
  
     }
     @objc func cancelPresentViewController(){

@@ -83,6 +83,21 @@ class WebService {
     
 }
 
+
+//extension WebService {
+//    if web.request != nil {
+//    homeView.containerView.isHidden = false
+//    homeView.activityIndicatorView.startAnimating()
+//    }
+//    
+//    func handleActivityIndicator() {
+//        if request != nil {
+//            
+//        }
+//    }
+//}
+
+
 struct Domain {
     var key: String
     var name: String

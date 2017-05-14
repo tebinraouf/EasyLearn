@@ -1,4 +1,5 @@
 import SystemConfiguration
+import UIKit
 
 public class Reachability {
     
@@ -34,4 +35,9 @@ public class Reachability {
         return ret
         
     }
+}
+func noInternetAlert(_ viewController: UIViewController) {
+    let alert = UIAlertController(title: "Internet Connection", message: "There is no Internet connection, please try again.", preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+    viewController.present(alert, animated: true)
 }

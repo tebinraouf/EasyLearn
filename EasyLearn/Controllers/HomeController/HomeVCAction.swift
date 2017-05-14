@@ -11,6 +11,7 @@ import UIKit
 class HomeVCAction: HomeViewDelegate {
     
     var homeView: HomeView!
+    var delegate: HomeViewController!
     var view: UIView!
     var navigationController: UINavigationController?
     var pushToNextViewController: (Word?, Status) -> () = { _ in }
@@ -38,7 +39,7 @@ class HomeVCAction: HomeViewDelegate {
                     }
                     
                 } else {
-                    print("No internet connection")
+                    noInternetAlert(delegate)
                 }
                 
                 
