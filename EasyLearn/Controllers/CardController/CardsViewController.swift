@@ -21,7 +21,6 @@ class CardsViewController: UIViewController {
     var isPlayClicked = false
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .appLightGreen
         self.automaticallyAdjustsScrollViewInsets = false
         registerCells()
         setupView()
@@ -30,8 +29,8 @@ class CardsViewController: UIViewController {
         handleBars()
         playCardSpeedInitialValue()
         favWords = currentDataSimple.fetchAllWords()!
-
         //initial value
+        view.backgroundColor = .appColor
         UserDefaults.standard.register(defaults: [UserDefaultsKeys.cardNumberLabel.rawValue: true])
     }
     func playCardSpeedInitialValue() {

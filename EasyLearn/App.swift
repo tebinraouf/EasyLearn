@@ -10,6 +10,7 @@ import UIKit
 
 class App {
     
+    
     var navigationController: UINavigationController
     
     init(_ window: UIWindow) {

@@ -124,7 +124,7 @@ class ColorCoreDataLayer {
             
             addColor(rgb: (r: 255, g: 255, b: 255), alpha: 1, isCardColor: 1, isTextColor: 0, isViewColor: 0)
             addColor(rgb: (r: 0, g: 0, b: 0), alpha: 1, isCardColor: 0, isTextColor: 1, isViewColor: 0)
-            addColor(rgb: (r: 220, g: 226, b: 202), alpha: 1, isCardColor: 0, isTextColor: 0, isViewColor: 1)
+            addColor(rgb: (r: 255, g: 56, b: 63), alpha: 1, isCardColor: 0, isTextColor: 0, isViewColor: 1)
         }
     }
     func fetchColors() -> [Color]? {

@@ -80,6 +80,7 @@
 		CF6BB1B21EB1A952003A8D54 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BB1B11EB1A952003A8D54 /* Extensions.swift */; };
 		CF6BB1B41EB1AA81003A8D54 /* CellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BB1B31EB1AA81003A8D54 /* CellData.swift */; };
 		CF6BB1B61EB24131003A8D54 /* ShowDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BB1B51EB24131003A8D54 /* ShowDetails.swift */; };
+		CFA8F64A1ECD40F60006DF02 /* PageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA8F6491ECD40F60006DF02 /* PageController.swift */; };
 		CFAFE6681E68F9CA0062235E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAFE6671E68F9CA0062235E /* AppDelegate.swift */; };
 		CFAFE66D1E68F9CA0062235E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFAFE66B1E68F9CA0062235E /* Main.storyboard */; };
 		CFAFE66F1E68F9CA0062235E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFAFE66E1E68F9CA0062235E /* Assets.xcassets */; };
@@ -166,6 +167,7 @@
 		CF6BB1B11EB1A952003A8D54 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Extensions/Extensions.swift; sourceTree = "<group>"; };
 		CF6BB1B31EB1AA81003A8D54 /* CellData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CellData.swift; path = Controllers/LexicalController/CellData.swift; sourceTree = "<group>"; };
 		CF6BB1B51EB24131003A8D54 /* ShowDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowDetails.swift; path = Controllers/LexicalController/ShowDetails.swift; sourceTree = "<group>"; };
+		CFA8F6491ECD40F60006DF02 /* PageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageController.swift; path = Controllers/Onboarding/PageController.swift; sourceTree = "<group>"; };
 		CFAFE6641E68F9CA0062235E /* EasyLearn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyLearn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFAFE6671E68F9CA0062235E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFAFE66C1E68F9CA0062235E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -394,6 +396,7 @@
 		CF6012DE1E789BA100EA0A3A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CFA8F6481ECD40900006DF02 /* Onboarding */,
 				CF67C8111EC69A56005D1F6D /* Domains */,
 				CF16A9FC1EA2A24C003EC2F7 /* ColorImageSelector */,
 				CFF0751F1E9B365000F7794D /* Colors */,
@@ -476,6 +479,14 @@
 				CF6BB13F1EB19FF4003A8D54 /* CustomAttributtedString.swift */,
 			);
 			name = ReusableClass;
+			sourceTree = "<group>";
+		};
+		CFA8F6481ECD40900006DF02 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				CFA8F6491ECD40F60006DF02 /* PageController.swift */,
+			);
+			name = Onboarding;
 			sourceTree = "<group>";
 		};
 		CFAFE65B1E68F9CA0062235E = {
@@ -786,6 +797,7 @@
 				CF6BB1691EB1A3DA003A8D54 /* LeftPaddedUILabel.swift in Sources */,
 				CF6BB16E1EB1A455003A8D54 /* hvCollectionViewExtension.swift in Sources */,
 				CF6BB1871EB1A54F003A8D54 /* cvCollectionViewExtension.swift in Sources */,
+				CFA8F64A1ECD40F60006DF02 /* PageController.swift in Sources */,
 				CF6BB1991EB1A73C003A8D54 /* cisCollectionViewExtension.swift in Sources */,
 				CF3209FA1EB50C2E001BF89D /* Reachability.swift in Sources */,
 				CF6BB1461EB1A1A3003A8D54 /* CardView.swift in Sources */,

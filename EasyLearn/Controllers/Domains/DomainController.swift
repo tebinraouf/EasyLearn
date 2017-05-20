@@ -49,8 +49,7 @@ class DomainController: UITableViewControllerWithViews {
         
         let domainWordsController = DomainWordsController()
         domainWordsController.domain = domain
-       
-        
+
         if Reachability.isConnectedToNetwork {
             let web = WebService(domain.key)
             web.getDomainWords { (words, status) in
