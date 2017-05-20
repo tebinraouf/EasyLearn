@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		04188B771971CC16A77558DA /* Pods_EasyLearn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 976E28507EF0BE8A82DAFA65 /* Pods_EasyLearn.framework */; };
 		CF0A82E11EAEFDC800D2BFB1 /* HomeControllerObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0A82E01EAEFDC800D2BFB1 /* HomeControllerObserver.swift */; };
-		CF0A82E41EB1031500D2BFB1 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0A82E31EB1031500D2BFB1 /* App.swift */; };
 		CF3209FA1EB50C2E001BF89D /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3209F91EB50C2E001BF89D /* Reachability.swift */; };
 		CF3209FC1EB5265E001BF89D /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3209FB1EB5265E001BF89D /* Resource.swift */; };
 		CF3209FE1EB526D8001BF89D /* DetailDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3209FD1EB526D8001BF89D /* DetailDeserializer.swift */; };
@@ -96,7 +95,6 @@
 		976E28507EF0BE8A82DAFA65 /* Pods_EasyLearn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyLearn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8B2FD38BDFDC2C50038BE00 /* Pods-EasyLearn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyLearn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyLearn/Pods-EasyLearn.debug.xcconfig"; sourceTree = "<group>"; };
 		CF0A82E01EAEFDC800D2BFB1 /* HomeControllerObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeControllerObserver.swift; sourceTree = "<group>"; };
-		CF0A82E31EB1031500D2BFB1 /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		CF3209F91EB50C2E001BF89D /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = Networking/Reachability.swift; sourceTree = "<group>"; };
 		CF3209FB1EB5265E001BF89D /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Resource.swift; path = Networking/Resource.swift; sourceTree = "<group>"; };
 		CF3209FD1EB526D8001BF89D /* DetailDeserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailDeserializer.swift; path = Models/DetailDeserializer.swift; sourceTree = "<group>"; };
@@ -207,14 +205,6 @@
 				CF0A82E01EAEFDC800D2BFB1 /* HomeControllerObserver.swift */,
 			);
 			name = Observers;
-			sourceTree = "<group>";
-		};
-		CF0A82E21EB102F400D2BFB1 /* AppNavigation */ = {
-			isa = PBXGroup;
-			children = (
-				CF0A82E31EB1031500D2BFB1 /* App.swift */,
-			);
-			name = AppNavigation;
 			sourceTree = "<group>";
 		};
 		CF16A9F31EA1C2B4003EC2F7 /* Extensions */ = {
@@ -521,7 +511,6 @@
 				CF6012DE1E789BA100EA0A3A /* Controllers */,
 				CF6012E21E789BF200EA0A3A /* Models */,
 				CF6012E11E789BE600EA0A3A /* Extensions */,
-				CF0A82E21EB102F400D2BFB1 /* AppNavigation */,
 				CF6012E01E789BCB00EA0A3A /* Supporting */,
 				CF6012DF1E789BBE00EA0A3A /* Networking */,
 			);
@@ -741,7 +730,6 @@
 				CF6BB1401EB19FF4003A8D54 /* CustomAttributtedString.swift in Sources */,
 				CF6BB18C1EB1A558003A8D54 /* CardsViewController.swift in Sources */,
 				CF6BB1681EB1A3DA003A8D54 /* LeftPaddedTextField.swift in Sources */,
-				CF0A82E41EB1031500D2BFB1 /* App.swift in Sources */,
 				CF6BB1671EB1A3DA003A8D54 /* CircleButton.swift in Sources */,
 				CF6BB1B01EB1A924003A8D54 /* Models.swift in Sources */,
 				CF6BB1481EB1A1AE003A8D54 /* ColorImageSelectorView.swift in Sources */,

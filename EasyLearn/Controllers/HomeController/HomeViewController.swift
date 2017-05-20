@@ -18,8 +18,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     var domains: [CDDomain]?
     var tmpDomains: [Domain]!
     var domainLayer = DomainCoreData()
-    
-    
+
     //MARK:- View Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,14 +28,15 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         registerCells()
         handleNavigationBars()
         
+        //HomeActions
         homeViewAction.homeView = homeView
         homeViewAction.view = view
         homeViewAction.navigationController = navigationController
         homeViewAction.delegate = self
         
+        //Domain Generation
         let dg = DomainGenerator()
         tmpDomains = dg.domains
-        
         domains = domainLayer.fetchAllDomains()
     }
     

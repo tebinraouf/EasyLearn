@@ -16,7 +16,6 @@ class HomeVCAction: HomeViewDelegate {
     var navigationController: UINavigationController?
     var pushToNextViewController: (Word?, Status) -> () = { _ in }
     
-    
     //MARK:- Handle Search
     func handleSearch(){
         if let text = homeView.searchText {
@@ -30,7 +29,20 @@ class HomeVCAction: HomeViewDelegate {
                     let webService = WebService(text, filters: [.lexicalCategory])
                     
                     webService.get({ (word, status) in
-                        self.pushToNextViewController(word, status)
+                        //self.pushToNextViewController(word, status)
+                        
+                        
+                        switch status {
+                        case .Success:
+                            let lexicalEntryVC = LexicalEntryViewController()
+                            lexicalEntryVC.word = word
+                            self.push(lexicalEntryVC)
+                        case .NotFound:
+                            self.goToErrorEmptyViewControllerWith(text: "No result. Please try another word.")
+                        }
+                        
+                        
+                        
                     })
                     
                     if webService.request != nil {
@@ -71,5 +83,13 @@ class HomeVCAction: HomeViewDelegate {
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
         }
+    }
+    private func goToErrorEmptyViewControllerWith(text: String){
+        let errorEmptyViewController = ErrorEmptyViewController()
+        errorEmptyViewController.messageLabel.text = text
+        push(errorEmptyViewController)
+    }
+    private func push(_ controller: UIViewController) {
+        navigationController?.pushViewController(controller, animated: true)
     }
 }
