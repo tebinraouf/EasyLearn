@@ -71,7 +71,7 @@ class PageView: UIView {
         translatesAutoresizingMaskIntoConstraints = false
         setupView()
         
-        //collectionView.register(PageCell.self, forCellWithReuseIdentifier: cellID)
+        collectionView.register(PageCell.self, forCellWithReuseIdentifier: CellID.pcCellID.rawValue)
         
     }
     

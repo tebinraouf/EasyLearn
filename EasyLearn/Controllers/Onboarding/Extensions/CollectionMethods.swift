@@ -13,18 +13,14 @@ extension PageController: UICollectionViewDataSource, UICollectionViewDelegate, 
         return pages.count + 1
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! PageCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellID.pcCellID.rawValue, for: indexPath) as! PageCell
         
         if indexPath.item != 3 {
             cell.page = pages[indexPath.item]
         }
-        
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        //var inset = collectionView.contentInset.
-        
         let size = CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
         return size
     }

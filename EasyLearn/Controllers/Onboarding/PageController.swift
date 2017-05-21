@@ -10,7 +10,6 @@ import UIKit
 
 class PageController: UIViewController {
     
-    let cellID = "cellID"
     let pageView = PageView()
     
     let pages: [Page] = {
@@ -20,18 +19,12 @@ class PageController: UIViewController {
         return [firstPage, secondPage, thirdPage]
     }()
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         automaticallyAdjustsScrollViewInsets = false
         navigationController?.setNavigationBarHidden(true, animated: true)
-        registerCell()
         setupView()
     }
-    func registerCell() {
-        pageView.collectionView.register(PageCell.self, forCellWithReuseIdentifier: cellID)
-    }
-    
     func handleGetStarted(){
         print(1234)
         navigationController?.pushViewController(HomeViewController(), animated: true)

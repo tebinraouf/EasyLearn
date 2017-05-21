@@ -21,6 +21,7 @@ enum CellID: String {
     case cvFooterID
     case cisSelector
     case cisSelectorCell
+    case pcCellID
 }
 
 
