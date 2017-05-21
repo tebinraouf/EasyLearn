@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		04188B771971CC16A77558DA /* Pods_EasyLearn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 976E28507EF0BE8A82DAFA65 /* Pods_EasyLearn.framework */; };
 		CF0A82E11EAEFDC800D2BFB1 /* HomeControllerObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0A82E01EAEFDC800D2BFB1 /* HomeControllerObserver.swift */; };
+		CF11ED7B1ED10D7600103BAF /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF11ED7A1ED10D7600103BAF /* LoginController.swift */; };
+		CF11ED7D1ED209D300103BAF /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF11ED7C1ED209D300103BAF /* PageCell.swift */; };
+		CF11ED7F1ED20A1B00103BAF /* PageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF11ED7E1ED20A1B00103BAF /* PageModel.swift */; };
+		CF11ED821ED20A9700103BAF /* CollectionMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF11ED811ED20A9700103BAF /* CollectionMethods.swift */; };
+		CF11ED841ED20B6200103BAF /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF11ED831ED20B6100103BAF /* PageView.swift */; };
 		CF3209FA1EB50C2E001BF89D /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3209F91EB50C2E001BF89D /* Reachability.swift */; };
 		CF3209FC1EB5265E001BF89D /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3209FB1EB5265E001BF89D /* Resource.swift */; };
 		CF3209FE1EB526D8001BF89D /* DetailDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3209FD1EB526D8001BF89D /* DetailDeserializer.swift */; };
@@ -95,6 +100,11 @@
 		976E28507EF0BE8A82DAFA65 /* Pods_EasyLearn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyLearn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8B2FD38BDFDC2C50038BE00 /* Pods-EasyLearn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyLearn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyLearn/Pods-EasyLearn.debug.xcconfig"; sourceTree = "<group>"; };
 		CF0A82E01EAEFDC800D2BFB1 /* HomeControllerObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeControllerObserver.swift; sourceTree = "<group>"; };
+		CF11ED7A1ED10D7600103BAF /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginController.swift; path = Controllers/Login/LoginController.swift; sourceTree = "<group>"; };
+		CF11ED7C1ED209D300103BAF /* PageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageCell.swift; path = Views/Cell/PageCell.swift; sourceTree = "<group>"; };
+		CF11ED7E1ED20A1B00103BAF /* PageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageModel.swift; path = Models/PageModel.swift; sourceTree = "<group>"; };
+		CF11ED811ED20A9700103BAF /* CollectionMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionMethods.swift; path = Controllers/Onboarding/Extensions/CollectionMethods.swift; sourceTree = "<group>"; };
+		CF11ED831ED20B6100103BAF /* PageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageView.swift; path = Views/PageView.swift; sourceTree = "<group>"; };
 		CF3209F91EB50C2E001BF89D /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = Networking/Reachability.swift; sourceTree = "<group>"; };
 		CF3209FB1EB5265E001BF89D /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Resource.swift; path = Networking/Resource.swift; sourceTree = "<group>"; };
 		CF3209FD1EB526D8001BF89D /* DetailDeserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailDeserializer.swift; path = Models/DetailDeserializer.swift; sourceTree = "<group>"; };
@@ -207,6 +217,22 @@
 			name = Observers;
 			sourceTree = "<group>";
 		};
+		CF11ED791ED10D4D00103BAF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				CF11ED7A1ED10D7600103BAF /* LoginController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		CF11ED801ED20A7100103BAF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CF11ED811ED20A9700103BAF /* CollectionMethods.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		CF16A9F31EA1C2B4003EC2F7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,6 +308,7 @@
 				CF6BB1471EB1A1AE003A8D54 /* ColorImageSelectorView.swift */,
 				CF6BB1491EB1A1B8003A8D54 /* AlphaView.swift */,
 				CF6BB14B1EB1A1C0003A8D54 /* FlashCardView.swift */,
+				CF11ED831ED20B6100103BAF /* PageView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -379,6 +406,7 @@
 				CF6BB1511EB1A275003A8D54 /* DashboardCell.swift */,
 				CF6BB1531EB1A286003A8D54 /* FlashCardCell.swift */,
 				CF6BB1551EB1A2AB003A8D54 /* ColorImageCell.swift */,
+				CF11ED7C1ED209D300103BAF /* PageCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -386,6 +414,7 @@
 		CF6012DE1E789BA100EA0A3A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CF11ED791ED10D4D00103BAF /* Login */,
 				CFA8F6481ECD40900006DF02 /* Onboarding */,
 				CF67C8111EC69A56005D1F6D /* Domains */,
 				CF16A9FC1EA2A24C003EC2F7 /* ColorImageSelector */,
@@ -442,6 +471,7 @@
 				CF3209FD1EB526D8001BF89D /* DetailDeserializer.swift */,
 				CF3209FF1EB5270D001BF89D /* WordDeserializer.swift */,
 				CF320A011EB527A5001BF89D /* WordCreator.swift */,
+				CF11ED7E1ED20A1B00103BAF /* PageModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -474,6 +504,7 @@
 		CFA8F6481ECD40900006DF02 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				CF11ED801ED20A7100103BAF /* Extensions */,
 				CFA8F6491ECD40F60006DF02 /* PageController.swift */,
 			);
 			name = Onboarding;
@@ -732,6 +763,7 @@
 				CF6BB1681EB1A3DA003A8D54 /* LeftPaddedTextField.swift in Sources */,
 				CF6BB1671EB1A3DA003A8D54 /* CircleButton.swift in Sources */,
 				CF6BB1B01EB1A924003A8D54 /* Models.swift in Sources */,
+				CF11ED7D1ED209D300103BAF /* PageCell.swift in Sources */,
 				CF6BB1481EB1A1AE003A8D54 /* ColorImageSelectorView.swift in Sources */,
 				CF6BB1621EB1A37B003A8D54 /* Helper.swift in Sources */,
 				CF6BB1701EB1A455003A8D54 /* hvSetupViewExtension.swift in Sources */,
@@ -757,6 +789,7 @@
 				CF320A051EB527EB001BF89D /* Builder.swift in Sources */,
 				CF6BB1921EB1A610003A8D54 /* SettingsViewController.swift in Sources */,
 				CF3871341E89BAEB005AA866 /* DataLayerSimple.swift in Sources */,
+				CF11ED841ED20B6200103BAF /* PageView.swift in Sources */,
 				CF6BB15D1EB1A34E003A8D54 /* ColorCellsViewModel.swift in Sources */,
 				CF6BB14E1EB1A260003A8D54 /* BaseCell.swift in Sources */,
 				CF6BB17F1EB1A4D5003A8D54 /* WordDetailsVC.swift in Sources */,
@@ -772,6 +805,8 @@
 				CF6BB16A1EB1A3DA003A8D54 /* VerticallyCenteredTextView.swift in Sources */,
 				CF6BB1561EB1A2AB003A8D54 /* ColorImageCell.swift in Sources */,
 				CF6BB15E1EB1A34E003A8D54 /* ColorViewModel.swift in Sources */,
+				CF11ED7F1ED20A1B00103BAF /* PageModel.swift in Sources */,
+				CF11ED7B1ED10D7600103BAF /* LoginController.swift in Sources */,
 				CF6BB1AE1EB1A87C003A8D54 /* BackgroundImageController.swift in Sources */,
 				CF6BB1801EB1A4D5003A8D54 /* WordSubDetailsVC.swift in Sources */,
 				CF6BB1741EB1A461003A8D54 /* HomeViewController.swift in Sources */,
@@ -790,6 +825,7 @@
 				CF3209FA1EB50C2E001BF89D /* Reachability.swift in Sources */,
 				CF6BB1461EB1A1A3003A8D54 /* CardView.swift in Sources */,
 				CF6BB1881EB1A54F003A8D54 /* cvCustomFuncs.swift in Sources */,
+				CF11ED821ED20A9700103BAF /* CollectionMethods.swift in Sources */,
 				CF3871321E89B193005AA866 /* CDWord.xcdatamodeld in Sources */,
 				CFFCA3211EB8E2750055D54B /* DataGenerator.swift in Sources */,
 				CF320A001EB5270D001BF89D /* WordDeserializer.swift in Sources */,
