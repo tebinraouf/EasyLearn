@@ -50,9 +50,11 @@ extension PageController {
         if pageNumber == pages.count {
             pageView.getStartedConstantConstraint = -300
             pageView.pageControlConstantConstraint = -300
+            pageView.loginViewConstantConstraint = 0
         }else {
             pageView.getStartedConstantConstraint = 0
             pageView.pageControlConstantConstraint = 0
+            pageView.loginViewConstantConstraint = 400
         }
         
         
