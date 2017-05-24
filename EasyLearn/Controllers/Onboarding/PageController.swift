@@ -24,11 +24,14 @@ class PageController: UIViewController {
         automaticallyAdjustsScrollViewInsets = false
         navigationController?.setNavigationBarHidden(true, animated: true)
         setupView()
+        pageView.setTextFieldsDelegate(self)
     }
     func handleGetStarted(){
         print(1234)
         navigationController?.pushViewController(HomeViewController(), animated: true)
     }
+    
+    
 }
 
 
@@ -63,6 +66,7 @@ extension PageController {
         }, completion: nil)
         
     }
+    
     override var shouldAutorotate: Bool {
         return false
     }
@@ -74,11 +78,25 @@ extension PageController {
     }
 }
 
+extension PageController: UITextFieldDelegate {
+    //MARK: Handle Keyboard Dismissal
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        pageView.keyboardResponder()
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        pageView.keyboardResponder()
+        return true
+    }
+    
+    
+}
+
 
 extension PageController {
     func setupView(){
         pageView.collectionViewDelegate = self
         pageView.collectionViewDataSource = self
+        pageView.loginDelegate = self
         
         view.addSubview(pageView)
         NSLayoutConstraint.activate([
@@ -90,6 +108,19 @@ extension PageController {
     }
 }
 
+
+extension PageController: LoginViewDelegate {
+    
+    func loginBtn() {
+        print("Login btn")
+    }
+    func registerBtn() {
+        print("Register btn")
+    }
+    func forgetPasswordBtn() {
+        print("password btn")
+    }
+}
 
 
 

@@ -85,4 +85,11 @@ class PageCell: BaseCell {
         gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
         gradientLayer.frame = CGRect(x: 0, y: 0, width: bounds.width, height: bounds.height)
     }
+    var loginView: LoginView?
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        if let loginView = loginView {
+            loginView.keyboardResponder()
+        }
+    }
 }

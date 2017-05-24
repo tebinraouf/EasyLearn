@@ -34,6 +34,7 @@ extension PageController: UICollectionViewDataSource, UICollectionViewDelegate, 
         //handle cell UI
         if indexPath.item == pages.count {
             isLoginPage(true, cell)
+            cell.loginView = pageView.loginView
         }else {
             isLoginPage(false, cell)
         }
