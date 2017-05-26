@@ -27,9 +27,7 @@ extension PageController: UICollectionViewDataSource, UICollectionViewDelegate, 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-    
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        
         let cell = cell as! PageCell
         //handle cell UI
         if indexPath.item == pages.count {
@@ -39,6 +37,4 @@ extension PageController: UICollectionViewDataSource, UICollectionViewDelegate, 
             isLoginPage(false, cell)
         }
     }
-    
-    
 }

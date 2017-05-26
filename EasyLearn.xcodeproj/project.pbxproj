@@ -90,6 +90,12 @@
 		CFAFE66D1E68F9CA0062235E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFAFE66B1E68F9CA0062235E /* Main.storyboard */; };
 		CFAFE66F1E68F9CA0062235E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFAFE66E1E68F9CA0062235E /* Assets.xcassets */; };
 		CFAFE6721E68F9CA0062235E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFAFE6701E68F9CA0062235E /* LaunchScreen.storyboard */; };
+		CFEB5A7D1ED7A9360001A4A4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CFEB5A7C1ED7A9360001A4A4 /* GoogleService-Info.plist */; };
+		CFEB5A801ED8AEB60001A4A4 /* Facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB5A7F1ED8AEB60001A4A4 /* Facebook.swift */; };
+		CFEB5A821ED8AF4E0001A4A4 /* CustomLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB5A811ED8AF4E0001A4A4 /* CustomLogin.swift */; };
+		CFEB5A841ED8AFE20001A4A4 /* CustomFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB5A831ED8AFE20001A4A4 /* CustomFuncs.swift */; };
+		CFEB5A861ED8B0B50001A4A4 /* OverrideFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB5A851ED8B0B50001A4A4 /* OverrideFuncs.swift */; };
+		CFEB5A881ED8B1500001A4A4 /* TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB5A871ED8B1500001A4A4 /* TextFieldDelegate.swift */; };
 		CFFCA31D1EB8E1990055D54B /* UserInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFCA31C1EB8E1990055D54B /* UserInteraction.swift */; };
 		CFFCA31F1EB8E1EE0055D54B /* DetailCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFCA31E1EB8E1EE0055D54B /* DetailCellData.swift */; };
 		CFFCA3211EB8E2750055D54B /* DataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFCA3201EB8E2750055D54B /* DataGenerator.swift */; };
@@ -185,6 +191,12 @@
 		CFAFE6711E68F9CA0062235E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CFAFE6731E68F9CA0062235E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFEB5A7B1ED7862E0001A4A4 /* EasyLearn.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EasyLearn.entitlements; sourceTree = "<group>"; };
+		CFEB5A7C1ED7A9360001A4A4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CFEB5A7F1ED8AEB60001A4A4 /* Facebook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Facebook.swift; path = Controllers/Onboarding/LoginFiles/Facebook.swift; sourceTree = "<group>"; };
+		CFEB5A811ED8AF4E0001A4A4 /* CustomLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomLogin.swift; path = Controllers/Onboarding/CustomLogin/CustomLogin.swift; sourceTree = "<group>"; };
+		CFEB5A831ED8AFE20001A4A4 /* CustomFuncs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomFuncs.swift; path = Controllers/Onboarding/Extensions/CustomFuncs.swift; sourceTree = "<group>"; };
+		CFEB5A851ED8B0B50001A4A4 /* OverrideFuncs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OverrideFuncs.swift; path = Controllers/Onboarding/Extensions/OverrideFuncs.swift; sourceTree = "<group>"; };
+		CFEB5A871ED8B1500001A4A4 /* TextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFieldDelegate.swift; path = Controllers/Onboarding/Extensions/TextFieldDelegate.swift; sourceTree = "<group>"; };
 		CFFCA31C1EB8E1990055D54B /* UserInteraction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserInteraction.swift; path = Controllers/DetailsController/UserInteraction.swift; sourceTree = "<group>"; };
 		CFFCA31E1EB8E1EE0055D54B /* DetailCellData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailCellData.swift; path = Controllers/DetailsController/DetailCellData.swift; sourceTree = "<group>"; };
 		CFFCA3201EB8E2750055D54B /* DataGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataGenerator.swift; path = Controllers/DetailsController/DataGenerator.swift; sourceTree = "<group>"; };
@@ -232,6 +244,9 @@
 			isa = PBXGroup;
 			children = (
 				CF11ED811ED20A9700103BAF /* CollectionMethods.swift */,
+				CFEB5A831ED8AFE20001A4A4 /* CustomFuncs.swift */,
+				CFEB5A851ED8B0B50001A4A4 /* OverrideFuncs.swift */,
+				CFEB5A871ED8B1500001A4A4 /* TextFieldDelegate.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -451,11 +466,13 @@
 		CF6012E01E789BCB00EA0A3A /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
+				CFEB5A7B1ED7862E0001A4A4 /* EasyLearn.entitlements */,
 				CFAFE66B1E68F9CA0062235E /* Main.storyboard */,
 				CFAFE6671E68F9CA0062235E /* AppDelegate.swift */,
 				CFAFE66E1E68F9CA0062235E /* Assets.xcassets */,
 				CFAFE6701E68F9CA0062235E /* LaunchScreen.storyboard */,
 				CFAFE6731E68F9CA0062235E /* Info.plist */,
+				CFEB5A7C1ED7A9360001A4A4 /* GoogleService-Info.plist */,
 			);
 			name = Supporting;
 			sourceTree = "<group>";
@@ -508,6 +525,7 @@
 		CFA8F6481ECD40900006DF02 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				CFEB5A7E1ED8AE8B0001A4A4 /* LoginFiles */,
 				CF11ED801ED20A7100103BAF /* Extensions */,
 				CFA8F6491ECD40F60006DF02 /* PageController.swift */,
 			);
@@ -535,7 +553,6 @@
 		CFAFE6661E68F9CA0062235E /* EasyLearn */ = {
 			isa = PBXGroup;
 			children = (
-				CFEB5A7B1ED7862E0001A4A4 /* EasyLearn.entitlements */,
 				CF67C80E1EC55FB4005D1F6D /* Theme */,
 				CF6BB13E1EB19FC4003A8D54 /* ReusableClass */,
 				CF0A82DF1EAEFC6A00D2BFB1 /* Observers */,
@@ -560,6 +577,15 @@
 				CF6BB1951EB1A6DF003A8D54 /* CardSettingsController.swift */,
 			);
 			name = CardSettings;
+			sourceTree = "<group>";
+		};
+		CFEB5A7E1ED8AE8B0001A4A4 /* LoginFiles */ = {
+			isa = PBXGroup;
+			children = (
+				CFEB5A7F1ED8AEB60001A4A4 /* Facebook.swift */,
+				CFEB5A811ED8AF4E0001A4A4 /* CustomLogin.swift */,
+			);
+			name = LoginFiles;
 			sourceTree = "<group>";
 		};
 		CFF075101E9AF47200F7794D /* Extensions */ = {
@@ -698,6 +724,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFAFE6721E68F9CA0062235E /* LaunchScreen.storyboard in Resources */,
+				CFEB5A7D1ED7A9360001A4A4 /* GoogleService-Info.plist in Resources */,
 				CFAFE66F1E68F9CA0062235E /* Assets.xcassets in Resources */,
 				CFAFE66D1E68F9CA0062235E /* Main.storyboard in Resources */,
 			);
@@ -759,6 +786,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFFCA3231EB8E39B0055D54B /* TextFormatter.swift in Sources */,
+				CFEB5A861ED8B0B50001A4A4 /* OverrideFuncs.swift in Sources */,
 				CF6BB1601EB1A34E003A8D54 /* SelectorViewModel.swift in Sources */,
 				CF6BB1821EB1A503003A8D54 /* ErrorViewController.swift in Sources */,
 				CF6BB1A01EB1A782003A8D54 /* csCustomFuctionsExtension.swift in Sources */,
@@ -770,6 +798,7 @@
 				CF6BB19C1EB1A743003A8D54 /* ColorImageSelector.swift in Sources */,
 				CF6BB1401EB19FF4003A8D54 /* CustomAttributtedString.swift in Sources */,
 				CF6BB18C1EB1A558003A8D54 /* CardsViewController.swift in Sources */,
+				CFEB5A841ED8AFE20001A4A4 /* CustomFuncs.swift in Sources */,
 				CF6BB1681EB1A3DA003A8D54 /* LeftPaddedTextField.swift in Sources */,
 				CF6BB1671EB1A3DA003A8D54 /* CircleButton.swift in Sources */,
 				CF6BB1B01EB1A924003A8D54 /* Models.swift in Sources */,
@@ -789,6 +818,7 @@
 				CF3209FE1EB526D8001BF89D /* DetailDeserializer.swift in Sources */,
 				CF6BB1761EB1A48D003A8D54 /* LexicalEntryViewController.swift in Sources */,
 				CF6BB1B21EB1A952003A8D54 /* Extensions.swift in Sources */,
+				CFEB5A801ED8AEB60001A4A4 /* Facebook.swift in Sources */,
 				CF6BB1B41EB1AA81003A8D54 /* CellData.swift in Sources */,
 				CF6BB1941EB1A654003A8D54 /* Service.swift in Sources */,
 				CF6BB1A71EB1A7D2003A8D54 /* cbgcDelegateExtension.swift in Sources */,
@@ -804,6 +834,7 @@
 				CF6BB15D1EB1A34E003A8D54 /* ColorCellsViewModel.swift in Sources */,
 				CF6BB14E1EB1A260003A8D54 /* BaseCell.swift in Sources */,
 				CF6BB17F1EB1A4D5003A8D54 /* WordDetailsVC.swift in Sources */,
+				CFEB5A821ED8AF4E0001A4A4 /* CustomLogin.swift in Sources */,
 				CF6BB1891EB1A54F003A8D54 /* cvGestureExtension.swift in Sources */,
 				CF6BB1AC1EB1A873003A8D54 /* biCollectionViewExtension.swift in Sources */,
 				CF6BB1AA1EB1A7E1003A8D54 /* CardBgColorController.swift in Sources */,
@@ -824,6 +855,7 @@
 				CF6BB1961EB1A6DF003A8D54 /* CardSettingsController.swift in Sources */,
 				CF6BB19A1EB1A73C003A8D54 /* cisSetupViewsExtension.swift in Sources */,
 				CF6BB1A11EB1A782003A8D54 /* csSetupViewExtension.swift in Sources */,
+				CFEB5A881ED8B1500001A4A4 /* TextFieldDelegate.swift in Sources */,
 				CF6BB18A1EB1A54F003A8D54 /* cvSetupViewExtension.swift in Sources */,
 				CF6BB1441EB1A197003A8D54 /* BackgroundColorView.swift in Sources */,
 				CF6BB1A21EB1A782003A8D54 /* csTableViewExtension.swift in Sources */,

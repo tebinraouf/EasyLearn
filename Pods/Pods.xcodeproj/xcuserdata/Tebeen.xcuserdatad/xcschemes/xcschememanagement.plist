@@ -39,6 +39,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>GTMSessionFetcher.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>GoogleToolboxForMac.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-EasyLearn.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -57,7 +67,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>10CDEEE9AAC60D377FD968457A9F3F8A</key>
+		<key>107A9565F9DF88517DFD3E28C05B2B96</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -87,7 +97,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A7B4441ECA9E59D4BBBBC385B3B78AB5</key>
+		<key>78EAE47FC3CD8F6EE992CA2019A62C1A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -97,7 +107,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C5F3339FB04AF3E8BE32644DE0843358</key>
+		<key>ADAB90B6C3E37C87143072AA29749723</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C052BEBFBD0AB5218CC64BA3450F6547</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D386D0B5B9719405E42EEBDB974B9A73</key>
 		<dict>
 			<key>primary</key>
 			<true/>

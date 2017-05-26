@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'A7B4441ECA9E59D4BBBBC385B3B78AB5'
+               BlueprintIdentifier = '78EAE47FC3CD8F6EE992CA2019A62C1A'
                BlueprintName = 'SwiftIconFont'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'SwiftIconFont.framework'>

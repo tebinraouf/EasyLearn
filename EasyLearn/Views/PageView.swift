@@ -276,6 +276,33 @@ extension PageView {
             facebookCenterConstraint.constant = newValue
         }
     }
+    var loginName: String? {
+        get {
+            return loginView.nameTextField.text
+        }
+        set {
+            loginView.nameTextField.text = newValue
+        }
+    }
+    var loginEmail: String? {
+        get {
+            return loginView.emailTextField.text
+        }
+        set {
+            loginView.emailTextField.text = newValue
+        }
+    }
+    var loginPassword: String? {
+        get {
+            return loginView.passTextField.text
+        }
+        set {
+            loginView.passTextField.text = newValue
+        }
+    }
+    
+    
+    
     var loginDelegate: LoginViewDelegate {
         get {
             return loginView.loginDelegate
