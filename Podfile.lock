@@ -1,15 +1,50 @@
 PODS:
+  - Bolts (1.8.4):
+    - Bolts/AppLinks (= 1.8.4)
+    - Bolts/Tasks (= 1.8.4)
+  - Bolts/AppLinks (1.8.4):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.8.4)
+  - FacebookCore (0.2.0):
+    - Bolts (~> 1.8)
+    - FBSDKCoreKit (~> 4.15)
+  - FacebookLogin (0.2.0):
+    - Bolts (~> 1.8)
+    - FacebookCore (~> 0.2)
+    - FBSDKCoreKit (~> 4.15)
+    - FBSDKLoginKit (~> 4.15)
+  - FacebookShare (0.2.0):
+    - Bolts (~> 1.8)
+    - FacebookCore (~> 0.2)
+    - FBSDKCoreKit (~> 4.15)
+    - FBSDKShareKit (~> 4.15)
+  - FBSDKCoreKit (4.21.0):
+    - Bolts (~> 1.7)
+  - FBSDKLoginKit (4.21.0):
+    - FBSDKCoreKit
+  - FBSDKShareKit (4.21.0):
+    - FBSDKCoreKit
   - SwiftIconFont (2.6.0)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
+  - FacebookCore
+  - FacebookLogin
+  - FacebookShare
   - SwiftIconFont
   - SwiftyJSON
 
 SPEC CHECKSUMS:
+  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  FacebookCore: 2cb3f0fbff218e9d3119cec84bae983b232412de
+  FacebookLogin: c9d606504735780a9e3002465a615512e0a691a5
+  FacebookShare: 8e9ee8ea06505e6a1d3d719b0cc63e840fb8aaeb
+  FBSDKCoreKit: 8a372ab194b5c7c26355c1920ef52dbeb44bc222
+  FBSDKLoginKit: a1a5f4b4ac445823a020fbeeaf5f03714a67ff9c
+  FBSDKShareKit: 649a7acfd01a3e056a33994c1bfbb997814cc8a2
   SwiftIconFont: bbe1f32e1e16bac87dad8566afc80132cb8d072c
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: c1a25f53d25cebfe5e754b5e56a68fd939d35a27
+PODFILE CHECKSUM: 6e3107d6473d8bcf920f6bb1025ba3fb22692f26
 
 COCOAPODS: 1.2.0

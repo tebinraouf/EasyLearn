@@ -8,4 +8,9 @@ target 'EasyLearn' do
   # Pods for EasyLearn
 pod 'SwiftIconFont'
 pod 'SwiftyJSON'
+pod 'FacebookCore'
+pod 'FacebookLogin'
+pod 'FacebookShare'
+pod 'Firebase/Core'
+
 end

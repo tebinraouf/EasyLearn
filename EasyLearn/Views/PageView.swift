@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FacebookLogin
 
 class PageView: UIView {
     
@@ -51,7 +52,7 @@ class PageView: UIView {
         btn.layer.shadowOffset = .zero
         btn.layer.shadowOpacity = 0.5
         btn.layer.shouldRasterize = true //cache the shadow because it's expensive
-        //btn.addTarget(self, action: #selector(handleGetStarted), for: .touchDown)
+        btn.addTarget(self, action: #selector(handleGetStarted), for: .touchDown)
         return btn
     }()
     lazy var pageControl: UIPageControl = {
@@ -65,6 +66,11 @@ class PageView: UIView {
     var getStartedConstraint: NSLayoutConstraint!
     var pageControlConstraint: NSLayoutConstraint!
     var loginView = LoginView()
+    var facebookBtn: LoginButton = {
+        let fb = LoginButton(readPermissions: [.publicProfile, .email])
+        fb.translatesAutoresizingMaskIntoConstraints = false
+        return fb
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -87,6 +93,8 @@ class PageView: UIView {
         setupGetStartedBackground()
         setupPageControl()
         setupGetStartedButton()
+        setupFacebookButton()
+        
         
         setupLoginView()
     }
@@ -103,7 +111,7 @@ class PageView: UIView {
             collectionView.topAnchor.constraint(equalTo: topAnchor),
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -200)
+            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -150)
             ])
     }
     func setupGetStartedBackground(){
@@ -132,6 +140,23 @@ class PageView: UIView {
             pageControl.topAnchor.constraint(equalTo: getStartedBackground.topAnchor, constant: 30)
             ])
     }
+    var facebookCenterConstraint: NSLayoutConstraint!
+    func setupFacebookButton(){
+        //let top = facebookBtn.topAnchor.constraint(equalTo: getStartedBackground.topAnchor, constant: 10)
+        let width = facebookBtn.widthAnchor.constraint(equalTo: widthAnchor, constant: -40)
+        let centerY = facebookBtn.centerYAnchor.constraint(equalTo: getStartedBackground.centerYAnchor)
+        let height = facebookBtn.heightAnchor.constraint(equalToConstant: 40)
+        facebookCenterConstraint = facebookBtn.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 400)
+        facebookCenterConstraint.isActive = true
+        NSLayoutConstraint.activate([width, centerY, height])
+        
+    }
+    
+    
+    
+    
+    
+    
     var centerConstraint: NSLayoutConstraint!
     func setupLoginView() {
         let top = loginView.topAnchor.constraint(equalTo: logoLabel.bottomAnchor)
@@ -153,6 +178,10 @@ class PageView: UIView {
         addSubview(getStartedBackground)
         addSubview(pageControl)
         addSubview(getStartedButton)
+        
+        
+        addSubview(facebookBtn)
+        
     }
     func keyboardResponder(){
         loginView.keyboardResponder()
@@ -162,11 +191,35 @@ class PageView: UIView {
         loginView.emailTextField.delegate = delegate
         loginView.passTextField.delegate = delegate
     }
+    func updateConstraintFor(getStarted: CGFloat, pageControl: CGFloat, loginView: CGFloat, facebookBtn: CGFloat){
+        getStartedConstantConstraint = getStarted
+        pageControlConstantConstraint = pageControl
+        loginViewConstantConstraint = loginView
+        fbConstantConstraint = facebookBtn
+        
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
+            self.layoutIfNeeded()
+        }, completion: nil)
+
+        
+    }
+    
+    
+    @objc private func handleGetStarted(){
+        loginDelegate.getStartedBtn()
+    }
+    
     
 }
 
 
 extension PageView {
+    var pageCollectionView: UICollectionView {
+        get {
+            return collectionView
+        }
+    }
+    
     var collectionViewDelegate: UICollectionViewDelegate? {
         get {
             return collectionView.delegate
@@ -215,12 +268,28 @@ extension PageView {
             centerConstraint.constant = newValue
         }
     }
+    var fbConstantConstraint: CGFloat {
+        get {
+            return facebookCenterConstraint.constant
+        }
+        set {
+            facebookCenterConstraint.constant = newValue
+        }
+    }
     var loginDelegate: LoginViewDelegate {
         get {
             return loginView.loginDelegate
         }
         set {
             loginView.loginDelegate = newValue
+        }
+    }
+    var facebookLoginDelegate: LoginButtonDelegate? {
+        get {
+            return facebookBtn.delegate
+        }
+        set {
+            facebookBtn.delegate = newValue
         }
     }
 }

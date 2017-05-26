@@ -184,6 +184,7 @@
 		CFAFE66E1E68F9CA0062235E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFAFE6711E68F9CA0062235E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CFAFE6731E68F9CA0062235E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFEB5A7B1ED7862E0001A4A4 /* EasyLearn.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EasyLearn.entitlements; sourceTree = "<group>"; };
 		CFFCA31C1EB8E1990055D54B /* UserInteraction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserInteraction.swift; path = Controllers/DetailsController/UserInteraction.swift; sourceTree = "<group>"; };
 		CFFCA31E1EB8E1EE0055D54B /* DetailCellData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailCellData.swift; path = Controllers/DetailsController/DetailCellData.swift; sourceTree = "<group>"; };
 		CFFCA3201EB8E2750055D54B /* DataGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataGenerator.swift; path = Controllers/DetailsController/DataGenerator.swift; sourceTree = "<group>"; };
@@ -534,6 +535,7 @@
 		CFAFE6661E68F9CA0062235E /* EasyLearn */ = {
 			isa = PBXGroup;
 			children = (
+				CFEB5A7B1ED7862E0001A4A4 /* EasyLearn.entitlements */,
 				CF67C80E1EC55FB4005D1F6D /* Theme */,
 				CF6BB13E1EB19FC4003A8D54 /* ReusableClass */,
 				CF0A82DF1EAEFC6A00D2BFB1 /* Observers */,
@@ -664,6 +666,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 2X4GM5K9GM;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -957,6 +964,7 @@
 			baseConfigurationReference = B8B2FD38BDFDC2C50038BE00 /* Pods-EasyLearn.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = EasyLearn/EasyLearn.entitlements;
 				DEVELOPMENT_TEAM = 2X4GM5K9GM;
 				INFOPLIST_FILE = EasyLearn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -971,6 +979,7 @@
 			baseConfigurationReference = 6EF7DBD2DA942ED54ADD413D /* Pods-EasyLearn.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = EasyLearn/EasyLearn.entitlements;
 				DEVELOPMENT_TEAM = 2X4GM5K9GM;
 				INFOPLIST_FILE = EasyLearn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

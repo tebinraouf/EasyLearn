@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import FacebookLogin
+import FacebookCore
+import FBSDKLoginKit
 
 class PageController: UIViewController {
     
@@ -24,7 +27,6 @@ class PageController: UIViewController {
         automaticallyAdjustsScrollViewInsets = false
         navigationController?.setNavigationBarHidden(true, animated: true)
         setupView()
-        pageView.setTextFieldsDelegate(self)
     }
     func handleGetStarted(){
         print(1234)
@@ -50,21 +52,16 @@ extension PageController {
         let pageNumber = Int(targetContentOffset.pointee.x / view.frame.width)
         pageView.currentPage = pageNumber
         
+        prepareLoginPage(pageNumber)
+        
+    }
+    
+    func prepareLoginPage(_ pageNumber: Int){
         if pageNumber == pages.count {
-            pageView.getStartedConstantConstraint = -300
-            pageView.pageControlConstantConstraint = -300
-            pageView.loginViewConstantConstraint = 0
+            pageView.updateConstraintFor(getStarted: -300, pageControl: -300, loginView: 0, facebookBtn: 0)
         }else {
-            pageView.getStartedConstantConstraint = 0
-            pageView.pageControlConstantConstraint = 0
-            pageView.loginViewConstantConstraint = 400
+            pageView.updateConstraintFor(getStarted: 0, pageControl: 0, loginView: 400, facebookBtn: 400)
         }
-        
-        
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
-            self.view.layoutIfNeeded()
-        }, completion: nil)
-        
     }
     
     override var shouldAutorotate: Bool {
@@ -87,8 +84,6 @@ extension PageController: UITextFieldDelegate {
         pageView.keyboardResponder()
         return true
     }
-    
-    
 }
 
 
@@ -96,7 +91,9 @@ extension PageController {
     func setupView(){
         pageView.collectionViewDelegate = self
         pageView.collectionViewDataSource = self
+        pageView.setTextFieldsDelegate(self)
         pageView.loginDelegate = self
+        pageView.facebookLoginDelegate = self
         
         view.addSubview(pageView)
         NSLayoutConstraint.activate([
@@ -120,8 +117,40 @@ extension PageController: LoginViewDelegate {
     func forgetPasswordBtn() {
         print("password btn")
     }
+    func getStartedBtn() {
+        let indexPath = IndexPath(item: 3, section: 0)
+        pageView.pageCollectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.left, animated: true)
+        pageView.updateConstraintFor(getStarted: -300, pageControl: -300, loginView: 0, facebookBtn: 0)
+    }
 }
 
+
+//Facebook Login Button Delegate 
+
+extension PageController: LoginButtonDelegate {
+    func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
+        
+        switch result {
+        case .success(grantedPermissions: let grantedPermissions, declinedPermissions: let declinedPermissions, token: let accessToken):
+            
+            let request = FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, name, email"])
+            request?.start { (connection, result, error) in
+                print(connection)
+                //print(result)
+            }
+            
+        case .cancelled:
+            print("User cancelled login.")
+        case .failed(let error):
+            print(error)
+        }
+        
+        
+    }
+    func loginButtonDidLogOut(_ loginButton: LoginButton) {
+        print("Logout")
+    }
+}
 
 
 

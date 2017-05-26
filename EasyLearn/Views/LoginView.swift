@@ -56,7 +56,7 @@ class LoginView: UIScrollView {
     lazy var loginRegisterButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.setTitle("Login", for: .normal)
+        btn.setTitle("Register", for: .normal)
         btn.setTitleColor(UIColor.appColor, for: .normal)
         btn.backgroundColor = .white
         btn.layer.cornerRadius = 20
@@ -224,6 +224,8 @@ class LoginView: UIScrollView {
         }else{
             handleRegister()
         }
+        //hide the keyboard
+        endEditing(true)
     }
     private func handleLogin(){
         loginDelegate.loginBtn()
@@ -243,5 +245,6 @@ protocol LoginViewDelegate {
     func loginBtn()
     func registerBtn()
     func forgetPasswordBtn()
+    func getStartedBtn()
 }
 
