@@ -140,6 +140,8 @@ class ColorCoreDataLayer {
         color.alpha = Double(String(format: "%.2f", alpha))!
         mainContext.trySave()
     }
+    //TODO:- Use typealias
+    //typealias rgb = (r: Int16, g: Int16, b: Int16)
     func addColor(rgb: (r: Int16, g: Int16, b: Int16), alpha: Double, isCardColor: Int16, isTextColor: Int16, isViewColor: Int16) {
         let color = Color(context: mainContext)
         color.red = Int16(rgb.r)
@@ -205,11 +207,34 @@ class ColorCoreDataLayer {
         }
         return nil
     }
-    
-
 }
 
 
+class UserCoreDataLayer {
+    let mainContext = CoreDataStack.sharedInstance.mainContext
+    func add(_ user: User) {
+        let cdUser = CDUser(context: mainContext)
+        if !isUserSaved(email: user.email) {
+            //print("New user")
+            cdUser.name = user.name
+            cdUser.email = user.email
+            mainContext.trySave()
+        }
+    }
+    func isUserSaved(email: String) -> Bool {
+        let fetchRequest: NSFetchRequest<CDUser> = CDUser.fetchRequest()
+        if let users = try? mainContext.fetch(fetchRequest) {
+            for user in users {
+                if let cdEmail = user.email {
+                    if cdEmail == email {
+                        return true
+                    }
+                }
+            }
+        }
+        return false
+    }
+}
 
 
 

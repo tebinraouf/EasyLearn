@@ -106,3 +106,9 @@ public func handleFlipping(from view1: UILabel, to view2: UITextView, isFlipped:
     }
 }
 
+
+func alert(title: String, message: String, viewController: UIViewController) {
+    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+    viewController.present(alert, animated: true)
+}

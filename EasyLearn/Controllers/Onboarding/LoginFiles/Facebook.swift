@@ -14,47 +14,43 @@ import Firebase
 import FirebaseAuth
 
 
-//Facebook Login Button Delegate
-
+//MARK:- Facebook Login Button Delegate
 extension PageController: LoginButtonDelegate {
     func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
-        
         switch result {
-        case .success(grantedPermissions: let grantedPermissions, declinedPermissions: let declinedPermissions, token: let accessToken):
-            
-            let request = FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, name, email"])
-            request?.start { (_, _, error) in
-                //first parameter: connection, result, error
-                if error != nil {
-                    print("The error is: ",error ?? "")
-                    return
-                }
-                
-                let access = accessToken.authenticationToken
-                let credential = FIRFacebookAuthProvider.credential(withAccessToken: access)
-                
-                
-                
-                FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
-                    if error != nil {
-                        print(error ?? "")
-                        return
+        case .success(grantedPermissions: let granted, declinedPermissions: _, token: let token):
+            if granted.contains(Permission(name: "email")) {
+                saveUserBy(access: token) { (email) in
+                    guard let email = email else { return }
+                    let newUser = User(name: email, email: email)
+                    let userLayer = UserCoreDataLayer()
+                    userLayer.add(newUser)
+                    DispatchQueue.main.async {
+                        self.handleGetStarted()
                     }
-                    
-                    print("Successfully logged in: ",user)
-                })
-                //print(result)
+                }
+            } else {
+                alert(title: "Email Address", message: "Please grant us your email address to create your account.", viewController: self)
+                FBSDKLoginManager().logOut()
             }
-            
         case .cancelled:
             print("User cancelled login.")
         case .failed(let error):
             print(error)
         }
-        
-        
     }
     func loginButtonDidLogOut(_ loginButton: LoginButton) {
         print("Logout")
+    }
+    func saveUserBy(access token: AccessToken, callBack: @escaping (String?)->()) {
+        let token = token.authenticationToken
+        let credential = FIRFacebookAuthProvider.credential(withAccessToken: token)
+        FIRAuth.auth()?.signIn(with: credential) { (user, error) in
+            if error != nil {
+                print(error ?? "")
+                return
+            }
+            callBack(user?.email)
+        }
     }
 }
