@@ -31,44 +31,38 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        if homeView.collectionVSLeadingAnchor?.constant != -200 {
-            handleMenuSlide()
+        
+        let dwc = DomainWordsController()
+        
+        if domains?.count == 0 {
+            dwc.domain = tmpDomains[indexPath.item]
         } else {
-            //didSelectNextViewController(indexPath)
-            
-            let dwc = DomainWordsController()
-            
-            if domains?.count == 0 {
-                dwc.domain = tmpDomains[indexPath.item]
-            } else {
-                let name = domains?[indexPath.item].name
-                let key = domains?[indexPath.item].key
-                let domain = Domain(key: key!, name: name!)
-                dwc.domain = domain
-            }
-
-            
-            if Reachability.isConnectedToNetwork {
-                let web = WebService(tmpDomains[indexPath.item].key)
-                web.getDomainWords { (words, status) in
-                    dwc.words = words
-                    DispatchQueue.main.async {
-                        self.navigationController?.pushViewController(dwc, animated: true)
-                    }
-                }
-                
-                if web.request != nil {
-                    homeView.containerView.isHidden = false
-                    homeView.activityIndicatorView.startAnimating()
-                }
-                
-                
-            } else {
-                noInternetAlert(self)
-            }
-            
-            
+            let name = domains?[indexPath.item].name
+            let key = domains?[indexPath.item].key
+            let domain = Domain(key: key!, name: name!)
+            dwc.domain = domain
         }
+        
+        
+        if Reachability.isConnectedToNetwork {
+            let web = WebService(tmpDomains[indexPath.item].key)
+            web.getDomainWords { (words, status) in
+                dwc.words = words
+                DispatchQueue.main.async {
+                    self.navigationController?.pushViewController(dwc, animated: true)
+                }
+            }
+            
+            if web.request != nil {
+                homeView.containerView.isHidden = false
+                homeView.activityIndicatorView.startAnimating()
+            }
+            
+            
+        } else {
+            noInternetAlert(self)
+        }
+
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 1

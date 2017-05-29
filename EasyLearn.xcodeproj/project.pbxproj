@@ -50,7 +50,6 @@
 		CF6BB1691EB1A3DA003A8D54 /* LeftPaddedUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BB1651EB1A3DA003A8D54 /* LeftPaddedUILabel.swift */; };
 		CF6BB16A1EB1A3DA003A8D54 /* VerticallyCenteredTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BB1661EB1A3DA003A8D54 /* VerticallyCenteredTextView.swift */; };
 		CF6BB16E1EB1A455003A8D54 /* hvCollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BB16B1EB1A455003A8D54 /* hvCollectionViewExtension.swift */; };
-		CF6BB16F1EB1A455003A8D54 /* hvDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BB16C1EB1A455003A8D54 /* hvDelegateExtension.swift */; };
 		CF6BB1701EB1A455003A8D54 /* hvSetupViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BB16D1EB1A455003A8D54 /* hvSetupViewExtension.swift */; };
 		CF6BB1731EB1A461003A8D54 /* HomeVCAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BB1711EB1A461003A8D54 /* HomeVCAction.swift */; };
 		CF6BB1741EB1A461003A8D54 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BB1721EB1A461003A8D54 /* HomeViewController.swift */; };
@@ -148,7 +147,6 @@
 		CF6BB1651EB1A3DA003A8D54 /* LeftPaddedUILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeftPaddedUILabel.swift; path = SubClasses/LeftPaddedUILabel.swift; sourceTree = "<group>"; };
 		CF6BB1661EB1A3DA003A8D54 /* VerticallyCenteredTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VerticallyCenteredTextView.swift; path = SubClasses/VerticallyCenteredTextView.swift; sourceTree = "<group>"; };
 		CF6BB16B1EB1A455003A8D54 /* hvCollectionViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = hvCollectionViewExtension.swift; path = Controllers/HomeController/Extensions/hvCollectionViewExtension.swift; sourceTree = "<group>"; };
-		CF6BB16C1EB1A455003A8D54 /* hvDelegateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = hvDelegateExtension.swift; path = Controllers/HomeController/Extensions/hvDelegateExtension.swift; sourceTree = "<group>"; };
 		CF6BB16D1EB1A455003A8D54 /* hvSetupViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = hvSetupViewExtension.swift; path = Controllers/HomeController/Extensions/hvSetupViewExtension.swift; sourceTree = "<group>"; };
 		CF6BB1711EB1A461003A8D54 /* HomeVCAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeVCAction.swift; path = Controllers/HomeController/HomeVCAction.swift; sourceTree = "<group>"; };
 		CF6BB1721EB1A461003A8D54 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Controllers/HomeController/HomeViewController.swift; sourceTree = "<group>"; };
@@ -387,7 +385,6 @@
 			isa = PBXGroup;
 			children = (
 				CF6BB16B1EB1A455003A8D54 /* hvCollectionViewExtension.swift */,
-				CF6BB16C1EB1A455003A8D54 /* hvDelegateExtension.swift */,
 				CF6BB16D1EB1A455003A8D54 /* hvSetupViewExtension.swift */,
 			);
 			name = Extensions;
@@ -840,7 +837,6 @@
 				CF6BB1AA1EB1A7E1003A8D54 /* CardBgColorController.swift in Sources */,
 				CF320A021EB527A5001BF89D /* WordCreator.swift in Sources */,
 				CF6BB1901EB1A5B2003A8D54 /* PlayViewController.swift in Sources */,
-				CF6BB16F1EB1A455003A8D54 /* hvDelegateExtension.swift in Sources */,
 				CF3209FC1EB5265E001BF89D /* Resource.swift in Sources */,
 				CFAFE6681E68F9CA0062235E /* AppDelegate.swift in Sources */,
 				CF6BB1731EB1A461003A8D54 /* HomeVCAction.swift in Sources */,

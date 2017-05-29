@@ -13,7 +13,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     
     let homeView = HomeView()
     var didSelectNextViewController: (IndexPath) -> () = { _ in }
-    var homeViewAction = HomeVCAction()
 
     var domains: [CDDomain]?
     var tmpDomains: [Domain]!
@@ -23,31 +22,20 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .appGray
-        
+
         setupView()
         registerCells()
         handleNavigationBars()
-        
-        //HomeActions
-        homeViewAction.homeView = homeView
-        homeViewAction.view = view
-        homeViewAction.navigationController = navigationController
-        homeViewAction.delegate = self
         
         //Domain Generation
         let dg = DomainGenerator()
         tmpDomains = dg.domains
         domains = domainLayer.fetchAllDomains()
     }
-    
-    
-    
-    
     //MARK:- Register Cells
     func registerCells(){
         homeView.collectionView.register(DashboardCell.self, forCellWithReuseIdentifier: CellID.hvCellID.rawValue)
     }
-    
     //MARK:- Handle Keyboard
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         homeView.searchTextField.resignFirstResponder()
@@ -73,21 +61,15 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         navigationController?.setNavigationBarHidden(false, animated: true)
         homeView.collectionView.reloadData()
     }
-    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        
         handleDomains()
-        
     }
-    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     func handleDomains() {
-        
         let domainCoreData = DomainCoreData()
-
         //then save domains from the server into core data
         let web = WebService()
         if domainCoreData.fetchAllDomains()?.count == 0 {
@@ -97,19 +79,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
                 }
                 print(domains ?? "")
             }
-        }
-    }
-    
-
-}
-
-extension HomeViewController {
-    var getNextViewController: (Word?, Status) -> () {
-        get {
-            return homeViewAction.pushToNextViewController
-        }
-        set {
-            homeViewAction.pushToNextViewController = newValue
         }
     }
 }

@@ -14,6 +14,7 @@ protocol HomeViewDelegate {
     func handleMenuSlide()
     func handleCard()
     func handleMoreCategory()
+    func handleTapTopContainer()
 }
 
 class HomeView: UIView {
@@ -62,6 +63,7 @@ class HomeView: UIView {
         btn.showsTouchWhenHighlighted = true
         btn.tintColor = .appColor
         btn.titleLabel?.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline)
+        btn.addTarget(self, action: #selector(moreCategoryBtn), for: .touchDown)
         return btn
     }()
     
@@ -85,6 +87,7 @@ class HomeView: UIView {
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.showsTouchWhenHighlighted = true
         btn.tintColor = .white
+        btn.addTarget(self, action: #selector(searchBtn), for: .touchDown)
         return btn
     }()
     var moreButton: UIButton = {
@@ -94,6 +97,7 @@ class HomeView: UIView {
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.showsTouchWhenHighlighted = true
         btn.tintColor = .gray
+        btn.addTarget(self, action: #selector(moreBtn), for: .touchDown)
         return btn
     }()
     lazy var collectionView: UICollectionView  = {
@@ -120,19 +124,54 @@ class HomeView: UIView {
         btn.layer.masksToBounds = true
         btn.tintColor = .appGray
         btn.backgroundColor = .appColor
+        btn.addTarget(self, action: #selector(cardBtn), for: .touchDown)
         return btn
     }()
-    var collectionVSLeadingAnchor: NSLayoutConstraint?
     
+    var delegate: HomeViewDelegate!
+    
+    //Initializer
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .appGray
         translatesAutoresizingMaskIntoConstraints = false
         setupView()
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapTopContainer))
+        addGestureRecognizer(tap)
+        
+        
     }
+    //MARK:- Constaints
+    var topContainerTopConstraint: NSLayoutConstraint!
+    var collectionViewSliderCenterConstraint: NSLayoutConstraint!
+
     //MARK:- Setup Views
     func setupView(){
         
+        
+        
+
+        addViews()
+        setupTopContainer()
+        setupLogoLabel()
+        setupSearchTextField()
+        setupSearchBtn()
+        setupCategoryBtn()
+        setupCollectionView()
+        
+        setupCardButton()
+        
+        //Menu Slider
+        setupMoreButton()
+        setupCollectionViewSlider()
+        
+        //Activity Indicator
+        setupContainerView()
+        setupActivityIndicator()
+    }
+    //MARK:- Add Sub Views
+    func addViews(){
         addSubview(topContainer)
         addSubview(logoLabel)
         addSubview(searchTextField)
@@ -144,81 +183,91 @@ class HomeView: UIView {
         addSubview(cardButton)
         addSubview(categoryBtn)
         addSubview(collectionView)
-        
+    }
+    
+    //MARK:- TopContainer
+    //Handle Animation
+    func setupTopContainer(){
+        topContainerTopConstraint = topContainer.topAnchor.constraint(equalTo: topAnchor)
+        topContainerTopConstraint.isActive = true
         NSLayoutConstraint.activate([
-            topContainer.topAnchor.constraint(equalTo: topAnchor),
             topContainer.leadingAnchor.constraint(equalTo: leadingAnchor),
             topContainer.trailingAnchor.constraint(equalTo: trailingAnchor),
             topContainer.bottomAnchor.constraint(equalTo: searchTextField.bottomAnchor, constant: 20)
             ])
+    }
+    func setupLogoLabel(){
         NSLayoutConstraint.activate([
             logoLabel.topAnchor.constraint(equalTo: topContainer.topAnchor, constant: 70),
             logoLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             logoLabel.widthAnchor.constraint(equalTo: logoLabel.widthAnchor),
             logoLabel.heightAnchor.constraint(equalToConstant: 100)
             ])
+    }
+    func setupSearchTextField(){
         NSLayoutConstraint.activate([
             searchTextField.topAnchor.constraint(equalTo: logoLabel.bottomAnchor, constant: 20),
             searchTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             searchTextField.trailingAnchor.constraint(equalTo: searchButton.trailingAnchor, constant: 0),
             searchTextField.heightAnchor.constraint(equalToConstant: 40)
             ])
+    }
+    func setupSearchBtn(){
         NSLayoutConstraint.activate([
             searchButton.topAnchor.constraint(equalTo: logoLabel.bottomAnchor, constant: 25),
             searchButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             searchButton.heightAnchor.constraint(equalToConstant: 30),
             searchButton.widthAnchor.constraint(equalToConstant: 30)
             ])
+    }
+    func setupCategoryBtn(){
         NSLayoutConstraint.activate([
             categoryBtn.topAnchor.constraint(equalTo: topContainer.bottomAnchor, constant: 10),
             categoryBtn.centerXAnchor.constraint(equalTo: centerXAnchor),
             categoryBtn.heightAnchor.constraint(equalTo: categoryBtn.heightAnchor),
             ])
-        
-        
-    
-        
-        
-        
-        
+    }
+    func setupCollectionView(){
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: categoryBtn.bottomAnchor),
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
             ])
-        
+        sendSubview(toBack: collectionView)
+    }
+    func setupCardButton(){
         NSLayoutConstraint.activate([
             cardButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
             cardButton.heightAnchor.constraint(equalToConstant: 60),
             cardButton.widthAnchor.constraint(equalToConstant: 60),
             cardButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -10)
             ])
-        sendSubview(toBack: collectionView)
-        
-        
-        
-        
+    }
+    
+    //MARK:- Cool Menu Button
+    func setupMoreButton(){
         NSLayoutConstraint.activate([
             moreButton.topAnchor.constraint(equalTo: topAnchor, constant: 30),
             moreButton.leftAnchor.constraint(equalTo: leftAnchor, constant: 10),
             moreButton.heightAnchor.constraint(equalToConstant: 40),
             moreButton.widthAnchor.constraint(equalToConstant: 40)
             ])
+    }
+    //MARK:- Cool Menu Animate
+    func setupCollectionViewSlider(){
         
-        
-        collectionViewSlider.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        collectionVSLeadingAnchor = collectionViewSlider.leadingAnchor.constraint(equalTo: leadingAnchor)
-        collectionVSLeadingAnchor?.constant = -200
-        collectionVSLeadingAnchor?.isActive = true
-        collectionViewSlider.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        collectionViewSlider.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        
-        
-        
-        
-        
-        
+        collectionViewSliderCenterConstraint = collectionViewSlider.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 400)
+        collectionViewSliderCenterConstraint.isActive = true
+        NSLayoutConstraint.activate([
+            collectionViewSlider.topAnchor.constraint(equalTo: topAnchor),
+            collectionViewSlider.widthAnchor.constraint(equalTo: widthAnchor),
+            collectionViewSlider.heightAnchor.constraint(equalToConstant: 100)
+            ])
+    }
+    
+    func setupContainerView(){
+        //this is to block user while search button is touched...
         NSLayoutConstraint.activate([
             containerView.topAnchor.constraint(equalTo: topAnchor),
             containerView.bottomAnchor.constraint(equalTo: bottomAnchor),
@@ -226,21 +275,22 @@ class HomeView: UIView {
             containerView.trailingAnchor.constraint(equalTo: trailingAnchor)
             ])
         containerView.isHidden = true
-        
+    }
+    func setupActivityIndicator(){
         NSLayoutConstraint.activate([
             activityIndicatorView.centerXAnchor.constraint(equalTo: centerXAnchor),
             activityIndicatorView.centerYAnchor.constraint(equalTo: centerYAnchor),
             activityIndicatorView.heightAnchor.constraint(equalToConstant: 40),
             activityIndicatorView.widthAnchor.constraint(equalToConstant: 40)
             ])
-        
     }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
 
-
+//MARK:- Getters & Setters
 extension HomeView {
     public var searchText: String? {
         get {
@@ -266,21 +316,40 @@ extension HomeView {
             searchTextField.delegate = newValue
         }
     }
+    public var topContainerConstant: CGFloat {
+        get {
+            return topContainerTopConstraint.constant
+        }
+        set {
+            topContainerTopConstraint.constant = newValue
+        }
+    }
+    public var sliderConstant: CGFloat {
+        get {
+            return collectionViewSliderCenterConstraint.constant
+        }
+        set {
+            collectionViewSliderCenterConstraint.constant = newValue
+        }
+    }
 }
 
-
+//MARK:- Delegate Actions
 extension HomeView {
-    public func setSearchButton(_ target: Any?, action: Selector) {
-        searchButton.addTarget(target, action: action, for: .touchDown)
+    @objc fileprivate func searchBtn() {
+        delegate.handleSearch()
     }
-    public func setMoreButton(_ target: Any?, action: Selector) {
-        moreButton.addTarget(target, action: action, for: .touchDown)
+    @objc fileprivate func moreBtn() {
+        delegate.handleMoreButton()
     }
-    public func setCardButton(_ target: Any?, action: Selector) {
-        cardButton.addTarget(target, action: action, for: .touchDown)
+    @objc fileprivate func cardBtn() {
+        delegate.handleCard()
     }
-    public func setMoreCategories(_ target: Any?, action: Selector) {
-        categoryBtn.addTarget(target, action: action, for: .touchDown)
+    @objc fileprivate func moreCategoryBtn() {
+        delegate.handleMoreCategory()
+    }
+    @objc fileprivate func tapTopContainer() {
+        delegate.handleTapTopContainer()
     }
 }
 
@@ -302,3 +371,4 @@ extension HomeView {
         }
     }
 }
+

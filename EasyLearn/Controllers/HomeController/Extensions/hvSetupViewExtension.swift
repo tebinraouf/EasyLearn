@@ -23,25 +23,25 @@ extension HomeViewController {
         homeView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
         
-        homeView.setSearchButton(self, action: #selector(handleSearch))
-        homeView.setMoreButton(self, action: #selector(handleMenuSlide))
-        homeView.setCardButton(self, action: #selector(handleCard))
-        homeView.setMoreCategories(self, action: #selector(handleMoreCategory))
         
-        handleGestures()
+        //handleGestures()
+        
+        
+        homeView.delegate = self
+        
     }
     
     
-    func handleGestures(){
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleMenuSlide))
-        homeView.containerView.addGestureRecognizer(tap)
-        
-        let swipeTap = UISwipeGestureRecognizer(target: self, action: #selector(handleMenuSlide))
-        swipeTap.direction = UISwipeGestureRecognizerDirection.left
-        homeView.collectionViewSlider.addGestureRecognizer(swipeTap)
-        
-        let leftEdgePanGesture = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(handleMenuSlideLeft(gesture:)))
-        leftEdgePanGesture.edges = .left
-        homeView.addGestureRecognizer(leftEdgePanGesture)
-    }
+//    func handleGestures(){
+//        let tap = UITapGestureRecognizer(target: self, action: #selector(handleMenuSlide))
+//        homeView.containerView.addGestureRecognizer(tap)
+//        
+//        let swipeTap = UISwipeGestureRecognizer(target: self, action: #selector(handleMenuSlide))
+//        swipeTap.direction = UISwipeGestureRecognizerDirection.left
+//        homeView.collectionViewSlider.addGestureRecognizer(swipeTap)
+//        
+//        let leftEdgePanGesture = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(handleMenuSlideLeft(gesture:)))
+//        leftEdgePanGesture.edges = .left
+//        homeView.addGestureRecognizer(leftEdgePanGesture)
+//    }
 }

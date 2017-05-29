@@ -22,7 +22,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if let window = window {
             //window.rootViewController = PageController()
-            window.rootViewController = UINavigationController(rootViewController: PageController())
+            
+            if isLoggedIn {
+                window.rootViewController = UINavigationController(rootViewController: HomeViewController())
+            } else {
+                window.rootViewController = UINavigationController(rootViewController: PageController())
+            }
+            
             window.makeKeyAndVisible()
         }
         

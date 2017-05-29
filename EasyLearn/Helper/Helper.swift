@@ -94,6 +94,18 @@ public func setUserSettings(for value: CGFloat, forKey: String) {
     UserDefaults.standard.setValue(value, forKey: forKey)
     UserDefaults.standard.synchronize()
 }
+public func setUserSettings(for value: Bool, forKey: String) {
+    UserDefaults.standard.setValue(value, forKey: forKey)
+    UserDefaults.standard.synchronize()
+}
+public var isLoggedIn: Bool {
+    get {
+        return UserDefaults.standard.bool(forKey: "isLoggedIn")
+    }
+    set {
+        setUserSettings(for: newValue, forKey: "isLoggedIn")
+    }
+}
 
 
 public func handleFlipping(from view1: UILabel, to view2: UITextView, isFlipped: inout Bool){
