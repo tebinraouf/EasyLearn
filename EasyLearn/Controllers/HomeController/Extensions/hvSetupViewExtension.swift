@@ -11,11 +11,11 @@ import UIKit
 extension HomeViewController {
     
     func setupView(){
-        
         homeView.collectionViewDelegate = self
         homeView.collectionViewDataSource = self
         homeView.searchTextFieldDelegate = self
-
+        homeView.navigationController = navigationController
+        
         view.addSubview(homeView)
         homeView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         homeView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
@@ -23,12 +23,8 @@ extension HomeViewController {
         homeView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
         
-        
         //handleGestures()
-        
-        
         homeView.delegate = self
-        
     }
     
     

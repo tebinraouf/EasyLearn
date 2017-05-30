@@ -22,6 +22,7 @@ enum CellID: String {
     case cisSelector
     case cisSelectorCell
     case pcCellID
+    case menuCell
 }
 
 

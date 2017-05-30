@@ -42,16 +42,14 @@ extension HomeViewController: HomeViewDelegate {
     }
     //MARK:- TopContainerSlider
     func handleMoreButton() {
+        
         //handleConstant(constant: 0)
         print("more is clicked....")
-        homeView.collectionViewSlider.isHidden = false
-        animateSettingFor(value: 100, sliderConstant: 0)
-        
+        animateSettingFor(value: 100, sliderOpacity: 1)
     }
     func handleTapTopContainer() {
         print("tappppppp")
-        homeView.collectionViewSlider.isHidden = true
-        animateSettingFor(value: 0, sliderConstant: 400)
+        animateSettingFor(value: 0, sliderOpacity: 0)
     }
     
     
@@ -86,26 +84,15 @@ extension HomeViewController: HomeViewDelegate {
     private func push(_ controller: UIViewController) {
         navigationController?.pushViewController(controller, animated: true)
     }
-    func animateSettingFor(value constant: CGFloat, sliderConstant: CGFloat){
+    func animateSettingFor(value constant: CGFloat, sliderOpacity: Float){
         homeView.topContainerConstant = constant
+        self.homeView.collectionViewSliderOpacity = sliderOpacity
+        //self.homeView.transform = CGAffineTransform(scaleX: 0.7, y: 0.7) //super cool
         
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.1, options: .curveEaseInOut, animations: {
             self.view.layoutIfNeeded()
-        }, completion: { bool in
-        
-            print(bool)
-            self.homeView.sliderConstant = sliderConstant
-            UIView.animate(withDuration: 0.5, animations: {
-                self.view.layoutIfNeeded()
-            })
-            
-        
-        })
-        
-        
-        
+        }, completion: nil)
         
     }
-    
-    
 }
+

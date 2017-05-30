@@ -12,12 +12,21 @@ import SwiftIconFont
 class HomeViewController: UIViewController, UITextFieldDelegate {
     
     let homeView = HomeView()
+
+    //MenuProtocol
+    var menuDelegate: UICollectionViewDelegate?
+    var menuDataSource: UICollectionViewDataSource?
+    
+    
     var didSelectNextViewController: (IndexPath) -> () = { _ in }
 
     var domains: [CDDomain]?
     var tmpDomains: [Domain]!
     var domainLayer = DomainCoreData()
 
+    
+    public static let shared = HomeViewController()
+    
     //MARK:- View Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +40,11 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         let dg = DomainGenerator()
         tmpDomains = dg.domains
         domains = domainLayer.fetchAllDomains()
+
+        
+        
+        
+        
     }
     //MARK:- Register Cells
     func registerCells(){
@@ -80,5 +94,9 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
                 print(domains ?? "")
             }
         }
+    }
+    
+    func logout() {
+        navigationController?.pushViewController(PageController(), animated: true)
     }
 }

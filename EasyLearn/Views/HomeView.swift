@@ -18,6 +18,7 @@ protocol HomeViewDelegate {
 }
 
 class HomeView: UIView {
+    var navigationController: UINavigationController?
     
     var containerView: UIView = {
         let view = UIView()
@@ -25,9 +26,10 @@ class HomeView: UIView {
         view.backgroundColor = .clear
         return view
     }()
-    var topContainer: UIImageView = {
-        let view = UIImageView(image: #imageLiteral(resourceName: "Bloody_Mary"))
+    var topContainer: UIView = {
+        let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .appRedish
         return view
     }()
     
@@ -37,15 +39,6 @@ class HomeView: UIView {
         ac.color = .appColor
         return ac
     }()
-//    var logoImage: UIImageView = {
-//        let iv = UIImageView(image: #imageLiteral(resourceName: "logo"))
-//        iv.backgroundColor = .clear
-//        iv.tintColor = .white
-//        iv.layer.cornerRadius = 100
-//        iv.layer.masksToBounds = true
-//        iv.translatesAutoresizingMaskIntoConstraints = false
-//        return iv
-//    }()
     var logoLabel: UILabel = {
         let label = UILabel()
         label.text = "Easylearn"
@@ -66,8 +59,6 @@ class HomeView: UIView {
         btn.addTarget(self, action: #selector(moreCategoryBtn), for: .touchDown)
         return btn
     }()
-    
-    
     lazy var searchTextField: LeftPaddedTextField = {
         let textField = LeftPaddedTextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -107,11 +98,18 @@ class HomeView: UIView {
         cv.backgroundColor = .clear
         return cv
     }()
+    //MARK:- Menu Slider Collection View
+    //GOTO: setupCollectionViewSlider()
+    
     lazy var collectionViewSlider: UICollectionView  = {
         let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
-        cv.backgroundColor = .gray
+        cv.backgroundColor = .clear
+        cv.showsHorizontalScrollIndicator = false
+        cv.alwaysBounceHorizontal = true
+        cv.layer.opacity = 0
         return cv
     }()
     var cardButton: UIButton = {
@@ -129,8 +127,10 @@ class HomeView: UIView {
     }()
     
     var delegate: HomeViewDelegate!
+    let menus = MenuButtonCreator()
     
-    //Initializer
+    
+    //MARK:- Initializer
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .appGray
@@ -138,19 +138,16 @@ class HomeView: UIView {
         setupView()
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapTopContainer))
-        addGestureRecognizer(tap)
+        topContainer.addGestureRecognizer(tap)
         
         
+        registerCell()
     }
     //MARK:- Constaints
     var topContainerTopConstraint: NSLayoutConstraint!
-    var collectionViewSliderCenterConstraint: NSLayoutConstraint!
 
     //MARK:- Setup Views
     func setupView(){
-        
-        
-        
 
         addViews()
         setupTopContainer()
@@ -254,14 +251,12 @@ class HomeView: UIView {
             moreButton.widthAnchor.constraint(equalToConstant: 40)
             ])
     }
-    //MARK:- Cool Menu Animate
+    //MARK:- Cool Menu Animate Collection View
     func setupCollectionViewSlider(){
-        
-        collectionViewSliderCenterConstraint = collectionViewSlider.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 400)
-        collectionViewSliderCenterConstraint.isActive = true
         NSLayoutConstraint.activate([
+            collectionViewSlider.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 50),
+            collectionViewSlider.trailingAnchor.constraint(equalTo: trailingAnchor),
             collectionViewSlider.topAnchor.constraint(equalTo: topAnchor),
-            collectionViewSlider.widthAnchor.constraint(equalTo: widthAnchor),
             collectionViewSlider.heightAnchor.constraint(equalToConstant: 100)
             ])
     }
@@ -324,12 +319,12 @@ extension HomeView {
             topContainerTopConstraint.constant = newValue
         }
     }
-    public var sliderConstant: CGFloat {
+    public var collectionViewSliderOpacity: Float {
         get {
-            return collectionViewSliderCenterConstraint.constant
+            return collectionViewSlider.layer.opacity
         }
         set {
-            collectionViewSliderCenterConstraint.constant = newValue
+            collectionViewSlider.layer.opacity = newValue
         }
     }
 }
@@ -370,5 +365,23 @@ extension HomeView {
             collectionView.dataSource = newValue
         }
     }
+    var menuSliderDelegate: UICollectionViewDelegate? {
+        get {
+            return collectionViewSlider.delegate
+        }
+        set {
+            collectionViewSlider.delegate = newValue
+        }
+    }
+    var menuSliderDataSource: UICollectionViewDataSource? {
+        get {
+            return collectionViewSlider.dataSource
+        }
+        set {
+            collectionViewSlider.dataSource = newValue
+        }
+    }
 }
+
+
 

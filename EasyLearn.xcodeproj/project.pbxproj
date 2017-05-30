@@ -15,6 +15,11 @@
 		CF11ED821ED20A9700103BAF /* CollectionMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF11ED811ED20A9700103BAF /* CollectionMethods.swift */; };
 		CF11ED841ED20B6200103BAF /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF11ED831ED20B6100103BAF /* PageView.swift */; };
 		CF20A1D61ED62C470093AA4C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF20A1D51ED62C470093AA4C /* LoginView.swift */; };
+		CF2914981EDCF927009BDAB0 /* MenuCollectionViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2914971EDCF927009BDAB0 /* MenuCollectionViewMethods.swift */; };
+		CF29149B1EDCF9D7009BDAB0 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF29149A1EDCF9D7009BDAB0 /* MenuCell.swift */; };
+		CF29149E1EDE018C009BDAB0 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF29149D1EDE018C009BDAB0 /* Menu.swift */; };
+		CF2914A01EDE0217009BDAB0 /* Model & Creator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF29149F1EDE0217009BDAB0 /* Model & Creator.swift */; };
+		CF2914A21EDE0307009BDAB0 /* MenuButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2914A11EDE0307009BDAB0 /* MenuButtonView.swift */; };
 		CF3209FA1EB50C2E001BF89D /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3209F91EB50C2E001BF89D /* Reachability.swift */; };
 		CF3209FC1EB5265E001BF89D /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3209FB1EB5265E001BF89D /* Resource.swift */; };
 		CF3209FE1EB526D8001BF89D /* DetailDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3209FD1EB526D8001BF89D /* DetailDeserializer.swift */; };
@@ -112,6 +117,11 @@
 		CF11ED811ED20A9700103BAF /* CollectionMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionMethods.swift; path = Controllers/Onboarding/Extensions/CollectionMethods.swift; sourceTree = "<group>"; };
 		CF11ED831ED20B6100103BAF /* PageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageView.swift; path = Views/PageView.swift; sourceTree = "<group>"; };
 		CF20A1D51ED62C470093AA4C /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = Views/LoginView.swift; sourceTree = "<group>"; };
+		CF2914971EDCF927009BDAB0 /* MenuCollectionViewMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuCollectionViewMethods.swift; path = Views/Menu/MenuCollectionViewMethods.swift; sourceTree = "<group>"; };
+		CF29149A1EDCF9D7009BDAB0 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuCell.swift; path = Views/Menu/MenuCell.swift; sourceTree = "<group>"; };
+		CF29149D1EDE018C009BDAB0 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Menu.swift; path = Controllers/Menu/Menu.swift; sourceTree = "<group>"; };
+		CF29149F1EDE0217009BDAB0 /* Model & Creator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Model & Creator.swift"; path = "Controllers/Menu/Model & Creator.swift"; sourceTree = "<group>"; };
+		CF2914A11EDE0307009BDAB0 /* MenuButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuButtonView.swift; path = Views/Menu/MenuButtonView.swift; sourceTree = "<group>"; };
 		CF3209F91EB50C2E001BF89D /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = Networking/Reachability.swift; sourceTree = "<group>"; };
 		CF3209FB1EB5265E001BF89D /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Resource.swift; path = Networking/Resource.swift; sourceTree = "<group>"; };
 		CF3209FD1EB526D8001BF89D /* DetailDeserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailDeserializer.swift; path = Models/DetailDeserializer.swift; sourceTree = "<group>"; };
@@ -285,6 +295,25 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
+		CF2914991EDCF934009BDAB0 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				CF2914971EDCF927009BDAB0 /* MenuCollectionViewMethods.swift */,
+				CF29149A1EDCF9D7009BDAB0 /* MenuCell.swift */,
+				CF2914A11EDE0307009BDAB0 /* MenuButtonView.swift */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		CF29149C1EDE0169009BDAB0 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				CF29149D1EDE018C009BDAB0 /* Menu.swift */,
+				CF29149F1EDE0217009BDAB0 /* Model & Creator.swift */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
 		CF3871231E87309A005AA866 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -317,6 +346,7 @@
 		CF51089B1E7C6198008B2BC0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CF2914991EDCF934009BDAB0 /* Menu */,
 				CF6012D91E773B7100EA0A3A /* Cells */,
 				CF6BB1411EB1A0A9003A8D54 /* HomeView.swift */,
 				CF6BB1431EB1A197003A8D54 /* BackgroundColorView.swift */,
@@ -430,6 +460,7 @@
 		CF6012DE1E789BA100EA0A3A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CF29149C1EDE0169009BDAB0 /* Menu */,
 				CF11ED791ED10D4D00103BAF /* Login */,
 				CFA8F6481ECD40900006DF02 /* Onboarding */,
 				CF67C8111EC69A56005D1F6D /* Domains */,
@@ -800,11 +831,13 @@
 				CF6BB1671EB1A3DA003A8D54 /* CircleButton.swift in Sources */,
 				CF6BB1B01EB1A924003A8D54 /* Models.swift in Sources */,
 				CF11ED7D1ED209D300103BAF /* PageCell.swift in Sources */,
+				CF2914981EDCF927009BDAB0 /* MenuCollectionViewMethods.swift in Sources */,
 				CF6BB1481EB1A1AE003A8D54 /* ColorImageSelectorView.swift in Sources */,
 				CF6BB1621EB1A37B003A8D54 /* Helper.swift in Sources */,
 				CF6BB1701EB1A455003A8D54 /* hvSetupViewExtension.swift in Sources */,
 				CFFCA31F1EB8E1EE0055D54B /* DetailCellData.swift in Sources */,
 				CF38712F1E89B0DE005AA866 /* CoreDataStack.swift in Sources */,
+				CF29149E1EDE018C009BDAB0 /* Menu.swift in Sources */,
 				CF6BB17A1EB1A4C9003A8D54 /* wdCollectionViewExtension.swift in Sources */,
 				CF6BB1521EB1A275003A8D54 /* DashboardCell.swift in Sources */,
 				CF6BB14C1EB1A1C0003A8D54 /* FlashCardView.swift in Sources */,
@@ -831,6 +864,7 @@
 				CF6BB15D1EB1A34E003A8D54 /* ColorCellsViewModel.swift in Sources */,
 				CF6BB14E1EB1A260003A8D54 /* BaseCell.swift in Sources */,
 				CF6BB17F1EB1A4D5003A8D54 /* WordDetailsVC.swift in Sources */,
+				CF2914A21EDE0307009BDAB0 /* MenuButtonView.swift in Sources */,
 				CFEB5A821ED8AF4E0001A4A4 /* CustomLogin.swift in Sources */,
 				CF6BB1891EB1A54F003A8D54 /* cvGestureExtension.swift in Sources */,
 				CF6BB1AC1EB1A873003A8D54 /* biCollectionViewExtension.swift in Sources */,
@@ -841,6 +875,7 @@
 				CFAFE6681E68F9CA0062235E /* AppDelegate.swift in Sources */,
 				CF6BB1731EB1A461003A8D54 /* HomeVCAction.swift in Sources */,
 				CF6BB16A1EB1A3DA003A8D54 /* VerticallyCenteredTextView.swift in Sources */,
+				CF29149B1EDCF9D7009BDAB0 /* MenuCell.swift in Sources */,
 				CF6BB1561EB1A2AB003A8D54 /* ColorImageCell.swift in Sources */,
 				CF6BB15E1EB1A34E003A8D54 /* ColorViewModel.swift in Sources */,
 				CF11ED7F1ED20A1B00103BAF /* PageModel.swift in Sources */,
@@ -866,6 +901,7 @@
 				CF6BB1881EB1A54F003A8D54 /* cvCustomFuncs.swift in Sources */,
 				CF11ED821ED20A9700103BAF /* CollectionMethods.swift in Sources */,
 				CF3871321E89B193005AA866 /* CDWord.xcdatamodeld in Sources */,
+				CF2914A01EDE0217009BDAB0 /* Model & Creator.swift in Sources */,
 				CFFCA3211EB8E2750055D54B /* DataGenerator.swift in Sources */,
 				CF320A001EB5270D001BF89D /* WordDeserializer.swift in Sources */,
 				CFFCA31D1EB8E1990055D54B /* UserInteraction.swift in Sources */,

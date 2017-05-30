@@ -32,5 +32,13 @@
       <ContextState
          contextName = "ShowDetails.(showWord(word : Word?, selectedWord : String?) -&gt; ()).(closure #1):ShowDetails.swift">
       </ContextState>
+      <ContextState
+         contextName = "MenuCell.menuButton.didset:MenuCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "menuButton.id">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>
