@@ -8,6 +8,8 @@
 
 import UIKit
 import Foundation
+import FBSDKLoginKit
+
 
 class CONSTANTS {
     static let SearchButton = Notification.Name("HomeViewControllerSearchButton")

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import FBSDKLoginKit
+
 
 
 struct MenuAction {
@@ -40,7 +40,7 @@ extension MenuAction: MenuActionable {
         alert.addAction(UIAlertAction(title: "Logout", style: .destructive) { (action) in
             isLoggedIn = false
             self.navigationController?.pushViewController(PageController(), animated: true)
-            FBSDKLoginManager().logOut()
+            
         })
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         self.homeController?.present(alert, animated: true)

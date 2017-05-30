@@ -26,6 +26,7 @@ extension PageController: LoginViewDelegate {
             let userLayer = UserCoreDataLayer()
             userLayer.add(newUser)
             DispatchQueue.main.async {
+                isLoggedIn = true
                 self.handleGetStarted()
             }
         })
@@ -42,6 +43,7 @@ extension PageController: LoginViewDelegate {
             let userLayer = UserCoreDataLayer()
             userLayer.add(newUser)
             DispatchQueue.main.async {
+                isLoggedIn = true
                 self.handleGetStarted()
             }
         })
