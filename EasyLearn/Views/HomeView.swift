@@ -19,6 +19,7 @@ protocol HomeViewDelegate {
 
 class HomeView: UIView {
     var navigationController: UINavigationController?
+    var homeController: HomeViewController?
     
     var containerView: UIView = {
         let view = UIView()

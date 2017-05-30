@@ -15,6 +15,7 @@ extension HomeViewController {
         homeView.collectionViewDataSource = self
         homeView.searchTextFieldDelegate = self
         homeView.navigationController = navigationController
+        homeView.homeController = self
         
         view.addSubview(homeView)
         homeView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true

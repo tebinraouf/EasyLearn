@@ -13,6 +13,7 @@ import FBSDKLoginKit
 struct MenuAction {
     var menu: MenuSelector
     var navigationController: UINavigationController?
+    var homeController: HomeViewController?
     
     init(_ menu: MenuSelector) {
         self.menu = menu
@@ -35,13 +36,14 @@ extension MenuAction: MenuActionable {
         print("account")
     }
     func handleLogout() {
-        print("logout")
-        isLoggedIn = false
-        navigationController?.pushViewController(PageController(), animated: true)
-        
-        //UINavigationController().pushViewController(PageController(), animated: true)
-        FBSDKLoginManager().logOut()
-        
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Logout", style: .destructive) { (action) in
+            isLoggedIn = false
+            self.navigationController?.pushViewController(PageController(), animated: true)
+            FBSDKLoginManager().logOut()
+        })
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.homeController?.present(alert, animated: true)
     }
     func handlePurchase() {
         print("purchase")

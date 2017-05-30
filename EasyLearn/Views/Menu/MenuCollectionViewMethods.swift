@@ -35,6 +35,7 @@ extension HomeView: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
         let menu = MenuSelector(rawValue: indexPath.item)
         var action = MenuAction(menu!)
         action.navigationController = navigationController
+        action.homeController = homeController
         action.setMenuAction()
     }
 }
