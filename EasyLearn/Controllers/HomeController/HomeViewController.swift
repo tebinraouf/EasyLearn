@@ -8,6 +8,8 @@
 
 import UIKit
 import SwiftIconFont
+import FirebaseAuth
+import Firebase
 
 class HomeViewController: UIViewController, UITextFieldDelegate {
     
@@ -41,9 +43,17 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         tmpDomains = dg.domains
         domains = domainLayer.fetchAllDomains()
 
+        print(FIRAuth.auth()?.currentUser?.email)
         
+        guard let firUser = FIRAuth.auth()?.currentUser?.email else { return }
         
+        //TODO:- check if the user is premium user or not 
+        //1. if user is premium, them searchLimit is unlimited
+        //2. else the searchLimit is 5
         
+        let user = User(name: firUser, email: firUser, searchLimit: 5)
+        let userLayer = UserCoreDataLayer()
+        userLayer.add(user)
         
     }
     //MARK:- Register Cells

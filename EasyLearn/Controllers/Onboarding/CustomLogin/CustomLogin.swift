@@ -22,13 +22,17 @@ extension PageController: LoginViewDelegate {
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
             self.handling(error)
             guard let authEmail = user?.email else { return }
-            let newUser = User(name: authEmail, email: authEmail)
-            let userLayer = UserCoreDataLayer()
-            userLayer.add(newUser)
+//            let newUser = User(name: authEmail, email: authEmail)
+//            let userLayer = UserCoreDataLayer()
+//            
+            
             DispatchQueue.main.async {
                 isLoggedIn = true
                 self.handleGetStarted()
             }
+            
+        
+            
         })
     }
     func registerBtn() {
@@ -39,13 +43,17 @@ extension PageController: LoginViewDelegate {
         FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
             self.handling(error)
             guard let authEmail = user?.email else { return }
-            let newUser = User(name: name, email: authEmail)
-            let userLayer = UserCoreDataLayer()
-            userLayer.add(newUser)
+//            let newUser = User(name: name, email: authEmail)
+//            let userLayer = UserCoreDataLayer()
+//            
+            
+            
             DispatchQueue.main.async {
                 isLoggedIn = true
                 self.handleGetStarted()
             }
+            
+            
         })
     }
     func forgetPasswordBtn() {

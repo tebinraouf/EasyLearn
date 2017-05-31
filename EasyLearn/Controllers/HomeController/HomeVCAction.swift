@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 extension HomeViewController: HomeViewDelegate {
     
@@ -18,22 +20,46 @@ extension HomeViewController: HomeViewDelegate {
             }else {
                 homeView.searchPlaceHolder = "Search..."
                 if Reachability.isConnectedToNetwork {
-                    let webService = WebService(text, filters: [.lexicalCategory])
-                    webService.get({ (word, status) in
-                        //self.pushToNextViewController(word, status)
-                        switch status {
-                        case .Success:
-                            let lexicalEntryVC = LexicalEntryViewController()
-                            lexicalEntryVC.word = word
-                            self.push(lexicalEntryVC)
-                        case .NotFound:
-                            self.goToErrorEmptyViewControllerWith(text: "No result. Please try another word.")
+                    
+                    guard let currentUserEmail = FIRAuth.auth()?.currentUser?.email else { return }
+                    let userLayer = UserCoreDataLayer()
+                    guard let searchLimit = userLayer.searchLimitBy(userEmail: currentUserEmail) else { return }
+                    
+                    var userSearchLimit = searchLimit
+                    
+                    //check if user has reached searching limit
+                    if userSearchLimit > 0 {
+                        //free search
+                        //start of web service
+                        let webService = WebService(text, filters: [.lexicalCategory])
+                        webService.get({ (word, status) in
+                            //self.pushToNextViewController(word, status)
+                            switch status {
+                            case .Success:
+                                let lexicalEntryVC = LexicalEntryViewController()
+                                lexicalEntryVC.word = word
+                                self.push(lexicalEntryVC)
+                            case .NotFound:
+                                self.goToErrorEmptyViewControllerWith(text: "No result. Please try another word.")
+                            }
+                        })
+                        if webService.request != nil {
+                            homeView.containerView.isHidden = false
+                            homeView.activityIndicatorView.startAnimating()
                         }
-                    })
-                    if webService.request != nil {
-                        homeView.containerView.isHidden = false
-                        homeView.activityIndicatorView.startAnimating()
+                        userSearchLimit -= 1
+                        userLayer.update(userSearchLimit, for: currentUserEmail)
+                        
+                        //end of web service
+                    } else {
+                        //has reached the limit
+                        print("You gorra unlock the unlimited feature...bro...")
                     }
+                    
+                    
+                    print(userSearchLimit)
+                    
+                    
                 } else {
                     noInternetAlert(self)
                 }

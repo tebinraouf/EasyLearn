@@ -110,6 +110,23 @@ public var isLoggedIn: Bool {
     }
 }
 
+public var isReachedSearchLimit: Bool {
+    get {
+        return UserDefaults.standard.bool(forKey: "isReachedSearchLimit")
+    }
+    set {
+        setUserSettings(for: newValue, forKey: "isReachedSearchLimit")
+    }
+}
+public var searchLimitCount: Int {
+    get {
+        return UserDefaults.standard.integer(forKey: "searchLimitCount")
+    }
+    set {
+        setUserSettings(for: newValue, forKey: "searchLimitCount")
+    }
+}
+
 
 public func handleFlipping(from view1: UILabel, to view2: UITextView, isFlipped: inout Bool){
     if isFlipped {

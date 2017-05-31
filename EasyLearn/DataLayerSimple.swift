@@ -213,15 +213,15 @@ class ColorCoreDataLayer {
 class UserCoreDataLayer {
     let mainContext = CoreDataStack.sharedInstance.mainContext
     func add(_ user: User) {
-        let cdUser = CDUser(context: mainContext)
-        if !isUserSaved(email: user.email) {
-            //print("New user")
+        if !isUserSavedWith(user.email) {
+            let cdUser = CDUser(context: mainContext)
             cdUser.name = user.name
             cdUser.email = user.email
+            cdUser.searchLimit = user.searchLimit
             mainContext.trySave()
         }
     }
-    func isUserSaved(email: String) -> Bool {
+    func isUserSavedWith(_ email: String) -> Bool {
         let fetchRequest: NSFetchRequest<CDUser> = CDUser.fetchRequest()
         if let users = try? mainContext.fetch(fetchRequest) {
             for user in users {
@@ -233,6 +233,25 @@ class UserCoreDataLayer {
             }
         }
         return false
+    }
+    func searchLimitBy(userEmail: String) -> Int32? {
+        let fetchRequest: NSFetchRequest<CDUser> = CDUser.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "email == %@", userEmail)
+        if let users = try? mainContext.fetch(fetchRequest) {
+            if let user = users.first {
+                return user.searchLimit
+            }
+        }
+        return nil
+    }
+    func update(_ searchLimit: Int32, for userEmail: String) {
+        let fetchRequest: NSFetchRequest<CDUser> = CDUser.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "email == %@", userEmail)
+        if let users = try? mainContext.fetch(fetchRequest) {
+            if let user = users.first {
+                user.searchLimit = searchLimit
+            }
+        }
     }
 }
 

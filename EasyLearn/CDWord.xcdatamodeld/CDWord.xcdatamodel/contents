@@ -7,6 +7,7 @@
     <entity name="CDUser" representedClassName="CDUser" syncable="YES" codeGenerationType="class">
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="searchLimit" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <entity name="CDWord" representedClassName="CDWord" syncable="YES" codeGenerationType="class">
         <attribute name="definition" optional="YES" attributeType="String" syncable="YES"/>
@@ -28,8 +29,8 @@
     </entity>
     <elements>
         <element name="CDDomain" positionX="-63" positionY="63" width="128" height="75"/>
+        <element name="CDUser" positionX="-63" positionY="63" width="128" height="90"/>
         <element name="CDWord" positionX="-63" positionY="-18" width="128" height="150"/>
         <element name="Color" positionX="-63" positionY="36" width="128" height="150"/>
-        <element name="CDUser" positionX="-63" positionY="63" width="128" height="75"/>
     </elements>
 </model>

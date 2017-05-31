@@ -22,13 +22,14 @@ extension PageController: LoginButtonDelegate {
             if granted.contains(Permission(name: "email")) {
                 saveUserBy(access: token) { (email) in
                     guard let email = email else { return }
-                    let newUser = User(name: email, email: email)
-                    let userLayer = UserCoreDataLayer()
-                    userLayer.add(newUser)
+//                    let newUser = User(name: email, email: email)
+//                    let userLayer = UserCoreDataLayer()
+//                    
                     DispatchQueue.main.async {
                         isLoggedIn = true
                         self.handleGetStarted()
                     }
+                    
                 }
             } else {
                 alert(title: "Email Address", message: "Please grant us your email address to create your account.", viewController: self)
