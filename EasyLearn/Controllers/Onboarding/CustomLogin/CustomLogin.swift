@@ -11,9 +11,6 @@ import FacebookLogin
 import FacebookCore
 import FBSDKLoginKit
 import Firebase
-import FirebaseAuth
-
-
 
 extension PageController: LoginViewDelegate {
     func loginBtn() {
@@ -21,39 +18,23 @@ extension PageController: LoginViewDelegate {
         guard let password = pageView.loginPassword else { return }
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
             self.handling(error)
-            guard let authEmail = user?.email else { return }
-//            let newUser = User(name: authEmail, email: authEmail)
-//            let userLayer = UserCoreDataLayer()
-//            
-            
             DispatchQueue.main.async {
                 isLoggedIn = true
                 self.handleGetStarted()
             }
-            
-        
-            
         })
     }
     func registerBtn() {
         //TODO:- Pass the name to Firebase
-        guard let name = pageView.loginName else { return }
+        //guard let name = pageView.loginName else { return }
         guard let email = pageView.loginEmail else { return }
         guard let password = pageView.loginPassword else { return }
         FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
             self.handling(error)
-            guard let authEmail = user?.email else { return }
-//            let newUser = User(name: name, email: authEmail)
-//            let userLayer = UserCoreDataLayer()
-//            
-            
-            
             DispatchQueue.main.async {
                 isLoggedIn = true
                 self.handleGetStarted()
             }
-            
-            
         })
     }
     func forgetPasswordBtn() {

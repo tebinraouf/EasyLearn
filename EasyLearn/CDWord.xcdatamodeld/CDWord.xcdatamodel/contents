@@ -8,6 +8,7 @@
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="searchLimit" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="words" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDWord" inverseName="users" inverseEntity="CDWord" syncable="YES"/>
     </entity>
     <entity name="CDWord" representedClassName="CDWord" syncable="YES" codeGenerationType="class">
         <attribute name="definition" optional="YES" attributeType="String" syncable="YES"/>
@@ -17,6 +18,7 @@
         <attribute name="lexicalEntry" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="word" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="users" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDUser" inverseName="words" inverseEntity="CDUser" syncable="YES"/>
     </entity>
     <entity name="Color" representedClassName="Color" syncable="YES" codeGenerationType="class">
         <attribute name="alpha" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -28,9 +30,9 @@
         <attribute name="red" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CDDomain" positionX="-63" positionY="63" width="128" height="75"/>
-        <element name="CDUser" positionX="-63" positionY="63" width="128" height="90"/>
-        <element name="CDWord" positionX="-63" positionY="-18" width="128" height="150"/>
-        <element name="Color" positionX="-63" positionY="36" width="128" height="150"/>
+        <element name="CDDomain" positionX="-414" positionY="69" width="128" height="75"/>
+        <element name="CDUser" positionX="-261" positionY="23" width="128" height="105"/>
+        <element name="CDWord" positionX="-20" positionY="-189" width="128" height="165"/>
+        <element name="Color" positionX="-416" positionY="-171" width="128" height="150"/>
     </elements>
 </model>

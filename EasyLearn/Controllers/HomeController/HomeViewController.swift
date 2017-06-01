@@ -25,7 +25,9 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     var domains: [CDDomain]?
     var tmpDomains: [Domain]!
     var domainLayer = DomainCoreData()
-
+    
+    //Limit Search Functionality
+    var ref: FIRDatabaseReference!
     
     public static let shared = HomeViewController()
     
@@ -43,18 +45,27 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         tmpDomains = dg.domains
         domains = domainLayer.fetchAllDomains()
 
-        print(FIRAuth.auth()?.currentUser?.email)
+        checkUserLimit()
         
-        guard let firUser = FIRAuth.auth()?.currentUser?.email else { return }
         
-        //TODO:- check if the user is premium user or not 
-        //1. if user is premium, them searchLimit is unlimited
-        //2. else the searchLimit is 5
-        
-        let user = User(name: firUser, email: firUser, searchLimit: 5)
-        let userLayer = UserCoreDataLayer()
-        userLayer.add(user)
-        
+    }
+    //MARK:- Current User Search Limit
+    func checkUserLimit(){
+        ref = FIRDatabase.database().reference()
+        ref.child("users").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            let value = snapshot.value as? NSDictionary
+            if let searchLimit = value?["searchLimit"] as? Int {
+                searchLimitCount = searchLimit
+            } else {
+                if searchLimitCount == 0 {
+                    searchLimitCount = 5
+                }
+                self.ref.child("users").child(userID).setValue(["searchLimit": searchLimitCount])
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
     }
     //MARK:- Register Cells
     func registerCells(){
@@ -105,8 +116,10 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
-    
     func logout() {
         navigationController?.pushViewController(PageController(), animated: true)
     }
 }
+
+
+

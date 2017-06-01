@@ -11,8 +11,6 @@ import FacebookLogin
 import FacebookCore
 import FBSDKLoginKit
 import Firebase
-import FirebaseAuth
-
 
 //MARK:- Facebook Login Button Delegate
 extension PageController: LoginButtonDelegate {
@@ -21,15 +19,11 @@ extension PageController: LoginButtonDelegate {
         case .success(grantedPermissions: let granted, declinedPermissions: _, token: let token):
             if granted.contains(Permission(name: "email")) {
                 saveUserBy(access: token) { (email) in
-                    guard let email = email else { return }
-//                    let newUser = User(name: email, email: email)
-//                    let userLayer = UserCoreDataLayer()
-//                    
+                //guard let email = email else { return }
                     DispatchQueue.main.async {
                         isLoggedIn = true
                         self.handleGetStarted()
                     }
-                    
                 }
             } else {
                 alert(title: "Email Address", message: "Please grant us your email address to create your account.", viewController: self)

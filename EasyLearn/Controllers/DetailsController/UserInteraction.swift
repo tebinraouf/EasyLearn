@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
 
 struct UserInteraction<T: WordPresentable> {
     private var word: T
@@ -41,6 +43,8 @@ struct UserInteraction<T: WordPresentable> {
             coreData.removeWordBy(id: id!)
         } else {
             cell.btnBookmark.setTitle(String.fontAwesomeIcon("bookmark"), for: .normal)
+            
+            
             coreData.saveWord(id, lexicalEntry, word, examples, definition)
         }
         //print(self.word.getPronunciation()) done....

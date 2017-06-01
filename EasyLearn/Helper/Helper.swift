@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 import FBSDKLoginKit
-
+import Firebase
 
 class CONSTANTS {
     static let SearchButton = Notification.Name("HomeViewControllerSearchButton")
@@ -110,14 +110,6 @@ public var isLoggedIn: Bool {
     }
 }
 
-public var isReachedSearchLimit: Bool {
-    get {
-        return UserDefaults.standard.bool(forKey: "isReachedSearchLimit")
-    }
-    set {
-        setUserSettings(for: newValue, forKey: "isReachedSearchLimit")
-    }
-}
 public var searchLimitCount: Int {
     get {
         return UserDefaults.standard.integer(forKey: "searchLimitCount")
@@ -125,6 +117,9 @@ public var searchLimitCount: Int {
     set {
         setUserSettings(for: newValue, forKey: "searchLimitCount")
     }
+}
+public var userID: String {
+    return (FIRAuth.auth()?.currentUser?.uid)!
 }
 
 

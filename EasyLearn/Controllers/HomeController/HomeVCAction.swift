@@ -20,17 +20,8 @@ extension HomeViewController: HomeViewDelegate {
             }else {
                 homeView.searchPlaceHolder = "Search..."
                 if Reachability.isConnectedToNetwork {
-                    
-                    guard let currentUserEmail = FIRAuth.auth()?.currentUser?.email else { return }
-                    let userLayer = UserCoreDataLayer()
-                    guard let searchLimit = userLayer.searchLimitBy(userEmail: currentUserEmail) else { return }
-                    
-                    var userSearchLimit = searchLimit
-                    
-                    //check if user has reached searching limit
-                    if userSearchLimit > 0 {
-                        //free search
-                        //start of web service
+                    //MARK:- Free Word Search
+                    if searchLimitCount > 0 {
                         let webService = WebService(text, filters: [.lexicalCategory])
                         webService.get({ (word, status) in
                             //self.pushToNextViewController(word, status)
@@ -47,19 +38,13 @@ extension HomeViewController: HomeViewDelegate {
                             homeView.containerView.isHidden = false
                             homeView.activityIndicatorView.startAnimating()
                         }
-                        userSearchLimit -= 1
-                        userLayer.update(userSearchLimit, for: currentUserEmail)
-                        
+                        searchLimitCount -= 1
+                        self.ref.child("users").child(userID).setValue(["searchLimit": searchLimitCount])
                         //end of web service
                     } else {
-                        //has reached the limit
+                        //MARK:- Ask User to Purchase
                         print("You gorra unlock the unlimited feature...bro...")
                     }
-                    
-                    
-                    print(userSearchLimit)
-                    
-                    
                 } else {
                     noInternetAlert(self)
                 }
@@ -89,19 +74,19 @@ extension HomeViewController: HomeViewDelegate {
         navigationController?.pushViewController(DomainController(), animated: true)
     }
     
-//    func handleMenuSlideLeft(gesture: UIScreenEdgePanGestureRecognizer){
-//        switch gesture.state {
-//        case .began, .changed:
-//            handleConstant(constant: 0)
-//        default: break
-//        }
-//    }
-//    private func handleConstant(constant: CGFloat){
-//        self.homeView.collectionVSLeadingAnchor?.constant = constant
-//        UIView.animate(withDuration: 0.3) {
-//            self.view.layoutIfNeeded()
-//        }
-//    }
+    //    func handleMenuSlideLeft(gesture: UIScreenEdgePanGestureRecognizer){
+    //        switch gesture.state {
+    //        case .began, .changed:
+    //            handleConstant(constant: 0)
+    //        default: break
+    //        }
+    //    }
+    //    private func handleConstant(constant: CGFloat){
+    //        self.homeView.collectionVSLeadingAnchor?.constant = constant
+    //        UIView.animate(withDuration: 0.3) {
+    //            self.view.layoutIfNeeded()
+    //        }
+    //    }
     private func goToErrorEmptyViewControllerWith(text: String){
         let errorEmptyViewController = ErrorEmptyViewController()
         errorEmptyViewController.messageLabel.text = text

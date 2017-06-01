@@ -48,6 +48,7 @@ class DataLayerSimple {
             cdWord.definition = definition
         }
         
+        
         mainContext.trySave()
     }
     func fetchAllWords() -> [CDWord]? {
@@ -252,6 +253,17 @@ class UserCoreDataLayer {
                 user.searchLimit = searchLimit
             }
         }
+    }
+    func getCurrentUserBy(_ email: String) -> User? {
+        let fetchRequest: NSFetchRequest<CDUser> = CDUser.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "email == %@", email)
+        if let users = try? mainContext.fetch(fetchRequest) {
+            if let cdUser = users.first {
+                let user = User(name: cdUser.name!, email: cdUser.email!, searchLimit: cdUser.searchLimit)
+                return user
+            }
+        }
+        return nil
     }
 }
 

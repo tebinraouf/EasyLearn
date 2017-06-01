@@ -13,5 +13,6 @@ pod 'FacebookLogin'
 pod 'FacebookShare'
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
+pod 'Firebase/Database'
 
 end
