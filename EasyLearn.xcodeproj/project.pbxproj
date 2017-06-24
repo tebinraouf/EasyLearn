@@ -1031,6 +1031,7 @@
 				CODE_SIGN_ENTITLEMENTS = EasyLearn/EasyLearn.entitlements;
 				DEVELOPMENT_TEAM = 2X4GM5K9GM;
 				INFOPLIST_FILE = EasyLearn/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tebeen.EasyLearn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1046,6 +1047,7 @@
 				CODE_SIGN_ENTITLEMENTS = EasyLearn/EasyLearn.entitlements;
 				DEVELOPMENT_TEAM = 2X4GM5K9GM;
 				INFOPLIST_FILE = EasyLearn/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tebeen.EasyLearn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
