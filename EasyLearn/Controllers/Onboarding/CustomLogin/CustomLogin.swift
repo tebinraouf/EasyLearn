@@ -18,10 +18,16 @@ extension PageController: LoginViewDelegate {
         guard let password = pageView.loginPassword else { return }
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
             self.handling(error)
-            DispatchQueue.main.async {
-                isLoggedIn = true
-                self.handleGetStarted()
+            if (user?.isEmailVerified)! {
+                DispatchQueue.main.async {
+                    isLoggedIn = true
+                    self.handleGetStarted()
+                }
+            }else {
+                alert(title: "Email Verification", message: "Please verify your email address.", viewController: self)
             }
+            
+            
         })
     }
     func registerBtn() {
@@ -30,11 +36,27 @@ extension PageController: LoginViewDelegate {
         guard let email = pageView.loginEmail else { return }
         guard let password = pageView.loginPassword else { return }
         FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
-            self.handling(error)
-            DispatchQueue.main.async {
-                isLoggedIn = true
-                self.handleGetStarted()
+            if error == nil {
+                FIRAuth.auth()?.currentUser?.sendEmailVerification(completion: { (error) in
+                    if error == nil {
+                        if (FIRAuth.auth()?.currentUser?.isEmailVerified)! {
+                            DispatchQueue.main.async {
+                                isLoggedIn = true
+                                self.handleGetStarted()
+                            }
+                        } else {
+                            alert(title: "Account Created", message: "Please verify your email address.", viewController: self)
+                        }
+                        
+                    } else {
+                        self.handling(error)
+                    }
+                })
+            } else {
+                self.handling(error)
             }
+            
+            
         })
     }
     func forgetPasswordBtn() {
