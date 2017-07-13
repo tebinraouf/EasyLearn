@@ -38,8 +38,8 @@ extension HomeViewController: HomeViewDelegate {
                             homeView.containerView.isHidden = false
                             homeView.activityIndicatorView.startAnimating()
                         }
-                        searchLimitCount -= 1
-                        self.ref.child("users").child(userID).setValue(["searchLimit": searchLimitCount])
+                        
+                        handleSearchLimitDecrement()
                         //end of web service
                     } else {
                         //MARK:- Ask User to Purchase
@@ -56,7 +56,13 @@ extension HomeViewController: HomeViewDelegate {
         
         //handleConstant(constant: 0)
         print("more is clicked....")
-        animateSettingFor(value: 100, sliderOpacity: 1)
+        
+        //for version 1 only 
+        handleLogout();
+        
+        
+        //Open Menu
+        //animateSettingFor(value: 100, sliderOpacity: 1)
     }
     func handleTapTopContainer() {
         print("tappppppp")
@@ -104,6 +110,15 @@ extension HomeViewController: HomeViewDelegate {
             self.view.layoutIfNeeded()
         }, completion: nil)
         
+    }
+    func handleLogout() {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Logout", style: .destructive) { (action) in
+            isLoggedIn = false
+            self.navigationController?.pushViewController(PageController(), animated: true)
+        })
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(alert, animated: true)
     }
 }
 

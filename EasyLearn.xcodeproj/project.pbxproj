@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		04188B771971CC16A77558DA /* Pods_EasyLearn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 976E28507EF0BE8A82DAFA65 /* Pods_EasyLearn.framework */; };
+		43AE357E1F154218007F9BD7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43AE357D1F154218007F9BD7 /* GoogleService-Info.plist */; };
+		43CFB0F51F1593F5004CCCB5 /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CFB0F41F1593F5004CCCB5 /* FirebaseHelper.swift */; };
 		CF0A82E11EAEFDC800D2BFB1 /* HomeControllerObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0A82E01EAEFDC800D2BFB1 /* HomeControllerObserver.swift */; };
 		CF11ED7B1ED10D7600103BAF /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF11ED7A1ED10D7600103BAF /* LoginController.swift */; };
 		CF11ED7D1ED209D300103BAF /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF11ED7C1ED209D300103BAF /* PageCell.swift */; };
@@ -94,7 +96,6 @@
 		CFAFE66D1E68F9CA0062235E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFAFE66B1E68F9CA0062235E /* Main.storyboard */; };
 		CFAFE66F1E68F9CA0062235E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFAFE66E1E68F9CA0062235E /* Assets.xcassets */; };
 		CFAFE6721E68F9CA0062235E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFAFE6701E68F9CA0062235E /* LaunchScreen.storyboard */; };
-		CFEB5A7D1ED7A9360001A4A4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CFEB5A7C1ED7A9360001A4A4 /* GoogleService-Info.plist */; };
 		CFEB5A801ED8AEB60001A4A4 /* Facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB5A7F1ED8AEB60001A4A4 /* Facebook.swift */; };
 		CFEB5A821ED8AF4E0001A4A4 /* CustomLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB5A811ED8AF4E0001A4A4 /* CustomLogin.swift */; };
 		CFEB5A841ED8AFE20001A4A4 /* CustomFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEB5A831ED8AFE20001A4A4 /* CustomFuncs.swift */; };
@@ -107,6 +108,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		43AE357D1F154218007F9BD7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		43CFB0F41F1593F5004CCCB5 /* FirebaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirebaseHelper.swift; path = Controllers/HomeController/FirebaseHelper.swift; sourceTree = "<group>"; };
 		6EF7DBD2DA942ED54ADD413D /* Pods-EasyLearn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyLearn.release.xcconfig"; path = "Pods/Target Support Files/Pods-EasyLearn/Pods-EasyLearn.release.xcconfig"; sourceTree = "<group>"; };
 		976E28507EF0BE8A82DAFA65 /* Pods_EasyLearn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyLearn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8B2FD38BDFDC2C50038BE00 /* Pods-EasyLearn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyLearn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyLearn/Pods-EasyLearn.debug.xcconfig"; sourceTree = "<group>"; };
@@ -199,7 +202,6 @@
 		CFAFE6711E68F9CA0062235E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CFAFE6731E68F9CA0062235E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFEB5A7B1ED7862E0001A4A4 /* EasyLearn.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EasyLearn.entitlements; sourceTree = "<group>"; };
-		CFEB5A7C1ED7A9360001A4A4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CFEB5A7F1ED8AEB60001A4A4 /* Facebook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Facebook.swift; path = Controllers/Onboarding/LoginFiles/Facebook.swift; sourceTree = "<group>"; };
 		CFEB5A811ED8AF4E0001A4A4 /* CustomLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomLogin.swift; path = Controllers/Onboarding/CustomLogin/CustomLogin.swift; sourceTree = "<group>"; };
 		CFEB5A831ED8AFE20001A4A4 /* CustomFuncs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomFuncs.swift; path = Controllers/Onboarding/Extensions/CustomFuncs.swift; sourceTree = "<group>"; };
@@ -366,6 +368,7 @@
 				CF5108A51E7C6D69008B2BC0 /* Extensions */,
 				CF6BB1711EB1A461003A8D54 /* HomeVCAction.swift */,
 				CF6BB1721EB1A461003A8D54 /* HomeViewController.swift */,
+				43CFB0F41F1593F5004CCCB5 /* FirebaseHelper.swift */,
 			);
 			name = HomeView;
 			sourceTree = "<group>";
@@ -500,7 +503,7 @@
 				CFAFE66E1E68F9CA0062235E /* Assets.xcassets */,
 				CFAFE6701E68F9CA0062235E /* LaunchScreen.storyboard */,
 				CFAFE6731E68F9CA0062235E /* Info.plist */,
-				CFEB5A7C1ED7A9360001A4A4 /* GoogleService-Info.plist */,
+				43AE357D1F154218007F9BD7 /* GoogleService-Info.plist */,
 			);
 			name = Supporting;
 			sourceTree = "<group>";
@@ -719,6 +722,7 @@
 					CFAFE6631E68F9CA0062235E = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 2X4GM5K9GM;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -752,7 +756,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFAFE6721E68F9CA0062235E /* LaunchScreen.storyboard in Resources */,
-				CFEB5A7D1ED7A9360001A4A4 /* GoogleService-Info.plist in Resources */,
+				43AE357E1F154218007F9BD7 /* GoogleService-Info.plist in Resources */,
 				CFAFE66F1E68F9CA0062235E /* Assets.xcassets in Resources */,
 				CFAFE66D1E68F9CA0062235E /* Main.storyboard in Resources */,
 			);
@@ -828,6 +832,7 @@
 				CF6BB18C1EB1A558003A8D54 /* CardsViewController.swift in Sources */,
 				CFEB5A841ED8AFE20001A4A4 /* CustomFuncs.swift in Sources */,
 				CF6BB1681EB1A3DA003A8D54 /* LeftPaddedTextField.swift in Sources */,
+				43CFB0F51F1593F5004CCCB5 /* FirebaseHelper.swift in Sources */,
 				CF6BB1671EB1A3DA003A8D54 /* CircleButton.swift in Sources */,
 				CF6BB1B01EB1A924003A8D54 /* Models.swift in Sources */,
 				CF11ED7D1ED209D300103BAF /* PageCell.swift in Sources */,
@@ -970,7 +975,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1014,7 +1019,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -1036,6 +1041,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tebeen.EasyLearn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1052,6 +1058,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tebeen.EasyLearn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

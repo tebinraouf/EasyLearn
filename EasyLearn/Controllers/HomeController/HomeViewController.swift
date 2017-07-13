@@ -44,28 +44,12 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         let dg = DomainGenerator()
         tmpDomains = dg.domains
         domains = domainLayer.fetchAllDomains()
-
-        checkUserLimit()
         
+        //initialFirebaseSetup()
         
-    }
-    //MARK:- Current User Search Limit
-    func checkUserLimit(){
-        ref = FIRDatabase.database().reference()
-        ref.child("users").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
-            // Get user value
-            let value = snapshot.value as? NSDictionary
-            if let searchLimit = value?["searchLimit"] as? Int {
-                searchLimitCount = searchLimit
-            } else {
-                if searchLimitCount == 0 {
-                    searchLimitCount = 5
-                }
-                self.ref.child("users").child(userID).setValue(["searchLimit": searchLimitCount])
-            }
-        }) { (error) in
-            print(error.localizedDescription)
-        }
+        let helper = FirebaseHelper()
+        helper.checkUserLimit()
+        
     }
     //MARK:- Register Cells
     func registerCells(){
@@ -119,7 +103,16 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     func logout() {
         navigationController?.pushViewController(PageController(), animated: true)
     }
+    func handleSearchLimitDecrement() {
+        let helper = FirebaseHelper()
+        helper.getSearchLimit({ (searchLimit) in
+            searchLimitCount = searchLimit
+            searchLimitCount -= 1
+            helper.updateFirebaseDatabase()
+        })
+    }
 }
+
 
 
 

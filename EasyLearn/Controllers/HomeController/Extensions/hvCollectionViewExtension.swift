@@ -30,8 +30,6 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         return size
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        
         let dwc = DomainWordsController()
         
         if domains?.count == 0 {
@@ -43,26 +41,8 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             dwc.domain = domain
         }
         
-        
-        if Reachability.isConnectedToNetwork {
-            let web = WebService(tmpDomains[indexPath.item].key)
-            web.getDomainWords { (words, status) in
-                dwc.words = words
-                DispatchQueue.main.async {
-                    self.navigationController?.pushViewController(dwc, animated: true)
-                }
-            }
-            
-            if web.request != nil {
-                homeView.containerView.isHidden = false
-                homeView.activityIndicatorView.startAnimating()
-            }
-            
-            
-        } else {
-            noInternetAlert(self)
-        }
-
+        handleSearchLimitDecrement()
+        internetReachability(dwc, indexPath)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 1
@@ -71,6 +51,23 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         return 1
     }
     
+    func internetReachability(_ dwc: DomainWordsController, _ indexPath: IndexPath) {
+        if Reachability.isConnectedToNetwork {
+            let web = WebService(tmpDomains[indexPath.item].key)
+            web.getDomainWords { (words, status) in
+                dwc.words = words
+                DispatchQueue.main.async {
+                    self.navigationController?.pushViewController(dwc, animated: true)
+                }
+            }
+            if web.request != nil {
+                homeView.containerView.isHidden = false
+                homeView.activityIndicatorView.startAnimating()
+            }
+        } else {
+            noInternetAlert(self)
+        }
+    }
     
 }
 

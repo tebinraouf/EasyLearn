@@ -17,17 +17,18 @@ extension PageController: LoginViewDelegate {
         guard let email = pageView.loginEmail else { return }
         guard let password = pageView.loginPassword else { return }
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
-            self.handling(error)
-            if (user?.isEmailVerified)! {
-                DispatchQueue.main.async {
-                    isLoggedIn = true
-                    self.handleGetStarted()
+            if error != nil {
+                self.handling(error)
+            } else {
+                if (user?.isEmailVerified)! {
+                    DispatchQueue.main.async {
+                        isLoggedIn = true
+                        self.handleGetStarted()
+                    }
+                }else {
+                    alert(title: "Email Verification", message: "Please verify your email address.", viewController: self)
                 }
-            }else {
-                alert(title: "Email Verification", message: "Please verify your email address.", viewController: self)
             }
-            
-            
         })
     }
     func registerBtn() {
@@ -91,6 +92,8 @@ extension PageController: LoginViewDelegate {
                 case .errorCodeInvalidEmail:
                     alert(title: "Email", message: (error?.localizedDescription)!, viewController: self)
                 case .errorCodeWeakPassword:
+                    alert(title: "Password", message: (error?.localizedDescription)!, viewController: self)
+                case .errorCodeWrongPassword:
                     alert(title: "Password", message: (error?.localizedDescription)!, viewController: self)
                 case .errorCodeInternalError:
                     alert(title: "Missing Email", message: "Please provide an email address.", viewController: self)

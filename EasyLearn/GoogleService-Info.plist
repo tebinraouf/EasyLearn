@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>154524312582-gr2fr58dg2gk2gdn1uoi5e92hkd22vg4.apps.googleusercontent.com</string>
+	<string>867480175020-t1uqda4hmntb41q2q4eodevqk9uoob9b.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.154524312582-gr2fr58dg2gk2gdn1uoi5e92hkd22vg4</string>
+	<string>com.googleusercontent.apps.867480175020-t1uqda4hmntb41q2q4eodevqk9uoob9b</string>
 	<key>API_KEY</key>
-	<string>AIzaSyA-CnWJK-Yd4n4qJiz4AK6cQcqPI_vumDg</string>
+	<string>AIzaSyBywp0jG_nu9c6tKgs3JJUZq1UxCYCu2tw</string>
 	<key>GCM_SENDER_ID</key>
-	<string>154524312582</string>
+	<string>867480175020</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.tebeen.EasyLearn</string>
 	<key>PROJECT_ID</key>
-	<string>easylearn-ec3b3</string>
+	<string>easylearn-fe53b</string>
 	<key>STORAGE_BUCKET</key>
-	<string>easylearn-ec3b3.appspot.com</string>
+	<string>easylearn-fe53b.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:154524312582:ios:04c5b4a0c21c8cf3</string>
+	<string>1:867480175020:ios:04c5b4a0c21c8cf3</string>
 	<key>DATABASE_URL</key>
-	<string>https://easylearn-ec3b3.firebaseio.com</string>
+	<string>https://easylearn-fe53b.firebaseio.com</string>
 </dict>
 </plist>

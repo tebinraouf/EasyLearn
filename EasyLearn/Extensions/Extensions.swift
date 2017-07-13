@@ -99,3 +99,31 @@ extension UIBarButtonItem {
 //}
 
 
+
+extension Date {
+    func startOfMonth() -> Date {
+        let start = Calendar.current.date(from: Calendar.current.dateComponents([.year, .month], from: Calendar.current.startOfDay(for: self)))!
+        return start
+    }
+    func endOfMonth() -> Date {
+        return Calendar.current.date(byAdding: DateComponents(month: 1, day: -1), to: self.startOfMonth())!
+    }
+    func nextMonth() -> Date {
+        return Calendar.current.date(byAdding: .day, value: 1, to: Calendar.current.startOfDay(for: self))!
+    }
+    func getCurrentMonth() -> Int {
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM"
+        let currentMonth = Int(formatter.string(from: date))
+        return currentMonth!
+    }
+    func getCurrentYear() -> Int {
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "YYYY"
+        let currentYear = Int(formatter.string(from: date))
+        return currentYear!
+    }
+}
+

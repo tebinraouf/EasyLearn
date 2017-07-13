@@ -54,8 +54,8 @@ struct UserInteraction<T: WordPresentable> {
         //you need the destination as well. 
         //organize the files; you don't need to do much. the file name is unique.
         
-        let proDownload = PronunciationDownloader(self.word.getPronunciation()!)
-        proDownload.download()
+        //let proDownload = PronunciationDownloader(self.word.getPronunciation()!)
+        //proDownload.download()
         
     }
     private func isSubCellIcon() {

@@ -66,7 +66,7 @@ class MenuButtonView: UIView {
         NSLayoutConstraint.activate([
             icon.topAnchor.constraint(equalTo: container.topAnchor, constant: 10),
             icon.centerXAnchor.constraint(equalTo: container.centerXAnchor),
-            icon.bottomAnchor.constraint(equalTo: title.topAnchor)
+            //icon.bottomAnchor.constraint(equalTo: title.topAnchor)
             ])
     }
     func setupTitle(){

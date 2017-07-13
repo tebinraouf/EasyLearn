@@ -118,6 +118,30 @@ public var searchLimitCount: Int {
         setUserSettings(for: newValue, forKey: "searchLimitCount")
     }
 }
+public var isSearchLimitUpdated: Int {
+    get {
+        return UserDefaults.standard.integer(forKey: "isSearchLimitUpdated")
+    }
+    set {
+        setUserSettings(for: newValue, forKey: "isSearchLimitUpdated")
+    }
+}
+public var monthCheck: Int {
+    get {
+        return UserDefaults.standard.integer(forKey: "monthCheck")
+    }
+    set {
+        setUserSettings(for: newValue, forKey: "monthCheck")
+    }
+}
+public var yearCheck: Int {
+    get {
+        return UserDefaults.standard.integer(forKey: "yearCheck")
+    }
+    set {
+        setUserSettings(for: newValue, forKey: "yearCheck")
+    }
+}
 public var userID: String {
     return (FIRAuth.auth()?.currentUser?.uid)!
 }

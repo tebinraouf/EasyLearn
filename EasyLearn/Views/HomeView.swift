@@ -85,10 +85,10 @@ class HomeView: UIView {
     var moreButton: UIButton = {
         let btn = UIButton(type: UIButtonType.system)
         btn.titleLabel?.font = UIFont.icon(from: .FontAwesome, ofSize: 20)
-        btn.setTitle(String.fontAwesomeIcon("bars"), for: .normal)
+        btn.setTitle(String.fontAwesomeIcon("sign-out"), for: .normal)
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.showsTouchWhenHighlighted = true
-        btn.tintColor = .gray
+        btn.tintColor = .white
         btn.addTarget(self, action: #selector(moreBtn), for: .touchDown)
         return btn
     }()
