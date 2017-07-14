@@ -21,12 +21,19 @@ extension CardBgColorController: BackgroundColorProtocol {
         setUserSettings(for: colorView.blueValue, forKey: "blue")
         handleBackgroundColor()
     }
+    //circle button handler
     func handleNewColor() {
-        colorView.circleButton.animate()
+        
         let cvm = ColorViewModel(colorView: colorView)
         let newColor = cvm.newColor()
         let currentLayer = ColorCoreDataLayer()
-        currentLayer.addColor(rgb: newColor, alpha: Double(alpha))
+        let isSaved = currentLayer.isColorSaved(rgb: newColor, alpha: Double(alpha))
+        if !isSaved {
+            colorView.circleButton.animate()
+            currentLayer.addColor(rgb: newColor, alpha: Double(alpha))
+        } else {
+          alert(title: "Color Saved", message: "The color is already saved.", viewController: self)
+        }
     }
     func handlePanGesture(gesture: UIPanGestureRecognizer) {
         let translation = gesture.translation(in: view)

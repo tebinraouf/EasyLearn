@@ -122,7 +122,6 @@ class ColorCoreDataLayer {
     }()
     init() {
         if numberOfColors <= 0 {
-            
             addColor(rgb: (r: 255, g: 255, b: 255), alpha: 1, isCardColor: 1, isTextColor: 0, isViewColor: 0)
             addColor(rgb: (r: 0, g: 0, b: 0), alpha: 1, isCardColor: 0, isTextColor: 1, isViewColor: 0)
             addColor(rgb: (r: 255, g: 56, b: 63), alpha: 1, isCardColor: 0, isTextColor: 0, isViewColor: 1)
@@ -133,6 +132,20 @@ class ColorCoreDataLayer {
         let colors = try? mainContext.fetch(fetchRequest)
         return colors
     }
+    
+    func isColorSaved(rgb: (r: Int16, g: Int16, b: Int16), alpha: Double) -> Bool {
+        let fetchRequest: NSFetchRequest<Color> = Color.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "red == %D && green == %D && blue == %D && alpha == %F", rgb.r, rgb.g, rgb.b, alpha)
+        let color = try? mainContext.fetch(fetchRequest)
+        if let _ = color?.first {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    
+    
     func addColor(rgb: (r: Int16, g: Int16, b: Int16), alpha: Double) {
         let color = Color(context: mainContext)
         color.red = Int16(rgb.r)
