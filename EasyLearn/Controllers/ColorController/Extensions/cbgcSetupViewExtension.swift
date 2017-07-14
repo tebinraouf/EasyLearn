@@ -19,7 +19,7 @@ extension CardBgColorController {
         setupClickableViews()
     }
     func navigationItems() {
-        navigationItem.titleView = colorView.segmentedControl
+        //navigationItem.titleView = colorView.segmentedControl
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(handleRandomColor))
     }
     func setupClickableViews() {

@@ -21,29 +21,28 @@ extension HomeViewController: HomeViewDelegate {
                 homeView.searchPlaceHolder = "Search..."
                 if Reachability.isConnectedToNetwork {
                     //MARK:- Free Word Search
-                    if searchLimitCount > 0 {
-                        let webService = WebService(text, filters: [.lexicalCategory])
-                        webService.get({ (word, status) in
-                            //self.pushToNextViewController(word, status)
-                            switch status {
-                            case .Success:
-                                let lexicalEntryVC = LexicalEntryViewController()
-                                lexicalEntryVC.word = word
-                                self.push(lexicalEntryVC)
-                            case .NotFound:
-                                self.goToErrorEmptyViewControllerWith(text: "No result. Please try another word.")
+                    handleSearchLimitDecrement { (shouldProceed) in
+                        //do something
+                        if shouldProceed {
+                            let webService = WebService(text, filters: [.lexicalCategory])
+                            webService.get({ (word, status) in
+                                //self.pushToNextViewController(word, status)
+                                switch status {
+                                case .Success:
+                                    let lexicalEntryVC = LexicalEntryViewController()
+                                    lexicalEntryVC.word = word
+                                    self.push(lexicalEntryVC)
+                                case .NotFound:
+                                    self.goToErrorEmptyViewControllerWith(text: "No result. Please try another word.")
+                                }
+                            })
+                            if webService.request != nil {
+                                self.homeView.containerView.isHidden = false
+                                self.homeView.activityIndicatorView.startAnimating()
                             }
-                        })
-                        if webService.request != nil {
-                            homeView.containerView.isHidden = false
-                            homeView.activityIndicatorView.startAnimating()
+                        } else {
+                            alert(title: "Search Limit", message: "You have reached your search limit for the month. Search Limit will be updated at the beginning of each month.", viewController: self)
                         }
-                        
-                        handleSearchLimitDecrement()
-                        //end of web service
-                    } else {
-                        //MARK:- Ask User to Purchase
-                        print("You gorra unlock the unlimited feature...bro...")
                     }
                 } else {
                     noInternetAlert(self)

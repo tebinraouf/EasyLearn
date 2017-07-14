@@ -163,3 +163,20 @@ func alert(title: String, message: String, viewController: UIViewController) {
     alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
     viewController.present(alert, animated: true)
 }
+
+
+//global function to handle searchLimit
+func handleSearchLimitDecrement(shouldProceed: @escaping (Bool)->()) {
+    let helper = FirebaseHelper()
+    helper.getSearchLimit({ (searchLimit) in
+        searchLimitCount = searchLimit
+        if searchLimitCount == 0 {
+            shouldProceed(false)
+        } else {
+            searchLimitCount -= 1
+            helper.updateFirebaseDatabase()
+            shouldProceed(true)
+        }
+    })
+}
+

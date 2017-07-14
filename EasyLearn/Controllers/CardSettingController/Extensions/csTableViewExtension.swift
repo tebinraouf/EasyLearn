@@ -31,8 +31,8 @@ extension CardSettingsController: UITableViewDataSource, UITableViewDelegate {
             handleCardHidden(cell, indexPath)
         case 2:
             handleColors(cell, indexPath)
-        case 3:
-            handleFlippingStyle(cell, indexPath)
+//        case 3:
+//            handleFlippingStyle(cell, indexPath)
         default: break
             
         }

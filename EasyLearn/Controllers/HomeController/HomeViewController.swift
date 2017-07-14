@@ -103,14 +103,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     func logout() {
         navigationController?.pushViewController(PageController(), animated: true)
     }
-    func handleSearchLimitDecrement() {
-        let helper = FirebaseHelper()
-        helper.getSearchLimit({ (searchLimit) in
-            searchLimitCount = searchLimit
-            searchLimitCount -= 1
-            helper.updateFirebaseDatabase()
-        })
-    }
+    
 }
 
 

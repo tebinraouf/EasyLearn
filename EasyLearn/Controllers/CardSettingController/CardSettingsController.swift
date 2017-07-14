@@ -9,8 +9,9 @@
 import UIKit
 
 class CardSettingsController: UIViewController {
-    let sectionTitles = ["Play Speed", "Hide/Show", "Aesthetics", "Flipping", "Background Image"]
-    let sectionItems = [["Play Speed"], ["Card number - total", "Card check circle"], ["Create Color", "Background/Foreground Selector"], ["Flipping style"], ["Patterns for background"]]
+    let sectionTitles = ["Play Speed", "Hide/Show", "Aesthetics"] //"Flipping", "Background Image"
+    let sectionItems = [["Play Speed"], ["Card number - total", "Card check circle"], ["Create Color", "Background/Foreground Selector"]] //deleted for v1 //["Flipping style"], ["Patterns for background"]
+    
     lazy var tableView: UITableView = {
        let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.delegate = self

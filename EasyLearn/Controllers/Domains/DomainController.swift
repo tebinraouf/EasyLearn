@@ -51,20 +51,31 @@ class DomainController: UITableViewControllerWithViews {
         domainWordsController.domain = domain
 
         if Reachability.isConnectedToNetwork {
-            let web = WebService(domain.key)
-            web.getDomainWords { (words, status) in
-                domainWordsController.words = words
-                DispatchQueue.main.async {
-                    self.navigationController?.pushViewController(domainWordsController, animated: true)
+            
+            handleSearchLimitDecrement { (shouldProceed) in
+                if shouldProceed {
+                    let web = WebService(domain.key)
+                    web.getDomainWords { (words, status) in
+                        domainWordsController.words = words
+                        DispatchQueue.main.async {
+                            self.navigationController?.pushViewController(domainWordsController, animated: true)
+                        }
+                    }
+                    if web.request != nil {
+                        //homeView.containerView.isHidden = false
+                        self.activityIndicatorView.startAnimating()
+                    }
+                } else {
+                    alert(title: "Search Limit", message: "You have reached your search limit for the month. Search Limit will be updated at the beginning of each month.", viewController: self)
                 }
-            }
-            if web.request != nil {
-                //homeView.containerView.isHidden = false
-                activityIndicatorView.startAnimating()
             }
         } else {
             noInternetAlert(self)
         }
+        
+        
+        
+        
     }
 }
 

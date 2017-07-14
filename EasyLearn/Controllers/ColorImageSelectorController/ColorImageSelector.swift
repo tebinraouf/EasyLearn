@@ -11,7 +11,7 @@ import UIKit
 class ColorImageSelector: UIViewController {
     let selectorView = ColorImageSelectorView()
     var isFlipped = true
-    var sectionTitles = ["Card Background Color", "Text Color", "View Background Color", "Card Background Image"]
+    var sectionTitles = ["Card Background Color", "Text Color", "View Background Color"]
     let coreDataLayer = DataLayerSimple()
     
     

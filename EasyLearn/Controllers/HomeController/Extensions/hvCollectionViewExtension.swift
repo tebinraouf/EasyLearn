@@ -41,7 +41,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             dwc.domain = domain
         }
         
-        handleSearchLimitDecrement()
+        
         internetReachability(dwc, indexPath)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -53,16 +53,24 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func internetReachability(_ dwc: DomainWordsController, _ indexPath: IndexPath) {
         if Reachability.isConnectedToNetwork {
-            let web = WebService(tmpDomains[indexPath.item].key)
-            web.getDomainWords { (words, status) in
-                dwc.words = words
-                DispatchQueue.main.async {
-                    self.navigationController?.pushViewController(dwc, animated: true)
+            
+            handleSearchLimitDecrement {(shouldProceed) in
+                if shouldProceed {
+                    let web = WebService(self.tmpDomains[indexPath.item].key)
+                    web.getDomainWords { (words, status) in
+                        dwc.words = words
+                        DispatchQueue.main.async {
+                            self.navigationController?.pushViewController(dwc, animated: true)
+                        }
+                    }
+                    if web.request != nil {
+                        self.homeView.containerView.isHidden = false
+                        self.homeView.activityIndicatorView.startAnimating()
+                    }
+                } else {
+                    alert(title: "Search Limit", message: "You have reached your search limit for the month. Search Limit will be updated at the beginning of each month.", viewController: self)
+                    
                 }
-            }
-            if web.request != nil {
-                homeView.containerView.isHidden = false
-                homeView.activityIndicatorView.startAnimating()
             }
         } else {
             noInternetAlert(self)

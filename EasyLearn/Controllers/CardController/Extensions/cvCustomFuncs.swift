@@ -20,6 +20,7 @@ extension CardsViewController {
     }
     func handleToolBarIcons(){
         let swap = barButtonWith(code: "exchange", handleBy:  #selector(handleCardSwap))
+            
         let shuffle  = barButtonWith(code: "random", handleBy: #selector(handleShuffle))
         let sortAsc = barButtonWith(code: "sort-alpha-asc", handleBy: #selector(handleSortAsc))
         let sortDesc = barButtonWith(code: "sort-alpha-desc", handleBy: #selector(handleSortDesc))

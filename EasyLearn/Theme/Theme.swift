@@ -34,6 +34,8 @@ enum Theme: Int {
         UISwitch.appearance().thumbTintColor = mainColor
         
         UISlider.appearance().tintColor = mainColor
+        UIToolbar.appearance().tintColor = mainColor
+        
         
     }
     
