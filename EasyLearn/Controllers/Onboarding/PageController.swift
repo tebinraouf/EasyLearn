@@ -28,6 +28,10 @@ class PageController: UIViewController {
     }
     func handleGetStarted(){
         print(1234)
+//        UIWindow().rootViewController = UINavigationController(rootViewController: HomeViewController())
+        //self.present(HomeViewController(), animated: true, completion: nil)
+        
+        //self.pushViewController(HomeViewController(), animated: true)
         navigationController?.pushViewController(HomeViewController(), animated: true)
     }
 }

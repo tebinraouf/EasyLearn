@@ -10,7 +10,11 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-extension HomeViewController: HomeViewDelegate {
+import FacebookLogin
+import FacebookCore
+import FBSDKLoginKit
+
+extension HomeViewController: HomeViewDelegate  {
     
     //MARK:- Handle Search
     func handleSearch(){
@@ -58,7 +62,6 @@ extension HomeViewController: HomeViewDelegate {
         
         //for version 1 only 
         handleLogout();
-        
         
         //Open Menu
         //animateSettingFor(value: 100, sliderOpacity: 1)
@@ -113,11 +116,24 @@ extension HomeViewController: HomeViewDelegate {
     func handleLogout() {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Logout", style: .destructive) { (action) in
+            
+            
+            
             isLoggedIn = false
+            
+            FBSDKLoginManager().logOut()
+            
+            
+            //since pageController is a UINavigationController, we need to present it.
+//            self.dismiss(animated: true) {
+//                self.present(PageController(), animated: true, completion: nil)
+//            }
             self.navigationController?.pushViewController(PageController(), animated: true)
         })
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         self.present(alert, animated: true)
     }
+    
 }
+
 

@@ -17,17 +17,17 @@ extension PageController {
     func prepareLoginPage(_ pageNumber: Int){
         if pageNumber == pages.count {
             pageView.updateConstraintFor(getStarted: -300, pageControl: -300, loginView: 0, facebookBtn: 0)
-        }else {
+        } else {
             pageView.updateConstraintFor(getStarted: 0, pageControl: 0, loginView: 400, facebookBtn: 400)
         }
     }
-    override var shouldAutorotate: Bool {
-        return false
-    }
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return .portrait
-    }
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
+//    override var shouldAutorotate: Bool {
+//        return false
+//    }
+//    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+//        return .portrait
+//    }
+//    override var preferredStatusBarStyle: UIStatusBarStyle {
+//        return .lightContent
+//    }
 }

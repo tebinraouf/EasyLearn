@@ -29,7 +29,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     //Limit Search Functionality
     var ref: FIRDatabaseReference!
     
-    public static let shared = HomeViewController()
+    //public static let shared = HomeViewController()
     
     //MARK:- View Lifecycles
     override func viewDidLoad() {
@@ -99,9 +99,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
                 print(domains ?? "")
             }
         }
-    }
-    func logout() {
-        navigationController?.pushViewController(PageController(), animated: true)
     }
     
 }

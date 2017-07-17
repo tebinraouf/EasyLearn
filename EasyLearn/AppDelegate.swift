@@ -38,6 +38,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Theme.current.apply()
         return true
     }
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        guard let controllers = window?.rootViewController?.childViewControllers else { return .portrait}
+        for con in controllers {
+            if con is CardsViewController && controllers.last is CardsViewController {
+                return .all
+            }
+        }
+        return .portrait
+    }
+    private func checkViewController(_ index: Int) -> UIInterfaceOrientationMask {
+        if window?.rootViewController?.childViewControllers[index] is CardsViewController {
+            return .all
+        } else {
+            return .portrait
+        }
+    }
+    
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
 

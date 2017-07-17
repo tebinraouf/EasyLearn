@@ -53,9 +53,9 @@ extension CardSettingsController {
             cell.imageView?.image = UIImage.icon(from: .MapIcon, code: "map.icon.pharmacy", imageSize: CGSize(width: 25, height: 25), ofSize: 25, color: .appColor)
             uiSwitch.tag = 100
             uiSwitch.isOn = UserDefaults.standard.bool(forKey: UserDefaultsKeys.cardNumberLabel.rawValue)
-        case 1:
-            cell.imageView?.image = UIImage.icon(from: .MaterialIcon, code: "check.circle", imageSize: CGSize(width: 25, height: 25), ofSize: 25, color: .appColor)
-            uiSwitch.tag = 200
+//        case 1:
+//            cell.imageView?.image = UIImage.icon(from: .MaterialIcon, code: "check.circle", imageSize: CGSize(width: 25, height: 25), ofSize: 25, color: .appColor)
+//            uiSwitch.tag = 200
         default:
             break
         }

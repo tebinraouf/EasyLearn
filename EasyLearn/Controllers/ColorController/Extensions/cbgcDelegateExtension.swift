@@ -23,7 +23,6 @@ extension CardBgColorController: BackgroundColorProtocol {
     }
     //circle button handler
     func handleNewColor() {
-        
         let cvm = ColorViewModel(colorView: colorView)
         let newColor = cvm.newColor()
         let currentLayer = ColorCoreDataLayer()
