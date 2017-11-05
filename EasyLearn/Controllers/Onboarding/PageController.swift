@@ -25,7 +25,20 @@ class PageController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: true)
         setDelegates()
         setupView()
+        
+        
+        
+        
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
+    }
+    
     func handleGetStarted(){
         print(1234)
 //        UIWindow().rootViewController = UINavigationController(rootViewController: HomeViewController())

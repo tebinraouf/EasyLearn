@@ -51,6 +51,10 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         helper.checkUserLimit()
         
     }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
+    }
+    
     //MARK:- Register Cells
     func registerCells(){
         homeView.collectionView.register(DashboardCell.self, forCellWithReuseIdentifier: CellID.hvCellID.rawValue)
