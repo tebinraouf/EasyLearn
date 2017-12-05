@@ -11,7 +11,7 @@ The app uses Facebook SDK as an alternative for login. Once the user logged in, 
 
 The current features:
 
-0. On boarding pages to describe the app before login
+1. On boarding pages to describe the app before login
 2. Search for words or user word category to find a word.
 3. Favorite a word. The app uses Core Data as local database.
 4. Use Flashcards to study the saved words.
