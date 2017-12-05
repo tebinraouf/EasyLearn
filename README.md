@@ -25,7 +25,7 @@ To setup the project:
 1. create a developer account at [Oxford Dictionaries ](https://developer.oxforddictionaries.com/)
 2. Get the app id and app key from the Oxfored Dictionaries developer dashboard. Set the **appID** and **appKey** in the **Resources.swift** file in the Networking folder.
 3. Create a Firebase account and put GoogleService-Info in the project.
-
+4. Update Facebook SDK details in Info.plist
 
 ## Firebase Database Structure
 Each user has four fields:
