@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		04188B771971CC16A77558DA /* Pods_EasyLearn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 976E28507EF0BE8A82DAFA65 /* Pods_EasyLearn.framework */; };
-		438D0E421FAFC1E700854DC1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 438D0E411FAFC1E600854DC1 /* GoogleService-Info.plist */; };
 		43CFB0F51F1593F5004CCCB5 /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CFB0F41F1593F5004CCCB5 /* FirebaseHelper.swift */; };
 		CF0A82E11EAEFDC800D2BFB1 /* HomeControllerObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0A82E01EAEFDC800D2BFB1 /* HomeControllerObserver.swift */; };
 		CF11ED7B1ED10D7600103BAF /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF11ED7A1ED10D7600103BAF /* LoginController.swift */; };
@@ -108,7 +107,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		438D0E411FAFC1E600854DC1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		43CFB0F41F1593F5004CCCB5 /* FirebaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirebaseHelper.swift; path = Controllers/HomeController/FirebaseHelper.swift; sourceTree = "<group>"; };
 		6EF7DBD2DA942ED54ADD413D /* Pods-EasyLearn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyLearn.release.xcconfig"; path = "Pods/Target Support Files/Pods-EasyLearn/Pods-EasyLearn.release.xcconfig"; sourceTree = "<group>"; };
 		976E28507EF0BE8A82DAFA65 /* Pods_EasyLearn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyLearn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -499,7 +497,6 @@
 			children = (
 				CFEB5A7B1ED7862E0001A4A4 /* EasyLearn.entitlements */,
 				CFAFE66B1E68F9CA0062235E /* Main.storyboard */,
-				438D0E411FAFC1E600854DC1 /* GoogleService-Info.plist */,
 				CFAFE6671E68F9CA0062235E /* AppDelegate.swift */,
 				CFAFE66E1E68F9CA0062235E /* Assets.xcassets */,
 				CFAFE6701E68F9CA0062235E /* LaunchScreen.storyboard */,
@@ -756,7 +753,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFAFE6721E68F9CA0062235E /* LaunchScreen.storyboard in Resources */,
-				438D0E421FAFC1E700854DC1 /* GoogleService-Info.plist in Resources */,
 				CFAFE66F1E68F9CA0062235E /* Assets.xcassets in Resources */,
 				CFAFE66D1E68F9CA0062235E /* Main.storyboard in Resources */,
 			);

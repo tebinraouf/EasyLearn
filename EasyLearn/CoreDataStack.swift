@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 
+//Taken from Lynda.com
 class CoreDataStack {
     
     static let sharedInstance = CoreDataStack()
