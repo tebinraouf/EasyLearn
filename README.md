@@ -39,7 +39,7 @@ Currently the flow of the application is that when a user is registered for the 
 
 These are some of the screenshots of the app.
 
-![Screenshot 1](screenshots/s1.png | width=300)
+![Screenshot 1](screenshots/s1.png)
 
 ![Screenshot 1](screenshots/s2.png)
 
